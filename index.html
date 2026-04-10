@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchonX.ai — Autonomous AI Leadership & Workforce Optimization</title>
+    <meta name="description" content="ArchonX.ai replaces reactive management with autonomous AI-driven leadership. Real-time task delegation, hazard mitigation, and workforce optimization for enterprise.">
+    <meta name="keywords" content="AI management, workforce optimization, autonomous leadership, enterprise AI, safety compliance, task delegation">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <span class="logo-icon">⬡</span>
+                <span class="logo-text">ARCHON<span class="logo-x">X</span><span class="logo-dot">.ai</span></span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="protocol.html" class="nav-link">Protocol</a></li>
+                <li><a href="markets.html" class="nav-link">Markets</a></li>
+                <li><a href="competitive.html" class="nav-link">Advantage</a></li>
+                <li><a href="invest.html" class="nav-link">Investors</a></li>
+                <li><a href="#invest" class="nav-link nav-link--cta">Request a Demo</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="assets/hero-bg.png" alt="" class="hero-bg-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <canvas id="particle-canvas" class="hero-particles"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge" id="hero-badge">
+                <span class="badge-pulse"></span>
+                <span class="badge-text">Now Raising $5M Seed Round</span>
+            </div>
+            <h1 class="hero-title" id="hero-title">
+                Driven by <span class="gradient-text">Data.</span><br>
+                Orchestrated by <span class="gradient-text">Intelligence.</span><br>
+                Built for <span class="gradient-text">Efficiency.</span>
+            </h1>
+            <p class="hero-subtitle" id="hero-subtitle">
+                The ultimate standard in automated leadership and workforce optimization. ArchonX replaces reactive, error-prone human supervision with autonomous AI-driven command.
+            </p>
+            <div class="hero-actions">
+                <a href="#invest" class="btn btn-primary" id="hero-cta-primary">
+                    <span>Get Started</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="about.html" class="btn btn-secondary" id="hero-cta-secondary">
+                    <span>Learn More</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-value" data-target="40">0</span><span class="hero-stat-suffix">%</span>
+                    <span class="hero-stat-label">Cost Savings</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value" data-target="95">0</span><span class="hero-stat-suffix">%</span>
+                    <span class="hero-stat-label">Fewer Incidents</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value" data-target="100">0</span><span class="hero-stat-suffix">%</span>
+                    <span class="hero-stat-label">Real-Time Reporting</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator" id="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section section--about" id="about">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">The Vision</span>
+                <h2 class="section-title">What is <span class="gradient-text">ArchonX</span>?</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card about-card--origin reveal-up">
+                    <div class="about-card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>The Name</h3>
+                    <p><strong>"Archon"</strong> — Ancient Greek for <em>Ruler</em> and <em>Commander</em>. Paired with <strong>"X"</strong>, representing mastery of the human operational domain. Together, they define the new standard of AI-driven authority.</p>
+                </div>
+                <div class="about-card about-card--vision reveal-up" style="--delay: 0.1s">
+                    <div class="about-card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <h3>Unblinking Oversight</h3>
+                    <p>Born from the need for total visibility in chaotic enterprise operations. ArchonX is the "Big Boss" — providing <strong>absolute operational authority</strong> and comprehensive system control where human supervisors fall short.</p>
+                </div>
+                <div class="about-card about-card--mission reveal-up" style="--delay: 0.2s">
+                    <div class="about-card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Autonomous Action</h3>
+                    <p>ArchonX doesn't just report data — it takes <strong>autonomous action</strong>. It replaces passive reporting with active, AI-driven leadership that makes real-time decisions at the speed of operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PROBLEM ===================== -->
+    <section class="section section--problem" id="problem">
+        <div class="container">
+            <div class="problem-grid">
+                <div class="problem-left reveal-left">
+                    <span class="section-tag section-tag--red">The Crisis</span>
+                    <h2 class="section-title">The $<span class="counter" data-target="500">0</span>B Problem</h2>
+                    <p class="problem-description">
+                        Enterprise and government sectors lose <strong>billions annually</strong> due to reactive management, human error, operational bottlenecks, and employee burnout. Traditional supervision is broken.
+                    </p>
+                    <ul class="problem-list">
+                        <li class="problem-item reveal-left" style="--delay: 0.1s">
+                            <span class="problem-icon problem-icon--red">✕</span>
+                            <span>Reactive, not proactive management</span>
+                        </li>
+                        <li class="problem-item reveal-left" style="--delay: 0.15s">
+                            <span class="problem-icon problem-icon--red">✕</span>
+                            <span>Costly human errors and oversight gaps</span>
+                        </li>
+                        <li class="problem-item reveal-left" style="--delay: 0.2s">
+                            <span class="problem-icon problem-icon--red">✕</span>
+                            <span>Operational bottlenecks and downtime</span>
+                        </li>
+                        <li class="problem-item reveal-left" style="--delay: 0.25s">
+                            <span class="problem-icon problem-icon--red">✕</span>
+                            <span>Employee burnout and high turnover</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="problem-right reveal-right">
+                    <span class="section-tag section-tag--cyan">The Answer</span>
+                    <h2 class="section-title">The <span class="gradient-text">ArchonX</span> Solution</h2>
+                    <p class="problem-description">
+                        An autonomous management engine that doesn't just monitor — it <strong>leads</strong>. Active, AI-driven command replaces passive reporting with decisive, real-time operational control.
+                    </p>
+                    <ul class="problem-list">
+                        <li class="problem-item reveal-right" style="--delay: 0.1s">
+                            <span class="problem-icon problem-icon--cyan">✓</span>
+                            <span>Proactive, predictive decision-making</span>
+                        </li>
+                        <li class="problem-item reveal-right" style="--delay: 0.15s">
+                            <span class="problem-icon problem-icon--cyan">✓</span>
+                            <span>Autonomous task routing and delegation</span>
+                        </li>
+                        <li class="problem-item reveal-right" style="--delay: 0.2s">
+                            <span class="problem-icon problem-icon--cyan">✓</span>
+                            <span>Real-time hazard and stress detection</span>
+                        </li>
+                        <li class="problem-item reveal-right" style="--delay: 0.25s">
+                            <span class="problem-icon problem-icon--cyan">✓</span>
+                            <span>24/7 unblinking operational oversight</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FEATURES ===================== -->
+    <section class="section section--features" id="features">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Core Capabilities</span>
+                <h2 class="section-title">The <span class="gradient-text">Archon Protocol</span></h2>
+                <p class="section-subtitle">Four pillars of autonomous intelligence that redefine operational command</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal-up" id="feature-delegation">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Intelligent Task Delegation</h3>
+                    <p class="feature-desc">Real-time, autonomous routing of tasks to human agents to ensure absolute adherence to performance metrics and peak efficiency. No delays. No bottlenecks.</p>
+                    <div class="feature-tag">AI-Powered Routing</div>
+                    <a href="protocol.html#delegation" class="card-link">Learn more →</a>
+                </div>
+                <div class="feature-card feature-card--large reveal-up" style="--delay: 0.1s" id="feature-hazard">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Holistic Hazard Mitigation</h3>
+                    <p class="feature-desc">Dual-layered protection combining physical and psychosocial monitoring:</p>
+                    <div class="feature-sub-grid">
+                        <div class="feature-sub">
+                            <span class="feature-sub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                            <div>
+                                <strong>Physical Safety</strong>
+                                <p>Computer vision scans for PPE compliance and environmental hazards in real time</p>
+                            </div>
+                        </div>
+                        <div class="feature-sub">
+                            <span class="feature-sub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/><line x1="10" y1="21" x2="14" y2="21"/></svg></span>
+                            <div>
+                                <strong>Psychosocial Monitoring</strong>
+                                <p>Advanced audio analytics detect voice tonality, stress, fatigue, and cognitive load to prevent burnout</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-tag">Multi-Modal Detection</div>
+                    <a href="protocol.html#hazard" class="card-link">Learn more →</a>
+                </div>
+                <div class="feature-card reveal-up" style="--delay: 0.2s" id="feature-personas">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Bespoke Management Personas</h3>
+                    <p class="feature-desc">Custom-trained AI personalities that embody your company's culture and values, ensuring high employee adoption and morale through personalized leadership.</p>
+                    <div class="feature-tag">Cultural Alignment</div>
+                    <a href="protocol.html#personas" class="card-link">Learn more →</a>
+                </div>
+                <div class="feature-card reveal-up" style="--delay: 0.3s" id="feature-loop">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                            <polyline points="22 2 22 8 16 8"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Closed-Loop Efficiency</h3>
+                    <p class="feature-desc">Instantaneous workflow rerouting when a hazard or stressor is detected, without requiring middle-management intervention. Fully autonomous response.</p>
+                    <div class="feature-tag">Zero Latency</div>
+                    <a href="protocol.html#closed-loop" class="card-link">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== VISUAL BREAK ===================== -->
+    <section class="section section--visual-break">
+        <div class="visual-break-bg">
+            <img src="assets/features-bg.png" alt="" class="visual-break-img">
+            <div class="visual-break-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="visual-break-content reveal-up">
+                <blockquote class="visual-quote">
+                    "ArchonX doesn't manage people — it <span class="gradient-text">commands operations</span>."
+                </blockquote>
+                <p class="visual-quote-sub">Replacing human supervisors with unblinking AI leadership for absolute operational authority.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== MARKETS ===================== -->
+    <section class="section section--markets" id="markets">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Target Markets</span>
+                <h2 class="section-title">Industries <span class="gradient-text">Transformed</span></h2>
+                <p class="section-subtitle">ArchonX delivers measurable ROI across high-complexity operational environments</p>
+            </div>
+            <div class="markets-grid">
+                <div class="market-card reveal-up" id="market-logistics">
+                    <div class="market-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+                    <h3>Logistics & Warehousing</h3>
+                    <p>Drastic reduction in worker's compensation claims and maximized units-processed-per-hour through real-time task routing and safety monitoring.</p>
+                    <div class="market-metrics">
+                        <span class="market-metric"><strong>↑ 3x</strong> throughput</span>
+                        <span class="market-metric"><strong>↓ 60%</strong> claims</span>
+                    </div>
+                </div>
+                <div class="market-card reveal-up" style="--delay: 0.1s" id="market-bpo">
+                    <div class="market-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+                    <h3>BPO & Call Centers</h3>
+                    <p>Audio analytics monitor agent stress to re-route calls or enforce micro-breaks. Dramatically improve retention and quality assurance scores.</p>
+                    <div class="market-metrics">
+                        <span class="market-metric"><strong>↑ 45%</strong> retention</span>
+                        <span class="market-metric"><strong>↑ 30%</strong> QA scores</span>
+                    </div>
+                </div>
+                <div class="market-card reveal-up" style="--delay: 0.2s" id="market-government">
+                    <div class="market-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg></div>
+                    <h3>Critical Infrastructure & Government</h3>
+                    <p>Ensures absolute adherence to safety protocols and regulatory compliance in high-liability environments with zero tolerance for oversight gaps.</p>
+                    <div class="market-metrics">
+                        <span class="market-metric"><strong>100%</strong> compliance</span>
+                        <span class="market-metric"><strong>0</strong> violations</span>
+                    </div>
+                </div>
+                <div class="market-card reveal-up" style="--delay: 0.3s" id="market-defense">
+                    <div class="market-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <h3>Defense & Emergency Dispatch</h3>
+                    <p>Monitors cognitive load to maintain peak operational readiness and preserve human life in mission-critical scenarios.</p>
+                    <div class="market-metrics">
+                        <span class="market-metric"><strong>24/7</strong> readiness</span>
+                        <span class="market-metric"><strong>↓ 80%</strong> fatigue errors</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== IMPACT STATS ===================== -->
+    <section class="section section--impact" id="impact">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Proven Results</span>
+                <h2 class="section-title">Measurable <span class="gradient-text">Impact</span></h2>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card reveal-up" id="impact-cost">
+                    <div class="impact-ring">
+                        <svg viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="54" class="impact-ring-bg"/>
+                            <circle cx="60" cy="60" r="54" class="impact-ring-fill" data-percent="40"/>
+                        </svg>
+                        <span class="impact-value"><span class="counter" data-target="40">0</span>%</span>
+                    </div>
+                    <h3>Operational Cost Savings</h3>
+                    <p>Dramatic reduction in overhead through autonomous management and optimized workflows</p>
+                </div>
+                <div class="impact-card reveal-up" style="--delay: 0.15s" id="impact-safety">
+                    <div class="impact-ring">
+                        <svg viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="54" class="impact-ring-bg"/>
+                            <circle cx="60" cy="60" r="54" class="impact-ring-fill" data-percent="95"/>
+                        </svg>
+                        <span class="impact-value"><span class="counter" data-target="95">0</span>%</span>
+                    </div>
+                    <h3>Reduction in Safety Incidents</h3>
+                    <p>Near-elimination of workplace incidents through proactive AI-driven safety monitoring</p>
+                </div>
+                <div class="impact-card reveal-up" style="--delay: 0.3s" id="impact-reporting">
+                    <div class="impact-ring">
+                        <svg viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="54" class="impact-ring-bg"/>
+                            <circle cx="60" cy="60" r="54" class="impact-ring-fill" data-percent="100"/>
+                        </svg>
+                        <span class="impact-value"><span class="counter" data-target="100">0</span>%</span>
+                    </div>
+                    <h3>Real-Time Reporting</h3>
+                    <p>Complete visibility with zero-latency operational data across your entire organization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== INVEST / CTA ===================== -->
+    <section class="section section--invest" id="invest">
+        <div class="container">
+            <div class="invest-card reveal-up">
+                <div class="invest-glow"></div>
+                <div class="invest-content">
+                    <span class="section-tag section-tag--gold">Investment Opportunity</span>
+                    <h2 class="section-title">Join the <span class="gradient-text">$5M Seed Round</span></h2>
+                    <p class="invest-desc">We are raising a <strong>$5 Million Seed Round</strong> to finalize multi-modal detection algorithms and execute pilot programs in the logistics, BPO, and government sectors.</p>
+                    <div class="invest-model">
+                        <div class="invest-model-item">
+                            <span class="invest-model-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+                            <div>
+                                <strong>Revenue Model</strong>
+                                <p>Scalable B2B Enterprise SaaS with premium implementation fees for bespoke AI personality training</p>
+                            </div>
+                        </div>
+                        <div class="invest-model-item">
+                            <span class="invest-model-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 12 3.269 3.126A59.768 59.768 0 0 1 21.485 12 59.77 59.77 0 0 1 3.27 20.876L5.999 12zm0 0h7.5"/></svg></span>
+                            <div>
+                                <strong>Use of Funds</strong>
+                                <p>Multi-modal algorithm R&D, pilot programs in logistics & BPO, enterprise sales team expansion</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invest-actions">
+                        <a href="mailto:invest@archonx.ai" class="btn btn-primary btn-large" id="invest-cta">
+                            <span>Request Investor Deck</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#" class="btn btn-secondary btn-large" id="demo-cta">
+                            <span>Schedule a Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <span class="logo-text">ARCHON<span class="logo-x">X</span><span class="logo-dot">.ai</span></span>
+                    </a>
+                    <p class="footer-tagline">Driven by Data. Orchestrated by Intelligence. Built for Efficiency.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="protocol.html">Archon Protocol</a></li>
+                        <li><a href="markets.html">Markets</a></li>
+                        <li><a href="competitive.html">Advantage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="invest.html">Investors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:hello@archonx.ai">hello@archonx.ai</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter / X</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ArchonX.ai — All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
