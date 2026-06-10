@@ -29,8 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // =================== SMOOTH SCROLL ===================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
+            const href = anchor.getAttribute('href');
+            if (!href || href.length <= 1) return;
             e.preventDefault();
-            const target = document.querySelector(anchor.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 const offset = 60;
                 const pos = target.getBoundingClientRect().top + window.scrollY - offset;
@@ -115,4 +117,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
 
     impactRings.forEach(ring => ringObserver.observe(ring));
+
+    // =================== EDITORIAL HOME (index only) ===================
+    if (document.body.classList.contains('home-editorial')) {
+        // Navbar theme: ink (white text) over dark sections, paper over light ones
+        const themedSections = Array.from(document.querySelectorAll('[data-nav]'));
+        let navThemeQueued = false;
+        const setNavTheme = () => {
+            navThemeQueued = false;
+            const probe = 26; // navbar vertical midline
+            let theme = 'ink';
+            for (const sec of themedSections) {
+                const rect = sec.getBoundingClientRect();
+                if (rect.top <= probe && rect.bottom > probe) {
+                    theme = sec.dataset.nav;
+                    break;
+                }
+            }
+            navbar.classList.toggle('navbar--paper', theme === 'paper');
+        };
+        window.addEventListener('scroll', () => {
+            if (!navThemeQueued) {
+                navThemeQueued = true;
+                requestAnimationFrame(setNavTheme);
+            }
+        }, { passive: true });
+        setNavTheme();
+
+        // Rule-draw: hairlines animate scaleX 0 -> 1 on reveal
+        document.querySelectorAll('.ed-rule').forEach(el => revealObserver.observe(el));
+
+        // Result gauges: fill bar to data-percent on reveal
+        const gauges = document.querySelectorAll('.ed-gauge-fill');
+        const gaugeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.width = parseInt(entry.target.dataset.percent) + '%';
+                    gaugeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        gauges.forEach(g => gaugeObserver.observe(g));
+    }
 });

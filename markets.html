@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Target Markets — ArchonX.ai</title>
-    <meta name="description" content="ArchonX serves high-liability, high-volume sectors: Logistics, BPO, Government Infrastructure, Defense, Emergency Response, and Small-to-Mid Business.">
+    <title>Markets - ArchonX.ai</title>
+    <meta name="description" content="Explore ArchonX markets across retail, construction, service, hospitality, logistics, BPO, government infrastructure, and emergency operations.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260610-subpages">
 </head>
-<body>
+<body class="subpage-modern">
     <nav class="navbar scrolled" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo" id="nav-logo">
-                <span class="logo-text">ARCHON<span class="logo-x">X</span><span class="logo-dot">.ai</span></span>
+            <a href="index.html" class="nav-logo" id="nav-logo" aria-label="ArchonX home">
+                <img src="assets/archonx-logo-mark-4k.png" alt="" class="logo-mark">
+                <span class="logo-text">ArchonX</span>
             </a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="protocol.html" class="nav-link">Protocol</a></li>
                 <li><a href="markets.html" class="nav-link">Markets</a></li>
                 <li><a href="competitive.html" class="nav-link">Advantage</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
                 <li><a href="invest.html" class="nav-link">Investors</a></li>
-                <li><a href="index.html#invest" class="nav-link nav-link--cta">Request a Demo</a></li>
             </ul>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
                 <span></span><span></span><span></span>
@@ -30,176 +31,273 @@
         </div>
     </nav>
 
-    <section class="page-hero">
-        <div class="container">
-            <span class="section-tag">Go-to-Market</span>
-            <h1 class="page-hero-title">Industries transformed.</h1>
-            <p class="page-hero-subtitle">We target high-liability, high-volume sectors across enterprise and government — driving adoption through immediate, quantifiable ROI in reduced accident claims, lower turnover, and optimized labor.</p>
-        </div>
-    </section>
-
-    <!-- ENTERPRISE MARKETS -->
-
-    <!-- LOGISTICS -->
-    <section class="section section--about" id="logistics">
-        <div class="container">
-            <div class="content-block reveal-up">
-                <div class="content-block-split">
-                    <div class="content-block-left">
-                        <span class="pillar-number">01</span>
-                        <h2 class="section-title">Global Logistics & Warehousing</h2>
-                    </div>
-                    <div class="content-block-right">
-                        <div class="content-highlight" style="margin-bottom: 24px;">
-                            <h4>The Problem</h4>
-                            <p>High injury rates, employee burnout, and logistical bottlenecks plague global warehouse and fulfillment operations. The cost of workers' compensation claims alone runs into billions annually.</p>
-                        </div>
-                        <div class="content-highlight">
-                            <h4>The ArchonX Fit</h4>
-                            <p>ArchonX acts as an omnipresent floor manager via computer vision — detecting safety hazards in real time while dynamically routing tasks based on worker capacity and zone activity. The result: drastic reduction in workers' compensation claims and maximized units-processed-per-hour.</p>
-                        </div>
-                        <div class="market-roi-strip">
-                            <div class="roi-item"><span class="roi-value">3x</span><span class="roi-label">Throughput increase</span></div>
-                            <div class="roi-item"><span class="roi-value">60%</span><span class="roi-label">Fewer comp claims</span></div>
-                            <div class="roi-item"><span class="roi-value">24/7</span><span class="roi-label">Floor coverage</span></div>
+    <main class="markets-page">
+        <section class="markets-hero">
+            <div class="container">
+                <div class="markets-hero-grid">
+                    <div class="markets-hero-copy reveal-left">
+                        <span class="section-tag">Market Command</span>
+                        <h1 class="markets-hero-title">Operational intelligence for every high-pressure workforce.</h1>
+                        <p class="markets-hero-subtitle">ArchonX is built for environments where safety, speed, staffing, and accountability directly affect margin. One command layer adapts across field teams, service teams, logistics floors, public infrastructure, and mission-critical operations.</p>
+                        <div class="markets-hero-actions">
+                            <a href="#market-map" class="btn btn-primary">Explore Markets</a>
+                            <a href="consultation.html" class="btn btn-secondary">Start a Consultation</a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BPO -->
-    <section class="section" id="bpo">
-        <div class="container">
-            <div class="content-block reveal-up">
-                <div class="content-block-split">
-                    <div class="content-block-left">
-                        <span class="pillar-number">02</span>
-                        <h2 class="section-title">BPO & Customer Service Centers</h2>
-                    </div>
-                    <div class="content-block-right">
-                        <div class="content-highlight" style="margin-bottom: 24px;">
-                            <h4>The Problem</h4>
-                            <p>Extreme employee churn and diminishing productivity caused by high mental load, repetitive stress, and inadequate human oversight. Traditional call center management relies on after-the-fact QA reviews that miss real-time burnout signals.</p>
+                    <div class="markets-command-panel reveal-right" aria-label="ArchonX market command model">
+                        <div class="command-panel-header">
+                            <span>ArchonX Market Fit</span>
+                            <strong>Live command layer</strong>
                         </div>
-                        <div class="content-highlight">
-                            <h4>The ArchonX Fit</h4>
-                            <p>Audio analytics continuously monitor agent voice tonality for signs of stress and fatigue. The system acts as a real-time supervisor — re-routing complex calls to fresher agents, enforcing mandatory micro-breaks, and flagging at-risk individuals before they burn out. ROI is measurable in retention rates and automated QA scores.</p>
-                        </div>
-                        <div class="market-roi-strip">
-                            <div class="roi-item"><span class="roi-value">45%</span><span class="roi-label">Higher retention</span></div>
-                            <div class="roi-item"><span class="roi-value">30%</span><span class="roi-label">QA improvement</span></div>
-                            <div class="roi-item"><span class="roi-value">0</span><span class="roi-label">Burnout incidents</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GOVERNMENT -->
-    <section class="section section--about" id="government">
-        <div class="container">
-            <div class="content-block reveal-up">
-                <div class="content-block-split">
-                    <div class="content-block-left">
-                        <span class="pillar-number">03</span>
-                        <h2 class="section-title">Federal & State Infrastructure</h2>
-                    </div>
-                    <div class="content-block-right">
-                        <div class="content-highlight" style="margin-bottom: 24px;">
-                            <h4>The Problem</h4>
-                            <p>"Management sprawl" — lack of centralized oversight across dispersed government operations. Safety violations go undetected. Budget overruns compound. Every hour of unaccounted labor is a compliance risk.</p>
-                        </div>
-                        <div class="content-highlight">
-                            <h4>The ArchonX Fit</h4>
-                            <p>A "Digital Supervisor" that accounts for every hour of labor and ensures absolute adherence to safety protocols. ArchonX enforces regulatory compliance in high-liability environments with zero tolerance for oversight gaps — delivering ROI in compliance scores and liability prevention.</p>
-                        </div>
-                        <div class="market-roi-strip">
-                            <div class="roi-item"><span class="roi-value">100%</span><span class="roi-label">Protocol compliance</span></div>
-                            <div class="roi-item"><span class="roi-value">0</span><span class="roi-label">Safety violations</span></div>
-                            <div class="roi-item"><span class="roi-value">Full</span><span class="roi-label">Labor accountability</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DEFENSE -->
-    <section class="section" id="defense">
-        <div class="container">
-            <div class="content-block reveal-up">
-                <div class="content-block-split">
-                    <div class="content-block-left">
-                        <span class="pillar-number">04</span>
-                        <h2 class="section-title">Emergency Response & Defense</h2>
-                    </div>
-                    <div class="content-block-right">
-                        <div class="content-highlight" style="margin-bottom: 24px;">
-                            <h4>The Problem</h4>
-                            <p>Overwhelmed human supervisors, critical communication delays, and cascading safety failures in mission-critical environments. When cognitive load exceeds capacity, lives are at stake.</p>
-                        </div>
-                        <div class="content-highlight">
-                            <h4>The ArchonX Fit</h4>
-                            <p>An automated command layer integrated via dispatch systems and body-cam feeds. ArchonX monitors cognitive load in real time, identifies tactical threats, coordinates response, and redistributes workload to maintain peak operational readiness. ROI is measured in mission reliability and the preservation of human life.</p>
-                        </div>
-                        <div class="market-roi-strip">
-                            <div class="roi-item"><span class="roi-value">24/7</span><span class="roi-label">Operational readiness</span></div>
-                            <div class="roi-item"><span class="roi-value">80%</span><span class="roi-label">Fewer fatigue errors</span></div>
-                            <div class="roi-item"><span class="roi-value">Real-time</span><span class="roi-label">Threat coordination</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SMB SECTION -->
-    <section class="section" style="background: var(--text); color: #fff;">
-        <div class="container">
-            <div class="content-block reveal-up">
-                <div class="content-block-split">
-                    <div class="content-block-left">
-                        <span class="pillar-number" style="color: rgba(255,255,255,0.2);">SMB</span>
-                        <h2 class="section-title" style="color: #fff;">Small & Mid-Size Business</h2>
-                    </div>
-                    <div class="content-block-right">
-                        <p class="body-large" style="color: rgba(255,255,255,0.7);">Perfect for business owners who are the single operational bottleneck. ArchonX becomes your <strong style="color: #fff;">Automated Floor Manager</strong> — letting you step away from the grind while standards are maintained by a tireless supervisor.</p>
-
-                        <div class="content-two-col" style="margin-top: 28px;">
-                            <div class="content-col-item" style="background: rgba(255,255,255,0.06); border: none;">
-                                <h3 style="color: #fff;">Doing More With Less</h3>
-                                <p style="color: rgba(255,255,255,0.5);">Autonomous task routing means you don't need to "bark orders." The AI handles delegation so you can focus on strategy and growth.</p>
+                        <div class="command-signal-list">
+                            <div>
+                                <span>01</span>
+                                <p>Detect workforce load, risk signals, service delays, and site bottlenecks.</p>
                             </div>
-                            <div class="content-col-item" style="background: rgba(255,255,255,0.06); border: none;">
-                                <h3 style="color: #fff;">Your Voice, Automated</h3>
-                                <p style="color: rgba(255,255,255,0.5);">The AI matches your specific management style — whether friendly and approachable or professional and direct. Your standards, maintained 24/7.</p>
+                            <div>
+                                <span>02</span>
+                                <p>Route work to the right person, zone, crew, team, or response path.</p>
+                            </div>
+                            <div>
+                                <span>03</span>
+                                <p>Report performance, risk, and compliance in real time for leadership.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div style="margin-top: 28px;">
-                            <p class="body-large" style="color: rgba(255,255,255,0.5); font-size: 15px;"><strong style="color: rgba(255,255,255,0.7);">Target SMB verticals:</strong> Independent Manufacturing & Workshops (keep machinists focused, machinery never idle), Franchise QSRs (consistent service when manager is off-site, kitchen throughput and stress monitoring).</p>
+                <div class="markets-snapshot reveal-up" aria-label="Market coverage snapshot">
+                    <div>
+                        <strong>8</strong>
+                        <span>core industries</span>
+                    </div>
+                    <div>
+                        <strong>4</strong>
+                        <span>operational pressure zones</span>
+                    </div>
+                    <div>
+                        <strong>1</strong>
+                        <span>autonomous command layer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section markets-map-section" id="market-map">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-tag">Industry Map</span>
+                    <h2 class="section-title">Where ArchonX creates leverage.</h2>
+                    <p class="section-subtitle">Each market has a different operating pressure. The system stays the same: sense what is happening, prioritize the work, route action, and measure the outcome.</p>
+                </div>
+
+                <div class="market-category-row reveal-up" aria-label="Market categories">
+                    <a href="#market-retail">Retail</a>
+                    <a href="#market-construction">Construction</a>
+                    <a href="#market-service">Service</a>
+                    <a href="#market-hospitality">Hospitality</a>
+                    <a href="#market-logistics">Logistics</a>
+                    <a href="#market-bpo">BPO</a>
+                    <a href="#market-government">Government</a>
+                    <a href="#market-defense">Defense</a>
+                </div>
+
+                <div class="market-command-grid">
+                    <article class="market-command-card reveal-up" id="market-retail">
+                        <div class="market-card-topline">
+                            <span>01</span>
+                            <small>Customer flow</small>
+                        </div>
+                        <h3>Retail</h3>
+                        <p>Improves floor coverage, queue response, staff allocation, and loss-prevention workflows across high-traffic retail operations.</p>
+                        <div class="market-card-fit">
+                            <strong>Best fit</strong>
+                            <span>Multi-site stores, busy floors, distributed teams</span>
+                        </div>
+                        <div class="market-card-metrics">
+                            <span>+35% floor coverage</span>
+                            <span>-25% shrink risk</span>
+                        </div>
+                    </article>
+
+                    <article class="market-command-card reveal-up" style="--delay: 0.05s;" id="market-construction">
+                        <div class="market-card-topline">
+                            <span>02</span>
+                            <small>Site visibility</small>
+                        </div>
+                        <h3>Construction &amp; Trades</h3>
+                        <p>Coordinates crews, flags safety risks, tracks site progress, and keeps field work moving with live task visibility.</p>
+                        <div class="market-card-fit">
+                            <strong>Best fit</strong>
+                            <span>Job sites, trades teams, project-based operations</span>
+                        </div>
+                        <div class="market-card-metrics">
+                            <span>+30% site visibility</span>
+                            <span>-40% safety gaps</span>
+                        </div>
+                    </article>
+
+                    <article class="market-command-card reveal-up" style="--delay: 0.1s;" id="market-service">
+                        <div class="market-card-topline">
+                            <span>03</span>
+                            <small>Delivery control</small>
+                        </div>
+                        <h3>Service &amp; Consulting</h3>
+                        <p>Gives client-facing teams workload routing, delivery oversight, utilization visibility, and engagement-level performance tracking.</p>
+                        <div class="market-card-fit">
+                            <strong>Best fit</strong>
+                            <span>Agencies, consultancies, managed service teams</span>
+                        </div>
+                        <div class="market-card-metrics">
+                            <span>+20% utilization</span>
+                            <span>+30% delivery control</span>
+                        </div>
+                    </article>
+
+                    <article class="market-command-card reveal-up" style="--delay: 0.15s;" id="market-hospitality">
+                        <div class="market-card-topline">
+                            <span>04</span>
+                            <small>Service speed</small>
+                        </div>
+                        <h3>Hospitality</h3>
+                        <p>Optimizes staffing, guest-response workflows, service consistency, and incident visibility across venues and hospitality teams.</p>
+                        <div class="market-card-fit">
+                            <strong>Best fit</strong>
+                            <span>Hotels, venues, restaurants, event operations</span>
+                        </div>
+                        <div class="market-card-metrics">
+                            <span>+35% response speed</span>
+                            <span>+25% service quality</span>
+                        </div>
+                    </article>
+
+                    <article class="market-command-card market-command-card--priority reveal-up" style="--delay: 0.2s;" id="market-logistics">
+                        <div class="market-card-topline">
+                            <span>05</span>
+                            <small>Throughput</small>
+                        </div>
+                        <h3>Logistics &amp; Warehousing</h3>
+                        <p>Detects safety hazards, worker overload, zone congestion, and task-routing inefficiencies across warehouse and fulfillment operations.</p>
+                        <div class="market-card-fit">
+                            <strong>Best fit</strong>
+                            <span>Warehouses, distribution centers, fulfillment floors</span>
+                        </div>
+                        <div class="market-card-metrics">
+                            <span>3x throughput</span>
+                            <span>-60% claims</span>
+                        </div>
+                    </article>
+
+                    <article class="market-command-card market-command-card--priority reveal-up" style="--delay: 0.25s;" id="market-bpo">
+                        <div class="market-card-topline">
+                            <span>06</span>
+                            <small>Cognitive load</small>
+                        </div>
+                        <h3>BPO &amp; Call Centers</h3>
+                        <p>Monitors agent stress, voice tonality, fatigue, queue pressure, and call complexity to protect quality and reduce churn.</p>
+                        <div class="market-card-fit">
+                            <strong>Best fit</strong>
+                            <span>Call centers, support teams, outsourced operations</span>
+                        </div>
+                        <div class="market-card-metrics">
+                            <span>+45% retention</span>
+                            <span>+30% QA scores</span>
+                        </div>
+                    </article>
+
+                    <article class="market-command-card market-command-card--priority reveal-up" style="--delay: 0.3s;" id="market-government">
+                        <div class="market-card-topline">
+                            <span>07</span>
+                            <small>Compliance</small>
+                        </div>
+                        <h3>Critical Infrastructure &amp; Government</h3>
+                        <p>Creates accountable oversight for dispersed public-sector teams, safety protocols, labor visibility, and high-liability compliance.</p>
+                        <div class="market-card-fit">
+                            <strong>Best fit</strong>
+                            <span>Infrastructure teams, public works, regulated operations</span>
+                        </div>
+                        <div class="market-card-metrics">
+                            <span>100% compliance</span>
+                            <span>-40% violations</span>
+                        </div>
+                    </article>
+
+                    <article class="market-command-card market-command-card--priority reveal-up" style="--delay: 0.35s;" id="market-defense">
+                        <div class="market-card-topline">
+                            <span>08</span>
+                            <small>Mission readiness</small>
+                        </div>
+                        <h3>Defense &amp; Emergency Dispatch</h3>
+                        <p>Maintains operational readiness by monitoring cognitive load, response pressure, fatigue risk, and mission-critical coordination signals.</p>
+                        <div class="market-card-fit">
+                            <strong>Best fit</strong>
+                            <span>Dispatch centers, emergency teams, mission-critical operations</span>
+                        </div>
+                        <div class="market-card-metrics">
+                            <span>24/7 readiness</span>
+                            <span>-80% fatigue errors</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section market-operating-model">
+            <div class="container">
+                <div class="market-model-grid reveal-up">
+                    <div>
+                        <span class="section-tag">Operating Model</span>
+                        <h2 class="section-title">One deployment logic across every market.</h2>
+                        <p class="section-subtitle">ArchonX is not a collection of disconnected tools. It is a command loop that adapts to the operating pressure of each industry.</p>
+                    </div>
+                    <div class="market-model-steps">
+                        <div>
+                            <span>Sense</span>
+                            <p>Capture safety, workload, service, queue, fatigue, compliance, and delivery signals.</p>
+                        </div>
+                        <div>
+                            <span>Prioritize</span>
+                            <p>Rank risk and urgency before a delay becomes a cost, incident, or customer failure.</p>
+                        </div>
+                        <div>
+                            <span>Route</span>
+                            <p>Move tasks, calls, crews, agents, or response paths to the best available capacity.</p>
+                        </div>
+                        <div>
+                            <span>Report</span>
+                            <p>Give leaders a live view of performance, incidents, workload, and improvement areas.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="section market-cta-band">
+            <div class="container">
+                <div class="market-cta-inner reveal-up">
+                    <span class="section-tag">Next Step</span>
+                    <h2>Map ArchonX to your operating environment.</h2>
+                    <p>Start with one department, site, team, or workflow. Prove ROI, then expand across the operating surface.</p>
+                    <a href="consultation.html" class="btn btn-primary">Start a Consultation</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer" id="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="nav-logo">
-                        <span class="logo-text">ARCHON<span class="logo-x">X</span><span class="logo-dot">.ai</span></span>
+                        <img src="assets/archonx-logo-mark-4k.png" alt="" class="logo-mark">
+                        <span class="logo-text">ArchonX</span>
                     </a>
                     <p class="footer-tagline">Driven by Data. Orchestrated by Intelligence. Built for Efficiency.</p>
                 </div>
                 <div class="footer-links-group">
                     <h4>Product</h4>
                     <ul>
+                        <li><a href="products.html">Products</a></li>
                         <li><a href="protocol.html">Archon Protocol</a></li>
                         <li><a href="markets.html">Markets</a></li>
                         <li><a href="competitive.html">Advantage</a></li>
@@ -222,10 +320,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 ArchonX.ai — All rights reserved.</p>
+                <p>&copy; 2026 ArchonX.ai - All rights reserved.</p>
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
                 </div>
             </div>
         </div>
