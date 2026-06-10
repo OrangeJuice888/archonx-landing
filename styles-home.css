@@ -1080,13 +1080,29 @@ body.home-editorial {
 }
 
 @media (max-width: 640px) {
-    .home-editorial .ed-hero-title { font-size: clamp(28px, 8.8vw, 40px); }
-    .home-editorial .ed-hero-video { display: none; }
-    .home-editorial .ed-hero-bg::before { display: block; }
+    .home-editorial .ed-hero-title {
+        font-size: clamp(28px, 8.8vw, 40px);
+    }
+
+    .home-editorial .ed-hero-video {
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 1;
+    }
+
+    .home-editorial .ed-hero-bg::before {
+        display: none;
+    }
+
     .home-editorial .ed-index-row {
         grid-template-columns: 40px minmax(0, 1fr) 20px;
         row-gap: 12px;
     }
+
     .home-editorial .ed-index-metrics {
         grid-column: 2;
         flex-direction: row;
@@ -1095,7 +1111,11 @@ body.home-editorial {
         align-items: flex-start;
         text-align: left;
     }
-    .home-editorial .ed-index-go { grid-row: 1; grid-column: 3; }
+
+    .home-editorial .ed-index-go {
+        grid-row: 1;
+        grid-column: 3;
+    }
 }
 
 /* =================== REDUCED MOTION =================== */
