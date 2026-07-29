@@ -1,0 +1,212 @@
+/* ================================================
+   ARCHONX.AI — MARKETS (№ 04 / 07) — page-scoped
+   Extends the Command Ledger system (styles-home.css +
+   styles-editorial.css). Monochrome tokens only.
+   Zero radius. Zero shadows. Zero color.
+   ================================================ */
+
+/* fourth headline line joins the slide-up cascade */
+.subpage-editorial .edc-cover-title .ed-line:nth-child(4) .ed-line-inner {
+    animation-delay: 0.37s;
+}
+
+/* ---------- 04.1 industry map ---------- */
+.subpage-editorial .pgmarkets-map .ed-dek { max-width: 34ch; }
+
+/* snapshot band — the house stat strip re-poled for paper.
+   styles-home.css styles .ed-hero-strip for the ink pole (white numerals,
+   light rules); every one of those declarations is inverted here. */
+.subpage-editorial .pgmarkets-snapshot {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 1px solid var(--rule-light);
+    border-bottom: 1px solid var(--rule-light);
+}
+.subpage-editorial .pgmarkets-snapshot .ed-hero-stat + .ed-hero-stat {
+    border-left-color: var(--rule-light);
+}
+/* .hero-stat-value hard-codes white via -webkit-text-fill-color, which wins over
+   `color`; both must be re-poled or the numerals render white-on-white here. */
+.subpage-editorial .pgmarkets-snapshot .ed-stat-num,
+.subpage-editorial .pgmarkets-snapshot .hero-stat-value {
+    color: var(--ink);
+    -webkit-text-fill-color: var(--ink);
+}
+.subpage-editorial .pgmarkets-snapshot .ed-stat-label {
+    color: var(--grey-500);
+    max-width: 30ch;
+}
+
+/* dispatch row — the two market CTAs on a hairline (mirrors .pgprotocol-cta-actions) */
+.subpage-editorial .pgmarkets-dispatch {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 24px 0;
+}
+
+/* jump line — ruled index of the eight theatres */
+.subpage-editorial .pgmarkets-jumpline {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--rule-light);
+    border-bottom: 1px solid var(--rule-light);
+    margin-bottom: clamp(40px, 5vw, 64px);
+}
+.subpage-editorial .pgmarkets-jumpline a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 14px 24px;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--grey-500);
+    transition: color 0.15s linear;
+}
+.subpage-editorial .pgmarkets-jumpline a:first-child { padding-left: 0; }
+.subpage-editorial .pgmarkets-jumpline a + a { border-left: 1px solid var(--rule-light); }
+.subpage-editorial .pgmarkets-jumpline a:hover { color: var(--ink); }
+.subpage-editorial .pgmarkets-jumpline a span {
+    color: var(--grey-400);
+    font-variant-numeric: tabular-nums;
+}
+
+/* market rows — expanded ruled clauses */
+.subpage-editorial .pgmarkets-clauses .ed-clause:last-child {
+    border-bottom: 1px solid var(--rule-light);
+}
+.subpage-editorial .pgmarkets-clause-head {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.subpage-editorial .pgmarkets-clause-head .edc-clause-no { margin-bottom: 0; }
+.subpage-editorial .pgmarkets-clause-main p {
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--grey-600);
+    max-width: 52ch;
+}
+.subpage-editorial .pgmarkets-clause-side {
+    display: flex;
+    flex-direction: column;
+}
+.subpage-editorial .pgmarkets-fit-label {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--grey-400);
+    margin-bottom: 10px;
+}
+.subpage-editorial .pgmarkets-fit {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--grey-600);
+}
+.subpage-editorial .pgmarkets-metrics {
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule-light);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--grey-500);
+    font-variant-numeric: tabular-nums;
+}
+.subpage-editorial .pgmarkets-metrics strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+/* ---------- 04.2 operating model ---------- */
+.subpage-editorial .pgmarkets-model .edc-prose { margin-bottom: clamp(40px, 5vw, 64px); }
+
+/* annex: live command layer, ruled sub-ledger under the lexicon.
+   Numerals are absolutely positioned so the sentence keeps full column width. */
+.subpage-editorial .pgmarkets-annex { margin-top: clamp(36px, 4vw, 56px); }
+.subpage-editorial .pgmarkets-annex-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule-dark);
+}
+.subpage-editorial .pgmarkets-annex-head h4,
+.subpage-editorial .pgmarkets-annex-no,
+.subpage-editorial .pgmarkets-signal-no {
+    margin: 0;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+.subpage-editorial .pgmarkets-annex-head h4 { color: var(--paper); }
+.subpage-editorial .pgmarkets-annex-no {
+    color: var(--grey-400);
+    font-variant-numeric: tabular-nums;
+}
+.subpage-editorial .pgmarkets-signal {
+    position: relative;
+    padding: 14px 0 14px 72px;
+    border-top: 1px solid var(--rule-dark);
+}
+.subpage-editorial .pgmarkets-signal:last-child { border-bottom: 1px solid var(--rule-dark); }
+.subpage-editorial .pgmarkets-signal-no {
+    position: absolute;
+    left: 0;
+    top: 17px;
+    color: var(--grey-400);
+    font-variant-numeric: tabular-nums;
+}
+.subpage-editorial .pgmarkets-signal p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--grey-400);
+    max-width: 58ch;
+}
+
+/* ---------- 04.3 next step ---------- */
+.subpage-editorial .pgmarkets-cta .ed-quote-block .ed-btn {
+    margin-top: clamp(32px, 4vw, 48px);
+}
+
+/* ---------- next-chapter label stacking + meta type ---------- */
+/* The next-chapter band is system-level and lives in styles-editorial.css. */
+
+/* ---------- responsive ---------- */
+@media (max-width: 1024px) {
+    .subpage-editorial .pgmarkets-clause-side { grid-column: 2; }
+    .subpage-editorial .pgmarkets-dispatch { justify-content: flex-start; }
+}
+@media (max-width: 768px) {
+    .subpage-editorial .pgmarkets-clause-side { grid-column: auto; }
+    .subpage-editorial .pgmarkets-jumpline a { padding: 12px 16px; }
+    /* styles-home.css re-rules the stacked strip for the ink pole */
+    .subpage-editorial .pgmarkets-snapshot .ed-hero-stat + .ed-hero-stat {
+        border-top-color: var(--rule-light);
+    }
+    .subpage-editorial .pgmarkets-snapshot .ed-stat-label { max-width: none; }
+    .subpage-editorial .pgmarkets-signal { padding-left: 52px; }
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .subpage-editorial .pgmarkets-jumpline a { transition: none; }
+}

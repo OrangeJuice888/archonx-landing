@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <!-- About cover plate: aperture arcs opening onto a horizon. White-on-
+       transparent line art, rendered at low opacity behind the VISION cover. -->
+  <defs>
+    <pattern id="vgrid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="vglow" cx="0.78" cy="0.35" r="0.55">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#vgrid)"/>
+  <rect width="1600" height="900" fill="url(#vglow)"/>
+
+  <!-- Horizon rule with survey ticks -->
+  <line x1="0" y1="560" x2="1600" y2="560" stroke="#ffffff" stroke-opacity="0.14"/>
+  <g stroke="#ffffff" stroke-opacity="0.24">
+    <line x1="200" y1="554" x2="200" y2="566"/>
+    <line x1="640" y1="554" x2="640" y2="566"/>
+    <line x1="1080" y1="554" x2="1080" y2="566"/>
+    <line x1="1420" y1="554" x2="1420" y2="566"/>
+  </g>
+
+  <!-- Aperture: concentric arcs opening from the upper right -->
+  <g stroke="#ffffff">
+    <path d="M 1250 560 m -120 0 a 120 120 0 1 1 240 0" stroke-opacity="0.30"/>
+    <path d="M 1250 560 m -220 0 a 220 220 0 1 1 440 0" stroke-opacity="0.20"/>
+    <path d="M 1250 560 m -330 0 a 330 330 0 1 1 660 0" stroke-opacity="0.13"/>
+    <path d="M 1250 560 m -460 0 a 460 460 0 1 1 920 0" stroke-opacity="0.07"/>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.32" stroke-dasharray="2 10">
+    <path d="M 1250 560 m -275 0 a 275 275 0 0 1 275 -275"/>
+  </g>
+
+  <!-- Sight line rising to the aperture centre -->
+  <line x1="180" y1="820" x2="1250" y2="560" stroke="#ffffff" stroke-opacity="0.10" stroke-dasharray="6 8"/>
+  <g fill="#ffffff" fill-opacity="0.5">
+    <circle cx="180" cy="820" r="3"/>
+    <circle cx="586" cy="721" r="3"/>
+    <circle cx="918" cy="641" r="3"/>
+  </g>
+  <circle cx="1250" cy="560" r="9" stroke="#ffffff" stroke-opacity="0.35"/>
+  <circle cx="1250" cy="560" r="3" fill="#ffffff" fill-opacity="0.6"/>
+
+  <!-- Crosshair markers -->
+  <g stroke="#ffffff" stroke-opacity="0.26">
+    <path d="M 320 190 h 18 M 329 181 v 18"/>
+    <path d="M 1470 720 h 18 M 1479 711 v 18"/>
+    <path d="M 90 400 h 18 M 99 391 v 18"/>
+  </g>
+</svg>

@@ -128,7 +128,7 @@ body.home-editorial {
     content: "";
     position: absolute;
     inset: 0;
-    background: url('assets/hero-bg.png') center / cover no-repeat;
+    background: url('/assets/hero-bg.png') center / cover no-repeat;
     filter: none;
     display: none;
 }
@@ -318,6 +318,13 @@ body.home-editorial {
 .home-editorial .ed-stat-num sup {
     font-size: 0.45em;
     vertical-align: 0.85em;
+}
+/* The count-up span still carries the legacy .hero-stat-value class, whose
+   56px/600 would otherwise beat the statline scale and shrink the sup ratio. */
+.home-editorial .ed-stat-num .hero-stat-value {
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
 }
 .home-editorial .ed-stat-label {
     display: block;
@@ -647,8 +654,9 @@ body.home-editorial {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(1) contrast(1.2);
-    opacity: 0.18;
+    /* The plate is monochrome line-art (doctrine-bg.svg); it needs more
+       opacity than the old photo did but no grayscale correction. */
+    opacity: 0.55;
 }
 .home-editorial .ed-doctrine .ed-container { position: relative; z-index: 1; }
 .home-editorial .ed-quote-block {
@@ -762,6 +770,15 @@ body.home-editorial {
 .home-editorial .ed-index-row:focus-visible .ed-index-metrics { color: var(--grey-400); }
 .home-editorial .ed-index-row:hover .ed-index-go,
 .home-editorial .ed-index-row:focus-visible .ed-index-go { opacity: 1; transform: translateX(0); }
+.home-editorial .ed-index-note {
+    margin-top: 24px;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--grey-500);
+}
 
 /* =================== No 06 — LEDGER OF RESULTS =================== */
 .home-editorial .ed-results-grid {
@@ -898,24 +915,9 @@ body.home-editorial {
     padding: clamp(48px, 6vw, 80px) 0 32px;
     overflow: hidden;
 }
-.home-editorial .ed-ghost-wordmark {
-    font-family: 'Conthrax', 'Inter', sans-serif;
-    font-size: clamp(72px, 13vw, 200px);
-    font-weight: 800;
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    white-space: nowrap;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
-    user-select: none;
-    margin-bottom: clamp(32px, 4vw, 56px);
-}
-@supports not (-webkit-text-stroke: 1px #fff) {
-    .home-editorial .ed-ghost-wordmark { color: #141414; }
-}
 .home-editorial .ed-footer-grid {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    grid-template-columns: 1.3fr 1fr 1fr 0.8fr 0.9fr;
     gap: 32px;
     padding-bottom: clamp(40px, 5vw, 64px);
 }
@@ -1068,7 +1070,6 @@ body.home-editorial {
     .home-editorial .ed-clause-body { grid-column: 1; }
     .home-editorial .ed-ghostnum { display: none; }
     .home-editorial .ed-doctrine { padding: 96px 0; }
-    .home-editorial .ed-ghost-wordmark { font-size: clamp(48px, 16vw, 96px); }
     .home-editorial .ed-footer-grid { grid-template-columns: 1fr; }
     .home-editorial .ed-footer-col {
         border-left: none;

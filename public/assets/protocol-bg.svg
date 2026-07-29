@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <!-- Protocol cover plate: a closed-loop circuit — detect, decide, act,
+       verify — drawn as a blueprint schematic behind the PROTOCOL cover. -->
+  <defs>
+    <pattern id="pgrid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pglow" cx="0.7" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#pgrid)"/>
+  <rect width="1600" height="900" fill="url(#pglow)"/>
+
+  <!-- Node boxes on the loop -->
+  <g stroke="#ffffff" stroke-opacity="0.30">
+    <rect x="880" y="160" width="150" height="70"/>
+    <rect x="1310" y="380" width="150" height="70"/>
+    <rect x="880" y="620" width="150" height="70"/>
+    <rect x="470" y="380" width="150" height="70"/>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.14">
+    <rect x="872" y="152" width="166" height="86"/>
+    <rect x="1302" y="372" width="166" height="86"/>
+  </g>
+
+  <!-- Right-angle connectors running the loop clockwise -->
+  <g stroke="#ffffff" stroke-opacity="0.22">
+    <path d="M 1030 195 H 1385 V 380"/>
+    <path d="M 1385 450 V 655 H 1030"/>
+    <path d="M 880 655 H 545 V 450"/>
+    <path d="M 545 380 V 195 H 880"/>
+  </g>
+
+  <!-- Flow direction ticks (arrowheads) -->
+  <g stroke="#ffffff" stroke-opacity="0.38">
+    <path d="M 1200 187 l 14 8 l -14 8"/>
+    <path d="M 1393 540 l -8 14 l -8 -14"/>
+    <path d="M 720 663 l -14 -8 l 14 -8"/>
+    <path d="M 537 290 l 8 -14 l 8 14"/>
+  </g>
+
+  <!-- Dashed inner loop -->
+  <g stroke="#ffffff" stroke-opacity="0.14" stroke-dasharray="3 9">
+    <circle cx="965" cy="425" r="150"/>
+  </g>
+  <circle cx="965" cy="425" r="4" fill="#ffffff" fill-opacity="0.55"/>
+  <circle cx="965" cy="425" r="12" stroke="#ffffff" stroke-opacity="0.30"/>
+
+  <!-- Port pins on the node boxes -->
+  <g fill="#ffffff" fill-opacity="0.5">
+    <circle cx="955" cy="160" r="3"/>
+    <circle cx="1460" cy="415" r="3"/>
+    <circle cx="955" cy="690" r="3"/>
+    <circle cx="470" cy="415" r="3"/>
+  </g>
+
+  <!-- Trace stubs wandering off-canvas -->
+  <g stroke="#ffffff" stroke-opacity="0.12">
+    <path d="M 1460 415 H 1600"/>
+    <path d="M 470 415 H 260 V 210 H 0"/>
+    <path d="M 955 690 V 830 H 1240"/>
+  </g>
+
+  <!-- Crosshair markers -->
+  <g stroke="#ffffff" stroke-opacity="0.26">
+    <path d="M 240 640 h 18 M 249 631 v 18"/>
+    <path d="M 1380 130 h 18 M 1389 121 v 18"/>
+  </g>
+</svg>

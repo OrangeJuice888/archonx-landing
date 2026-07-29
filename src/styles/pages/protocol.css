@@ -1,0 +1,146 @@
+/* ================================================
+   ARCHONX.AI — № 03 / THE ARCHON PROTOCOL — page-scoped layout
+   Extends styles-home.css + styles-editorial.css (Command Ledger).
+   Monochrome. Ruled. Numbered. Zero radius. Zero shadows. Zero color.
+   ================================================ */
+
+/* ---------- clause spread: ritual stacked in the sticky rail ---------- */
+.subpage-editorial .pgprotocol-spread .ed-sechead { margin-bottom: 0; }
+.subpage-editorial .pgprotocol-spread .ed-sechead-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+.subpage-editorial .pgprotocol-spread .ed-title {
+    font-size: clamp(30px, 3.4vw, 50px);
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+}
+.subpage-editorial .pgprotocol-spread .ed-clause-tag {
+    display: block;
+    margin-top: 28px;
+    color: var(--grey-500);
+}
+.subpage-editorial .ed-section--ink .pgprotocol-spread .ed-clause-tag { color: var(--grey-400); }
+
+/* ghost-numeral host: clip (not hidden) so the sticky rail keeps working */
+.subpage-editorial .pgprotocol-ghost-host { overflow: clip; }
+.subpage-editorial .pgprotocol-ghost-host .ed-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- annex: ruled, lettered sub-ledger under the prose ---------- */
+.subpage-editorial .pgprotocol-annex { margin-top: clamp(36px, 4vw, 56px); }
+.subpage-editorial .pgprotocol-annex-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule-light);
+}
+.subpage-editorial .pgprotocol-annex-head h4,
+.subpage-editorial .pgprotocol-annex-no {
+    margin: 0;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+.subpage-editorial .pgprotocol-annex-head h4 { color: var(--ink); }
+.subpage-editorial .pgprotocol-annex-no {
+    color: var(--grey-400);
+    font-variant-numeric: tabular-nums;
+}
+.subpage-editorial .ed-section--ink .pgprotocol-annex-head { border-top-color: var(--rule-dark); }
+.subpage-editorial .ed-section--ink .pgprotocol-annex-head h4 { color: #fff; }
+
+.subpage-editorial .pgprotocol-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: pgpclause;
+}
+.subpage-editorial .pgprotocol-list li {
+    counter-increment: pgpclause;
+    position: relative;
+    padding: 14px 0 14px 72px;
+    border-top: 1px solid var(--rule-light);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--grey-600);
+}
+.subpage-editorial .pgprotocol-list li:last-child { border-bottom: 1px solid var(--rule-light); }
+.subpage-editorial .pgprotocol-list li::before {
+    content: counter(pgpclause, lower-alpha) ".";
+    position: absolute;
+    left: 0;
+    top: 17px;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--grey-400);
+    font-variant-numeric: tabular-nums;
+}
+.subpage-editorial .pgprotocol-list--steps li::before {
+    content: counter(pgpclause, decimal-leading-zero);
+}
+.subpage-editorial .pgprotocol-list li strong { color: var(--ink); font-weight: 600; }
+.subpage-editorial .ed-section--ink .pgprotocol-list li {
+    border-top-color: var(--rule-dark);
+    color: var(--grey-400);
+}
+.subpage-editorial .ed-section--ink .pgprotocol-list li:last-child { border-bottom-color: var(--rule-dark); }
+.subpage-editorial .ed-section--ink .pgprotocol-list li strong { color: #fff; }
+
+/* annex paragraph variant (no list) */
+.subpage-editorial .pgprotocol-annex > p {
+    margin: 0;
+    padding-top: 16px;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--grey-600);
+    max-width: 58ch;
+}
+.subpage-editorial .pgprotocol-annex > p strong { color: var(--ink); font-weight: 600; }
+.subpage-editorial .ed-section--ink .pgprotocol-annex > p { color: var(--grey-300); }
+.subpage-editorial .ed-section--ink .pgprotocol-annex > p strong { color: #fff; }
+
+/* subclause legibility on the ink pole */
+.subpage-editorial .ed-section--ink .pgprotocol-subclause p { color: var(--grey-400); }
+
+/* ---------- closing dispatch row (№ 03.5) ---------- */
+.subpage-editorial .pgprotocol-cta {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: end;
+    gap: 40px;
+}
+.subpage-editorial .pgprotocol-cta > p {
+    margin: 0;
+    max-width: 52ch;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--grey-600);
+}
+.subpage-editorial .pgprotocol-cta-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1024px) {
+    .subpage-editorial .pgprotocol-cta { grid-template-columns: 1fr; }
+    .subpage-editorial .pgprotocol-cta-actions { justify-content: flex-start; }
+}
+@media (max-width: 768px) {
+    .subpage-editorial .pgprotocol-list li { padding-left: 52px; }
+}

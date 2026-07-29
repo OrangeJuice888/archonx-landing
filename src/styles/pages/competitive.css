@@ -1,0 +1,23 @@
+/* ================================================
+   COMPETITIVE — № 05 / THE LEDGER OF CONTRASTS
+   Page-scoped: .subpage-editorial .pgcompetitive-*
+   Monochrome tokens only — zero radius, zero shadows.
+   ================================================ */
+
+/* Contrast rows: advantage title over the struck-through competition entry;
+   the ArchonX way entered in ink in the third column. */
+.subpage-editorial .pgcompetitive-contrast .ed-clause-title {
+    margin-bottom: 28px;
+}
+.subpage-editorial .pgcompetitive-crisis {
+    max-width: 46ch;
+    line-height: 1.7;
+}
+.subpage-editorial .ed-clause-body .pgcompetitive-way {
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 46ch;
+}
+
+/* Tier meta type and the next-chapter band are system-level and live in
+   styles-editorial.css — do not redeclare them here. */

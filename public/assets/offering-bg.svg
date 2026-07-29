@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <!-- Invest cover plate: a plotted growth curve with a dashed projection —
+       the trajectory the round funds — behind the PRE-SEED cover. -->
+  <defs>
+    <pattern id="ogrid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="oglow" cx="0.78" cy="0.3" r="0.6">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#ogrid)"/>
+  <rect width="1600" height="900" fill="url(#oglow)"/>
+
+  <!-- Chart frame: baseline + y ticks -->
+  <line x1="120" y1="760" x2="1520" y2="760" stroke="#ffffff" stroke-opacity="0.14"/>
+  <g stroke="#ffffff" stroke-opacity="0.10">
+    <line x1="120" y1="580" x2="1520" y2="580"/>
+    <line x1="120" y1="400" x2="1520" y2="400"/>
+    <line x1="120" y1="220" x2="1520" y2="220"/>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.28">
+    <line x1="120" y1="754" x2="120" y2="766"/>
+    <line x1="470" y1="754" x2="470" y2="766"/>
+    <line x1="820" y1="754" x2="820" y2="766"/>
+    <line x1="1170" y1="754" x2="1170" y2="766"/>
+    <line x1="1520" y1="754" x2="1520" y2="766"/>
+  </g>
+
+  <!-- Realised curve: milestones plotted -->
+  <path d="M 120 720 L 470 660 L 820 540 L 1080 380" stroke="#ffffff" stroke-opacity="0.30"/>
+  <g fill="#ffffff" fill-opacity="0.6">
+    <circle cx="120" cy="720" r="3.5"/>
+    <circle cx="470" cy="660" r="3.5"/>
+    <circle cx="820" cy="540" r="3.5"/>
+  </g>
+  <circle cx="1080" cy="380" r="4" fill="#ffffff" fill-opacity="0.7"/>
+  <circle cx="1080" cy="380" r="12" stroke="#ffffff" stroke-opacity="0.35"/>
+
+  <!-- Projection: dashed continuation -->
+  <path d="M 1080 380 L 1310 240 L 1520 130" stroke="#ffffff" stroke-opacity="0.35" stroke-dasharray="4 10"/>
+  <g stroke="#ffffff" stroke-opacity="0.30">
+    <circle cx="1310" cy="240" r="5"/>
+    <circle cx="1520" cy="130" r="5"/>
+  </g>
+
+  <!-- Confidence band around the projection -->
+  <path d="M 1080 380 L 1520 210 M 1080 380 L 1520 60" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <!-- Gauge arc, lower right: allocation motif -->
+  <g stroke="#ffffff">
+    <path d="M 1330 690 a 120 120 0 0 1 240 0" stroke-opacity="0.18"/>
+    <path d="M 1330 690 a 120 120 0 0 1 132 -119" stroke-opacity="0.4"/>
+  </g>
+  <line x1="1450" y1="690" x2="1462" y2="571" stroke="#ffffff" stroke-opacity="0.3"/>
+  <circle cx="1450" cy="690" r="3" fill="#ffffff" fill-opacity="0.5"/>
+
+  <!-- Crosshair markers -->
+  <g stroke="#ffffff" stroke-opacity="0.26">
+    <path d="M 300 200 h 18 M 309 191 v 18"/>
+    <path d="M 700 300 h 18 M 709 291 v 18"/>
+  </g>
+</svg>
