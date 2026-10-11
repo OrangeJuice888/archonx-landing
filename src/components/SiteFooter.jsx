@@ -18,11 +18,11 @@ export default function SiteFooter() {
             <div className="footer-links-group" key={heading}>
               <h4>{heading}</h4>
               <ul>
-                {links.map(({ to, href, label }) => (
+                {links.map(({ to, href, label, reload }) => (
                   <li key={label}>
                     {/* href="#" marks a profile that doesn't exist yet; an <a>
                         without href keeps the styling but is inert. */}
-                    {to ? <Link to={to}>{label}</Link> : href === '#' ? <a>{label}</a> : <a href={href}>{label}</a>}
+                    {to ? (reload ? <a href={`${to}/`}>{label}</a> : <Link to={to}>{label}</Link>) : href === '#' ? <a>{label}</a> : <a href={href}>{label}</a>}
                   </li>
                 ))}
               </ul>

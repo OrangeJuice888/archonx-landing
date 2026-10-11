@@ -4,13 +4,17 @@
 // The business runs as two named divisions:
 //   ArchonX Lab        — the product suite (Bluework, Argos-5, ArchonX)
 //   ArchonX Consulting — services and custom builds for individual clients
+//
+// `reload: true` marks a link to a standalone static page outside the React app
+// (the consulting page at /consultation/), so it renders as a plain <a> that
+// loads the page instead of a client-side <Link>.
 
 export const NAV_LINKS = [
   { to: '/about', label: 'About' },
   { to: '/protocol', label: 'Protocol' },
   { to: '/markets', label: 'Markets' },
   { to: '/competitive', label: 'Advantage' },
-  { to: '/consultation', label: 'Consulting' },
+  { to: '/consultation', label: 'Consulting', reload: true },
   { to: '/invest', label: 'Investors' },
 ]
 
@@ -26,7 +30,7 @@ export const FOOTER_COLUMNS = [
   {
     heading: 'ArchonX Consulting',
     links: [
-      { to: '/consultation', label: 'Start a Consultation' },
+      { to: '/consultation', label: 'Start a Consultation', reload: true },
       { to: '/consultation/products', label: 'Custom Products' },
     ],
   },

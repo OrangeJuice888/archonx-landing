@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import SiteFooter from '../components/SiteFooter.jsx'
 
@@ -137,7 +136,7 @@ export default function ConsultingProducts() {
               <p className="section-subtitle">Tell us where the manual work piles up and we&rsquo;ll come back with the system that removes it &mdash; scope, timeline, and rollout path included.</p>
             </div>
             <div className="consulting-more-cta reveal-up">
-              <Link to="/consultation#consultation-form">Start a Consultation <span aria-hidden="true">&rarr;</span></Link>
+              <a href="/consultation/#book">Start a Consultation <span aria-hidden="true">&rarr;</span></a>
             </div>
           </div>
         </section>

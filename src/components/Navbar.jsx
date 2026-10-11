@@ -69,11 +69,17 @@ export default function Navbar() {
           <span className="logo-text">ArchonX</span>
         </Link>
         <ul className={open ? 'nav-links open' : 'nav-links'} id="nav-links">
-          {NAV_LINKS.map(({ to, label }) => (
+          {NAV_LINKS.map(({ to, label, reload }) => (
             <li key={to}>
-              <Link to={to} className="nav-link" onClick={() => setOpen(false)}>
-                {label}
-              </Link>
+              {reload ? (
+                <a href={`${to}/`} className="nav-link">
+                  {label}
+                </a>
+              ) : (
+                <Link to={to} className="nav-link" onClick={() => setOpen(false)}>
+                  {label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

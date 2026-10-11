@@ -190,7 +190,7 @@ export default function Markets() {
 
           <div className="pgmarkets-dispatch reveal-up">
             <Magnetic href="#market-map" onClick={handleHashClick} className="ed-btn ed-btn--solid">Explore Markets <span className="ed-arrow">&rarr;</span></Magnetic>
-            <Magnetic to="/consultation" className="ed-btn ed-btn--outline">Start a Consultation</Magnetic>
+            <Magnetic href="/consultation/" className="ed-btn ed-btn--outline">Start a Consultation</Magnetic>
           </div>
 
           <div className="pgmarkets-jumpline reveal-up" aria-label="Market categories">
@@ -272,7 +272,7 @@ export default function Markets() {
             <span className="ed-quote-dash"></span>
             <h2 className="ed-quote">Map ArchonX to your <span className="ed-underline ed-underline--heavy">operating environment</span>.</h2>
             <p className="ed-quote-sub">Start with one department, site, team, or workflow. Prove ROI, then expand across the operating surface.</p>
-            <Magnetic to="/consultation" className="ed-btn ed-btn--solid">Start a Consultation <span className="ed-arrow">&rarr;</span></Magnetic>
+            <Magnetic href="/consultation/" className="ed-btn ed-btn--solid">Start a Consultation <span className="ed-arrow">&rarr;</span></Magnetic>
           </div>
         </div>
       </Section>

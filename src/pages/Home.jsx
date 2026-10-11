@@ -440,7 +440,7 @@ export default function Home() {
               <p>Generative AI is projected to add up to <strong>A$115 billion a year</strong> to Australia's economy by 2030 &mdash; with the largest gains in workforce productivity. (Tech Council of Australia &amp; Microsoft)</p>
               <div className="ed-offering-ctas">
                 <Magnetic href="mailto:hello@archonx.ai?subject=Request%20a%20Demo" className="ed-btn ed-btn--solid" id="demo-cta">Request a Demo <span className="ed-arrow">&rarr;</span></Magnetic>
-                <Magnetic to="/consultation" className="ed-btn ed-btn--outline" id="invest-cta">Start a Consultation</Magnetic>
+                <Magnetic href="/consultation/" className="ed-btn ed-btn--outline" id="invest-cta">Start a Consultation</Magnetic>
               </div>
             </div>
             <div className="ed-termsheet reveal-up" style={{ '--delay': '0.1s' }}>
