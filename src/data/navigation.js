@@ -34,7 +34,6 @@ export const FOOTER_COLUMNS = [
     links: [
       { to: '/consultation', label: 'Start a Consultation', reload: true },
       { href: '/consultation/#audit', label: 'Free AI Audit' },
-      { to: '/consultation/products', label: 'Custom Products' },
     ],
   },
   {

@@ -68,7 +68,7 @@ export default function About() {
         lines={[
           <>Software that runs</>,
           <>the business. People</>,
-          <>in command.</>,
+          <><span className="ed-ghost">in command.</span></>,
         ]}
         dek={<>ArchonX is an Australian software company. We build systems and put the latest AI to work inside businesses, from a one-person trade to a large organisation, so the people running them spend less time on admin.</>}
         aside={

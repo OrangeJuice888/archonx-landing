@@ -466,7 +466,6 @@ body.home-editorial:not(.subpage-editorial) {
     --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
     --font-mono: 'Space Grotesk', 'Inter', sans-serif;
     --font-serif: 'Space Grotesk', 'Inter', sans-serif;
-    --font-logo: 'Conthrax', 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
 }
 body.home-editorial:not(.subpage-editorial) .ed-btn { font-family: 'Space Grotesk', 'Inter', sans-serif; }
 body.home-editorial:not(.subpage-editorial) .ed-subclause-num { font-weight: 600; }

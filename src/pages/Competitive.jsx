@@ -166,7 +166,7 @@ export default function Competitive() {
       </Section>
 
       {/* ===================== NEXT CHAPTER — № 06 ===================== */}
-      <NextChapter to="/consultation" label={<>Next &mdash; &#8470; 06 / 06</>} title="Start a consultation" />
+      <NextChapter href="/consultation/" label={<>Next &mdash; &#8470; 06 / 06</>} title="Start a consultation" />
 
       <EdFooter />
     </>

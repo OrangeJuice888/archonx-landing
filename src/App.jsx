@@ -10,7 +10,6 @@ import Protocol from './pages/Protocol.jsx'
 import Markets from './pages/Markets.jsx'
 import Competitive from './pages/Competitive.jsx'
 import Consultation from './pages/Consultation.jsx'
-import ConsultingProducts from './pages/ConsultingProducts.jsx'
 import Privacy from './pages/Privacy.jsx'
 import Terms from './pages/Terms.jsx'
 
@@ -21,7 +20,9 @@ const PAGES = [
   { path: '/markets', el: <Markets /> },
   { path: '/competitive', el: <Competitive /> },
   { path: '/consultation', el: <Consultation /> },
-  { path: '/consultation/products', el: <ConsultingProducts /> },
+  // The old consulting products page is gone; old links land on the new
+  // consulting page's services section.
+  { path: '/consultation/products', el: <Consultation /> },
   { path: '/privacy', el: <Privacy /> },
   { path: '/terms', el: <Terms /> },
 ]
