@@ -24,6 +24,11 @@
     --nav-height: 52px;
     --container-max: 1120px;
     --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+    /* Type system shared with the ArchonX Consulting page (/consultation/) */
+    --font-body: "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+    --font-display: "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+    --font-mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
+    --font-serif: "Instrument Serif", Georgia, serif;
 }
 
 html {
@@ -33,7 +38,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    font-family: var(--font-body);
     background: var(--bg);
     color: var(--text);
     line-height: 1.5;
@@ -65,7 +70,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-display);
     font-weight: 600;
     line-height: 1.08;
     letter-spacing: -0.025em;
@@ -142,7 +147,7 @@ h6 {
 }
 
 .logo-text {
-    font-family: 'Conthrax', 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-family: var(--font-logo, var(--font-display));
     font-size: 18px;
     font-weight: 600;
     line-height: 1;
@@ -255,12 +260,12 @@ h6 {
 /* =================== ABOUT =================== */
 
 #about .section-tag {
-    font-family: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-family: var(--font-mono);
     letter-spacing: 0;
 }
 
 #about .section-title {
-    font-family: 'Conthrax', 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-family: var(--font-display);
     letter-spacing: 0;
 }
 
@@ -338,8 +343,6 @@ h6 {
 /* =================== MARKETS =================== */
 
 /* =================== IMPACT =================== */
-
-/* =================== INVEST =================== */
 
 /* =================== FOOTER =================== */
 .footer {
@@ -1075,10 +1078,10 @@ body.consulting-body .navbar.scrolled {
 .consulting-hero h1 {
     max-width: 1120px;
     color: #fff;
-    font-family: "Cormorant Garamond", Georgia, serif;
+    font-family: var(--font-serif);
     font-size: clamp(54px, 7.2vw, 96px);
     font-style: italic;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: -0.035em;
     line-height: 0.92;
     text-shadow: 0 0 42px rgba(255, 255, 255, 0.08);
@@ -1362,10 +1365,10 @@ body.consulting-body .navbar.scrolled {
 .consulting-hero h1 {
     max-width: 1050px;
     color: #ffffff;
-    font-family: "Cormorant Garamond", Georgia, serif;
+    font-family: var(--font-serif);
     font-size: clamp(62px, 8vw, 110px);
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: -0.026em;
     line-height: 0.9;
     text-shadow: none;

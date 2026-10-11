@@ -9,7 +9,6 @@ import About from './pages/About.jsx'
 import Protocol from './pages/Protocol.jsx'
 import Markets from './pages/Markets.jsx'
 import Competitive from './pages/Competitive.jsx'
-import Invest from './pages/Invest.jsx'
 import Consultation from './pages/Consultation.jsx'
 import ConsultingProducts from './pages/ConsultingProducts.jsx'
 import Privacy from './pages/Privacy.jsx'
@@ -21,7 +20,6 @@ const PAGES = [
   { path: '/protocol', el: <Protocol /> },
   { path: '/markets', el: <Markets /> },
   { path: '/competitive', el: <Competitive /> },
-  { path: '/invest', el: <Invest /> },
   { path: '/consultation', el: <Consultation /> },
   { path: '/consultation/products', el: <ConsultingProducts /> },
   { path: '/privacy', el: <Privacy /> },
@@ -29,11 +27,15 @@ const PAGES = [
 ]
 
 // Old static URLs (about.html, …) redirect to their clean route so
-// bookmarks and external links keep working.
+// bookmarks and external links keep working. The former Investors chapter
+// (ArchonX no longer raises funding) sends visitors to About instead.
 const HTML_REDIRECTS = PAGES.map(({ path }) => ({
   from: path === '/' ? '/index.html' : `${path}.html`,
   to: path,
-}))
+})).concat([
+  { from: '/invest', to: '/about' },
+  { from: '/invest.html', to: '/about' },
+])
 
 export default function App() {
   const location = useLocation()

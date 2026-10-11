@@ -17,7 +17,7 @@ const CLAUSES = [
     id: 'about-archonx',
     n: 2,
     label: 'About ArchonX',
-    body: <p>ArchonX is based in Australia and provides AI-driven operational intelligence, automation, workforce optimisation, and consulting-related services. Website content is provided for general business information and does not create a customer agreement, service commitment, or professional advisory relationship unless a separate written agreement is executed.</p>,
+    body: <p>ArchonX is an Australian software company based in Brisbane. ArchonX Lab develops operations software, including Bluework, and ArchonX Consulting provides AI implementation and consulting services. Website content is provided for general business information and does not create a customer agreement, service commitment, or professional advisory relationship unless a separate written agreement is executed.</p>,
   },
   {
     id: 'website-use',
@@ -107,7 +107,7 @@ export default function Terms() {
         aside={
           <>
             <span className="ed-kicker">[ Appendix B &mdash; 13 Clauses ]</span>
-            <span className="ed-kicker">Last updated &mdash; June 9, 2026</span>
+            <span className="ed-kicker">Last updated &mdash; October 11, 2026</span>
           </>
         }
       />
@@ -144,7 +144,7 @@ export default function Terms() {
       {/* ===================== NEXT CHAPTER ===================== */}
       <NextChapter
         to="/"
-        label={<>Cover &mdash; &#8470; 01 / 07</>}
+        label={<>Cover &mdash; &#8470; 01 / 06</>}
         title="Return to Cover"
       />
 

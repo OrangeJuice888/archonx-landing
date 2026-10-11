@@ -3,51 +3,51 @@ import EdFooter from '../components/EdFooter.jsx'
 import { Magnetic, Parallax } from '../motion/index.js'
 import { ChapterCover, SectionHead, NextChapter, Section } from '../components/editorial/index.js'
 
-// No 02.3 — the four evidence clauses behind "The Problem". `delay` is the
+// No 02.3 — the four evidence clauses behind "The Gap". `delay` is the
 // stagger each card animates on; the first one leads, so it has none.
 const CLAUSES = [
   {
-    no: 'Productivity',
-    title: 'Slowest decade in 60 years',
-    body: <>Australia's productivity growth in the decade to 2020 was the slowest in six decades &mdash; teams work harder while throughput stalls. (Productivity Commission)</>,
+    no: 'Adoption',
+    title: '12% of businesses, 11% of small ones',
+    body: <>Only 12% of Australian businesses used AI in the workplace in 2024&ndash;25, and 11% of small and micro businesses. Large businesses were at 35%. (ABS Business Characteristics Survey, June 2026)</>,
   },
   {
-    no: 'Cost',
-    title: '146,700 serious claims a year',
-    body: <>More than 400 serious workers' compensation claims are lodged every day, each costing a median A$16,300 and 7.4 weeks of lost work. (Safe Work Australia, 2023&ndash;24)</>,
+    no: 'Trust',
+    title: '65% want a person in control',
+    body: <>Of the small and medium businesses that haven't adopted AI, 65% say they distrust its decisions or prefer human control. (National AI Centre SME AI Pulse, Feb 2026)</>,
     delay: '0.05s',
   },
   {
-    no: 'Control',
-    title: 'A new legal duty to manage risk',
-    body: <>Since 2022, Australian WHS regulations impose a positive duty on employers to proactively manage psychosocial hazards &mdash; a duty passive dashboards cannot discharge.</>,
+    no: 'Barriers',
+    title: 'Privacy and know-how hold them back',
+    body: <>Privacy and security is a top barrier at 39%, level with fear of failure, and lack of knowledge holds back 31%. Both come down to implementation. (Intuit QuickBooks AI Impact Report, 2026)</>,
     delay: '0.1s',
   },
   {
-    no: 'Workforce',
-    title: 'Burnout at 1 in 2',
-    body: <>Half of Australian workers report burnout in the past year, and psychological claims are up 161% in a decade with 35.7 weeks median absence. (Beyond Blue &middot; Safe Work Australia)</>,
+    no: 'Payoff',
+    title: 'Those using it report gains',
+    body: <>79% report productivity gains from AI, and accountants and bookkeepers using AI save 8 hours a week on average, 11 for the top performers. (Intuit QuickBooks &middot; Xero Modern Practice Playbook, Sept 2026)</>,
     delay: '0.15s',
   },
 ]
 
-// No 02.4 — the three pillars the solution stands on, keyed by their index label.
+// No 02.4 — the three pillars the company stands on, keyed by their index label.
 const PILLARS = [
   {
     index: '02.4a',
-    title: <>Master Workflows</>,
-    body: <>AI agents direct human agents in real-time, optimising task distribution for absolute adherence to performance metrics.</>,
+    title: <>ArchonX Lab</>,
+    body: <>The software arm. Bluework, an operations platform for teams that run shifts: rosters, clock-in and timesheets, leave, tasks, team chat, voice-recorded SOPs and a company AI agent, with an optional Protect layer, in controlled rollout, that flags psychosocial-hazard signals for human review. Plus custom-built systems, from point of sale and back office to marketplaces with escrow payments.</>,
   },
   {
     index: '02.4b',
-    title: <>Hazard &amp; Risk Management</>,
-    body: <>Dual-layered A/V monitoring for physical environments and psychosocial detection - identifying risks before they become liabilities.</>,
+    title: <>ArchonX Consulting</>,
+    body: <>The implementation arm. AI receptionists, chat agents, enquiry follow-up, inbox and bookkeeping automation, workflow builds, and review and launch for apps built with AI. Published prices, a fixed quote in writing, and every system set up in the client's name.</>,
     delay: '0.1s',
   },
   {
     index: '02.4c',
-    title: <>Bespoke Management Personas</>,
-    body: <>Custom-trained AI that reflects your company's unique culture, knowledge, tone, and directives - not generic, robotic interfaces.</>,
+    title: <>The Archon Protocol</>,
+    body: <>How both arms work: map the work before touching the tech, build on what the business already runs, keep people in charge of anything that matters, then run it, measure it and expand one job at a time.</>,
     delay: '0.2s',
   },
 ]
@@ -55,26 +55,26 @@ const PILLARS = [
 export default function About() {
   usePageMeta({
     title: 'About - ArchonX.ai | Australia',
-    description: 'Learn about ArchonX.ai - the Australian autonomous AI-driven workforce management platform redefining corporate governance and operational perfection.',
+    description: 'ArchonX is an Australian software company with two arms: ArchonX Lab builds operations software such as Bluework, and ArchonX Consulting puts AI to work inside businesses, from a one-person trade to a large organisation.',
     bodyClass: 'home-editorial subpage-editorial',
   })
   return (
     <>
       {/* ===================== CHAPTER COVER — No 02 ===================== */}
       <ChapterCover
-        no={<>&#8470; 02 / 07</>}
+        no={<>02 / 06</>}
         ghost="VISION"
         plate="/assets/vision-bg.svg"
         lines={[
-          <>The ultimate standard</>,
-          <>in automated</>,
-          <>leadership.</>,
+          <>Software that runs</>,
+          <>the business. People</>,
+          <>in command.</>,
         ]}
-        dek={<>ArchonX.ai is the fundamental, unshakable operating system that modern businesses must be built upon. It's not just an HR tool - it covers efficiency entirely.</>}
+        dek={<>ArchonX is an Australian software company. We build systems and put the latest AI to work inside businesses, from a one-person trade to a large organisation, so the people running them spend less time on admin.</>}
         aside={
           <>
             <span className="ed-kicker">[ The Vision ]</span>
-            <span className="ed-kicker">Chapter 02 &mdash; Read in order</span>
+            <span className="ed-kicker">About ArchonX</span>
           </>
         }
       />
@@ -82,16 +82,16 @@ export default function About() {
       {/* ===================== No 02.1 — THE NAME ===================== */}
       <Section pole="paper">
         <div className="ed-container">
-          <SectionHead no="02.1" label="The Name" />
+          <SectionHead no="02.1" label="The name" />
           <div className="edc-spread">
             <div className="edc-spread-rail reveal-up">
               <span className="ed-bignum">02.1</span>
-              <h2 className="ed-title">The Name</h2>
+              <h2 className="ed-title">The name</h2>
             </div>
             <div className="edc-prose reveal-up" style={{ '--delay': '0.1s' }}>
-              <p><strong>Archon</strong> - Ancient Greek for <em>Ruler</em> or <em>Commander</em>. It represents the authoritative, guiding intelligence that acts as the ultimate supervisor, leading workers to peak performance while managing safety and well-being through custom-trained AI personalities.</p>
-              <p><strong>X (Ten)</strong> - The Roman numeral 10. It symbolizes scale, absolute power, control, completion, and flawless execution. It grounds our high-tech identity in the Base-10 numerical system - the foundation of all human-centric computing.</p>
-              <p>Together, ArchonX represents the pinnacle of intelligent corporate governance and operational perfection - <strong>absolute operational authority and comprehensive system control</strong>.</p>
+              <p><strong>Archon</strong> is Ancient Greek for <em>ruler</em> or <em>commander</em>: the one who has command of what is going on. That is what good operations software gives an owner or a manager: a clear view of the work and the means to direct it.</p>
+              <p><strong>X</strong> is the unknown in every business: the particular software, people, rules and habits it actually runs on. No two are the same, which is why we map the work before we build anything.</p>
+              <p>Together, ArchonX means <strong>command of your own operations</strong>: systems that do the repetitive work, with your people making the decisions.</p>
             </div>
           </div>
         </div>
@@ -100,31 +100,31 @@ export default function About() {
       {/* ===================== No 02.2 — THE ORIGIN ===================== */}
       <Section pole="ink">
         <div className="ed-container">
-          <SectionHead no="02.2" label="The Origin" />
+          <SectionHead no="02.2" label="Background" />
           <div className="edc-spread">
             <div className="edc-spread-rail reveal-up">
               <span className="ed-bignum">02.2</span>
-              <h2 className="ed-title">The Origin</h2>
+              <h2 className="ed-title">Background</h2>
             </div>
             <div className="edc-prose reveal-up" style={{ '--delay': '0.1s' }}>
-              <p>Born from the realization that modern enterprise operations are chaotic and traditional management simply cannot keep up. Achieving operational perfection requires a flawless, all-seeing authority - a true "Big Boss."</p>
-              <p>We reimagined the concept of omnipresent oversight and engineered it for corporate good. Using unblinking audio and visual monitoring, ArchonX protects and optimises - watching for physical safety hazards and signs of human burnout, then instantly re-routing tasks for maximum efficiency.</p>
+              <p>ArchonX builds software for Australian businesses from Brisbane. Bluework, our operations platform for teams that run shifts, is where most of our engineering has gone: rosters, timesheets and the daily admin behind them, with workplace safety handled as one part of running a team well.</p>
+              <p>ArchonX Consulting exists because the question we hear most is whether someone will put AI into a business properly, in that business's name, and stay until it works.</p>
             </div>
           </div>
           <div className="ed-quote-block reveal-up">
             <span className="ed-quote-dash"></span>
-            <blockquote className="ed-quote">Our philosophy: <strong>true authority is real-time awareness that keeps business running perfectly and people operating safely</strong>.</blockquote>
+            <blockquote className="ed-quote">Our view: <strong>the best system is the one your team actually runs, with a person approving anything that matters</strong>.</blockquote>
           </div>
         </div>
       </Section>
 
-      {/* ===================== No 02.3 — THE PROBLEM ===================== */}
+      {/* ===================== No 02.3 — THE GAP ===================== */}
       <Section pole="paper" className="ed-section--protocol">
         <Parallax as="span" className="ed-ghostnum" range={60} aria-hidden="true">02</Parallax>
         <div className="ed-container">
-          <SectionHead no="02.3" label="The Problem" bignum="02.3" title="The Problem" />
+          <SectionHead no="02.3" label="The gap" bignum="02.3" title="The gap" />
           <div className="edc-prose reveal-up">
-            <p>Work-related injury and illness leaves Australia's economy <strong>A$28.6 billion smaller every year</strong> &mdash; 1.6% of GDP (Safe Work Australia / Deloitte Access Economics). Mental ill-health and suicide cost a further <strong>A$200&ndash;220 billion a year</strong> (Productivity Commission). Passive tools report these problems only after the damage is done.</p>
+            <p>Australian businesses can buy AI tools today. Most haven't put them to work, and the reasons are practical: trust, privacy, and nobody with the time to do it properly. Every figure below is attributed; none is ours.</p>
           </div>
           <div className="ed-clauses" style={{ marginTop: 'clamp(40px, 5vw, 64px)' }}>
             {CLAUSES.map((clause) => (
@@ -144,12 +144,12 @@ export default function About() {
         </div>
       </Section>
 
-      {/* ===================== No 02.4 — THE SOLUTION ===================== */}
+      {/* ===================== No 02.4 — THE COMPANY ===================== */}
       <Section pole="ink">
         <div className="ed-container">
-          <SectionHead no="02.4" label="The Solution" bignum="02.4" title="The Solution" />
+          <SectionHead no="02.4" label="The company" bignum="02.4" title="Two arms, one method" />
           <div className="edc-prose reveal-up">
-            <p>An integrated autonomous management system built on three core pillars that transforms management into a closed-loop, automated engine:</p>
+            <p>One company builds the software and implements it, so there is a single accountable party from the first conversation to the monthly report:</p>
           </div>
           <div className="ed-lexicon" style={{ marginTop: 'clamp(40px, 5vw, 64px)' }}>
             {PILLARS.map((pillar) => (
@@ -170,16 +170,16 @@ export default function About() {
       {/* ===================== No 02.5 — EXECUTIVE SUMMARY ===================== */}
       <Section pole="paper">
         <div className="ed-container">
-          <SectionHead no="02.5" label="Executive Summary" />
+          <SectionHead no="02.5" label="In short" />
           <div className="ed-quote-block reveal-up">
             <span className="ed-quote-dash"></span>
-            <h2 className="ed-quote">Autonomous workforce management with active, AI-driven leadership.</h2>
+            <h2 className="ed-quote">An Australian software company that builds AI systems and implements them, one job at a time.</h2>
           </div>
           <div className="edc-prose reveal-up" style={{ marginTop: '32px', '--delay': '0.1s' }}>
-            <p>ArchonX acts as the frontline supervisor for efficiency and safety. Built in Australia for Australian operating conditions and WHS compliance, it targets high-liability, high-volume sectors - delivering a closed-loop efficiency engine unlike passive HR software or siloed camera systems. Scalable B2B Enterprise SaaS with premium integration and tiered licensing.</p>
+            <p>Based in Brisbane and working across Australia, ArchonX is built for small businesses through to larger organisations and government. Prices are published. Quotes are fixed and in writing. Every AI assistant says it is an AI, every account is set up in the client's name, and a monthly report shows what the system did, including where it was wrong. We hold no ISO 27001 or SOC 2 certificate and do not claim one.</p>
           </div>
           <div className="reveal-up" style={{ marginTop: '48px', '--delay': '0.15s' }}>
-            <Magnetic to="/protocol" className="ed-btn ed-btn--solid">Explore the Protocol <span className="ed-arrow">&rarr;</span></Magnetic>
+            <Magnetic to="/protocol" className="ed-btn ed-btn--solid">See how we work <span className="ed-arrow">&rarr;</span></Magnetic>
           </div>
         </div>
       </Section>
@@ -187,7 +187,7 @@ export default function About() {
       {/* ===================== NEXT CHAPTER ===================== */}
       <NextChapter
         to="/protocol"
-        label={<>Next &mdash; &#8470; 03 / 07</>}
+        label={<>Next</>}
         title="The Archon Protocol"
       />
 

@@ -18,11 +18,13 @@ export default function SiteFooter() {
             <div className="footer-links-group" key={heading}>
               <h4>{heading}</h4>
               <ul>
-                {links.map(({ to, href, label, reload }) => (
+                {links.map(({ to, href, label, reload, external }) => (
                   <li key={label}>
-                    {/* href="#" marks a profile that doesn't exist yet; an <a>
-                        without href keeps the styling but is inert. */}
-                    {to ? (reload ? <a href={`${to}/`}>{label}</a> : <Link to={to}>{label}</Link>) : href === '#' ? <a>{label}</a> : <a href={href}>{label}</a>}
+                    {to
+                      ? (reload ? <a href={`${to}/`}>{label}</a> : <Link to={to}>{label}</Link>)
+                      : external
+                        ? <a href={href} target="_blank" rel="noopener">{label}</a>
+                        : <a href={href}>{label}</a>}
                   </li>
                 ))}
               </ul>
@@ -30,7 +32,7 @@ export default function SiteFooter() {
           ))}
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2026 ArchonX.ai - All rights reserved.</p>
+          <p>&copy; 2026 ArchonX. Brisbane, Australia.</p>
           <div className="footer-bottom-links">
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Service</Link>

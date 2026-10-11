@@ -1,8 +1,7 @@
-const RUNNING_TITLE = 'ArchonX — Field Manual'
-
-// The section-opening ritual every editorial chapter repeats: a hairline rule
-// that draws in on reveal, a meta row (issue label + running title), and an
-// optional oversized numeral beside the section title.
+// The section opener every editorial chapter repeats: a hairline rule that
+// draws in on reveal, a small label, then the section title and dek.
+// `no`, `bignum` and `running` are still accepted so pages need no change,
+// but are no longer rendered: issue numbers and running heads read as template.
 //
 // Two shapes exist in the design system:
 //   full   — rule + meta + numeral/title block
@@ -16,21 +15,19 @@ export default function SectionHead({
   bignum,
   dek,
   meta,
-  running = RUNNING_TITLE,
+  running, // eslint-disable-line no-unused-vars
   fat = false,
   children,
 }) {
-  const hasTitleBlock = Boolean(title || bignum || dek)
+  const hasTitleBlock = Boolean(title || dek)
   return (
     <header className={fat ? 'ed-sechead ed-sechead--fat' : 'ed-sechead'}>
       <span className={fat ? 'ed-rule ed-rule--fat' : 'ed-rule'}></span>
       <div className="ed-sechead-meta">
-        <span>{meta ?? `№ ${no} / ${label}`}</span>
-        {running ? <span className="ed-running">{running}</span> : null}
+        <span>{meta ?? label}</span>
       </div>
       {hasTitleBlock ? (
         <div className="ed-sechead-title reveal-up">
-          {bignum ? <span className="ed-bignum">{bignum}</span> : null}
           {title ? <h2 className="ed-title">{title}</h2> : null}
           {dek ? <p className="ed-dek">{dek}</p> : null}
         </div>

@@ -9,7 +9,7 @@ const BUILD_CARDS = [
     id: 'receptionist',
     label: '01',
     delay: '0s',
-    title: 'AI Receptionist',
+    title: 'AI receptionist',
     body: 'A voice agent that answers in your brand voice, qualifies callers against your criteria, books into your calendar stack, and hands urgent calls to the right person.',
     points: ['Custom greeting and voice', 'Your qualification script', 'Calendar and phone integration'],
   },
@@ -17,7 +17,7 @@ const BUILD_CARDS = [
     id: 'chat-agent',
     label: '02',
     delay: '0.08s',
-    title: 'AI Chat Agent',
+    title: 'AI chat agent',
     body: 'A chat agent trained on your documents, policies, and product catalogue, deployed across web, SMS, WhatsApp, and social with handoff rules your team defines.',
     points: ['Trained on your content', 'Multi-channel deployment', 'Custom handoff rules'],
   },
@@ -25,31 +25,31 @@ const BUILD_CARDS = [
     id: 'dashboard',
     label: '03',
     delay: '0.16s',
-    title: 'Operations Dashboard',
-    body: 'A live command view built on your KPIs — revenue, leads, team performance, and automation output pulled straight from the tools you already run.',
-    points: ['Your KPIs, not templates', 'Live tool connections', 'Role-based views'],
+    title: 'Operations dashboard',
+    body: 'A live view built on your KPIs: revenue, leads, team performance and automation output, pulled straight from the tools you already run.',
+    points: ['Your own KPIs', 'Live tool connections', 'Role-based views'],
   },
   {
     id: 'automations',
     label: '04',
     delay: '0.24s',
-    title: 'Workflow Automations',
-    body: 'End-to-end automation mapped to how your business actually operates — intake, follow-up, reporting, and the exceptions that used to need a person watching.',
-    points: ['Mapped to your process', 'Cross-tool orchestration', 'Exception alerts'],
+    title: 'Workflow automations',
+    body: 'Automation mapped to how your business actually runs: intake, follow-up, reporting, and the exceptions that used to need a person watching.',
+    points: ['Mapped to your process', 'Works across your tools', 'Exception alerts'],
   },
   {
     id: 'pos',
     label: '05',
     delay: '0.32s',
-    title: 'Point of Sale',
-    body: 'A POS shaped around how you sell — orders, payments, and inventory feeding the same live data your dashboard reads, online or offline.',
+    title: 'Point of sale',
+    body: 'A POS shaped around how you sell, with orders, payments and inventory feeding the same live data your dashboard reads.',
     points: ['Your sales flow', 'Inventory sync', 'Dashboard-connected'],
   },
   {
     id: 'forms',
     label: '06',
     delay: '0.4s',
-    title: 'Intake and Booking Forms',
+    title: 'Intake and booking forms',
     body: 'Forms that validate on entry, branch on your rules, and route every submission to the right person or workflow the moment it lands.',
     points: ['Conditional logic', 'Entry validation', 'Automatic routing'],
   },
@@ -57,18 +57,18 @@ const BUILD_CARDS = [
     id: 'command',
     label: '07',
     delay: '0.48s',
-    title: 'Command Systems',
-    body: 'Bespoke operational command for teams that need workforce intelligence and task delegation — with a direct upgrade path into the ArchonX Lab suite.',
-    points: ['Risk signal design', 'Task routing', 'Lab suite upgrade path'],
+    title: 'Operations platforms',
+    body: 'Rosters, clock-in, timesheets and SOPs for teams that run shifts, on Bluework from ArchonX Lab, or a bespoke build when your operation needs something that does not exist yet.',
+    points: ['Bluework for shift teams', 'Bespoke when needed', 'Built in your name'],
   },
   {
     id: 'every-build',
-    label: 'Every Build',
+    label: 'Every build',
     delay: '0.56s',
     wide: true,
-    title: 'Yours, not a template',
-    body: 'Every product starts in a consultation, is built around your tools and constraints, and ships with training, documentation, and ongoing management.',
-    points: ['Scoped in consultation', 'Integrated with your stack', 'Managed after launch'],
+    title: 'What you always get',
+    body: 'Every product starts in a consultation, is built around your tools and constraints, and ships with training and documentation, with an optional care plan after launch.',
+    points: ['Scoped in consultation', 'Integrated with your stack', 'Care plan optional'],
   },
 ]
 
@@ -76,7 +76,7 @@ export default function ConsultingProducts() {
   usePageMeta({
     title: 'Custom Products - ArchonX Consulting - ArchonX.ai',
     description:
-      'The customised products ArchonX Consulting delivers: AI receptionists, chat agents, operations dashboards, workflow automations, point of sale, forms, and command systems built around one business at a time.',
+      'The customised products ArchonX Consulting delivers: AI receptionists, chat agents, operations dashboards, workflow automations, point of sale, forms, and operations platforms built around one business at a time.',
     bodyClass: 'subpage-modern consulting-body',
   })
 
@@ -89,13 +89,13 @@ export default function ConsultingProducts() {
           <div className="consulting-orbit consulting-orbit--two"></div>
           <div className="container">
             <div className="consulting-hero-inner reveal-up">
-              <span className="consulting-hero-tag">ArchonX Consulting &mdash; Delivered Work</span>
+              <span className="consulting-hero-tag">ArchonX Consulting: what we build</span>
               <h1>
-                <span>Custom Products,</span>
-                <span>Built For One</span>
-                <span>Business At A Time.</span>
+                <span>Custom products,</span>
+                <span>built for one</span>
+                <span>business at a time.</span>
               </h1>
-              <p>These are the systems consulting engagements produce &mdash; not demos, not templates. Each one is scoped in consultation, shaped around your tools and team, and run in production.</p>
+              <p>These are the kinds of systems a consulting engagement produces. Each one is scoped in consultation, shaped around your tools and team, and set up in your name.</p>
             </div>
           </div>
         </section>
@@ -103,9 +103,9 @@ export default function ConsultingProducts() {
         <section className="section consulting-frameworks" id="builds">
           <div className="container">
             <div className="section-header reveal-up">
-              <span className="section-tag">The Builds</span>
+              <span className="section-tag">The builds</span>
               <h2 className="section-title">What a customised product looks like.</h2>
-              <p className="section-subtitle">Seven kinds of systems we deliver, each configured around a single client&rsquo;s workflows, data, and operating constraints.</p>
+              <p className="section-subtitle">Seven kinds of systems we build, each configured around one business&rsquo;s workflows, data, and operating constraints.</p>
             </div>
             <div className="consulting-card-grid reveal-up">
               {BUILD_CARDS.map((card) => (
@@ -131,12 +131,12 @@ export default function ConsultingProducts() {
         <section className="section consulting-frameworks" id="start">
           <div className="container">
             <div className="section-header reveal-up">
-              <span className="section-tag">Your Build</span>
+              <span className="section-tag">Your build</span>
               <h2 className="section-title">The next one is scoped around you.</h2>
-              <p className="section-subtitle">Tell us where the manual work piles up and we&rsquo;ll come back with the system that removes it &mdash; scope, timeline, and rollout path included.</p>
+              <p className="section-subtitle">Tell us where the manual work piles up. We&rsquo;ll come back with the system that removes it, including scope, timeline and rollout path.</p>
             </div>
             <div className="consulting-more-cta reveal-up">
-              <a href="/consultation/#book">Start a Consultation <span aria-hidden="true">&rarr;</span></a>
+              <a href="/consultation/#book">Start a consultation <span aria-hidden="true">&rarr;</span></a>
             </div>
           </div>
         </section>

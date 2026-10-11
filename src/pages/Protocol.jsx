@@ -15,120 +15,120 @@ import '../styles/pages/protocol.css'
 //                as a JSX node rather than a list of strings
 const CLAUSES = [
   {
-    id: 'delegation',
+    id: 'map',
     pole: 'paper',
     ghost: true,
     no: '03.1',
-    label: 'Delegation',
-    title: 'Intelligent Task Delegation',
-    tag: '[ AI-Powered Routing ]',
+    label: 'Map',
+    title: 'Map the work',
+    tag: '[ Map Before Build ]',
     prose: (
       <>
-        <p>AI agents direct human agents in real-time, optimising task distribution for absolute adherence to performance metrics. ArchonX acts as an omnipresent floor manager - dynamically routing tasks based on capacity, priority, and worker status.</p>
-        <p>Unlike traditional systems that merely track task completion after the fact, ArchonX <strong>proactively assigns, reassigns, and re-routes work</strong> at the speed of operations. When a hazard is detected or a worker shows signs of stress, tasks are instantly redistributed - no manager needed, no delays incurred.</p>
+        <p>The first hour of every engagement is spent on how a job actually moves through the business, from the first call to the paid invoice: who touches it, which software it lives in, where it waits. Most of what is worth automating is obvious once it is drawn.</p>
+        <p>So is what to leave alone. The map ends with a ranked list of opportunities, each with an <strong>estimated</strong> hours figure, labelled as an estimate, and a "don't bother" list of work that isn't worth automating.</p>
       </>
     ),
     annex: {
-      title: 'Key Capabilities',
-      no: <>Annex &mdash; 03.1</>,
+      title: 'What the map covers',
+      no: <>Step 1 of 4</>,
       delay: '0.1s',
       body: (
         <ul className="pgprotocol-list">
-          <li>Real-time autonomous direction of human agents</li>
-          <li>Dynamic capacity-based task routing and assignment</li>
-          <li>Performance-metric-driven optimisation</li>
-          <li>Instant redistribution upon hazard or stressor detection</li>
-          <li>Zero middle-management bottleneck</li>
+          <li>Every step from first contact to paid invoice, and who approves what</li>
+          <li>The software each step already lives in</li>
+          <li>Hours each job takes today, as a labelled estimate</li>
+          <li>The one job to start with, and the order for the rest</li>
+          <li>The "don't bother" list</li>
         </ul>
       ),
     },
   },
   {
-    id: 'hazard',
+    id: 'build',
     pole: 'ink',
     no: '03.2',
-    label: 'Hazard Mitigation',
-    title: 'Holistic Hazard Mitigation',
-    tag: '[ Multi-Modal Detection ]',
+    label: 'Build',
+    title: 'Build on what you run',
+    tag: '[ Software + Implementation ]',
     prose: (
       <>
-        <p>A dual-layered protection system that combines physical and psychosocial monitoring through multi-modal audio/visual analytics - identifying risks before they become liabilities.</p>
+        <p>We connect the software a business already uses and build only what is missing. If ServiceM8, Cliniko or Xero already does something, we connect it instead of rebuilding it.</p>
       </>
     ),
     subclauses: [
       {
         num: '03.2a',
         delay: '0.05s',
-        heading: <>03.2a &mdash; Physical Safety</>,
-        body: <p>Computer vision scans continuously for PPE compliance and environmental hazards in real time. Video detection systems monitor warehouse floors, construction sites, and operational zones for safety violations, obstructions, and dangerous conditions.</p>,
+        heading: <>Platforms we build</>,
+        body: <p>Bluework, ArchonX Lab's operations platform for teams that run shifts: rosters, clock-in and timesheets, leave, tasks, team chat, voice-recorded SOPs and a company AI agent, with an optional Protect layer, in controlled rollout, that flags psychosocial-hazard signals for human review. Custom systems built in-house: point of sale and back office, marketplaces with escrow payments, operations dashboards.</p>,
       },
       {
         num: '03.2b',
         delay: '0.1s',
-        heading: <>03.2b &mdash; Psychosocial Monitoring</>,
-        body: <p>Hazard word and phrase detection flags stress markers, fatigue indicators, and cognitive load in real time. The system identifies precursors to burnout before they manifest - triggering micro-breaks, call re-routing, or workload redistribution automatically.</p>,
+        heading: <>Systems we connect</>,
+        body: <p>Job, practice, booking and accounting software most Australian businesses run: ServiceM8, Tradify, Simpro, AroFlo, Cliniko, Halaxy, Nookal, Best Practice, Xero, MYOB, QuickBooks, HubSpot, Pipedrive, Zoho, Shopify, Square, Lightspeed, Google Workspace and Microsoft 365. Workflows run on standard tools, in the client's own workspace.</p>,
       },
     ],
     annex: {
-      title: 'Why Dual-Layered Matters',
-      no: <>Annex &mdash; 03.2</>,
+      title: 'What "in your name" means',
+      no: <>Step 2 of 4</>,
       delay: '0.15s',
-      body: <p>The competition offers siloed solutions - computer vision for physical safety in one product, text analysis for sentiment in another. ArchonX is the only platform that provides <strong>both physical and psychosocial monitoring in a single, integrated system</strong>, ensuring that no risk vector goes undetected.</p>,
+      body: <p>Every account, phone number and subscription is set up under the client's business with the client's logins. A one-page runbook is written so another provider could pick it up. <strong>If ArchonX disappeared tomorrow, the system would keep running.</strong> Month to month, no exit fee.</p>,
     },
   },
   {
-    id: 'personas',
+    id: 'govern',
     pole: 'paper',
     ghost: true,
     no: '03.3',
-    label: 'Personas',
-    title: 'Bespoke Management Personas',
-    tag: '[ Cultural Alignment ]',
+    label: 'Govern',
+    title: 'Keep people in charge',
+    tag: '[ Human Review ]',
     prose: (
       <>
-        <p>Generic, robotic interfaces kill adoption and morale. ArchonX takes a fundamentally different approach - creating <strong>custom-trained AI personalities</strong> that embody your company's unique culture, knowledge, tone, and directives.</p>
-        <p>Each persona is trained to match your specific management style - whether friendly and supportive, or professional and directive. The AI doesn't just execute commands; it leads with emotional intelligence, improving morale and driving adoption rates that generic systems cannot achieve.</p>
+        <p>Every AI assistant we deploy says it is an AI at the start of the conversation and hands over to a person when asked. Nothing we build pretends to be a named human, and we do not clone voices.</p>
+        <p>Anything a customer would be upset to find out was automatic goes through a person first: money, health, legal and tenancy decisions, and every change to a ledger or a calendar that a rule didn't already allow.</p>
       </>
     ),
     annex: {
-      title: 'Implementation',
-      no: <>Annex &mdash; 03.3</>,
+      title: 'Standing rules',
+      no: <>Step 3 of 4</>,
       delay: '0.1s',
       body: (
         <ul className="pgprotocol-list">
-          <li>Custom-trained on your company's culture, policies, and values</li>
-          <li>Tone-matched to your leadership style (friendly, professional, etc.)</li>
-          <li>Embeds institutional knowledge for contextual decision-making</li>
-          <li>Premium implementation service for bespoke personality development</li>
-          <li>Drives higher adoption rates through cultural alignment</li>
+          <li>Every AI assistant identifies itself as an AI</li>
+          <li>A person approves money, health, legal and tenancy decisions</li>
+          <li>Data kept in the Australian region wherever the provider offers one, and disclosed where it isn't</li>
+          <li>Business-tier AI accounts whose terms exclude training on client data</li>
+          <li>Designed to align with the Australian Privacy Principles, the Voluntary AI Safety Standard and the National AI Centre's Guidance for AI Adoption; no certification claimed</li>
         </ul>
       ),
     },
   },
   {
-    id: 'closed-loop',
+    id: 'run',
     pole: 'ink',
     no: '03.4',
-    label: 'Closed Loop',
-    title: 'Closed-Loop Efficiency Engine',
-    tag: '[ Zero Latency ]',
+    label: 'Run',
+    title: 'Run, measure, expand',
+    tag: '[ Closed Loop, Measured ]',
     prose: (
       <>
-        <p>The competition detects a hazard and then waits for slow, manual human intervention. ArchonX <strong>closes the loop instantly</strong> - re-routing workflows and reassigning tasks in real-time without requiring human executive intervention.</p>
-        <p>This is the core differentiator. ArchonX doesn't just identify problems; it solves them autonomously. When fatigue is detected in a contact-centre agent, the system re-routes complex calls to fresher agents and enforces micro-breaks - all before a human manager would even know there was an issue.</p>
+        <p>Nothing faces a customer until the client has heard it, read it and approved the rules. Then it goes live with a go-live date committed in the quote, a text every Friday during the build, and 30 days of included fixes afterwards.</p>
+        <p>Every month the system reports what it did: calls answered, messages handled, drafts approved and drafts rejected, so the client can see where it got things wrong as well as right. The next job starts when the first one has paid for itself.</p>
       </>
     ),
     annex: {
-      title: 'The Closed Loop in Action',
-      no: <>Annex &mdash; 03.4</>,
+      title: 'How it runs',
+      no: <>Step 4 of 4</>,
       delay: '0.1s',
       body: (
         <ol className="pgprotocol-list pgprotocol-list--steps">
-          <li><strong>Detect</strong> - Multi-modal sensors identify a hazard or stressor</li>
-          <li><strong>Assess</strong> - AI evaluates severity, context, and available resources</li>
-          <li><strong>Act</strong> - Workflows are re-routed and tasks reassigned instantly</li>
-          <li><strong>Verify</strong> - System confirms resolution and adjusts parameters</li>
-          <li><strong>Learn</strong> - Predictive models update for future prevention</li>
+          <li><strong>Test</strong>: on real calls, emails and documents before anything faces a customer</li>
+          <li><strong>Go live</strong>: on the date in the quote, in the client's name</li>
+          <li><strong>Report</strong>: monthly, on what ran, what it handled and what it got wrong</li>
+          <li><strong>Fix</strong>: 30 days of included fixes, then a care plan if wanted</li>
+          <li><strong>Expand</strong>: the next job, once the first has paid for itself</li>
         </ol>
       ),
     },
@@ -138,25 +138,25 @@ const CLAUSES = [
 export default function Protocol() {
   usePageMeta({
     title: 'The Archon Protocol - ArchonX.ai',
-    description: 'Four pillars of autonomous intelligence: Intelligent Task Delegation, Holistic Hazard Mitigation, Bespoke Management Personas, and Closed-Loop Efficiency.',
+    description: 'How ArchonX puts AI to work in a business: map the work, build on what you already run, keep people in charge, then run, measure and expand. The same four steps apply to our software and our consulting.',
     bodyClass: 'home-editorial subpage-editorial',
   })
   return (
     <>
       {/* ===================== CHAPTER COVER — № 03 ===================== */}
       <ChapterCover
-        no={<>&#8470; 03 / 07</>}
+        no={<>03 / 06</>}
         ghost="PROTOCOL"
         plate="/assets/protocol-bg.svg"
         lines={[
           <>The Archon</>,
           <><span className="ed-ghost">Protocol.</span></>,
         ]}
-        dek={<>Four pillars of autonomous intelligence that transform management into a closed-loop, automated engine - replacing reactive oversight with decisive, real-time command.</>}
+        dek={<>How ArchonX puts AI to work in a business: map the work, build on what you already run, keep people in charge, then run, measure and expand. The same four steps apply to our software and our consulting.</>}
         aside={
           <>
-            <span className="ed-clause-tag">[ Core Capabilities ]</span>
-            <span className="ed-kicker">Clauses 03.1 &mdash; 03.4</span>
+            <span className="ed-clause-tag">[ How We Work ]</span>
+            <span className="ed-kicker">Four steps</span>
           </>
         }
       />
@@ -202,19 +202,19 @@ export default function Protocol() {
       {/* ===================== № 03.5 — DISPATCH ===================== */}
       <Section pole="paper">
         <div className="ed-container">
-          <SectionHead no="03.5" label="Dispatch" bignum="03.5" title="See the Protocol in action." />
+          <SectionHead no="03.5" label="Next step" bignum="03.5" title="See it by sector." />
           <div className="pgprotocol-cta reveal-up">
-            <p>Discover how ArchonX transforms operations across Australian logistics, BPO, government, and emergency services sectors.</p>
+            <p>Read how the four steps apply in your sector, or start with the free two-minute audit: it names the first job AI could take on in your business and what fits your budget.</p>
             <div className="pgprotocol-cta-actions">
-              <Magnetic to="/markets" className="ed-btn ed-btn--solid">Explore Markets <span className="ed-arrow">&rarr;</span></Magnetic>
-              <Magnetic to="/invest" className="ed-btn ed-btn--outline">Investor Information</Magnetic>
+              <Magnetic to="/markets" className="ed-btn ed-btn--solid">Explore markets <span className="ed-arrow">&rarr;</span></Magnetic>
+              <Magnetic href="/consultation/#audit" className="ed-btn ed-btn--outline">Start the free audit</Magnetic>
             </div>
           </div>
         </div>
       </Section>
 
       {/* ===================== NEXT CHAPTER — № 04 ===================== */}
-      <NextChapter to="/markets" label={<>Next &mdash; &#8470; 04 / 07</>} title="Markets" />
+      <NextChapter to="/markets" label={<>Next</>} title="Markets" />
 
       <EdFooter />
     </>

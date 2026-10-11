@@ -1,52 +1,53 @@
 import '../styles/pages/markets.css'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import EdFooter from '../components/EdFooter.jsx'
-import { Magnetic, Parallax, AnimatedCounter, handleHashClick } from '../motion/index.js'
+import { Magnetic, Parallax, handleHashClick } from '../motion/index.js'
 import { ChapterCover, SectionHead, NextChapter, Section } from '../components/editorial/index.js'
 
-// The eight market theatres. The jump index and the clause rows both render from
-// this one list so the two can never drift apart. `delay` is optional — the first
-// row deliberately carries no --delay stagger.
+// The eight sectors. The jump index and the clause rows both render from this
+// one list so the two can never drift apart. `delay` is optional — the first
+// row deliberately carries no --delay stagger. `metrics` name the first jobs
+// we usually switch on, not statistics: ArchonX has no client results to cite.
 const MARKETS = [
   {
     id: 'market-retail',
     no: '01',
     short: 'Retail',
-    chip: 'Customer flow',
+    chip: 'Front of house',
     name: <>Retail</>,
-    desc: <>Improves floor coverage, queue response, staff allocation, and loss-prevention workflows across Australia's A$444 billion retail sector, where retail crime costs businesses up to A$9 billion a year and 88% of frontline workers report customer abuse.</>,
-    fit: 'Multi-site stores, busy floors, distributed teams',
+    desc: <>Stock, order and opening-hours questions answered on web, Instagram and phone from your live catalogue, with anything unusual handed to you. Supplier invoices read from your inbox and queued in Xero or MYOB. One review request after each sale. Point of sale and back office built around how you sell, with orders, payments and inventory feeding the same live data your reports read.</>,
+    fit: 'Independent retailers, multi-site stores, online and in-store',
     metrics: [
-      <><strong>1.49M</strong> AU workers (ABS)</>,
-      <><strong>A$9B</strong> retail crime / yr (NRA)</>,
+      <><strong>Catalogue answers</strong> 24 / 7</>,
+      <><strong>POS to books</strong> in one flow</>,
     ],
   },
   {
     id: 'market-construction',
     no: '02',
     delay: '0.05s',
-    short: 'Construction',
-    chip: 'Site visibility',
-    name: <>Construction &amp; Trades</>,
-    desc: <>Coordinates crews, flags safety risks, tracks site progress, and keeps field work moving. Australian construction employs 1.37 million people and recorded 37 worker fatalities in 2024, with 17,600 serious claims a year.</>,
-    fit: 'Job sites, trades teams, project-based operations',
+    short: 'Trades',
+    chip: 'On the tools',
+    name: <>Construction &amp; trades</>,
+    desc: <>The phone answered while you're on site, with emergencies ringing straight through. A 30-second voice note after the job becomes a draft quote in ServiceM8, Tradify, Simpro or AroFlo. Invoices chased from Xero or MYOB until they're paid. For crews, Bluework handles rosters, clock-in and the SOPs.</>,
+    fit: 'Sole traders, trade businesses, builders, site crews',
     metrics: [
-      <><strong>37</strong> deaths in 2024 (SWA)</>,
-      <><strong>17,600</strong> serious claims / yr</>,
+      <><strong>Calls answered</strong> jobs booked</>,
+      <><strong>Voice note</strong> to draft quote</>,
     ],
   },
   {
     id: 'market-service',
     no: '03',
     delay: '0.1s',
-    short: 'Service',
-    chip: 'Delivery control',
-    name: <>Service &amp; Consulting</>,
-    desc: <>Gives client-facing teams workload routing, delivery oversight, utilisation visibility, and engagement-level performance tracking. Australian employees donate an average 3.6 hours of unpaid overtime a week &mdash; worth A$95.8 billion a year.</>,
-    fit: 'Agencies, consultancies, managed service teams',
+    short: 'Services',
+    chip: 'Back office',
+    name: <>Professional services &amp; agencies</>,
+    desc: <>Document chasing with a live view of who is behind, inbox triage with replies drafted in your tone, reconciliation suggestions in Xero, MYOB or QuickBooks, and meeting notes into the practice system, for accountants, lawyers, agencies and consultancies. Every change still goes through a registered person.</>,
+    fit: 'Accounting and bookkeeping firms, legal practices, agencies, consultancies',
     metrics: [
-      <><strong>3.6h</strong> unpaid OT / wk</>,
-      <><strong>A$95.8B</strong> unpaid OT / yr</>,
+      <><strong>Documents chased</strong> automatically</>,
+      <><strong>Drafts ready</strong> a person sends</>,
     ],
   },
   {
@@ -56,11 +57,11 @@ const MARKETS = [
     short: 'Hospitality',
     chip: 'Service speed',
     name: <>Hospitality</>,
-    desc: <>Optimises staffing, guest-response workflows, service consistency, and incident visibility across venues. Accommodation and food services employs 1.26 million Australians and has the nation's highest staff turnover at 15.5% a year.</>,
-    fit: 'Hotels, venues, restaurants, event operations',
+    desc: <>Bookings by phone, text and web during service and overnight, placed into your reservation system with anything unusual passed to the floor. Guest questions answered from your own FAQ. Supplier invoices into the books. Rosters, clock-in and award-aware timesheets across venues with Bluework.</>,
+    fit: 'Restaurants, cafes, venues, hotels and motels',
     metrics: [
-      <><strong>1.26M</strong> AU workers (ABS)</>,
-      <><strong>15.5%</strong> annual turnover</>,
+      <><strong>Bookings taken</strong> during service</>,
+      <><strong>Rosters</strong> to timesheets</>,
     ],
   },
   {
@@ -69,12 +70,12 @@ const MARKETS = [
     delay: '0.2s',
     short: 'Logistics',
     chip: 'Throughput',
-    name: <>Logistics &amp; Warehousing</>,
-    desc: <>Detects safety hazards, worker overload, zone congestion, and task-routing inefficiencies. Transport, postal and warehousing is Australia's deadliest industry &mdash; 54 fatalities in 2024 &mdash; and body stressing drives 34.5% of all serious claims nationally.</>,
-    fit: 'Warehouses, distribution centres, fulfilment floors',
+    name: <>Logistics &amp; warehousing</>,
+    desc: <>Rostering, clock-in and task boards for floors that run in shifts, with award-aware timesheets and voice-recorded SOPs the team can search. Workflow automation between job, fleet and accounting software, with a person approving anything that matters.</>,
+    fit: 'Warehouses, distribution centres, fulfilment floors, transport operators',
     metrics: [
-      <><strong>54</strong> deaths in 2024 (SWA)</>,
-      <><strong>34.5%</strong> claims body stressing</>,
+      <><strong>Shift rosters</strong> &amp; timesheets</>,
+      <><strong>Systems</strong> connected</>,
     ],
   },
   {
@@ -82,13 +83,13 @@ const MARKETS = [
     no: '06',
     delay: '0.25s',
     short: 'BPO',
-    chip: 'Cognitive load',
-    name: <>BPO &amp; Contact Centres</>,
-    desc: <>Monitors agent stress, hazard phrases, fatigue, queue pressure, and call complexity to protect quality and reduce churn. Australian contact-centre attrition hit 29% in 2025, and a psychological injury claim costs a median 35.7 weeks of lost work.</>,
+    chip: 'Volume',
+    name: <>BPO &amp; contact centres</>,
+    desc: <>AI receptionists and chat agents for overflow and after hours, each announcing it is an AI and handing over on request. Enquiry follow-up until booked. Team rostering and timesheets in Bluework, with fatigue and overload signals from its Protect layer, in controlled rollout, reviewed by a person before anything changes.</>,
     fit: 'Contact centres, support teams, outsourced operations',
     metrics: [
-      <><strong>29%</strong> agent attrition (ACXPA)</>,
-      <><strong>35.7wk</strong> median psych absence</>,
+      <><strong>Overflow</strong> answered</>,
+      <><strong>Rosters</strong> &amp; timesheets</>,
     ],
   },
   {
@@ -96,13 +97,13 @@ const MARKETS = [
     no: '07',
     delay: '0.3s',
     short: 'Government',
-    chip: 'Compliance',
-    name: <>Critical Infrastructure &amp; Government</>,
-    desc: <>Creates accountable oversight for dispersed public-sector teams, safety protocols, labour visibility, and high-liability compliance. Commonwealth psychological injury claims are up 75% since 2017, and psychological claims now drive around half the average Comcare premium.</>,
-    fit: 'Infrastructure teams, public works, regulated operations',
+    chip: 'Accountability',
+    name: <>Government &amp; infrastructure</>,
+    desc: <>Operations software for dispersed teams: rosters, SOPs with citations, and tamper-evident records designed for audits. AI-use policies and automated-decision wording written to align with the Australian Privacy Principles, the Voluntary AI Safety Standard and the National AI Centre's Guidance for AI Adoption.</>,
+    fit: 'Public works and infrastructure teams, regulated operations',
     metrics: [
-      <><strong>+75%</strong> psych claims since 2017</>,
-      <><strong>57%</strong> psych return-to-work</>,
+      <><strong>Evidence-grade</strong> records</>,
+      <><strong>AI-use policy</strong> included</>,
     ],
   },
   {
@@ -110,54 +111,53 @@ const MARKETS = [
     no: '08',
     delay: '0.35s',
     short: 'Emergency',
-    chip: 'Mission readiness',
-    name: <>Emergency Services &amp; Dispatch</>,
-    desc: <>Maintains operational readiness by monitoring cognitive load, response pressure, fatigue risk, and mission-critical coordination signals. 1 in 3 Australian police and emergency services employees experience high psychological distress &mdash; versus 1 in 8 adults generally &mdash; and probable PTSD runs at 2.5 times the general population.</>,
-    fit: 'Dispatch centres, emergency teams, mission-critical operations',
+    chip: 'Readiness',
+    name: <>Emergency services &amp; dispatch</>,
+    desc: <>Shift rosters, clock-in, award-aware timesheets and searchable SOPs for teams that cannot afford a gap. Bluework's Protect layer adds fatigue, overload and psychosocial-hazard signals for a person to review; it is in controlled rollout and subject to legal and jurisdictional approval.</>,
+    fit: 'Dispatch centres, emergency teams, mission-critical rosters',
     metrics: [
-      <><strong>1 in 3</strong> high distress (Beyond Blue)</>,
-      <><strong>2.5&times;</strong> PTSD vs population</>,
+      <><strong>Rosters</strong> &amp; clock-in</>,
+      <><strong>Human review</strong> always</>,
     ],
   },
 ]
 
-// The four beats of the command loop. First entry carries no stagger.
+// The four beats of the Protocol. First entry carries no stagger.
 const MODEL_STEPS = [
-  { index: '04.2a', title: 'Sense', body: <>Capture safety, workload, service, queue, fatigue, compliance, and delivery signals.</> },
-  { index: '04.2b', title: 'Prioritise', delay: '0.1s', body: <>Rank risk and urgency before a delay becomes a cost, incident, or customer failure.</> },
-  { index: '04.2c', title: 'Route', delay: '0.2s', body: <>Move tasks, calls, crews, agents, or response paths to the best available capacity.</> },
-  { index: '04.2d', title: 'Report', delay: '0.3s', body: <>Give leaders a live view of performance, incidents, workload, and improvement areas.</> },
+  { index: '04.2a', title: 'Map', body: <>Draw how work moves from first contact to paid invoice, and pick the one job to start with.</> },
+  { index: '04.2b', title: 'Build', delay: '0.1s', body: <>Connect the software the sector already runs; build only what is missing, in the client's name.</> },
+  { index: '04.2c', title: 'Govern', delay: '0.2s', body: <>Every AI says it is an AI. A person approves money, health, legal and tenancy decisions.</> },
+  { index: '04.2d', title: 'Measure', delay: '0.3s', body: <>Report monthly what the system did, including what it got wrong, then expand to the next job.</> },
 ]
 
 const SIGNALS = [
-  { no: '01', body: <>Detect workforce load, risk signals, service delays, and site bottlenecks.</> },
-  { no: '02', body: <>Route work to the right person, zone, crew, team, or response path.</> },
-  { no: '03', body: <>Report performance, risk, and compliance in real time for leadership.</> },
+  { no: '01', body: <>Start with the single job that costs the most time.</> },
+  { no: '02', body: <>Connect the software the sector already runs rather than replacing it.</> },
+  { no: '03', body: <>Show the owner, every month, what the system did and where it was wrong.</> },
 ]
 
 export default function Markets() {
   usePageMeta({
     title: 'Markets - ArchonX.ai | Australia',
-    description: 'Explore ArchonX markets across Australian retail, construction, service, hospitality, logistics, BPO, government infrastructure, and emergency operations.',
+    description: 'What AI does first in eight Australian sectors: retail, trades, professional services, hospitality, logistics, contact centres, government and emergency services. One method, the Archon Protocol, applied to each.',
     bodyClass: 'home-editorial subpage-editorial',
   })
   return (
     <>
-      {/* ===================== CHAPTER COVER — № 04 / 07 ===================== */}
+      {/* ===================== CHAPTER COVER — № 04 / 06 ===================== */}
       <ChapterCover
-        no={<>&#8470; 04 / 07</>}
+        no={<>&#8470; 04 / 06</>}
         ghost="MARKETS"
         plate="/assets/markets-bg.svg"
         lines={[
-          <>Operational</>,
-          <>intelligence for every</>,
-          <>high-pressure</>,
-          <>Australian <span className="ed-ghost">workforce.</span></>,
+          <>What AI does first</>,
+          <>in eight Australian</>,
+          <><span className="ed-ghost">sectors.</span></>,
         ]}
-        dek={<>ArchonX is built for environments where safety, speed, staffing, and accountability directly affect margin. One command layer adapts across field teams, service teams, logistics floors, public infrastructure, and mission-critical operations &mdash; and operationalises the positive duty to manage psychosocial hazards embedded in Australian WHS regulations since 2022.</>}
+        dek={<>Different sectors run on different software and different rules. The method stays the same: map the work, build on what you already run, keep people in charge, measure. Here is what that looks like in each.</>}
         aside={<>
-          <span className="ed-kicker">[ Market Command ]</span>
-          <span className="ed-kicker">Eight theatres &mdash; 01 / 08</span>
+          <span className="ed-kicker">[ Market Map ]</span>
+          <span className="ed-kicker">Eight sectors &mdash; 01 / 08</span>
         </>}
       />
 
@@ -167,31 +167,11 @@ export default function Markets() {
         <div className="ed-container">
           <SectionHead
             no="04.1"
-            label="Industry Map"
+            label="Sectors"
             bignum="04.1"
-            title="Where ArchonX creates leverage."
-            dek={<>Each market has a different operating pressure. The system stays the same: sense what is happening, prioritise the work, route action, and measure the outcome.</>}
+            title="Where to start in each sector."
+            dek={<>Each sector has a different pressure point and its own software. The first job we switch on is the one that costs the most time; the rest follow once it has paid for itself.</>}
           />
-
-          <div className="ed-hero-strip pgmarkets-snapshot reveal-up" aria-label="Market coverage snapshot">
-            <div className="ed-hero-stat">
-              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={8} /></span>
-              <span className="ed-stat-label">core Australian industries</span>
-            </div>
-            <div className="ed-hero-stat">
-              <span className="ed-stat-num"><sup>A$</sup><AnimatedCounter className="hero-stat-value" target={28.6} decimals={1} /><sup>B</sup></span>
-              <span className="ed-stat-label">annual cost of workplace harm (Safe Work Australia)</span>
-            </div>
-            <div className="ed-hero-stat">
-              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={1} /></span>
-              <span className="ed-stat-label">autonomous command layer</span>
-            </div>
-          </div>
-
-          <div className="pgmarkets-dispatch reveal-up">
-            <Magnetic href="#market-map" onClick={handleHashClick} className="ed-btn ed-btn--solid">Explore Markets <span className="ed-arrow">&rarr;</span></Magnetic>
-            <Magnetic href="/consultation/" className="ed-btn ed-btn--outline">Start a Consultation</Magnetic>
-          </div>
 
           <div className="pgmarkets-jumpline reveal-up" aria-label="Market categories">
             {MARKETS.map((m) => (
@@ -223,7 +203,7 @@ export default function Markets() {
             ))}
           </div>
 
-          <p className="ed-index-note reveal-up">Sector data: Australian Bureau of Statistics &middot; Safe Work Australia, Key WHS Statistics 2025 &middot; National Retail Association &middot; The Australia Institute &middot; ACXPA &middot; Comcare &middot; Beyond Blue, Answering the Call &mdash; 2024&ndash;2026</p>
+          <p className="ed-index-note reveal-up">Each row names the first jobs we recommend switching on in that sector, not results. The free audit on the consulting page picks the one that fits your business and budget, with the hours shown as labelled estimates.</p>
         </div>
       </Section>
 
@@ -232,12 +212,12 @@ export default function Markets() {
         <div className="ed-container">
           <SectionHead
             no="04.2"
-            label="Operating Model"
+            label="How we work"
             bignum="04.2"
-            title="One deployment logic across every market."
+            title="The same method in every sector."
           />
           <div className="edc-prose reveal-up">
-            <p>ArchonX is not a collection of disconnected tools. It is a command loop that adapts to the operating pressure of each industry.</p>
+            <p>We use one method, the Archon Protocol, and apply it to the software and rules each sector already has.</p>
           </div>
           <div className="ed-lexicon">
             {MODEL_STEPS.map((s) => (
@@ -249,10 +229,10 @@ export default function Markets() {
             ))}
           </div>
 
-          <div className="pgmarkets-annex reveal-up" aria-label="ArchonX market command model">
+          <div className="pgmarkets-annex reveal-up" aria-label="ArchonX market fit">
             <div className="pgmarkets-annex-head">
-              <h4>ArchonX Market Fit</h4>
-              <span className="pgmarkets-annex-no">Live command layer</span>
+              <h4>House rules</h4>
+              <span className="pgmarkets-annex-no">Same in every sector</span>
             </div>
             {SIGNALS.map((s) => (
               <div key={s.no} className="pgmarkets-signal">
@@ -267,18 +247,18 @@ export default function Markets() {
       {/* ===================== № 04.3 — NEXT STEP ===================== */}
       <Section pole="paper" className="pgmarkets-cta">
         <div className="ed-container">
-          <SectionHead no="04.3" label="Next Step" />
+          <SectionHead no="04.3" label="Next step" />
           <div className="ed-quote-block reveal-up">
             <span className="ed-quote-dash"></span>
-            <h2 className="ed-quote">Map ArchonX to your <span className="ed-underline ed-underline--heavy">operating environment</span>.</h2>
-            <p className="ed-quote-sub">Start with one department, site, team, or workflow. Prove ROI, then expand across the operating surface.</p>
-            <Magnetic href="/consultation/" className="ed-btn ed-btn--solid">Start a Consultation <span className="ed-arrow">&rarr;</span></Magnetic>
+            <h2 className="ed-quote">Start with <span className="ed-underline ed-underline--heavy">one job</span>.</h2>
+            <p className="ed-quote-sub">Pick your sector in the free two-minute audit. It names the first job, suggests a package that fits your budget, and includes one build we run free for 90 days, within the usage limits on the consulting page.</p>
+            <Magnetic href="/consultation/#audit" className="ed-btn ed-btn--solid">Start the free audit <span className="ed-arrow">&rarr;</span></Magnetic>
           </div>
         </div>
       </Section>
 
-      {/* ===================== NEXT CHAPTER — № 05 / 07 ===================== */}
-      <NextChapter to="/competitive" label={<>Next &mdash; &#8470; 05 / 07</>} title="The Advantage" />
+      {/* ===================== NEXT CHAPTER — № 05 / 06 ===================== */}
+      <NextChapter to="/competitive" label={<>Next &mdash; &#8470; 05 / 06</>} title="How we're different" />
 
       <EdFooter />
     </>
