@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FOOTER_COLUMNS } from '../data/navigation.js'
 
-// Editorial footer — the colophon that closes every chapter.
+// Editorial footer that closes every chapter.
 export default function EdFooter() {
   return (
     <footer className="ed-footer" id="footer" data-nav="ink">
@@ -22,11 +22,13 @@ export default function EdFooter() {
             <div className="ed-footer-col" key={heading}>
               <h4>{heading}</h4>
               <ul>
-                {links.map(({ to, href, label }) => (
+                {links.map(({ to, href, label, reload, external }) => (
                   <li key={label}>
-                    {/* href="#" marks a profile that doesn't exist yet; an <a>
-                        without href keeps the styling but is inert. */}
-                    {to ? <Link to={to}>{label}</Link> : href === '#' ? <a>{label}</a> : <a href={href}>{label}</a>}
+                    {to
+                      ? (reload ? <a href={`${to}/`}>{label}</a> : <Link to={to}>{label}</Link>)
+                      : external
+                        ? <a href={href} target="_blank" rel="noopener">{label}</a>
+                        : <a href={href}>{label}</a>}
                   </li>
                 ))}
               </ul>
@@ -34,9 +36,9 @@ export default function EdFooter() {
           ))}
         </div>
         <div className="ed-footer-bottom">
-          <p>&copy; 2026 ArchonX.ai &mdash; Australia &mdash; All rights reserved</p>
-          <p className="ed-colophon">Data: Safe Work Australia &middot; ABS &middot; Productivity Commission &middot; Comcare &middot; Beyond Blue &mdash; &#8470; 07 / 07</p>
-          <p className="ed-footer-legal"><Link to="/privacy">Privacy</Link> &mdash; <Link to="/terms">Terms</Link></p>
+          <p>&copy; 2026 ArchonX. Brisbane, Australia.</p>
+          <p className="ed-colophon">Figures from ABS, National AI Centre, Intuit QuickBooks, Xero and CPA Australia</p>
+          <p className="ed-footer-legal"><Link to="/privacy">Privacy</Link> &middot; <Link to="/terms">Terms</Link></p>
         </div>
       </div>
     </footer>

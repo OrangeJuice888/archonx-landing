@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import EdFooter from '../components/EdFooter.jsx'
+import GlobeBackdrop from '../components/GlobeBackdrop.jsx'
 import { Magnetic, TiltCard, Parallax, AnimatedCounter, GaugeFill, handleHashClick } from '../motion/index.js'
 import { Section, SectionHead } from '../components/editorial/index.js'
 
@@ -12,109 +13,109 @@ const MotionLink = motion.create(Link)
 const LEXICON = [
   {
     index: '01.1',
-    title: 'The Name',
-    dict: <>ar&middot;chon &mdash; n. ruler, commander (Gk.)</>,
+    title: 'The name',
+    dict: <>ar&middot;chon, noun: ruler, commander (Greek)</>,
     body: (
-      <><strong>"Archon"</strong> - Ancient Greek for <em>Ruler</em> and <em>Commander</em>. Paired with <strong>"X"</strong>, representing mastery of the human operational domain. Together, they define the new standard of AI-driven authority.</>
+      <><strong>Archon</strong> is Ancient Greek for <em>ruler</em> or <em>commander</em>. The <strong>X</strong> is the unknown in every business: the software, people and rules it runs on. ArchonX builds systems that help a business run its operations, with people making the decisions.</>
     ),
   },
   {
     index: '01.2',
-    title: 'Unblinking Oversight',
+    title: 'Two arms',
     delay: '0.1s',
     body: (
-      <>Born from the need for total visibility in chaotic enterprise operations. ArchonX is the "Big Boss" - providing <strong>absolute operational authority</strong> and comprehensive system control where human supervisors fall short.</>
+      <><strong>ArchonX Lab</strong> builds software: Bluework for rosters, time and daily operations, and custom systems from point of sale to marketplaces. <strong>ArchonX Consulting</strong> puts AI into a business's daily work: reception, enquiries, admin, bookkeeping and the workflows between them.</>
     ),
   },
   {
     index: '01.3',
-    title: 'Autonomous Action',
+    title: "Who it's for",
     delay: '0.2s',
     body: (
-      <>ArchonX doesn't just report data - it takes <strong>autonomous action</strong>. It replaces passive reporting with active, AI-driven leadership that makes real-time decisions at the speed of operations.</>
+      <>Small businesses through to larger organisations and government, across Australia, from Brisbane. The rule is the same for all of them: <strong>start with one job</strong>, prove it works, then expand.</>
     ),
   },
 ]
 
-// No 02 — the crisis → solution ledger.
+// No 02 — the gap → the answer ledger. Every figure is attributed.
 const LEDGER = [
   {
     letter: 'A',
-    crisis: <>Slowest productivity decade in 60 years &mdash; Productivity Commission</>,
-    solution: 'Proactive, predictive decision-making',
+    crisis: <>65% of SMEs that haven't adopted AI distrust its decisions or prefer human control (National AI Centre)</>,
+    solution: 'A person approves anything that matters',
   },
   {
     letter: 'B',
     delay: '0.05s',
-    crisis: <>146,700 serious injury claims a year &mdash; 400+ every day</>,
-    solution: 'Autonomous task routing and delegation',
+    crisis: <>Privacy and security is a top barrier, at 39% (Intuit QuickBooks)</>,
+    solution: 'Data kept in Australia where the provider offers it; business accounts whose terms exclude training on your data',
   },
   {
     letter: 'C',
     delay: '0.1s',
-    crisis: <>7.4 weeks median time lost per serious claim</>,
-    solution: 'Real-time hazard and stress detection',
+    crisis: <>Lack of knowledge holds back 31% (Intuit QuickBooks)</>,
+    solution: 'A free audit, a written plan and one job first',
   },
   {
     letter: 'D',
     delay: '0.15s',
-    crisis: <>1 in 2 workers report burnout in the past year &mdash; Beyond Blue</>,
-    solution: '24/7 unblinking operational oversight',
+    crisis: <>79% report productivity gains from AI (Intuit QuickBooks)</>,
+    solution: 'A monthly report on what it did and what it got wrong',
   },
 ]
 
 // No 03 — the four protocol clauses. Only 03.2 breaks out into subclauses.
 const CLAUSES = [
   {
-    id: 'feature-delegation',
-    num: '03.1',
-    title: 'Intelligent Task Delegation',
-    body: <>Real-time, autonomous routing of tasks to human agents to ensure absolute adherence to performance metrics and peak efficiency. No delays. No bottlenecks.</>,
-    tag: '[ AI-Powered Routing ]',
-    to: '/protocol#delegation',
+    id: 'feature-map',
+    num: '1',
+    title: 'Map the work',
+    body: <>The first hour goes on how work actually moves through the business, from first call to paid invoice. Most of what is worth automating is obvious once it is drawn, and so is what to leave alone.</>,
+    tag: '[ Map Before Build ]',
+    to: '/protocol#map',
   },
   {
-    id: 'feature-hazard',
-    num: '03.2',
+    id: 'feature-build',
+    num: '2',
     delay: '0.05s',
-    title: 'Holistic Hazard Mitigation',
-    body: <>Dual-layered protection combining physical and psychosocial monitoring:</>,
+    title: 'Build on what you run',
+    body: <>We connect the software you already use and build only what is missing:</>,
     subclauses: [
       {
         id: '03.2a',
-        label: <>03.2a &mdash; Physical Safety</>,
-        body: <>Computer vision scans for PPE compliance and environmental hazards in real time</>,
+        label: <>Our software</>,
+        body: <>Bluework for rosters, clock-in, timesheets, SOPs and a company AI agent, built by ArchonX Lab</>,
       },
       {
         id: '03.2b',
-        label: <>03.2b &mdash; Psychosocial Monitoring</>,
-        body: <>Hazard word and phrase detection surfaces stress, fatigue, and cognitive load signals to prevent burnout</>,
+        label: <>Custom systems</>,
+        body: <>Receptionists, chat agents, workflows, dashboards, point of sale and marketplaces, built in your name</>,
       },
     ],
-    tag: '[ Multi-Modal Detection ]',
-    to: '/protocol#hazard',
+    tag: '[ Software + Implementation ]',
+    to: '/protocol#build',
   },
   {
-    id: 'feature-personas',
-    num: '03.3',
+    id: 'feature-govern',
+    num: '3',
     delay: '0.1s',
-    title: 'Bespoke Management Personas',
-    body: <>Custom-trained AI personalities that embody your company's culture and values, ensuring high employee adoption and morale through personalised leadership.</>,
-    tag: '[ Cultural Alignment ]',
-    to: '/protocol#personas',
+    title: 'Keep people in charge',
+    body: <>Every AI assistant says it is an AI. Money, health, legal and tenancy decisions go through a person. Nothing we build is a black box or pretends to be human.</>,
+    tag: '[ Human Review ]',
+    to: '/protocol#govern',
   },
   {
-    id: 'feature-loop',
-    num: '03.4',
+    id: 'feature-run',
+    num: '4',
     delay: '0.15s',
-    title: 'Closed-Loop Efficiency',
-    body: <>Instantaneous workflow rerouting when a hazard or stressor is detected, without requiring middle-management intervention. Fully autonomous response.</>,
-    tag: '[ Zero Latency ]',
-    to: '/protocol#closed-loop',
+    title: 'Run, measure, expand',
+    body: <>Nothing faces a customer until it has been tested on real calls and emails. A monthly report shows what the system did, including where it was wrong. The next job starts when the first one has paid for itself.</>,
+    tag: '[ Closed Loop, Measured ]',
+    to: '/protocol#run',
   },
 ]
 
-// No 05 — the eight theatres of command. Note that market 03 deep-links to
+// No 05 — the eight sectors. Note that market 03 deep-links to
 // `#market-service` while its own anchor id is `market-services`.
 const MARKETS = [
   {
@@ -122,26 +123,26 @@ const MARKETS = [
     to: '/markets#market-retail',
     num: '01',
     name: <>Retail</>,
-    desc: <>Improves floor coverage, queue response, staff allocation, and loss-prevention workflows across Australia's A$444 billion retail sector, where crime costs up to A$9 billion a year.</>,
-    metrics: <><span><strong>1.49M</strong> AU workers</span><span><strong>A$9B</strong> Retail crime / yr</span></>,
+    desc: <>Stock, order and opening-hours questions answered on web, Instagram and phone from your live catalogue; supplier invoices into the books; review requests after each sale. Point of sale and back office built around how you sell.</>,
+    metrics: <><span><strong>Catalogue answers</strong> 24 / 7</span><span><strong>POS to books</strong> in one flow</span></>,
   },
   {
     id: 'market-construction',
     to: '/markets#market-construction',
     num: '02',
     delay: '0.05s',
-    name: <>Construction &amp; Trades</>,
-    desc: <>Coordinates crews, flags safety risks, and keeps field work moving across an industry that recorded 37 worker deaths in 2024 and 17,600 serious claims a year.</>,
-    metrics: <><span><strong>37</strong> Deaths in 2024</span><span><strong>17,600</strong> Serious claims / yr</span></>,
+    name: <>Construction &amp; trades</>,
+    desc: <>The phone answered while you're on the tools, a voice note turned into a draft quote, invoices chased until they're paid. For crews, Bluework handles rosters, clock-in and the SOPs.</>,
+    metrics: <><span><strong>Calls answered</strong> jobs booked</span><span><strong>Voice note</strong> to draft quote</span></>,
   },
   {
     id: 'market-services',
     to: '/markets#market-service',
     num: '03',
     delay: '0.1s',
-    name: <>Service &amp; Consulting</>,
-    desc: <>Gives client-facing teams better workload routing and delivery oversight, in a workforce donating 3.6 unpaid overtime hours a week &mdash; A$95.8 billion a year nationally.</>,
-    metrics: <><span><strong>3.6h</strong> Unpaid OT / wk</span><span><strong>A$95.8B</strong> Unpaid OT / yr</span></>,
+    name: <>Professional services &amp; agencies</>,
+    desc: <>Document chasing, inbox triage, reconciliation suggestions and meeting notes into the practice system, for accountants, lawyers, agencies and consultancies. Every change still goes through a registered person.</>,
+    metrics: <><span><strong>Documents chased</strong> automatically</span><span><strong>Drafts ready</strong> a person sends</span></>,
   },
   {
     id: 'market-hospitality',
@@ -149,75 +150,75 @@ const MARKETS = [
     num: '04',
     delay: '0.15s',
     name: <>Hospitality</>,
-    desc: <>Optimises staffing, guest-response workflows, and service consistency across the industry with Australia's highest staff turnover &mdash; 15.5% change employers each year.</>,
-    metrics: <><span><strong>1.26M</strong> AU workers</span><span><strong>15.5%</strong> Annual turnover</span></>,
+    desc: <>Bookings by phone, text and web during service; guest questions answered from your own FAQ; supplier invoices into the books; rosters and clock-in across venues with Bluework.</>,
+    metrics: <><span><strong>Bookings taken</strong> during service</span><span><strong>Rosters</strong> to timesheets</span></>,
   },
   {
     id: 'market-logistics',
     to: '/markets#market-logistics',
     num: '05',
     delay: '0.2s',
-    name: <>Logistics &amp; Warehousing</>,
-    desc: <>Real-time task routing and safety monitoring for Australia's deadliest industry &mdash; 54 transport and warehousing workers died in 2024, and body stressing drives 34.5% of all serious claims.</>,
-    metrics: <><span><strong>54</strong> Deaths in 2024</span><span><strong>34.5%</strong> Claims from body stressing</span></>,
+    name: <>Logistics &amp; warehousing</>,
+    desc: <>Rostering, clock-in and task boards for floors that run in shifts, with award-aware timesheets and SOPs the team can search. Workflow automation between job, fleet and accounting software.</>,
+    metrics: <><span><strong>Shift rosters</strong> &amp; timesheets</span><span><strong>Systems</strong> connected</span></>,
   },
   {
     id: 'market-bpo',
     to: '/markets#market-bpo',
     num: '06',
     delay: '0.25s',
-    name: <>BPO &amp; Contact Centres</>,
-    desc: <>Hazard phrase detection monitors agent stress to re-route calls or enforce micro-breaks &mdash; against 29% annual agent attrition and 35.7 weeks median absence per psychological claim.</>,
-    metrics: <><span><strong>29%</strong> Agent attrition</span><span><strong>35.7wk</strong> Median psych absence</span></>,
+    name: <>BPO &amp; contact centres</>,
+    desc: <>AI receptionists and chat agents for overflow and after hours, and enquiry follow-up until booked. Team rostering in Bluework, with fatigue and overload signals from its Protect layer (in controlled rollout), reviewed by a person.</>,
+    metrics: <><span><strong>Overflow</strong> answered</span><span><strong>Rosters</strong> &amp; timesheets</span></>,
   },
   {
     id: 'market-government',
     to: '/markets#market-government',
     num: '07',
     delay: '0.3s',
-    name: <>Government &amp; Infrastructure</>,
-    desc: <>Accountable oversight for public-sector teams, where Commonwealth psychological claims are up 75% since 2017 and only 57% return to work &mdash; versus 92% for physical injuries.</>,
-    metrics: <><span><strong>+75%</strong> Psych claims since 2017</span><span><strong>57%</strong> Psych return-to-work</span></>,
+    name: <>Government &amp; infrastructure</>,
+    desc: <>Operations software for dispersed teams: rosters, SOPs with citations, and tamper-evident records designed for audits. AI-use policies written to align with the Australian Privacy Principles and the Voluntary AI Safety Standard.</>,
+    metrics: <><span><strong>Evidence-grade</strong> records</span><span><strong>AI-use policy</strong> included</span></>,
   },
   {
     id: 'market-defense',
     to: '/markets#market-defense',
     num: '08',
     delay: '0.35s',
-    name: <>Emergency Services &amp; Dispatch</>,
-    desc: <>Monitors cognitive load to preserve readiness among Australian first responders &mdash; 1 in 3 experience high psychological distress, versus 1 in 8 of all adults.</>,
-    metrics: <><span><strong>1 in 3</strong> High distress</span><span><strong>2.5&times;</strong> PTSD vs population</span></>,
+    name: <>Emergency services &amp; dispatch</>,
+    desc: <>Shift rosters, clock-in and searchable SOPs for teams that cannot afford a gap. Fatigue and overload signals come with Bluework Protect (in controlled rollout), and a person reviews every one.</>,
+    metrics: <><span><strong>Rosters</strong> &amp; clock-in</span><span><strong>Human review</strong> always</span></>,
   },
 ]
 
-// No 06 — the three measured results. `value` drives both the counter and the
+// No 06 — the three measured figures. `value` drives both the counter and the
 // gauge; `cap` is the printed "n / 100" caption.
 const RESULTS = [
   {
-    id: 'impact-cost',
-    meta: <>06.1 &mdash; Claims</>,
+    id: 'impact-adoption',
+    meta: <>Adoption</>,
     value: 12,
     cap: '12 / 100',
-    title: 'Mental-Health Share of Serious Claims',
-    body: <>12% of Australia's serious workers' compensation claims are now psychological &mdash; up 161% in a decade, at A$67,400 median compensation each. (Safe Work Australia, 2023&ndash;24)</>,
+    title: 'Businesses using AI at work',
+    body: <>12% of Australian businesses used AI in the workplace in 2024&ndash;25, and 11% of small and micro businesses. Large businesses were at 35%. (ABS Business Characteristics Survey, June 2026)</>,
   },
   {
-    id: 'impact-safety',
+    id: 'impact-smes',
     delay: '0.1s',
-    meta: <>06.2 &mdash; Burnout</>,
-    value: 50,
-    cap: '50 / 100',
-    title: 'Workers Reporting Burnout',
-    body: <>1 in 2 Australian workers experienced workplace burnout in the past year, with inappropriate workload the leading driver. (Beyond Blue, 2025)</>,
+    meta: <>SMEs</>,
+    value: 44,
+    cap: '44 / 100',
+    title: 'SMEs reporting some AI adoption',
+    body: <>44% of Australian small and medium businesses reported some AI adoption in February 2026, mostly content generation and data analysis. Agentic AI is largely untouched. (National AI Centre SME AI Pulse)</>,
   },
   {
-    id: 'impact-reporting',
+    id: 'impact-intent',
     delay: '0.2s',
-    meta: <>06.3 &mdash; Recovery</>,
-    value: 57,
-    cap: '57 / 100',
-    title: 'Psychological Return-to-Work Rate',
-    body: <>Only 57% of psychological injury claims in the Commonwealth scheme return to work, against 92% for physical injuries. (Comcare, 2023&ndash;24)</>,
+    meta: <>Plans</>,
+    value: 71,
+    cap: '71 / 100',
+    title: 'Businesses planning more AI in 2026',
+    body: <>71% of Australian businesses plan to increase their use of AI in 2026, and 76% of AI users reported higher profitability against 34% of non-users. (CPA Australia Business Technology Report)</>,
   },
 ]
 
@@ -227,9 +228,9 @@ const delayStyle = (delay) => (delay ? { '--delay': delay } : undefined)
 
 export default function Home() {
   usePageMeta({
-    title: 'ArchonX.ai – Autonomous AI Leadership & Workforce Optimisation | Australia',
+    title: 'ArchonX.ai – AI Software and Consulting for Australian Business | Brisbane',
     description:
-      'ArchonX.ai replaces reactive management with autonomous AI-driven leadership for Australian enterprise and government. Real-time task delegation, hazard mitigation, and WHS psychosocial compliance.',
+      'ArchonX is an Australian software company. ArchonX Lab builds operations software such as Bluework; ArchonX Consulting puts AI to work inside businesses, from a one-person trade to a large organisation, with people in charge.',
     bodyClass: 'home-editorial',
   })
   return (
@@ -243,44 +244,36 @@ export default function Home() {
           <div className="ed-hero-overlay"></div>
         </div>
         <div className="ed-container ed-hero-inner">
-          <div className="ed-masthead">
-            <span className="ed-masthead-cell">ArchonX.ai &mdash; Autonomous Command</span>
-            <span className="ed-masthead-cell ed-masthead-badge" id="hero-badge">
-              <span className="badge-pulse"></span>
-              <span className="badge-text">Now Raising &mdash; Pre-Seed Funding Round</span>
-            </span>
-            <span className="ed-masthead-cell ed-masthead-vol">Australia &mdash; Vol. 01 &mdash; 2026</span>
-          </div>
           <h1 className="ed-hero-title" id="hero-title">
-            <span className="ed-line"><span className="ed-line-inner">Driven by <span className="ed-ghost">Data.</span></span></span>
-            <span className="ed-line"><span className="ed-line-inner">Orchestrated by <span className="ed-ghost">Intelligence.</span></span></span>
-            <span className="ed-line"><span className="ed-line-inner">Built for <span className="ed-ghost">Efficiency.</span></span></span>
+            <span className="ed-line"><span className="ed-line-inner">Driven by <span className="ed-ghost">data.</span></span></span>
+            <span className="ed-line"><span className="ed-line-inner">Orchestrated by <span className="ed-ghost">intelligence.</span></span></span>
+            <span className="ed-line"><span className="ed-line-inner">Built for <span className="ed-ghost">efficiency.</span></span></span>
           </h1>
           <div className="ed-hero-sub">
             <p className="ed-hero-dek" id="hero-subtitle">
-              The ultimate standard in automated leadership and workforce optimisation. ArchonX replaces reactive, error-prone human supervision with autonomous AI-driven command &mdash; built for Australian enterprise and government.
+              ArchonX is an Australian software company. We build AI systems and put them to work inside businesses, from a one-person trade to a large organisation. ArchonX Lab builds the software; ArchonX Consulting puts it into your operations.
             </p>
             <div className="ed-hero-ctas">
-              <Magnetic href="#invest" onClick={handleHashClick} className="ed-btn ed-btn--solid" id="hero-cta-primary">Get Started <span className="ed-arrow">&rarr;</span></Magnetic>
-              <Magnetic to="/about" className="ed-btn ed-btn--bare" id="hero-cta-secondary">Learn More</Magnetic>
+              <Magnetic href="/consultation/" className="ed-btn ed-btn--solid" id="hero-cta-primary">Start a consultation <span className="ed-arrow">&rarr;</span></Magnetic>
+              <Magnetic href="#features" onClick={handleHashClick} className="ed-btn ed-btn--bare" id="hero-cta-secondary">How we work</Magnetic>
             </div>
           </div>
           <div className="ed-hero-strip">
             <div className="ed-hero-stat">
-              <span className="ed-stat-num"><sup>A$</sup><AnimatedCounter className="hero-stat-value" target={28.6} decimals={1} /><sup>B</sup></span>
-              <span className="ed-stat-label">Annual cost of workplace harm to Australia &mdash; Safe Work Australia</span>
+              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={44} /><sup>%</sup></span>
+              <span className="ed-stat-label">of Australian SMEs report some AI adoption (National AI Centre, Feb 2026)</span>
             </div>
             <div className="ed-hero-stat">
-              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={400} /><sup>+</sup></span>
-              <span className="ed-stat-label">Serious injury claims lodged every day &mdash; Safe Work Australia</span>
+              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={71} /><sup>%</sup></span>
+              <span className="ed-stat-label">of businesses plan to increase AI use in 2026 (CPA Australia)</span>
             </div>
             <div className="ed-hero-stat">
-              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={161} /><sup>%</sup></span>
-              <span className="ed-stat-label">Decade rise in psychological injury claims &mdash; Safe Work Australia</span>
+              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={8} /><sup>h / wk</sup></span>
+              <span className="ed-stat-label">saved on average by accountants and bookkeepers using AI (Xero, Sept 2026)</span>
             </div>
           </div>
           <div className="ed-hero-scroll" aria-hidden="true">
-            <span>01 / 07 &mdash; Scroll</span>
+            <span>01 / 06 &mdash; Scroll</span>
             <span className="ed-scroll-line"></span>
           </div>
         </div>
@@ -289,7 +282,7 @@ export default function Home() {
       {/* ===================== No 01 — THE LEXICON ===================== */}
       <Section pole="paper" id="about">
         <div className="ed-container">
-          <SectionHead no="01" label="The Vision" bignum="01" title="About Us" />
+          <SectionHead no="01" label="The company" bignum="01" title="About us" />
           <div className="ed-lexicon">
             {LEXICON.map((entry) => (
               <TiltCard as="article" key={entry.index} className="ed-entry reveal-up" style={delayStyle(entry.delay)}>
@@ -303,19 +296,19 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ===================== No 02 — THE DEFICIT ===================== */}
+      {/* ===================== No 02 — THE GAP ===================== */}
       <Section pole="ink" id="problem">
         <div className="ed-container">
-          <SectionHead meta={<>&#8470; 02 / The Crisis &rarr; The Solution</>} />
+          <SectionHead meta={<>The problem</>} />
           <div className="ed-deficit">
             <div className="ed-deficit-left reveal-up">
-              <div className="ed-deficit-num"><span className="ed-deficit-sym">A$</span><AnimatedCounter className="counter" target={28.6} decimals={1} /><span className="ed-deficit-sym">B</span></div>
-              <p className="ed-deficit-cap">Annual cost of work-related injury and illness to Australia's economy &mdash; Safe Work Australia / Deloitte Access Economics</p>
-              <p className="ed-deficit-copy">Work-related injuries and illnesses leave Australia's economy <strong>A$28.6 billion smaller every year</strong> &mdash; 1.6% of GDP and roughly 185,500 full-time jobs. Mental ill-health costs the nation a further <strong>A$200&ndash;220 billion a year</strong> (Productivity Commission). Traditional supervision is broken.</p>
+              <div className="ed-deficit-num"><AnimatedCounter className="counter" target={12} /><span className="ed-deficit-sym">%</span></div>
+              <p className="ed-deficit-cap">of Australian businesses used AI in the workplace in 2024&ndash;25 (ABS Business Characteristics Survey, June 2026)</p>
+              <p className="ed-deficit-copy">Only <strong>12% of Australian businesses</strong> used AI at work in 2024&ndash;25, and 11% of small and micro businesses (ABS). Among small and medium businesses that haven't adopted it, <strong>65% say they distrust AI decisions or prefer human control</strong> (National AI Centre). The tools exist. Getting them working is the hard part.</p>
             </div>
             <div className="ed-deficit-right reveal-up" style={{ '--delay': '0.1s' }}>
-              <span className="ed-kicker">The ArchonX Answer</span>
-              <p className="ed-deficit-copy">An autonomous management engine that doesn't just monitor - it <span className="ed-underline">leads</span>. Since 2022, Australian WHS regulations impose a positive duty to manage psychosocial hazards. ArchonX turns that duty into decisive, real-time operational control.</p>
+              <span className="ed-kicker">What we do about it</span>
+              <p className="ed-deficit-copy">Software, and the people who put it to work. We build the system, connect it to what you already run, keep a person <span className="ed-underline">approving anything that matters</span>, and report what it did every month.</p>
             </div>
           </div>
           <div className="ed-ledger">
@@ -337,10 +330,10 @@ export default function Home() {
         <div className="ed-container">
           <SectionHead
             no="03"
-            label="Core Capabilities"
+            label="How we work"
             bignum="03"
             title="The Archon Protocol"
-            dek="Four clauses of autonomous command."
+            dek="Four steps we follow in our software and our consulting work."
           />
           <div className="ed-clauses">
             {CLAUSES.map((clause) => (
@@ -366,29 +359,29 @@ export default function Home() {
 
       {/* ===================== No 04 — DOCTRINE ===================== */}
       <Section pole="ink" className="ed-doctrine">
-        <Parallax as="img" src="/assets/doctrine-bg.svg" alt="" className="ed-doctrine-plate" range={50} aria-hidden="true" />
+        <GlobeBackdrop className="ed-doctrine-globe" />
         <div className="ed-container">
-          <SectionHead no="04" label="Doctrine" running={null} />
+          <SectionHead no="04" label="Our view" running={null} />
           <div className="ed-quote-block reveal-up">
             <span className="ed-quote-dash"></span>
             <blockquote className="ed-quote">
-              ArchonX doesn't manage people &mdash; it <span className="ed-underline ed-underline--heavy">commands operations</span>.
+              AI does the repetitive work. <span className="ed-underline ed-underline--heavy">People make the calls</span>.
             </blockquote>
-            <p className="ed-quote-attr">&mdash; The Archon Principle</p>
-            <p className="ed-quote-sub">Replacing human supervisors with unblinking AI leadership for absolute operational authority.</p>
+            <p className="ed-quote-attr">The rule we work by</p>
+            <p className="ed-quote-sub">Software that helps run the business, with your people in charge of it.</p>
           </div>
         </div>
       </Section>
 
-      {/* ===================== No 05 — INDEX OF OPERATIONS ===================== */}
+      {/* ===================== No 05 — INDEX OF SECTORS ===================== */}
       <Section pole="paper" id="markets">
         <div className="ed-container">
           <SectionHead
             no="05"
-            label="Target Markets"
+            label="Sectors"
             running={<>Index &mdash; 01&ndash;08</>}
             bignum="05"
-            title="Eight theatres of command."
+            title="Where to start, by sector."
           />
           <div className="ed-index">
             {MARKETS.map((market) => (
@@ -401,14 +394,14 @@ export default function Home() {
               </MotionLink>
             ))}
           </div>
-          <p className="ed-index-note reveal-up">Sector data: ABS &middot; Safe Work Australia &middot; National Retail Association &middot; The Australia Institute &middot; ACXPA &middot; Comcare &middot; Beyond Blue &mdash; 2024&ndash;2026</p>
+          <p className="ed-index-note reveal-up">Each row names the first jobs we recommend switching on in that sector. The free audit on the consulting page picks the one that fits your business and budget.</p>
         </div>
       </Section>
 
-      {/* ===================== No 06 — LEDGER OF RESULTS ===================== */}
+      {/* ===================== No 06 — THE AUSTRALIAN PICTURE ===================== */}
       <Section pole="paper" className="ed-results" id="impact">
         <div className="ed-container">
-          <SectionHead no="06" label="The Australian Data" bignum="06" title="The stakes, measured." fat />
+          <SectionHead no="06" label="The numbers" bignum="06" title="Where business is up to." fat />
           <div className="ed-results-grid">
             {RESULTS.map((result) => (
               <TiltCard as="div" key={result.id} className="ed-result reveal-up" style={delayStyle(result.delay)} id={result.id}>
@@ -423,42 +416,39 @@ export default function Home() {
               </TiltCard>
             ))}
           </div>
+          <p className="ed-index-note reveal-up">These figures describe the Australian market. ArchonX publishes its prices and its method; it has no client results to report yet, and it won't invent any.</p>
         </div>
       </Section>
 
-      {/* ===================== No 07 — THE OFFERING ===================== */}
-      <Section pole="ink" className="ed-offering" id="invest">
+      {/* ===================== No 07 — WORK WITH US ===================== */}
+      <Section pole="ink" className="ed-offering" id="start">
         <div className="ed-container">
-          <SectionHead meta={<>&#8470; 07 / Investment &mdash; Pre-Seed</>} />
+          <SectionHead meta={<>Work with us</>} />
           <div className="ed-offering-head reveal-up">
-            <h2 className="ed-offering-title">Join the <span className="ed-ghost ed-ghost--ink">Pre-Seed</span> round.</h2>
+            <h2 className="ed-offering-title">Two ways to <span className="ed-ghost ed-ghost--ink">start</span>.</h2>
             <span className="ed-offering-underscore"></span>
           </div>
           <div className="ed-offering-spread">
             <div className="ed-offering-pitch reveal-up">
-              <p>We are raising a <strong>Pre-Seed Funding Round</strong> to finalise multi-modal detection algorithms and execute pilot programs across Australian logistics, contact-centre, government, and high-pressure service environments.</p>
-              <p>Generative AI is projected to add up to <strong>A$115 billion a year</strong> to Australia's economy by 2030 &mdash; with the largest gains in workforce productivity. (Tech Council of Australia &amp; Microsoft)</p>
+              <p><strong>Consulting.</strong> A free two-minute AI audit tells you which jobs AI could take on, what fits your budget, and the one build we'll run free for 90 days. Or book a 15-minute call. Fixed quotes in writing, published prices, everything built in your name.</p>
+              <p><strong>Software.</strong> Bluework, our operations platform for teams that run shifts, is in early access. Custom systems, from point of sale to marketplaces, are scoped in consultation and built by ArchonX Lab.</p>
               <div className="ed-offering-ctas">
-                <Magnetic href="mailto:hello@archonx.ai?subject=Request%20a%20Demo" className="ed-btn ed-btn--solid" id="demo-cta">Request a Demo <span className="ed-arrow">&rarr;</span></Magnetic>
-                <Magnetic to="/consultation" className="ed-btn ed-btn--outline" id="invest-cta">Start a Consultation</Magnetic>
+                <Magnetic href="/consultation/#audit" className="ed-btn ed-btn--solid" id="audit-cta">Start the free audit <span className="ed-arrow">&rarr;</span></Magnetic>
+                <Magnetic href="/consultation/" className="ed-btn ed-btn--outline" id="consult-cta">Book a call</Magnetic>
               </div>
             </div>
             <div className="ed-termsheet reveal-up" style={{ '--delay': '0.1s' }}>
               <div className="ed-term-row">
-                <span className="ed-term-label">Round</span>
-                <span className="ed-term-value">Pre-Seed</span>
+                <span className="ed-term-label">Software</span>
+                <span className="ed-term-value">Bluework: rosters, time and daily operations &middot; from A$8 per active employee a month (minimum four), ex GST &middot; <a href="https://bluework.com.au" target="_blank" rel="noopener">bluework.com.au</a></span>
               </div>
               <div className="ed-term-row">
-                <span className="ed-term-label">Revenue Model</span>
-                <span className="ed-term-value">B2B Enterprise SaaS + premium implementation fees for bespoke AI personality training</span>
+                <span className="ed-term-label">Consulting</span>
+                <span className="ed-term-value">Packages from $399 a month plus $990 setup, or own a build outright from $3,900 &middot; ex GST, month to month</span>
               </div>
               <div className="ed-term-row">
-                <span className="ed-term-label">Use of Funds</span>
-                <span className="ed-term-value">Multi-modal algorithm R&amp;D &middot; Australian pilot programs in logistics &amp; BPO &middot; enterprise sales expansion</span>
-              </div>
-              <div className="ed-term-row">
-                <span className="ed-term-label">Base of Operations</span>
-                <span className="ed-term-value">Australia</span>
+                <span className="ed-term-label">Based in</span>
+                <span className="ed-term-value">Brisbane, Queensland. We work across Australia.</span>
               </div>
               <div className="ed-term-row">
                 <span className="ed-term-label">Contact</span>

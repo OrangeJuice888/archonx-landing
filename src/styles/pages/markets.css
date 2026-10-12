@@ -1,5 +1,5 @@
 /* ================================================
-   ARCHONX.AI — MARKETS (№ 04 / 07) — page-scoped
+   ARCHONX.AI — MARKETS (№ 04 / 06) — page-scoped
    Extends the Command Ledger system (styles-home.css +
    styles-editorial.css). Monochrome tokens only.
    Zero radius. Zero shadows. Zero color.
@@ -12,40 +12,6 @@
 
 /* ---------- 04.1 industry map ---------- */
 .subpage-editorial .pgmarkets-map .ed-dek { max-width: 34ch; }
-
-/* snapshot band — the house stat strip re-poled for paper.
-   styles-home.css styles .ed-hero-strip for the ink pole (white numerals,
-   light rules); every one of those declarations is inverted here. */
-.subpage-editorial .pgmarkets-snapshot {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: 1px solid var(--rule-light);
-    border-bottom: 1px solid var(--rule-light);
-}
-.subpage-editorial .pgmarkets-snapshot .ed-hero-stat + .ed-hero-stat {
-    border-left-color: var(--rule-light);
-}
-/* .hero-stat-value hard-codes white via -webkit-text-fill-color, which wins over
-   `color`; both must be re-poled or the numerals render white-on-white here. */
-.subpage-editorial .pgmarkets-snapshot .ed-stat-num,
-.subpage-editorial .pgmarkets-snapshot .hero-stat-value {
-    color: var(--ink);
-    -webkit-text-fill-color: var(--ink);
-}
-.subpage-editorial .pgmarkets-snapshot .ed-stat-label {
-    color: var(--grey-500);
-    max-width: 30ch;
-}
-
-/* dispatch row — the two market CTAs on a hairline (mirrors .pgprotocol-cta-actions) */
-.subpage-editorial .pgmarkets-dispatch {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    padding: 24px 0;
-}
 
 /* jump line — ruled index of the eight theatres */
 .subpage-editorial .pgmarkets-jumpline {
@@ -60,7 +26,7 @@
     align-items: baseline;
     gap: 10px;
     padding: 14px 24px;
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-family: var(--font-mono);
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.14em;
@@ -98,10 +64,10 @@
     flex-direction: column;
 }
 .subpage-editorial .pgmarkets-fit-label {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-family: var(--font-mono);
     font-size: 11px;
     font-weight: 500;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--grey-400);
     margin-bottom: 10px;
@@ -118,7 +84,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-family: var(--font-mono);
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.08em;
@@ -149,11 +115,11 @@
 .subpage-editorial .pgmarkets-annex-no,
 .subpage-editorial .pgmarkets-signal-no {
     margin: 0;
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-family: var(--font-mono);
     font-size: 11px;
     font-weight: 500;
     line-height: 1.4;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
 }
 .subpage-editorial .pgmarkets-annex-head h4 { color: var(--paper); }
@@ -193,16 +159,10 @@
 /* ---------- responsive ---------- */
 @media (max-width: 1024px) {
     .subpage-editorial .pgmarkets-clause-side { grid-column: 2; }
-    .subpage-editorial .pgmarkets-dispatch { justify-content: flex-start; }
 }
 @media (max-width: 768px) {
     .subpage-editorial .pgmarkets-clause-side { grid-column: auto; }
     .subpage-editorial .pgmarkets-jumpline a { padding: 12px 16px; }
-    /* styles-home.css re-rules the stacked strip for the ink pole */
-    .subpage-editorial .pgmarkets-snapshot .ed-hero-stat + .ed-hero-stat {
-        border-top-color: var(--rule-light);
-    }
-    .subpage-editorial .pgmarkets-snapshot .ed-stat-label { max-width: none; }
     .subpage-editorial .pgmarkets-signal { padding-left: 52px; }
 }
 
