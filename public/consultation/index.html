@@ -503,6 +503,40 @@ body.admin-mode .px-cta,body.admin-mode #mnav [data-book]{display:none}
 .app-pointer{margin-top:1.4rem;border:1px solid var(--ink);padding:1rem 1.2rem;display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:center;justify-content:space-between}
 .app-pointer p{margin:0;max-width:62ch}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- ALIGNMENT FIXES ----------
+   Cards in the same row share row lines (CSS subgrid), so titles, text,
+   prices and buttons line up across columns even when one title wraps.
+   Explicit rows keep a card that lacks a part (no price, one note) aligned. */
+@supports (grid-template-rows: subgrid) {
+  .svc > .s { grid-row: span 5; grid-template-rows: subgrid; row-gap: .5rem; align-content: normal }
+  .s > h4 { grid-row: 1 } .s > .one { grid-row: 2 } .s > ul { grid-row: 3 } .s > .from { grid-row: 4 } .s > .fine { grid-row: 5 }
+  .progs > .prog { grid-row: span 7; grid-template-rows: subgrid; row-gap: .6rem; align-content: normal }
+  .prog > .tag { grid-row: 1; justify-self: start; align-self: start }
+  .prog > h3 { grid-row: 2 } .prog > .meta { grid-row: 3 } .prog > p:not(.meta):not(.small) { grid-row: 4 }
+  .prog > .small { grid-row: 5 } .prog > .small ~ .small { grid-row: 6 }
+  .prog > .btn-2 { grid-row: 7; align-self: end }
+  .inds > .ind { grid-row: span 4; grid-template-rows: subgrid; row-gap: .5rem; align-content: normal }
+  .ind > button { align-self: end }
+  .stats > .stat { grid-row: span 3; grid-template-rows: subgrid; row-gap: .3rem; align-content: normal }
+  .answers > * { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; align-content: normal }
+  .packs > * { grid-row: span 5; grid-template-rows: subgrid; row-gap: .7rem; align-content: normal }
+  .packs > * > .btn, .packs > * > .btn-2, .packs > * > .live { align-self: start }
+}
+/* "What we build free": these cards hold loose text, so subgrid can't be used;
+   in three columns every title takes two lines' height, so descriptions start level */
+@media (min-width: 800px) { .menu div b { line-height: 1.3; min-height: 2.6em } }
+/* founder points: a real two-column grid instead of ragged wrapping */
+.tick { display: grid; grid-template-columns: 1fr; gap: .5rem 1.4rem }
+@media (min-width: 700px) { .tick { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+/* founder card spans the column, like the booking form below it */
+.founder { max-width: none }
+/* form question lines up with the other field labels */
+.sheet legend { padding: 0 }
+/* demo: the note and the input box end on the same right edge */
+.disclose, .demo-input { max-width: 46rem }
+/* footer: column headings sit on the same line as the logo */
+.fgrid h4:not(.sr-only) { min-height: 28px; display: flex; align-items: center; margin: 0 0 .8rem }
 </style>
 <script>
 /* Form delivery for archonx.ai. Web3Forms emails each submission to the inbox the access key is
