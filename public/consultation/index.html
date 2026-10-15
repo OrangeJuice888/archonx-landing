@@ -87,9 +87,7 @@ section{padding-block:clamp(48px,7vw,84px);border-top:1px solid var(--rule)}
 .hero-grid{display:grid;gap:2.2rem}
 @media (min-width:900px){.hero-grid{grid-template-columns:1.15fr .95fr;gap:3rem;align-items:start}}
 .book-h{font-size:clamp(2rem,4vw,3.1rem);line-height:1.08;letter-spacing:-.022em;margin-block:.35rem 1rem}
-.founder{display:flex;gap:.9rem;align-items:center;margin-top:1.5rem;padding:.9rem 1rem;border:1px solid var(--rule);border-radius:var(--radius);max-width:34rem}
-.founder .ph{flex:none;width:56px;height:56px;border-radius:50%;background:var(--paper-2);display:grid;place-items:center;color:var(--ink-2);font-family:var(--display);font-weight:700}
-.founder q{quotes:"“" "”";display:block;margin-top:.15rem}
+.builtby{margin-top:1.5rem;padding:1rem 1.1rem;border:1px solid var(--rule);font-family:var(--display);font-size:1.15rem;line-height:1.35}
 .sheet{--orange:var(--sheet-accent);--orange-ink:var(--sheet-accent-ink);--orange-soft:var(--sheet-accent-soft);background:var(--sheet);color:var(--sheet-ink);border:1px solid var(--sheet-rule);border-radius:8px;padding:clamp(1.1rem,3vw,1.6rem);color-scheme:light;box-shadow:0 1px 0 var(--sheet-rule),0 12px 30px -24px rgba(0,0,0,.45)}
 .sheet h3{font-size:1.5rem}
 .sheet label,.sheet legend{font-weight:700;font-size:.95rem;display:block;margin-bottom:.3rem}
@@ -487,7 +485,7 @@ body:not(.admin-mode) .px-nav:not(.scrolled):not(.menu-open) .px-burger:focus-vi
 tr.hl td{background:#E4E4E4}
 tr.hl td:first-child{box-shadow:inset 3px 0 0 var(--ink)}
 .card,.first,.plate li,.pill,.copyrow code,.fill,.progbar{border-radius:0}
-.demo-input label,.hrow .hl,.adm-form label,.err,.founder .ph{font-weight:500}
+.demo-input label,.hrow .hl,.adm-form label,.err{font-weight:500}
 .sheet input[type=text],.sheet input[type=tel],.sheet input[type=email],.sheet textarea,.tf,.demo-input textarea{border-color:#8A8E92}
 @media (hover:hover){.px-nav .px-cta .btn:hover{background:#B9B9B9;border-color:#B9B9B9}.px-nav.scrolled .px-cta .btn:hover,body.admin-mode .px-cta .btn:hover{background:#000;border-color:#000}}
 body.admin-mode .px-cta,body.admin-mode #mnav [data-book]{display:none}
@@ -503,6 +501,38 @@ body.admin-mode .px-cta,body.admin-mode #mnav [data-book]{display:none}
 .app-pointer{margin-top:1.4rem;border:1px solid var(--ink);padding:1rem 1.2rem;display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:center;justify-content:space-between}
 .app-pointer p{margin:0;max-width:62ch}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- ALIGNMENT FIXES ----------
+   Cards in the same row share row lines (CSS subgrid), so titles, text,
+   prices and buttons line up across columns even when one title wraps.
+   Explicit rows keep a card that lacks a part (no price, one note) aligned. */
+@supports (grid-template-rows: subgrid) {
+  .svc > .s { grid-row: span 5; grid-template-rows: subgrid; row-gap: .5rem; align-content: normal }
+  .s > h4 { grid-row: 1 } .s > .one { grid-row: 2 } .s > ul { grid-row: 3 } .s > .from { grid-row: 4 } .s > .fine { grid-row: 5 }
+  .progs > .prog { grid-row: span 7; grid-template-rows: subgrid; row-gap: .6rem; align-content: normal }
+  .prog > .tag { grid-row: 1; justify-self: start; align-self: start }
+  .prog > h3 { grid-row: 2 } .prog > .meta { grid-row: 3 } .prog > p:not(.meta):not(.small) { grid-row: 4 }
+  .prog > .small { grid-row: 5 } .prog > .small ~ .small { grid-row: 6 }
+  .prog > .btn-2 { grid-row: 7; align-self: end }
+  .inds > .ind { grid-row: span 4; grid-template-rows: subgrid; row-gap: .5rem; align-content: normal }
+  .ind > button { align-self: end }
+  .stats > .stat { grid-row: span 3; grid-template-rows: subgrid; row-gap: .3rem; align-content: normal }
+  .answers > * { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; align-content: normal }
+  .packs > * { grid-row: span 5; grid-template-rows: subgrid; row-gap: .7rem; align-content: normal }
+  .packs > * > .btn, .packs > * > .btn-2, .packs > * > .live { align-self: start }
+}
+/* "What we build free": these cards hold loose text, so subgrid can't be used;
+   in three columns every title takes two lines' height, so descriptions start level */
+@media (min-width: 800px) { .menu div b { line-height: 1.3; min-height: 2.6em } }
+/* booking points: a real two-column grid instead of ragged wrapping */
+.tick { display: grid; grid-template-columns: 1fr; gap: .5rem 1.4rem }
+@media (min-width: 700px) { .tick { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+/* form question lines up with the other field labels */
+.sheet legend { padding: 0 }
+/* demo: the note and the input box end on the same right edge */
+.disclose, .demo-input { max-width: 46rem }
+/* footer: column headings sit on the same line as the logo */
+.fgrid h4:not(.sr-only) { min-height: 28px; display: flex; align-items: center; margin: 0 0 .8rem }
 </style>
 <script>
 /* Form delivery for archonx.ai. Web3Forms emails each submission to the inbox the access key is
@@ -550,7 +580,7 @@ window.AXFORM = (() => {
   <div class="px-hero-content">
     <span class="px-tag">ArchonX Consulting</span>
     <h1>AI Consulting, Automation and <em>Intelligent Agents</em></h1>
-    <p class="px-hero-dek">A founder-run consultancy in Brisbane, working with businesses across Australia. A fixed quote in writing before any work starts, every system set up in your business's name, and prices published on this page.</p>
+    <p class="px-hero-dek">Built by top engineers in Brisbane, working with businesses across Australia. A fixed quote in writing before any work starts, every system set up in your business's name, and prices published on this page.</p>
     <div class="px-hero-ctas"><a class="btn" href="#audit">Start the free audit</a><a class="btn-2" href="#sheet" data-book>Book a 15-minute call</a></div>
     <span class="px-motto">Driven by data · Orchestrated by intelligence · Built for efficiency</span>
   </div>
@@ -599,16 +629,10 @@ window.AXFORM = (() => {
     <div>
       <p class="eyebrow">Book a call · AI set up for Australian trades, clinics, workshops, shops, salons, studios, agencies, firms and venues</p>
       <h2 class="book-h">Your phone answered, your enquiries followed up, your paperwork moving. While you do the actual work.</h2>
-      <p class="lede"><span class="fill">[Founder name]</span> sets up AI that answers calls, replies to enquiries, books work and handles routine admin inside the software you already use. You get a fixed quote in writing before any work starts, and every system is set up in your business's name, so you own it.</p>
-      <div class="founder">
-        <div class="ph" aria-hidden="true"><span class="fill" style="font-size:.7rem">[photo]</span></div>
-        <div>
-          <strong><span class="fill">[Founder name]</span></strong> · Founder, ArchonX Consulting · Brisbane, QLD
-          <q>You deal with me from the first call to hand-over.</q>
-        </div>
-      </div>
+      <p class="lede">We set up AI that answers calls, replies to enquiries, books work and handles routine admin inside the software you already use. You get a fixed quote in writing before any work starts, and every system is set up in your business's name, so you own it.</p>
+      <p class="builtby">AI, SI and ML agents and software, built by top engineers.</p>
       <ul class="tick" style="margin-top:1.6rem">
-        <li>Founder-run, Brisbane, QLD</li>
+        <li>Built by top engineers in Brisbane</li>
         <li>Fixed quote in writing before work starts</li>
         <li>Month to month, 30 days' notice, no exit fee</li>
         <li>You own what we build</li>
@@ -840,7 +864,7 @@ window.AXFORM = (() => {
           <p class="help" style="margin-bottom:1rem">We'll read your answers, check them against what your software can do, and send you a short written plan within two business days. If the free build suits you, we'll also offer a time to set it up.</p>
           <div class="field"><label for="aName">Your name</label><input type="text" id="aName" aria-describedby="aEName" placeholder="e.g. Dani Kelly" autocomplete="name"><p class="err" id="aEName" hidden>Please enter your name.</p></div>
           <div class="field"><label for="aBiz">Business name</label><input type="text" id="aBiz" aria-describedby="aEBiz" placeholder="e.g. Kelly Electrical" autocomplete="organization"><p class="err" id="aEBiz" hidden>Please enter the business name.</p></div>
-          <div class="field"><label for="aMobile">Mobile</label><input type="tel" id="aMobile" aria-describedby="aEMobile" placeholder="04xx xxx xxx" autocomplete="tel" inputmode="tel"><p class="help"><span class="fill">[Founder name]</span> texts you within one business day to confirm we've got it.</p><p class="err" id="aEMobile" hidden>Enter an Australian mobile, starting with 04.</p></div>
+          <div class="field"><label for="aMobile">Mobile</label><input type="tel" id="aMobile" aria-describedby="aEMobile" placeholder="04xx xxx xxx" autocomplete="tel" inputmode="tel"><p class="help">We text you within one business day to confirm we've got it.</p><p class="err" id="aEMobile" hidden>Enter an Australian mobile, starting with 04.</p></div>
           <div class="field"><label for="aEmail">Email</label><input type="email" id="aEmail" aria-describedby="aEEmail" placeholder="you@yourbusiness.com.au" autocomplete="email" inputmode="email"><p class="err" id="aEEmail" hidden>That email doesn't look right.</p></div>
           <div class="field"><label for="aWeb">Website or Instagram (if you have one)</label><input type="text" id="aWeb" placeholder="e.g. kellyelectrical.com.au" autocomplete="url"></div>
           <div class="field"><label for="aNotes">Anything else we should know?</label><input type="text" id="aNotes" maxlength="300" placeholder="e.g. we're closed Mondays, call after 3pm"></div>
@@ -968,7 +992,7 @@ window.AXFORM = (() => {
   <div class="wrap">
     <p class="eyebrow">Programs</p>
     <h2>Try it before you build it</h2>
-    <p class="lede" style="margin-block:.8rem 1.8rem">If you'd rather see it first, or do it yourself with help, start here. Every program is run live by <span class="fill">[Founder name]</span>, online unless it says otherwise, and every one of them ends with something written that you keep.</p>
+    <p class="lede" style="margin-block:.8rem 1.8rem">If you'd rather see it first, or do it yourself with help, start here. Every program is run live by our engineers, online unless it says otherwise, and every one of them ends with something written that you keep.</p>
     <div class="progs">
       <div class="prog"><span class="tag">Free, places limited</span><h3>Live Build</h3><p class="meta">90 minutes · online · once a month · recorded for everyone who registers</p><p>We build one real automation from scratch for one volunteer business while you watch and ask questions. We show where it stumbles as well as where it works.</p><p class="small muted">For owners and managers who want to see what "AI automation" actually looks like before they spend a dollar. Places limited to 25 so every question gets answered. Next session: <span class="fill">[date]</span>. Register and you get a calendar invite and one reminder; nothing else unless you ask.</p><a class="btn-2" href="#sheet" data-book data-prefill="Live Build registration">Save my seat</a></div>
       <div class="prog"><span class="tag">Free, places limited</span><h3>First Workflow Cohort</h3><p class="meta">Six Tuesday evenings, 7:00 to 8:15pm AEST · live on Zoom with recordings · Friday lunchtime office hours · up to twelve businesses</p><p><b>Week 1</b> where the hours actually go (bring a week of your own admin). <b>Week 2</b> what AI can and can't do today, shown live. <b>Week 3</b> the front door: calls, chat, missed calls, follow-up and bookings. <b>Week 4</b> the back office: inbox, quotes, invoices, books and meeting notes. <b>Week 5</b> your obligations: Privacy Act and the APPs, telling people they're talking to AI, the Spam Act, recording consent, and which government programs you may be able to access. <b>Week 6</b> build night and your plan: one working automation, your one-page AI policy, and the order to do the rest in.</p><p class="small muted">For owners and office managers in any of the industries on this page who will do the homework. No technical background needed. Applications close two weeks before each cohort; we confirm by email within five business days. Next cohort starts Tuesday <span class="fill">[date]</span>; applications close Friday <span class="fill">[date]</span>.</p><p class="small"><b>This cohort is run and paid for by ArchonX. It is not government-funded.</b> There is no sales segment and no obligation to buy anything, during or after.</p><a class="btn-2" href="#sheet" data-book data-prefill="First Workflow Cohort application">Apply for the next cohort</a></div>
@@ -993,14 +1017,14 @@ window.AXFORM = (() => {
 <section id="how-it-works">
   <div class="wrap">
     <p class="eyebrow">How it works</p>
-    <h2>Four steps, one person, a date in writing</h2>
+    <h2>Four steps and a date in writing</h2>
     <div class="steps" style="margin-top:2rem">
-      <div class="step"><div><h4>Pick a time.</h4><p>A 15-minute video or phone call with <span class="fill">[Founder name]</span>. You get an SMS and a calendar invite straight away. We cover what is eating your week, what software you use, what AI could take over first and roughly what it costs. If AI isn't worth it for you yet, or a free government program or your existing software already does the job, we say so.</p></div></div>
+      <div class="step"><div><h4>Pick a time.</h4><p>A 15-minute video or phone call with us. You get an SMS and a calendar invite straight away. We cover what is eating your week, what software you use, what AI could take over first and roughly what it costs. If AI isn't worth it for you yet, or a free government program or your existing software already does the job, we say so.</p></div></div>
       <div class="step"><div><h4>Written quote within two business days.</h4><p>Fixed price, go-live date, what's included, what's excluded and who bills the extras. For bigger or multi-system jobs we suggest the $990 audit first, which is credited against the build within 60 days and refunded if we can't find three worthwhile opportunities.</p></div></div>
       <div class="step"><div><h4>Build, then test with you on real calls and emails.</h4><p>A Front Desk build typically takes two to four weeks from the day you give us access; Back Office and Whole Shop typically take four to eight. Your quote states the date we commit to. You get a progress text every Friday. Nothing faces a customer until you've heard it, read it and approved the rules: what it says first ("You're speaking with an AI assistant for [Business]; this call is recorded"), when it transfers to a person, and what it never does.</p></div></div>
       <div class="step"><div><h4>Hand over, in your name.</h4><p>Logins, accounts and the phone number are yours. You get a one-page runbook, a recorded 60-minute training session and 30 days of included fixes. After 30 days you get a report of calls answered, bookings made and hours logged against the plan's estimates. Then keep it running yourself, or pick a care plan.</p></div></div>
     </div>
-    <div class="box box-orange" style="margin-top:2rem"><b>Capacity policy.</b> We start <span class="fill">[six]</span> new builds a month. That is a policy so one person can keep every build on time, and it won't change to make you hurry. If the month is full when you book, we'll tell you the next start date on the call and hold your place.</div>
+    <div class="box box-orange" style="margin-top:2rem"><b>Capacity policy.</b> We start <span class="fill">[six]</span> new builds a month. That is a policy so we can keep every build on time, and it won't change to make you hurry. If the month is full when you book, we'll tell you the next start date on the call and hold your place.</div>
   </div>
 </section>
 
@@ -1013,7 +1037,7 @@ window.AXFORM = (() => {
     <div class="packs">
       <div class="pack"><h3>Front Desk</h3><p class="for">Trades, clinics, legal practices and venues that miss calls and enquiries.</p><div class="nums" data-pack="front"></div><ul><li>AI receptionist with 400 call minutes a month</li><li>Missed-call text-back</li><li>Website and social chat agent (500 conversations)</li><li>Bookings into your calendar, job, practice or reservation software</li><li>Instant lead follow-up by SMS and email (300 SMS)</li><li>Review requests</li><li>One Australian number connected</li><li>Monthly report · Care Plan Light</li></ul><p class="live">Typical go-live: 2 to 4 weeks</p></div>
       <div class="pack"><h3>Back Office</h3><p class="for">Firms, agencies and offices drowning in email, documents and bookkeeping.</p><div class="nums" data-pack="back"></div><ul><li>Inbox and admin assistant for up to three users</li><li>Receipts, bills and invoice reminders into Xero, MYOB or QuickBooks</li><li>Document chasing</li><li>Meeting notes into your CRM or practice software</li><li>One workflow automation built during setup</li><li>AI-use policy and privacy wording for your business</li><li>Monthly report · Care Plan Standard</li></ul><p class="live">Typical go-live: 4 to 8 weeks</p></div>
-      <div class="pack"><h3>Whole Shop</h3><p class="for">Businesses that want both ends handled by one person, with governance.</p><div class="nums" data-pack="whole"></div><ul><li>Everything in Front Desk and Back Office for up to ten users</li><li>Up to three workflow automations</li><li>Care Plan Full with quarterly review</li><li>Priority support (fix started the same business day)</li></ul><p class="live">Typical go-live: 6 to 10 weeks</p></div>
+      <div class="pack"><h3>Whole Shop</h3><p class="for">Businesses that want both ends handled by one team, with governance.</p><div class="nums" data-pack="whole"></div><ul><li>Everything in Front Desk and Back Office for up to ten users</li><li>Up to three workflow automations</li><li>Care Plan Full with quarterly review</li><li>Priority support (fix started the same business day)</li></ul><p class="live">Typical go-live: 6 to 10 weeks</p></div>
     </div>
     <p class="small muted" style="margin-top:.9rem">No "most popular" badge. We are a new business and we won't claim one until it is true.</p>
 
@@ -1094,10 +1118,10 @@ window.AXFORM = (() => {
 <section id="about">
   <div class="wrap">
     <p class="eyebrow">About</p>
-    <h2>Who you'll deal with, and how we work</h2>
+    <h2>Who builds it, and how we work</h2>
     <div class="about-grid" style="margin-top:1.8rem">
       <div class="stack-lg">
-        <p class="story">I'm <span class="fill">[Founder name]</span>. I started ArchonX Consulting in <span class="fill">[year]</span> in Brisbane, QLD, after <span class="fill">[one true sentence about the work or situation that led here]</span>. Before this I <span class="fill">[one or two true, checkable facts about past roles or training]</span>. I set up every system myself, I answer the phone myself, and I'm the one who turns up to train your team. You can check my background on <span class="fill">[LinkedIn]</span> and our registration on <span class="fill">[ABN Lookup]</span>.</p>
+        <p class="story"><b>AI, SI and ML agents and software, built by top engineers.</b> ArchonX Consulting is the consulting arm of ArchonX, an Australian software company based in Brisbane, QLD. Our engineers set up every system in your business's name and train your team to use it. You can check our registration on <span class="fill">[ABN Lookup]</span>.</p>
         <div>
           <h3 style="margin-bottom:.8rem">How we work</h3>
           <ol class="method">
@@ -1176,7 +1200,7 @@ window.AXFORM = (() => {
     <h2>Fifteen minutes. A straight answer.</h2>
     <p class="lede">Tell us what's eating your week. You'll leave the call knowing what AI could take off your plate, what it would cost, and whether it's worth doing yet. If the answer is "not yet", you'll hear that too.</p>
     <div><a class="btn" href="#sheet" data-book>Pick a time for my call</a></div>
-    <p class="small muted">Prefer to ring? <span class="fill">[phone]</span>, Monday to Friday 8am to 6pm AEST. If the AI assistant answers, it will say so, take your details, and <span class="fill">[Founder name]</span> will call you back the same business day.</p>
+    <p class="small muted">Prefer to ring? <span class="fill">[phone]</span>, Monday to Friday 8am to 6pm AEST. If the AI assistant answers, it will say so, take your details, and we will call you back the same business day.</p>
     <p class="small muted">We start <span class="fill">[six]</span> new builds a month so every build gets proper attention. If this month is full, we'll give you the next start date on the call and hold your place.</p>
     <p class="small muted">Prefer to start smaller? <a href="#audit">Do the free two-minute audit</a> and get one free build either way.</p>
     <div class="px-cta-grid">
@@ -1653,7 +1677,7 @@ function renderDone(name, saved, reason) {
   form.hidden = true; done.hidden = false; bar.classList.remove('show');
   const who = esc(name.split(' ')[0] || 'there');
   if (saved) {
-    done.innerHTML = `<h3>Thanks, ${who}. Your details are in.</h3><p>Next: <span class="fill">[Founder name]</span> texts you within one business day with three times to choose from, then you get a calendar invite. Nothing else is sent unless you ticked the box.</p><p class="help">Change of mind? Reply STOP to the text or email <span class="fill">[privacy email]</span> and we delete your details.</p><p><button class="btn-2" type="button" id="againBtn">Send another enquiry</button></p>`;
+    done.innerHTML = `<h3>Thanks, ${who}. Your details are in.</h3><p>Next: we text you within one business day with three times to choose from, then you get a calendar invite. Nothing else is sent unless you ticked the box.</p><p class="help">Change of mind? Reply STOP to the text or email <span class="fill">[privacy email]</span> and we delete your details.</p><p><button class="btn-2" type="button" id="againBtn">Send another enquiry</button></p>`;
   } else {
     const why = reason === 'timeout' ? 'That took too long to save, so we can\'t confirm your details went through.' : 'We couldn\'t send your details just now, so nothing has been sent.';
     done.innerHTML = `<h3>Thanks, ${who}.</h3><p>${why} To book your call, email or ring us and we'll sort a time by SMS:</p><div class="copyrow"><code id="cEmail">hello@archonx.ai</code><button class="btn-2" type="button" data-copy="cEmail">Copy</button></div><div class="copyrow"><code id="cPhone">[phone]</code><button class="btn-2" type="button" data-copy="cPhone">Copy</button></div><p class="help">Monday to Friday 8am to 6pm AEST. If the AI assistant answers, it will say so and a person calls you back the same business day.</p><p><button class="btn-2" type="button" id="againBtn">Back to the form</button></p>`;
@@ -1959,7 +1983,7 @@ aform.addEventListener('submit', async e => {
   btn.disabled = false; btn.textContent = 'Send me the plan';
   aform.hidden = true; adone.hidden = false;
   const who = esc(name.split(' ')[0] || 'there');
-  if (saved) adone.innerHTML = `<h3>Got it, ${who}.</h3><p><span class="fill">[Founder name]</span> will read your answers and reply by email or text within two business days, by ${fmtDate(due)}. If you'd rather talk sooner, <a href="#sheet" data-book>pick a time for a call</a>. Nothing else will be sent unless you ticked the box.</p><p class="help">Change of mind? Reply STOP to any text or email <span class="fill">[privacy email]</span> and we delete your answers.</p>`;
+  if (saved) adone.innerHTML = `<h3>Got it, ${who}.</h3><p>We'll read your answers and reply by email or text within two business days, by ${fmtDate(due)}. If you'd rather talk sooner, <a href="#sheet" data-book>pick a time for a call</a>. Nothing else will be sent unless you ticked the box.</p><p class="help">Change of mind? Reply STOP to any text or email <span class="fill">[privacy email]</span> and we delete your answers.</p>`;
   else adone.innerHTML = `<h3>Thanks, ${who}.</h3><p>${reason === 'timeout' ? 'That took too long to save, so we can\'t confirm your answers went through.' : 'We couldn\'t send your answers just now, so nothing has been sent.'} Press Back to my result, use Copy my result, and email it to <code class="mono">hello@archonx.ai</code>, or ring <code class="mono">[phone]</code>, and we'll send the plan within two business days.</p>`;
   adone.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
 });
@@ -2068,13 +2092,13 @@ function template(doc) {
   const pk = Object.keys(PACKS).find(k => PACKS[k].name === l.suggested_package); const indP = IND[l.industry] || IND.trades;
   const pm = pk ? money(PACKS[pk].monthly) : '$[monthly]', ps = pk ? money(pk === 'front' ? indP.setup : PACKS[pk].setup) : '$[setup]', pb = pk ? money(pk === 'front' ? indP.own : PACKS[pk].own) : '$[build]';
   const pkgName = l.suggested_package || '[Package]';
-  const sig = `\n\n[Founder name]\nArchonX Consulting, [Legal entity] Pty Ltd, ABN [ABN], Brisbane QLD, [mobile]`;
-  const freeP = `Free, either way: I'll set up ${fb.name} for you. ${fb.desc} It runs free on our side for 90 days and identifies itself as an automated message every time. It takes about 20 minutes of yours.`;
+  const sig = `\n\nThe ArchonX Consulting team\n[Legal entity] Pty Ltd, ABN [ABN], Brisbane QLD, [mobile]`;
+  const freeP = `Free, either way: we'll set up ${fb.name} for you. ${fb.desc} It runs free on our side for 90 days and identifies itself as an automated message every time. It takes about 20 minutes of yours.`;
   const rate = +doc.hourly_rate || 0; const annual = rate && !open ? ` (at $${rate} an hour that is roughly $${Math.round(lo * rate * 46).toLocaleString('en-AU')} to $${Math.round(hi * rate * 46).toLocaleString('en-AU')} a year, an estimate)` : '';
-  if (fit === 'notyet' || fit === 'not_yet') return `Subject: Your ArchonX audit, ${c.business}: the free build, and what to do yourself\n\nHi ${first},\n\nThanks for doing the audit. Our packages start at $399 a month plus $990 setup, ex GST, and that's above what you said the business can spend right now, so I won't send you a proposal. Here's what I can do instead.\n\n${freeP} If you want it, reply "yes" and I'll suggest a time.\n\nDo it yourself, in about an hour:\n1. [specific native feature in ${sw[0] || 'your software'}]\n2. [specific native feature]\n3. [specific free step, e.g. add your top ten questions and answers to your Google Business Profile]\n\nYour ${n === 1 ? 'job' : 'jobs'}, ${hs.join(', ')}, will still be here when the numbers change. The audit stays free, and I'll check in once in three months unless you'd rather I didn't; just say.${sig}`;
-  if (fit === 'partial') return `Subject: Your ArchonX plan, ${c.business}: what fits and what doesn't\n\nHi ${first},\n\nThanks for doing the audit. I'll be straight with you about the numbers.\n\n${jobsN}: ${hs.join(', ')}, ${range} ${estBy}${annual}. Covering ${allOf} is ${pkgName} at ${pm} a month plus ${ps} setup, ex GST, which is above the range you gave (${l.budget_monthly} a month, ${l.budget_oneoff} one-off).\n\nWhat fits your range: [component or build] at $[price], ex GST. It handles ${hs[0]} and I'd start there.${n > 1 ? ' ' + hs.slice(1).join(' and ') + ' can wait; you\'d add ' + (n === 2 ? 'it' : 'them') + ' later as a single workflow from $2,500 or by moving to ' + pkgName + ' when it makes sense.' : ''} If a one-off suits you better, the whole thing can be owned outright from ${pb} with no monthly fee to us.\n\nFree, regardless: ${fb.name}. ${fb.desc} 90 days free on our side, then your choice to keep it, take it over, or switch it off.\n\nIf you want to go ahead with the smaller step, reply "yes" and I'll send a written quote. If you'd rather talk it through, pick a time: [booking link].${sig}`;
-  if (fit === 'discuss') return `Subject: Your ArchonX plan, ${c.business}\n\nHi ${first},\n\nThanks for doing the audit. Here's what I took from it.\n\nThe ${n === 1 ? 'job' : countWord + ' jobs'} eating your week, in your words: ${hs.join(', ')}. ${est} across the ${n === 1 ? 'job' : countWord}${annual}. You weren't sure about budget, so here's the range: the package that covers ${allOf} is ${pkgName} at ${pm} a month plus ${ps} setup; the smallest useful step is [component] at $[price]; owning it outright is from ${pb}. All ex GST. A 15-minute call is the quickest way to land on the right one: [booking link].\n\n${freeP}\n\nNext step: reply "yes" to this email and I'll send the written quote and a time to set up the free build, or pick a slot at the link above. No obligation.${sig}`;
-  return `Subject: Your ArchonX plan, ${c.business}\n\nHi ${first},\n\nThanks for doing the audit. Here's what I took from it.\n\nThe ${n === 1 ? 'job' : countWord + ' jobs'} eating your week, in your words: ${hs.join(', ')}. ${est} across the ${n === 1 ? 'job' : countWord}${annual}. I've checked what ${sw.join(', ') || 'the tools you already use'} can and can't do, and ${allOf === 'it' ? 'it' : allOf} can be handled inside ${pkgName} at ${pm} a month plus ${ps} setup, ex GST, month to month with 30 days' notice. If you'd rather pay once and own it, the same build is from ${pb} with no monthly fee to us. Your phone number, any minutes above the allowance and any software you don't already have are billed by the provider at cost and listed on the quote.\n\n${freeP}\n\nNext step: reply "yes" to this email and I'll send the written quote and a time to set up the free build, or pick a 15-minute slot here: [booking link]. No obligation.${sig}`;
+  if (fit === 'notyet' || fit === 'not_yet') return `Subject: Your ArchonX audit, ${c.business}: the free build, and what to do yourself\n\nHi ${first},\n\nThanks for doing the audit. Our packages start at $399 a month plus $990 setup, ex GST, and that's above what you said the business can spend right now, so I won't send you a proposal. Here's what we can do instead.\n\n${freeP} If you want it, reply "yes" and we'll suggest a time.\n\nDo it yourself, in about an hour:\n1. [specific native feature in ${sw[0] || 'your software'}]\n2. [specific native feature]\n3. [specific free step, e.g. add your top ten questions and answers to your Google Business Profile]\n\nYour ${n === 1 ? 'job' : 'jobs'}, ${hs.join(', ')}, will still be here when the numbers change. The audit stays free, and we'll check in once in three months unless you'd rather we didn't; just say.${sig}`;
+  if (fit === 'partial') return `Subject: Your ArchonX plan, ${c.business}: what fits and what doesn't\n\nHi ${first},\n\nThanks for doing the audit. We'll be straight with you about the numbers.\n\n${jobsN}: ${hs.join(', ')}, ${range} ${estBy}${annual}. Covering ${allOf} is ${pkgName} at ${pm} a month plus ${ps} setup, ex GST, which is above the range you gave (${l.budget_monthly} a month, ${l.budget_oneoff} one-off).\n\nWhat fits your range: [component or build] at $[price], ex GST. It handles ${hs[0]} and I'd start there.${n > 1 ? ' ' + hs.slice(1).join(' and ') + ' can wait; you\'d add ' + (n === 2 ? 'it' : 'them') + ' later as a single workflow from $2,500 or by moving to ' + pkgName + ' when it makes sense.' : ''} If a one-off suits you better, the whole thing can be owned outright from ${pb} with no monthly fee to us.\n\nFree, regardless: ${fb.name}. ${fb.desc} 90 days free on our side, then your choice to keep it, take it over, or switch it off.\n\nIf you want to go ahead with the smaller step, reply "yes" and we'll send a written quote. If you'd rather talk it through, pick a time: [booking link].${sig}`;
+  if (fit === 'discuss') return `Subject: Your ArchonX plan, ${c.business}\n\nHi ${first},\n\nThanks for doing the audit. Here's what I took from it.\n\nThe ${n === 1 ? 'job' : countWord + ' jobs'} eating your week, in your words: ${hs.join(', ')}. ${est} across the ${n === 1 ? 'job' : countWord}${annual}. You weren't sure about budget, so here's the range: the package that covers ${allOf} is ${pkgName} at ${pm} a month plus ${ps} setup; the smallest useful step is [component] at $[price]; owning it outright is from ${pb}. All ex GST. A 15-minute call is the quickest way to land on the right one: [booking link].\n\n${freeP}\n\nNext step: reply "yes" to this email and we'll send the written quote and a time to set up the free build, or pick a slot at the link above. No obligation.${sig}`;
+  return `Subject: Your ArchonX plan, ${c.business}\n\nHi ${first},\n\nThanks for doing the audit. Here's what I took from it.\n\nThe ${n === 1 ? 'job' : countWord + ' jobs'} eating your week, in your words: ${hs.join(', ')}. ${est} across the ${n === 1 ? 'job' : countWord}${annual}. we've checked what ${sw.join(', ') || 'the tools you already use'} can and can't do, and ${allOf === 'it' ? 'it' : allOf} can be handled inside ${pkgName} at ${pm} a month plus ${ps} setup, ex GST, month to month with 30 days' notice. If you'd rather pay once and own it, the same build is from ${pb} with no monthly fee to us. Your phone number, any minutes above the allowance and any software you don't already have are billed by the provider at cost and listed on the quote.\n\n${freeP}\n\nNext step: reply "yes" to this email and we'll send the written quote and a time to set up the free build, or pick a 15-minute slot here: [booking link]. No obligation.${sig}`;
 }
 $('#admList').addEventListener('submit', async e => {
   e.preventDefault(); const f = e.target; if (!f.matches('.adm-form')) return;
