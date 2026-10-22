@@ -17,7 +17,7 @@ const CLAUSES = [
     id: 'about-archonx',
     n: 2,
     label: 'About ArchonX',
-    body: <p>ArchonX is an Australian software company based in Brisbane. ArchonX Lab develops operations software, including Bluework, and ArchonX Consulting provides AI implementation and consulting services. Website content is provided for general business information and does not create a customer agreement, service commitment, or professional advisory relationship unless a separate written agreement is executed.</p>,
+    body: <p>ArchonX is operated by ArchonX Pty Ltd (ACN 698 731 832), an Australian software company based in Brisbane. ArchonX Lab develops operations software, including Bluework, and ArchonX Consulting provides AI implementation and consulting services. Website content is provided for general business information and does not create a customer agreement, service commitment, or professional advisory relationship unless a separate written agreement is executed.</p>,
   },
   {
     id: 'website-use',
@@ -107,7 +107,7 @@ export default function Terms() {
         aside={
           <>
             <span className="ed-kicker">[ Appendix B &mdash; 13 Clauses ]</span>
-            <span className="ed-kicker">Last updated &mdash; October 11, 2026</span>
+            <span className="ed-kicker">Last updated &mdash; October 23, 2026</span>
           </>
         }
       />

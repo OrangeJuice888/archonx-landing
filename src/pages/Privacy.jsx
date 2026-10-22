@@ -14,7 +14,7 @@ const CLAUSES = [
     heading: '1. Overview',
     body: (
       <>
-        <p>ArchonX.ai ("ArchonX", "we", "us", or "our") respects privacy and is committed to handling personal information responsibly. We are based in Australia and handle personal information in accordance with the Privacy Act 1988 (Cth) and the Australian Privacy Principles. This Privacy Policy applies to information collected through our website, consultation requests, email communications, pilot discussions, and related business interactions.</p>
+        <p>ArchonX Pty Ltd (ACN 698 731 832), trading as ArchonX.ai ("ArchonX", "we", "us", or "our"), respects privacy and is committed to handling personal information responsibly. We are based in Australia and handle personal information in accordance with the Privacy Act 1988 (Cth) and the Australian Privacy Principles. This Privacy Policy applies to information collected through our website, consultation requests, email communications, pilot discussions, and related business interactions.</p>
       </>
     ),
   },
@@ -138,7 +138,7 @@ export default function Privacy() {
         aside={
           <>
             <span className="ed-kicker">[ Privacy Policy ]</span>
-            <span className="ed-kicker">Last updated &mdash; June 9, 2026</span>
+            <span className="ed-kicker">Last updated &mdash; October 23, 2026</span>
           </>
         }
       />

@@ -32,7 +32,7 @@ export default function SiteFooter() {
           ))}
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2026 ArchonX. Brisbane, Australia.</p>
+          <p>&copy; 2026 ArchonX Pty Ltd, ACN 698 731 832. Brisbane, Australia.</p>
           <div className="footer-bottom-links">
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Service</Link>

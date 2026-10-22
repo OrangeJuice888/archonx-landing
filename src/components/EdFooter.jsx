@@ -36,7 +36,7 @@ export default function EdFooter() {
           ))}
         </div>
         <div className="ed-footer-bottom">
-          <p>&copy; 2026 ArchonX. Brisbane, Australia.</p>
+          <p>&copy; 2026 ArchonX Pty Ltd, ACN 698 731 832. Brisbane, Australia.</p>
           <p className="ed-colophon">Figures from ABS, National AI Centre, Intuit QuickBooks, Xero and CPA Australia</p>
           <p className="ed-footer-legal"><Link to="/privacy">Privacy</Link> &middot; <Link to="/terms">Terms</Link></p>
         </div>
