@@ -108,6 +108,7 @@ export default function About() {
             </div>
             <div className="edc-prose reveal-up" style={{ '--delay': '0.1s' }}>
               <p>ArchonX builds software for Australian businesses from Brisbane. Bluework, our operations platform for teams that run shifts, is where most of our engineering has gone: rosters, timesheets and the daily admin behind them, with workplace safety handled as one part of running a team well.</p>
+              <p>Our engineers have experience working with major companies, including SK Hynix, Samsung, Hyundai, LG, Citibank, MetLife, IBM, Suncorp, OpenAI, Blackbook, Incheon Airport and Shinsegae, and with public sector organisations, including central government agencies, national data centres, provincial and metropolitan governments and public enterprises.</p>
               <p>ArchonX Consulting exists because the question we hear most is whether someone will put AI into a business properly, in that business's name, and stay until it works.</p>
             </div>
           </div>
