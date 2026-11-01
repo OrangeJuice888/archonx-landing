@@ -567,13 +567,13 @@ window.AXFORM = (() => {
 <header class="px-nav" id="pxNav">
   <div class="px-nav-inner">
     <a class="px-brand" href="/" aria-label="ArchonX home"><img src="/assets/archonx-logo-mark-4k.png" alt="" width="28" height="28"><span class="px-brand-word">ArchonX<small>Consulting</small></span></a>
-    <nav class="px-links" aria-label="Sections"><a href="#audit">Free audit</a><a href="#demo">Demo</a><a href="#services">Services</a><a href="#programs">Programs</a><a href="#pricing">Pricing</a><a href="#industries">Industries</a><a href="#about">About</a><a href="#faq">FAQ</a></nav>
+    <nav class="px-links" aria-label="Sections"><a href="#audit">Free audit</a><a href="#demo">Demo</a><a href="#services">Services</a><a href="#engineer">Engineer</a><a href="#programs">Programs</a><a href="#pricing">Pricing</a><a href="#industries">Industries</a><a href="#about">About</a><a href="#faq">FAQ</a></nav>
     <div class="px-cta"><a class="btn" href="#sheet" data-book>Book a call</a></div>
     <button class="px-burger" id="menuBtn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Menu"><span></span><span></span></button>
   </div>
 </header>
 <div class="px-mobile" id="mnav">
-  <nav aria-label="Mobile"><a href="#audit">Free audit</a><a href="#demo">Demo</a><a href="#services">Services</a><a href="#programs">Programs</a><a href="#pricing">Pricing</a><a href="#industries">Industries</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#launch">App review and launch</a><a href="#sheet" data-book>Book a call</a><a href="/">ArchonX home</a></nav>
+  <nav aria-label="Mobile"><a href="#audit">Free audit</a><a href="#demo">Demo</a><a href="#services">Services</a><a href="#programs">Programs</a><a href="#pricing">Pricing</a><a href="#industries">Industries</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#launch">App review and launch</a><a href="#engineer">Forward-deployed engineer</a><a href="#sheet" data-book>Book a call</a><a href="/">ArchonX home</a></nav>
 </div>
 
 <main id="top">
@@ -993,6 +993,31 @@ window.AXFORM = (() => {
   </div>
 </section>
 
+<section id="engineer">
+  <div class="wrap">
+    <p class="eyebrow">Forward-deployed engineer</p>
+    <h2>An ArchonX engineer inside your team, priced on the outcome.</h2>
+    <p class="lede" style="margin-top:.8rem">Traditional consultancies bill the hours. Software companies bill per seat, forever. Our engineers work with AI tooling and finish in days what used to take weeks, so we price the result and you keep the difference. The engineer maps the work in the room, ships one improvement every week, and trains the person who will own it. Everything is built in your name, with no per-seat fees, ever.</p>
+    <ul class="tick" style="margin-top:1.2rem"><li>On site in Brisbane, remote elsewhere</li><li>A visible backlog with an owner for every job</li><li>A written note every Friday, a report every month</li><li>The runbook exists on the last day</li></ul>
+
+    <h3 style="margin-top:2.4rem">What it costs, and what others charge</h3>
+    <p class="small muted">All ArchonX prices are in Australian dollars and exclude GST. Market figures are ranges from published Australian consultancy price lists and 2026 rate guides, collected October 2026, ex GST where the source says so. They are ranges, not quotes, and no firm is named.</p>
+    <div class="tablewrap"><table id="fdeTable">
+      <thead><tr><th>What you buy</th><th>ArchonX (ex GST)</th><th>What others charge</th></tr></thead>
+      <tbody>
+        <tr><td>One working system in two weeks: one workflow or agent, scoped in writing, live and handed over</td><td class="price">$9,900</td><td>Brisbane pilots $20,000 to $65,000; two-week sprints $10,000 to $25,000</td></tr>
+        <tr><td>Four-week build: up to three connected systems, live and handed over</td><td class="price">$19,900</td><td>Six-week fixed projects $30,000 to $90,000</td></tr>
+        <tr><td>Embedded engineer, two days a week</td><td class="price">$8,800 a month</td><td>Part-time AI engineers $15,000 to $35,000 a month</td></tr>
+        <tr><td>Embedded engineer, three days a week</td><td class="price">$12,900 a month</td><td>Part-time AI engineers $15,000 to $35,000 a month</td></tr>
+        <tr><td>Full-time secondment, three-month minimum</td><td class="price">Quoted on request</td><td>Embedded engineers $25,000 to $50,000 a month</td></tr>
+        <tr><td>Own what we build, outright</td><td class="price">From $3,900, no monthly fee to us</td><td>Software subscriptions: per seat, every month, for as long as you use it</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small muted" style="margin-top:.8rem">Sprints are fixed scope in writing: half at kick-off, half on acceptance, and the second half isn't payable if the agreed outcome isn't live. Embedded months are billed in advance, month to month, with 30 days' notice. Travel outside greater Brisbane is at cost. Software and model subscriptions stay in your name. Government work, senior GenAI specialists and full-time secondments are quoted on request. No result is guaranteed; what we promise is the system, live, in your name.</p>
+    <div class="cta-row" style="margin-top:1.4rem;display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn" href="#sheet" data-book>Book a 15-minute call</a><a class="btn-2" href="#audit">Start the free audit</a></div>
+  </div>
+</section>
+
 <section id="programs">
   <div class="wrap">
     <p class="eyebrow">Programs</p>
@@ -1067,7 +1092,7 @@ window.AXFORM = (() => {
     </table></div>
 
     <h3 style="margin-top:2.4rem">Prefer to own it outright?</h3>
-    <p style="max-width:70ch">Any package can be bought as a one-off build with no monthly fee to us: Front Desk from <span class="price">$3,900</span> (from $4,100 with workshop or studio setup, from $4,400 with clinic or legal setup), Back Office from <span class="price">$6,900</span>, Whole Shop from <span class="price">$9,900</span>. You then pay the software, number and call costs directly to the providers (typically $60 to $250 a month depending on call volume; this is an estimate and we itemise it on your quote), and you can add a care plan at any time.</p>
+    <p style="max-width:70ch">Any package can be bought as a one-off build with no monthly fee to us: Front Desk from <span class="price">$3,900</span> (from $4,100 with workshop or studio setup, from $4,400 with clinic or legal setup), Back Office from <span class="price">$6,900</span>, Whole Shop from <span class="price">$9,900</span>. No per-seat fees, ever. You then pay the software, number and call costs directly to the providers (typically $60 to $250 a month depending on call volume; this is an estimate and we itemise it on your quote), and you can add a care plan at any time.</p>
 
     <h3 style="margin-top:2.4rem">App review and launch (fixed fees, ex GST)</h3>
     <p class="small muted">For founders who built an app with AI. Details under <a href="#launch">App review and launch</a>.</p>
