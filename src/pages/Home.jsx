@@ -440,11 +440,11 @@ export default function Home() {
             <div className="ed-termsheet reveal-up" style={{ '--delay': '0.1s' }}>
               <div className="ed-term-row">
                 <span className="ed-term-label">Software</span>
-                <span className="ed-term-value">Bluework: rosters, time and daily operations &middot; from A$8 per active employee a month (minimum four), ex GST &middot; <a href="https://bluework.com.au" target="_blank" rel="noopener">bluework.com.au</a></span>
+                <span className="ed-term-value">Bluework: rosters, time and daily operations &middot; from A$8 per active employee a month (minimum four), + GST &middot; <a href="https://bluework.com.au" target="_blank" rel="noopener">bluework.com.au</a></span>
               </div>
               <div className="ed-term-row">
                 <span className="ed-term-label">Consulting</span>
-                <span className="ed-term-value">Packages from $399 a month plus $990 setup, or own a build outright from $3,900 &middot; ex GST, month to month</span>
+                <span className="ed-term-value">Packages from $400 a month plus $1,500 setup, or own a build outright from $3,900 &middot; all + GST, month to month</span>
               </div>
               <div className="ed-term-row">
                 <span className="ed-term-label">Based in</span>
