@@ -17,10 +17,10 @@
 <link rel="manifest" href="/assets/site.webmanifest">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter:wght@600&display=swap">
 <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/conthrax">
+<script src="/consultation/ax-content.js"></script>
 <style>
 body{margin:0}
 img{max-width:100%}
-#admin{display:none!important}
 /* Layout concept: the ArchonX Consulting house design system. White ground, ink text, weight 400,
    hairline rules, sharp corners, no accent colour; a dark globe hero and dark panels carry the drama.
    One deliberate look in both viewer themes, so every colour is set explicitly here. */
@@ -315,40 +315,14 @@ footer{border-top:1px solid var(--rule);padding-block:2.5rem 3.5rem;font-size:.8
 .menu div{border-top:1px solid var(--rule);padding-top:.6rem;font-size:.9rem}
 .menu div b{display:block;font-family:var(--display);font-size:1.05rem}
 .menu div span{color:var(--ink-2)}
-/* admin */
-body.admin-mode main > section:not(#admin), body.admin-mode .bottom-bar, body.admin-mode footer{display:none}
-#admin{display:none}
-body.admin-mode #admin{display:block}
-.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-block:1rem}
-.tabs button{background:transparent;border:1.5px solid var(--ink-2);border-radius:999px;padding:.45rem .9rem;font-weight:700;cursor:pointer;color:var(--ink)}
-.tabs button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.kpis{display:flex;flex-wrap:wrap;gap:1.2rem;font-family:var(--mono);font-size:.85rem;color:var(--ink-2)}
-.kpis b{color:var(--ink);font-size:1.1rem}
-.adm-row{border:1px solid var(--rule);border-radius:var(--radius);margin-bottom:.6rem;background:var(--paper-2)}
-.adm-row summary{list-style:none;cursor:pointer;padding:.7rem .9rem;display:grid;grid-template-columns:1fr auto;gap:.4rem .9rem;align-items:center}
-.adm-row summary::-webkit-details-marker{display:none}
-.adm-row .ttl{font-family:var(--display);font-size:1.1rem;font-weight:700}
-.adm-row .meta{font-family:var(--mono);font-size:.78rem;color:var(--ink-2)}
 .pill{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;border:1px solid var(--ink-2);border-radius:999px;padding:.1rem .5rem;color:var(--ink-2);white-space:nowrap}
 .pill.late{border-color:var(--orange);color:var(--orange)}
 .pill.ok{border-color:var(--green);color:var(--green)}
-.adm-body{padding:.4rem .9rem 1rem;display:grid;gap:1rem;border-top:1px solid var(--rule)}
-@media (min-width:900px){.adm-body{grid-template-columns:1.1fr .9fr}}
-.adm-body dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem .8rem;font-size:.9rem;margin:0}
-.adm-body dt{font-family:var(--mono);font-size:.78rem;color:var(--ink-2);padding-top:.15rem}
-.adm-body dd{margin:0;min-width:0;overflow-wrap:anywhere}
-.adm-form{display:grid;gap:.6rem;align-content:start}
-.adm-form label{font-size:.85rem;font-weight:700;display:grid;gap:.25rem}
-.adm-form select,.adm-form input,.adm-form textarea{font:inherit;font-size:.95rem;padding:.5rem .6rem;border:1.5px solid var(--ink-2);border-radius:var(--radius);background:var(--paper);color:var(--ink);width:100%}
-.adm-form textarea{min-height:120px;font-family:var(--mono);font-size:.85rem}
-.adm-actions{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
-.adm-note{font-size:.85rem;color:var(--ink-2)}
-.admin-link{margin-top:1rem;font-size:.8rem}
 
 /* ===== ArchonX Consulting design layer ===== */
 body{font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 ::selection{background:rgba(30,33,36,.9);color:#fff}
-h1,h2,h3,h4,.ql,.btn,.btn-2,.chip,.opts label,.seg label,.tabs button,.ptoggle button,.pack .nums .m,.stat .n,.step::before,.method li::before,.faq summary,.card .job,.adm-row .ttl,.ind button,.linkbtn,.s h4,.prog h3,.res h3,.fb b,.opp .o b,.menu div b{font-weight:400}
+h1,h2,h3,h4,.ql,.btn,.btn-2,.chip,.opts label,.seg label,.ptoggle button,.pack .nums .m,.stat .n,.step::before,.method li::before,.faq summary,.card .job,.ind button,.linkbtn,.s h4,.prog h3,.res h3,.fb b,.opp .o b,.menu div b{font-weight:400}
 b,strong,.sheet label,.sheet legend{font-weight:500}
 h2{font-size:clamp(1.9rem,3.2vw,2.6rem);letter-spacing:-.02em}
 h3{letter-spacing:-.01em}
@@ -358,7 +332,7 @@ h3{letter-spacing:-.01em}
 @media (hover:hover){.btn:hover{filter:none;background:#000}.btn-2:hover{background:var(--ink);color:#fff}.panel .btn-2:hover{background:#efefef;color:#111214;filter:none}}
 .panel .btn-2{border-color:#efefef;color:#efefef}
 .panel .btn{background:#efefef;color:#111214}
-.chip,.opts label,.seg label,.tabs button,.ptoggle,.prog .tag{border-radius:0}
+.chip,.opts label,.seg label,.ptoggle,.prog .tag{border-radius:0}
 .chip{border:1px solid #CFCFCF}
 .opts label{border:1px solid #CFCFCF;font-weight:400}
 .opts label:has(input:checked),.seg label:has(input:checked){border-color:var(--ink);background:#F2F2F2}
@@ -366,7 +340,7 @@ h3{letter-spacing:-.01em}
 .sheet input[type=text],.sheet input[type=tel],.sheet input[type=email],.sheet textarea,.tf,.demo-input textarea{border-radius:0;border:1px solid #9A9EA2}
 .panel{border-radius:0}
 .pack{border-radius:0;background:var(--paper)}
-.box,.gov,.prog,.fb,.adm-row,.res .lab,.disclose{border-radius:0}
+.box,.gov,.prog,.fb,.res .lab,.disclose{border-radius:0}
 .price{color:var(--ink);font-family:var(--mono)}
 .fill{background:#EFEFEF;border-bottom:1px dotted var(--ink)}
 .pill.late{background:var(--ink);color:#fff;border-color:var(--ink)}
@@ -388,13 +362,11 @@ footer{font-size:.8rem}
 
 /* nav: transparent over the globe, white once past it */
 .px-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;height:64px;color:#fff;margin-bottom:-64px;transition:background .3s ease,color .3s ease,border-color .3s ease;border-bottom:1px solid transparent}
-.px-nav.scrolled,.px-nav.menu-open,body.admin-mode .px-nav{background:#fff;color:var(--ink);border-bottom-color:var(--rule)}
-body.admin-mode .px-nav{margin-bottom:0}
-body.admin-mode .px-annc{display:none}
+.px-nav.scrolled,.px-nav.menu-open{background:#fff;color:var(--ink);border-bottom-color:var(--rule)}
 .px-nav-inner{max-width:1360px;margin-inline:auto;padding-inline:clamp(16px,3vw,24px);height:100%;display:flex;align-items:center;gap:28px}
 .px-brand{display:inline-flex;align-items:center;gap:5px;color:inherit;text-decoration:none}
 .px-brand img{width:28px;height:28px;object-fit:contain;flex-shrink:0;filter:invert(1) grayscale(1);transition:filter .3s ease}
-.px-nav.scrolled .px-brand img,.px-nav.menu-open .px-brand img,body.admin-mode .px-brand img{filter:none}
+.px-nav.scrolled .px-brand img,.px-nav.menu-open .px-brand img{filter:none}
 .px-brand-word small,.fbrand span small{font-family:var(--body);font-size:12px;font-weight:400;letter-spacing:.02em;opacity:.75;margin-left:6px}
 .px-brand-word,.fbrand span{font-family:'Conthrax', 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;font-size:18px;font-weight:600;line-height:1;letter-spacing:0}
 
@@ -403,7 +375,7 @@ body.admin-mode .px-annc{display:none}
 @media (hover:hover){.px-links a:hover{opacity:.55}}
 .px-cta{display:none}
 .px-nav .px-cta .btn{background:#fff;color:var(--ink);border:1px solid #fff;font-size:14px;padding:11px 18px;min-height:0}
-.px-nav.scrolled .px-cta .btn,body.admin-mode .px-cta .btn{background:var(--ink);color:#fff;border-color:var(--ink)}
+.px-nav.scrolled .px-cta .btn{background:var(--ink);color:#fff;border-color:var(--ink)}
 .px-burger{margin-left:auto;width:44px;height:44px;position:relative;background:none;border:0;color:inherit;cursor:pointer;padding:0}
 .px-burger span{position:absolute;left:10px;right:10px;height:1.5px;background:currentColor;transition:transform .3s ease,top .3s ease}
 .px-burger span:nth-child(1){top:17px}
@@ -481,17 +453,16 @@ body.admin-mode .px-annc{display:none}
 
 /* review fixes: focus on dark areas, contrast, corners, weights */
 .px-mobile{overscroll-behavior:contain}
-.px-annc :focus-visible,.px-hero :focus-visible,.px-fpanel :focus-visible,.px-cta-dark:focus-visible,body:not(.admin-mode) .px-nav:not(.scrolled):not(.menu-open) :focus-visible{outline:2px solid #fff;outline-offset:3px}
-.px-burger:focus-visible,.px-annc-close:focus-visible,.ptoggle button:focus-visible,.tabs button:focus-visible,.linkbtn:focus-visible,.ind button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-body:not(.admin-mode) .px-nav:not(.scrolled):not(.menu-open) .px-burger:focus-visible,.px-annc .px-annc-close:focus-visible{outline-color:#fff}
+.px-annc :focus-visible,.px-hero :focus-visible,.px-fpanel :focus-visible,.px-cta-dark:focus-visible,.px-nav:not(.scrolled):not(.menu-open) :focus-visible{outline:2px solid #fff;outline-offset:3px}
+.px-burger:focus-visible,.px-annc-close:focus-visible,.ptoggle button:focus-visible,.linkbtn:focus-visible,.ind button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.px-nav:not(.scrolled):not(.menu-open) .px-burger:focus-visible,.px-annc .px-annc-close:focus-visible{outline-color:#fff}
 .eyebrow{color:#6E7276}
 tr.hl td{background:#E4E4E4}
 tr.hl td:first-child{box-shadow:inset 3px 0 0 var(--ink)}
 .card,.first,.plate li,.pill,.copyrow code,.fill,.progbar{border-radius:0}
-.demo-input label,.hrow .hl,.adm-form label,.err{font-weight:500}
+.demo-input label,.hrow .hl,.err{font-weight:500}
 .sheet input[type=text],.sheet input[type=tel],.sheet input[type=email],.sheet textarea,.tf,.demo-input textarea{border-color:#8A8E92}
-@media (hover:hover){.px-nav .px-cta .btn:hover{background:#B9B9B9;border-color:#B9B9B9}.px-nav.scrolled .px-cta .btn:hover,body.admin-mode .px-cta .btn:hover{background:#000;border-color:#000}}
-body.admin-mode .px-cta,body.admin-mode #mnav [data-book]{display:none}
+@media (hover:hover){.px-nav .px-cta .btn:hover{background:#B9B9B9;border-color:#B9B9B9}.px-nav.scrolled .px-cta .btn:hover{background:#000;border-color:#000}}
 
 /* app review and launch */
 .lnums{display:grid;gap:.2rem;padding-block:.6rem;border-block:1px solid var(--rule)}
@@ -561,7 +532,7 @@ window.AXFORM = (() => {
 <body>
 
 <div class="px-annc" id="annc">
-  <p>Free AI audit for Australian businesses, with one free build: <a href="#audit">see your result in two minutes</a></p>
+  <p><span data-p="text.announcement" data-fmt="plain">Free AI audit for Australian businesses, with one free build:</span> <a href="#audit" data-p="text.announcementLink" data-fmt="plain">see your result in two minutes</a></p>
   <button class="px-annc-close" id="anncClose" type="button" aria-label="Dismiss">&times;</button>
 </div>
 <header class="px-nav" id="pxNav">
@@ -599,7 +570,7 @@ window.AXFORM = (() => {
 
 <section class="px-statement" aria-label="What we do">
   <div class="wrap">
-    <p>We turn the latest AI into working systems inside your business. <span>One job first, a person approving anything that matters, and everything built in your name.</span></p>
+    <p><span data-p="text.opening" data-fmt="plain">We turn the latest AI into working systems inside your business.</span> <span data-p="text.openingSub" data-fmt="plain">One job first, a person approving anything that matters, and everything built in your name.</span></p>
   </div>
 </section>
 
@@ -697,7 +668,7 @@ window.AXFORM = (() => {
   <div class="wrap">
     <div class="answers">
       <div><h4>Will it sound like a robot?</h4><p>Today's voices are clear and natural, and every caller is told up front that they are talking to an AI assistant. It takes the details, books the work and texts you a summary.</p></div>
-      <div><h4>What does it actually cost?</h4><p>Packages start at $400 a month plus $1,500 setup, both + GST. Your phone number, call minutes above the allowance and any software you need are listed on the quote with the provider that bills them. Or buy the build outright from $3,900 + GST and pay no monthly fee to us. <a href="#pricing">See Pricing</a>.</p></div>
+      <div><h4>What does it actually cost?</h4><p>Packages start at <span data-p="pricing.packs.front.monthly">$400</span> a month plus <span data-p="pricing.packs.front.setup">$1,500</span> setup, both + GST. Your phone number, call minutes above the allowance and any software you need are listed on the quote with the provider that bills them. Or buy the build outright from <span data-p="pricing.packs.front.own">$3,900</span> + GST and pay no monthly fee to us. <a href="#pricing">See Pricing</a>.</p></div>
       <div><h4>Am I locked in?</h4><p>No. Month to month, cancel with 30 days' notice, no exit fee. Every build is set up in your business's name with your logins, so if you leave, it stays with you.</p></div>
       <div><h4>What happens to my customers' details?</h4><p>They are stored with named providers, in the Australian region wherever that provider offers one, never used to train AI models, and you get the full list in writing before we start. <a href="#about-data">See how we handle data</a>.</p></div>
     </div>
@@ -824,22 +795,22 @@ window.AXFORM = (() => {
       </div>
       <div class="q"><div class="ql">If something took one of those jobs off your plate, what could the business spend on it each month?</div><p class="qh">Before GST. We ask so that we only suggest things you can actually use. A lower number doesn't change the free build, and "not sure" is a normal answer.</p>
         <div class="opts" role="group" aria-label="Monthly budget">
-          <label><input type="radio" name="aBm" id="aBm0" value="0"> Under $300</label>
-          <label><input type="radio" name="aBm" id="aBm1" value="1"> $300 to $600</label>
-          <label><input type="radio" name="aBm" id="aBm2" value="2"> $600 to $1,000</label>
-          <label><input type="radio" name="aBm" id="aBm3" value="3"> $1,000 to $2,000</label>
-          <label><input type="radio" name="aBm" id="aBm4" value="4"> More than $2,000</label>
+          <label><input type="radio" name="aBm" id="aBm0" value="0"> Under <span data-market>$300</span></label>
+          <label><input type="radio" name="aBm" id="aBm1" value="1"> <span data-market>$300</span> to <span data-market>$600</span></label>
+          <label><input type="radio" name="aBm" id="aBm2" value="2"> <span data-market>$600</span> to <span data-market>$1,000</span></label>
+          <label><input type="radio" name="aBm" id="aBm3" value="3"> <span data-market>$1,000</span> to <span data-market>$2,000</span></label>
+          <label><input type="radio" name="aBm" id="aBm4" value="4"> More than <span data-market>$2,000</span></label>
           <label><input type="radio" name="aBm" id="aBm9" value="9"> Not sure yet</label>
         </div>
         <p class="err" id="aE5" hidden>Pick a range, or "Not sure yet".</p>
       </div>
       <div class="q"><div class="ql">And for a one-off setup or build?</div><p class="qh">Some people prefer to pay once and own the system, with no monthly fee to us. This tells us whether to show you that option.</p>
         <div class="opts" role="group" aria-label="One-off budget">
-          <label><input type="radio" name="aBo" id="aBo0" value="0"> Under $1,000</label>
-          <label><input type="radio" name="aBo" id="aBo1" value="1"> $1,000 to $3,000</label>
-          <label><input type="radio" name="aBo" id="aBo2" value="2"> $3,000 to $6,000</label>
-          <label><input type="radio" name="aBo" id="aBo3" value="3"> $6,000 to $12,000</label>
-          <label><input type="radio" name="aBo" id="aBo4" value="4"> More than $12,000</label>
+          <label><input type="radio" name="aBo" id="aBo0" value="0"> Under <span data-market>$1,000</span></label>
+          <label><input type="radio" name="aBo" id="aBo1" value="1"> <span data-market>$1,000</span> to <span data-market>$3,000</span></label>
+          <label><input type="radio" name="aBo" id="aBo2" value="2"> <span data-market>$3,000</span> to <span data-market>$6,000</span></label>
+          <label><input type="radio" name="aBo" id="aBo3" value="3"> <span data-market>$6,000</span> to <span data-market>$12,000</span></label>
+          <label><input type="radio" name="aBo" id="aBo4" value="4"> More than <span data-market>$12,000</span></label>
           <label><input type="radio" name="aBo" id="aBo9" value="9"> Not sure yet</label>
         </div>
         <p class="err" id="aE6" hidden>Pick a range, or "Not sure yet".</p>
@@ -899,45 +870,45 @@ window.AXFORM = (() => {
     <div class="group">
       <h3>Front desk <span>Group 1 of 4</span></h3>
       <div class="svc">
-        <div class="s"><h4>AI Receptionist (voice agent)</h4><p class="one">Answers the calls you can't, 24 hours a day, and tells every caller it is an AI.</p><ul><li>Answers in an Australian voice, takes job or appointment details, books into your calendar, job, practice or reservation software under rules you set</li><li>Transfers urgent calls to you or your on-call number; takes a message for everything else</li><li>Missed-call text-back and a text summary of every call, with the caller's number</li><li>Announces that it is an AI assistant and that the call is recorded, at the start of every call, with an option to decline recording and get a call-back</li><li>Australian phone number, or we forward or port your existing one</li></ul><p class="from"><span class="lbl">from</span><span class="price">$300/mo + $500 setup + GST</span></p><p class="fine">Includes 300 call minutes; extra minutes $0.35 each; Australian number about $15 a month, billed at cost. One-off build from $2,900 + GST.</p></div>
-        <div class="s"><h4>Website and Social Chat Agent</h4><p class="one">Answers the same twenty questions on your website, Facebook and Instagram so you don't have to.</p><ul><li>Trained on your services, prices, areas, hours and FAQs</li><li>Captures the enquiry and books a time or a call-back</li><li>Hands over to you by SMS with the transcript when it can't help</li><li>Shows "You're chatting with an AI assistant" before the first message</li></ul><p class="from"><span class="lbl">from</span><span class="price">$200/mo + $500 setup + GST</span></p><p class="fine">Includes 500 conversations a month; extra conversations $0.20 each.</p></div>
-        <div class="s"><h4>Instant Lead Follow-up</h4><p class="one">Replies to every new enquiry within a minute, then follows up until they book or say no.</p><ul><li>SMS and email reply within 60 seconds of a web form, portal enquiry or missed call</li><li>Asks the qualifying questions you'd ask, then books or sends the quote</li><li>Follows up on a schedule you approve and stops the moment they reply "no thanks"</li><li>Logs everything in your CRM or job software; Spam Act and Do Not Call Register rules built into every sequence</li></ul><p class="from"><span class="lbl">from</span><span class="price">$200/mo + $500 setup + GST</span></p><p class="fine">SMS billed at cost, about $0.10 a message.</p></div>
-        <div class="s"><h4>Reviews and Reputation</h4><p class="one">Asks for the review at the right moment and drafts your replies.</p><ul><li>Review request by SMS once a job is paid or an appointment is finished, sent once, no incentives, no filtering</li><li>Drafts replies to Google reviews in your voice for one-tap approval</li><li>Monthly summary of ratings and themes</li></ul><p class="from"><span class="lbl">add-on</span><span class="price">$100/mo + GST</span></p><p class="fine">Included in every package.</p></div>
+        <div class="s"><h4>AI Receptionist (voice agent)</h4><p class="one">Answers the calls you can't, 24 hours a day, and tells every caller it is an AI.</p><ul><li>Answers in an Australian voice, takes job or appointment details, books into your calendar, job, practice or reservation software under rules you set</li><li>Transfers urgent calls to you or your on-call number; takes a message for everything else</li><li>Missed-call text-back and a text summary of every call, with the caller's number</li><li>Announces that it is an AI assistant and that the call is recorded, at the start of every call, with an option to decline recording and get a call-back</li><li>Australian phone number, or we forward or port your existing one</li></ul><p class="from"><span class="lbl">from</span><span class="price"><span data-p="pricing.frontDesk.receptionist.monthly">$300</span>/mo + <span data-p="pricing.frontDesk.receptionist.setup">$500</span> setup + GST</span></p><p class="fine">Includes <span data-p="pricing.frontDesk.receptionist.includedMinutes" data-fmt="int">300</span> call minutes; extra minutes <span data-p="pricing.frontDesk.receptionist.extraMinute">$0.35</span> each; Australian number about <span data-p="pricing.extras.phoneNumberMonthly">$15</span> a month, billed at cost. One-off build from <span data-p="pricing.frontDesk.receptionist.ownFrom">$2,900</span> + GST.</p></div>
+        <div class="s"><h4>Website and Social Chat Agent</h4><p class="one">Answers the same twenty questions on your website, Facebook and Instagram so you don't have to.</p><ul><li>Trained on your services, prices, areas, hours and FAQs</li><li>Captures the enquiry and books a time or a call-back</li><li>Hands over to you by SMS with the transcript when it can't help</li><li>Shows "You're chatting with an AI assistant" before the first message</li></ul><p class="from"><span class="lbl">from</span><span class="price"><span data-p="pricing.frontDesk.chat.monthly">$200</span>/mo + <span data-p="pricing.frontDesk.chat.setup">$500</span> setup + GST</span></p><p class="fine">Includes <span data-p="pricing.frontDesk.chat.includedConversations" data-fmt="int">500</span> conversations a month; extra conversations <span data-p="pricing.frontDesk.chat.extraConversation">$0.20</span> each.</p></div>
+        <div class="s"><h4>Instant Lead Follow-up</h4><p class="one">Replies to every new enquiry within a minute, then follows up until they book or say no.</p><ul><li>SMS and email reply within 60 seconds of a web form, portal enquiry or missed call</li><li>Asks the qualifying questions you'd ask, then books or sends the quote</li><li>Follows up on a schedule you approve and stops the moment they reply "no thanks"</li><li>Logs everything in your CRM or job software; Spam Act and Do Not Call Register rules built into every sequence</li></ul><p class="from"><span class="lbl">from</span><span class="price"><span data-p="pricing.frontDesk.leadFollowUp.monthly">$200</span>/mo + <span data-p="pricing.frontDesk.leadFollowUp.setup">$500</span> setup + GST</span></p><p class="fine">SMS billed at cost, about <span data-p="pricing.frontDesk.leadFollowUp.smsCost">$0.10</span> a message.</p></div>
+        <div class="s"><h4>Reviews and Reputation</h4><p class="one">Asks for the review at the right moment and drafts your replies.</p><ul><li>Review request by SMS once a job is paid or an appointment is finished, sent once, no incentives, no filtering</li><li>Drafts replies to Google reviews in your voice for one-tap approval</li><li>Monthly summary of ratings and themes</li></ul><p class="from"><span class="lbl">add-on</span><span class="price"><span data-p="pricing.frontDesk.reviews.monthly">$100</span>/mo + GST</span></p><p class="fine">Included in every package.</p></div>
       </div>
     </div>
 
     <div class="group">
       <h3>Back office <span>Group 2 of 4</span></h3>
       <div class="svc">
-        <div class="s"><h4>Inbox and Admin Assistant</h4><p class="one">Sorts your inbox, drafts replies in your tone and keeps the admin moving.</p><ul><li>Sorts email by customer and urgency, flags deadlines, files attachments</li><li>Drafts replies for your approval; sends nothing without you unless you choose to allow it</li><li>Turns voice notes into quotes, reports or job notes; data entry into your CRM, sheet or job software</li><li>Chases documents and signatures and keeps a running list of what is outstanding</li><li>Daily summary of what it did and what needs you</li></ul><p class="from"><span class="lbl">from</span><span class="price">$500/mo + $1,000 setup + GST</span></p><p class="fine">Up to three users.</p></div>
-        <div class="s"><h4>Quotes, Invoices and Bookkeeping Automation</h4><p class="one">The glue between your job software and your accounting software.</p><ul><li>Receipts and supplier bills into Xero, MYOB or QuickBooks for approval</li><li>Draft invoices raised from completed jobs; reminders at 7, 14 and 21 days that stop on payment</li><li>Reconciliation suggestions with reasons, for a person to approve</li><li>BAS-quarter data check and client reminders for firms (your registered agent still lodges)</li></ul><p class="from"><span class="lbl">from</span><span class="price">$1,900 one-off + GST</span></p><p class="fine">Included in Back Office. If your job software already drafts quotes (for example ServiceM8), we connect it instead of rebuilding it.</p></div>
-        <div class="s"><h4>Meeting Notes and CRM Updates</h4><p class="one">Record the meeting with consent, get the notes, the actions and the CRM update.</p><ul><li>Consent script for in-person, phone and video meetings</li><li>Transcript, summary and action items after every meeting or site visit</li><li>CRM or practice-software notes updated for your approval (HubSpot, Pipedrive, Zoho, Xero Practice Manager and others)</li></ul><p class="from"><span class="lbl">from</span><span class="price">$100/mo + $500 setup + GST</span></p></div>
-        <div class="s"><h4>Content and Marketing Automation</h4><p class="one">Posts, emails and listings drafted in your brand voice, scheduled for your approval.</p><ul><li>Weekly social post drafts from your photos and notes</li><li>Monthly customer email draft; Google Business Profile posts</li><li>Listing or product descriptions from dot points</li><li>Nothing publishes without your tick</li></ul><p class="from"><span class="lbl">from</span><span class="price">$200/mo + $700 setup + GST</span></p></div>
+        <div class="s"><h4>Inbox and Admin Assistant</h4><p class="one">Sorts your inbox, drafts replies in your tone and keeps the admin moving.</p><ul><li>Sorts email by customer and urgency, flags deadlines, files attachments</li><li>Drafts replies for your approval; sends nothing without you unless you choose to allow it</li><li>Turns voice notes into quotes, reports or job notes; data entry into your CRM, sheet or job software</li><li>Chases documents and signatures and keeps a running list of what is outstanding</li><li>Daily summary of what it did and what needs you</li></ul><p class="from"><span class="lbl">from</span><span class="price"><span data-p="pricing.backOffice.inbox.monthly">$500</span>/mo + <span data-p="pricing.backOffice.inbox.setup">$1,000</span> setup + GST</span></p><p class="fine">Up to three users.</p></div>
+        <div class="s"><h4>Quotes, Invoices and Bookkeeping Automation</h4><p class="one">The glue between your job software and your accounting software.</p><ul><li>Receipts and supplier bills into Xero, MYOB or QuickBooks for approval</li><li>Draft invoices raised from completed jobs; reminders at 7, 14 and 21 days that stop on payment</li><li>Reconciliation suggestions with reasons, for a person to approve</li><li>BAS-quarter data check and client reminders for firms (your registered agent still lodges)</li></ul><p class="from"><span class="lbl">from</span><span class="price"><span data-p="pricing.backOffice.quotesInvoices.from">$1,900</span> one-off + GST</span></p><p class="fine">Included in Back Office. If your job software already drafts quotes (for example ServiceM8), we connect it instead of rebuilding it.</p></div>
+        <div class="s"><h4>Meeting Notes and CRM Updates</h4><p class="one">Record the meeting with consent, get the notes, the actions and the CRM update.</p><ul><li>Consent script for in-person, phone and video meetings</li><li>Transcript, summary and action items after every meeting or site visit</li><li>CRM or practice-software notes updated for your approval (HubSpot, Pipedrive, Zoho, Xero Practice Manager and others)</li></ul><p class="from"><span class="lbl">from</span><span class="price"><span data-p="pricing.backOffice.meetings.monthly">$100</span>/mo + <span data-p="pricing.backOffice.meetings.setup">$500</span> setup + GST</span></p></div>
+        <div class="s"><h4>Content and Marketing Automation</h4><p class="one">Posts, emails and listings drafted in your brand voice, scheduled for your approval.</p><ul><li>Weekly social post drafts from your photos and notes</li><li>Monthly customer email draft; Google Business Profile posts</li><li>Listing or product descriptions from dot points</li><li>Nothing publishes without your tick</li></ul><p class="from"><span class="lbl">from</span><span class="price"><span data-p="pricing.backOffice.content.monthly">$200</span>/mo + <span data-p="pricing.backOffice.content.setup">$700</span> setup + GST</span></p></div>
       </div>
     </div>
 
     <div class="group">
       <h3>Builds you own <span>Group 3 of 4</span></h3>
       <div class="svc">
-        <div class="s"><h4>Workflow Automation and Custom AI Agents</h4><p class="one">One repeatable chain of work built end to end: enquiry to quote to booking to invoice to review, or an assistant trained on your own procedures and price book.</p><ul><li>Process mapped with you before anything is built; written scope and fixed price</li><li>Apps connected (job software, accounting, calendar, forms, CRM) on n8n or Make in your own workspace</li><li>Human approval steps wherever money, health, legal or tenancy matters are involved</li><li>Error handling: if a step fails you get a text and the job waits for you</li><li>Documented and handed over in your name</li></ul><p class="from"><span class="lbl">from</span><span class="price">$2,900 per workflow + GST</span></p><p class="fine">Multi-system builds (three or more apps) from $9,000. Tool subscriptions, typically $50 to $150 a month, are yours and are itemised on the quote.</p></div>
-        <div class="s"><h4>Document and Clinic Paperwork Automation</h4><p class="one">Referrals, results, letters, applications and forms read, extracted and filed for a person to check.</p><ul><li>Reads incoming documents from email, fax-to-email, portals or scans</li><li>Extracts the fields you need and files against the right patient, client or matter record</li><li>Flags anything unclear for review instead of guessing; audit log of every action</li><li>Pilot on two weeks of your real documents before you commit to the full build; privacy data-flow note supplied</li></ul><p class="from"><span class="lbl">from</span><span class="price">$7,500 + $300/mo + GST</span></p><p class="fine">Worthwhile from roughly 20 inbound documents a week.</p></div>
-        <div class="s"><h4>Freight, Depot and Customs Operations</h4><p class="one">Time-slot bookings, cargo status, quotes and customs paperwork handled for freight depots, 3PL warehouses, customs brokers and forwarders.</p><ul><li>Time-slot and collection requests answered within a minute by email or text, checked against the windows you set and booked into your depot system for a person to confirm</li><li>Container and cargo status answered 24/7 by phone, text and web from your tracking data; the assistant says it is an AI and hands anything unusual to the depot team</li><li>Storage, transport and unpack quotes drafted from your rate card; a person prices every quote before it goes out</li><li>Customs, quarantine and bond paperwork read, extracted and filed against the right job for checking, with an audit log of every action</li><li>Received, cleared and dispatched updates to clients and drivers; invoices raised when the job closes and chased until paid</li><li>Shift crews on Bluework: rosters, clock-in and SOPs for the yard and warehouse floor</li></ul><p class="from"><span class="lbl">from</span><span class="price">$2,900 per workflow + GST</span></p><p class="fine">Multi-system builds (depot, transport and accounting software together) from $9,000. Document handling from $7,500 + $300/mo.</p></div>
-        <div class="s"><h4>90-Day Pilot (fixed scope)</h4><p class="one">One workflow live, measured and documented in 90 days, for teams of 5 to 50.</p><ul><li>Kick-off workshop, process map and success measures agreed in writing in week one</li><li>One workflow built, tested on real volume and live by week eight</li><li>Safe-use rules and a short AI policy for your team; training for everyone who touches it</li><li>Written summary comparing the first 30 days with the last 30, and what to do next</li></ul><p class="from"><span class="lbl">from</span><span class="price">$5,900 + GST</span></p><p class="fine">Up to 20 staff. From $8,900 for 21 to 50 staff.</p></div>
-        <div class="s"><h4>Build, Train and Hand Over</h4><p class="one">How every build ends: in your name, with your team able to run it.</p><ul><li>Accounts, numbers and subscriptions set up under your business, with your logins</li><li>One-page runbook written so another provider could pick it up</li><li>Recorded 60-minute training session; 30 days of included fixes after go-live</li><li>Optional care plan if you'd rather we kept an eye on it</li></ul><p class="from"><span class="lbl">included</span><span class="price">every build and package</span></p><p class="fine">Taking over and documenting a system someone else built: from $1,000.</p></div>
+        <div class="s"><h4>Workflow Automation and Custom AI Agents</h4><p class="one">One repeatable chain of work built end to end: enquiry to quote to booking to invoice to review, or an assistant trained on your own procedures and price book.</p><ul><li>Process mapped with you before anything is built; written scope and fixed price</li><li>Apps connected (job software, accounting, calendar, forms, CRM) on n8n or Make in your own workspace</li><li>Human approval steps wherever money, health, legal or tenancy matters are involved</li><li>Error handling: if a step fails you get a text and the job waits for you</li><li>Documented and handed over in your name</li></ul><p class="from"><span class="lbl">from</span><span class="price"><span data-p="pricing.builds.workflow.from">$2,900</span> per workflow + GST</span></p><p class="fine">Multi-system builds (three or more apps) from <span data-p="pricing.builds.workflow.multiSystemFrom">$9,000</span>. Tool subscriptions, typically <span data-p="pricing.builds.workflow.toolsLow">$50</span> to <span data-p="pricing.builds.workflow.toolsHigh">$150</span> a month, are yours and are itemised on the quote.</p></div>
+        <div class="s"><h4>Document and Clinic Paperwork Automation</h4><p class="one">Referrals, results, letters, applications and forms read, extracted and filed for a person to check.</p><ul><li>Reads incoming documents from email, fax-to-email, portals or scans</li><li>Extracts the fields you need and files against the right patient, client or matter record</li><li>Flags anything unclear for review instead of guessing; audit log of every action</li><li>Pilot on two weeks of your real documents before you commit to the full build; privacy data-flow note supplied</li></ul><p class="from"><span class="lbl">from</span><span class="price"><span data-p="pricing.builds.documents.from">$7,500</span> + <span data-p="pricing.builds.documents.monthly">$300</span>/mo + GST</span></p><p class="fine">Worthwhile from roughly 20 inbound documents a week.</p></div>
+        <div class="s"><h4>Freight, Depot and Customs Operations</h4><p class="one">Time-slot bookings, cargo status, quotes and customs paperwork handled for freight depots, 3PL warehouses, customs brokers and forwarders.</p><ul><li>Time-slot and collection requests answered within a minute by email or text, checked against the windows you set and booked into your depot system for a person to confirm</li><li>Container and cargo status answered 24/7 by phone, text and web from your tracking data; the assistant says it is an AI and hands anything unusual to the depot team</li><li>Storage, transport and unpack quotes drafted from your rate card; a person prices every quote before it goes out</li><li>Customs, quarantine and bond paperwork read, extracted and filed against the right job for checking, with an audit log of every action</li><li>Received, cleared and dispatched updates to clients and drivers; invoices raised when the job closes and chased until paid</li><li>Shift crews on Bluework: rosters, clock-in and SOPs for the yard and warehouse floor</li></ul><p class="from"><span class="lbl">from</span><span class="price"><span data-p="pricing.builds.workflow.from">$2,900</span> per workflow + GST</span></p><p class="fine">Multi-system builds (depot, transport and accounting software together) from <span data-p="pricing.builds.workflow.multiSystemFrom">$9,000</span>. Document handling from <span data-p="pricing.builds.documents.from">$7,500</span> + <span data-p="pricing.builds.documents.monthly">$300</span>/mo.</p></div>
+        <div class="s"><h4>90-Day Pilot (fixed scope)</h4><p class="one">One workflow live, measured and documented in 90 days, for teams of 5 to 50.</p><ul><li>Kick-off workshop, process map and success measures agreed in writing in week one</li><li>One workflow built, tested on real volume and live by week eight</li><li>Safe-use rules and a short AI policy for your team; training for everyone who touches it</li><li>Written summary comparing the first 30 days with the last 30, and what to do next</li></ul><p class="from"><span class="lbl">from</span><span class="price"><span data-p="pricing.builds.pilot.upTo20">$5,900</span> + GST</span></p><p class="fine">Up to 20 staff. From <span data-p="pricing.builds.pilot.upTo50">$8,900</span> for 21 to 50 staff.</p></div>
+        <div class="s"><h4>Build, Train and Hand Over</h4><p class="one">How every build ends: in your name, with your team able to run it.</p><ul><li>Accounts, numbers and subscriptions set up under your business, with your logins</li><li>One-page runbook written so another provider could pick it up</li><li>Recorded 60-minute training session; 30 days of included fixes after go-live</li><li>Optional care plan if you'd rather we kept an eye on it</li></ul><p class="from"><span class="lbl">included</span><span class="price">every build and package</span></p><p class="fine">Taking over and documenting a system someone else built: from <span data-p="pricing.builds.takeover.from">$1,000</span>.</p></div>
       </div>
     </div>
 
     <div class="group">
       <h3>Advice, training and care <span>Group 4 of 4</span></h3>
       <div class="svc">
-        <div class="s"><h4>AI Readiness Audit and Roadmap</h4><p class="one">Half a day with us, then a ranked list of what to automate and what to leave alone, yours to keep.</p><ul><li>Four hours on site or on video, walking through how work actually flows from first call to paid invoice</li><li>Process map, ranked opportunities with estimated hours and costs (labelled as estimates), software and integration map</li><li>A "don't bother" list, which is often the most useful part</li><li>Credited in full against any build you start within 60 days</li><li>If we can't find at least three worthwhile opportunities, you don't pay</li></ul><p class="from"><span class="lbl">fixed</span><span class="price">$1,000 + GST</span></p></div>
-        <div class="s"><h4>AI Risk, Governance and Policy Review</h4><p class="one">Your team is probably already pasting things into free AI tools. Find out what, and set the rules.</p><ul><li>Free 20-minute call to talk through what is in use today</li><li>Written review of where client, patient or tenant data could be exposed</li><li>A short AI-use policy in plain English, designed to align with the Australian Government's Guidance for AI Adoption (the six AI6 practices) and the Voluntary AI Safety Standard</li><li>Privacy-policy wording for automated decision-making (required for Privacy Act entities from 10 December 2026) and client-disclosure wording for accounting, legal and health firms</li></ul><p class="from"><span class="lbl">review and policy from</span><span class="price">$1,500 + GST</span></p><p class="fine">20-minute call free.</p></div>
-        <div class="s"><h4>Training, Workshops and Cohort Programs</h4><p class="one">Your team builds something real, on your files, and leaves with it working.</p><ul><li>Two-hour online sessions, half-day on site, or the free six-week evening cohort (see <a href="#programs">Programs</a>)</li><li>Two or three working assistants built on your own documents and templates</li><li>Safe-use rules your team will actually follow; 30 days of email support afterwards</li></ul><p class="from"><span class="lbl">from</span><span class="price">$300 a seat + GST</span></p><p class="fine">Half-day Team AI Day $1,500 for up to eight people; full-day Team Build Day $3,900 for up to twelve. Cohort free, places limited.</p></div>
-        <div class="s"><h4>Care Plan (managed)</h4><p class="one">We watch it, update it and change it when your business changes.</p><ul><li>Monitoring and alerts, with a fix started the same business day</li><li>Model and software updates applied and tested</li><li>Monthly report of what ran, what it handled and what it got wrong</li><li>Included change hours each month (1, 3 or 8 depending on tier); Full adds a quarterly review and scoping for the next workflow</li></ul><p class="from"><span class="lbl">Light · Standard · Full</span><span class="price">$200 · $500 · $1,000/mo + GST</span></p><p class="fine">Month to month, 30 days' notice.</p></div>
+        <div class="s"><h4>AI Readiness Audit and Roadmap</h4><p class="one">Half a day with us, then a ranked list of what to automate and what to leave alone, yours to keep.</p><ul><li>Four hours on site or on video, walking through how work actually flows from first call to paid invoice</li><li>Process map, ranked opportunities with estimated hours and costs (labelled as estimates), software and integration map</li><li>A "don't bother" list, which is often the most useful part</li><li>Credited in full against any build you start within 60 days</li><li>If we can't find at least three worthwhile opportunities, you don't pay</li></ul><p class="from"><span class="lbl">fixed</span><span class="price"><span data-p="pricing.advice.audit.fixed">$1,000</span> + GST</span></p></div>
+        <div class="s"><h4>AI Risk, Governance and Policy Review</h4><p class="one">Your team is probably already pasting things into free AI tools. Find out what, and set the rules.</p><ul><li>Free 20-minute call to talk through what is in use today</li><li>Written review of where client, patient or tenant data could be exposed</li><li>A short AI-use policy in plain English, designed to align with the Australian Government's Guidance for AI Adoption (the six AI6 practices) and the Voluntary AI Safety Standard</li><li>Privacy-policy wording for automated decision-making (required for Privacy Act entities from 10 December 2026) and client-disclosure wording for accounting, legal and health firms</li></ul><p class="from"><span class="lbl">review and policy from</span><span class="price"><span data-p="pricing.advice.governance.from">$1,500</span> + GST</span></p><p class="fine">20-minute call free.</p></div>
+        <div class="s"><h4>Training, Workshops and Cohort Programs</h4><p class="one">Your team builds something real, on your files, and leaves with it working.</p><ul><li>Two-hour online sessions, half-day on site, or the free six-week evening cohort (see <a href="#programs">Programs</a>)</li><li>Two or three working assistants built on your own documents and templates</li><li>Safe-use rules your team will actually follow; 30 days of email support afterwards</li></ul><p class="from"><span class="lbl">from</span><span class="price"><span data-p="pricing.advice.training.perSeatFrom">$300</span> a seat + GST</span></p><p class="fine">Half-day Team AI Day <span data-p="pricing.advice.training.teamDay">$1,500</span> for up to eight people; full-day Team Build Day <span data-p="pricing.advice.training.buildDay">$3,900</span> for up to twelve. Cohort free, places limited.</p></div>
+        <div class="s"><h4>Care Plan (managed)</h4><p class="one">We watch it, update it and change it when your business changes.</p><ul><li>Monitoring and alerts, with a fix started the same business day</li><li>Model and software updates applied and tested</li><li>Monthly report of what ran, what it handled and what it got wrong</li><li>Included change hours each month (1, 3 or 8 depending on tier); Full adds a quarterly review and scoping for the next workflow</li></ul><p class="from"><span class="lbl">Light · Standard · Full</span><span class="price"><span data-p="pricing.advice.carePlan.light">$200</span> · <span data-p="pricing.advice.carePlan.standard">$500</span> · <span data-p="pricing.advice.carePlan.full">$1,000</span>/mo + GST</span></p><p class="fine">Month to month, 30 days' notice.</p></div>
       </div>
     </div>
 
-    <div class="app-pointer"><p><b>Built an app with AI?</b> We also review AI-built code and launch it properly, in accounts you own: a $2,900 fixed review, a $10,000 launch package and app care from $500 a month, all + GST.</p><a class="btn-2" href="#launch">See app review and launch</a></div>
+    <div class="app-pointer"><p><b>Built an app with AI?</b> We also review AI-built code and launch it properly, in accounts you own: a <span data-p="pricing.app.review">$2,900</span> fixed review, a <span data-p="pricing.app.launch">$10,000</span> launch package and app care from <span data-p="pricing.app.care">$500</span> a month, all + GST.</p><a class="btn-2" href="#launch">See app review and launch</a></div>
     <div class="box free"><b>Free ways to start:</b> the <a href="#audit">two-minute audit</a>, which comes with one free build · the plan tool on this page · a free 15-minute call with a person · the free 20-minute AI risk call · the free monthly Live Build · the free six-week cohort · a two-week paid pilot on your real documents before any document build.</div>
   </div>
 </section>
@@ -960,7 +931,7 @@ window.AXFORM = (() => {
     <div class="stats stats3">
       <div class="stat"><span class="n">45%</span><p>of AI-generated code failed basic security tests while looking syntactically correct.</p><span class="src">Veracode GenAI Code Security Report 2025</span></div>
       <div class="stat"><span class="n">2&times;</span><p>AI-assisted commits leak passwords and keys at roughly double the rate of human-written ones.</p><span class="src">GitGuardian State of Secrets Sprawl 2026</span></div>
-      <div class="stat"><span class="n">A$56,600</span><p>average cost of a cybercrime incident for an Australian small business, up 14% in a year.</p><span class="src">ACSC Annual Cyber Threat Report 2024-25</span></div>
+      <div class="stat"><span class="n">A<span data-market>$56,600</span></span><p>average cost of a cybercrime incident for an Australian small business, up 14% in a year.</p><span class="src">ACSC Annual Cyber Threat Report 2024-25</span></div>
     </div>
 
     <h3 style="margin-top:2.6rem">Four steps, no surprises</h3>
@@ -974,11 +945,11 @@ window.AXFORM = (() => {
     <h3 style="margin-top:2.6rem">Fixed fees, no hourly anxiety</h3>
     <p class="small muted" style="max-width:70ch;margin-top:.4rem">Three ways to engage, each a fixed number you see before we start. Start with the review: if you continue to the launch package within 30 days, the review fee is credited in full.</p>
     <div class="packs lpacks" style="margin-top:1.2rem">
-      <div class="pack"><h3>The review</h3><p class="for">A clear verdict on your app before you spend another dollar or invite another user.</p><div class="lnums"><span class="m">$2,900<small> fixed + GST</small></span><span class="g">Including GST: $3,190</span></div><ul><li>Line-by-line review of your codebase and live app</li><li>Security sweep: exposed keys, logins, payments, data</li><li>Findings ranked critical to cosmetic, in plain English</li><li>Fix roadmap with ready-to-paste prompts for your AI tool</li><li>Realistic monthly running-cost estimate for your stack</li><li>45-minute walkthrough and an honest fix-or-rebuild verdict</li></ul><a class="btn-2" href="#sheet" data-book data-prefill="App review ($2,900)">Book the review</a></div>
-      <div class="pack"><h3>The launch package</h3><p class="for">The full journey: reviewed, fixed and deployed to production, in accounts you own.</p><div class="lnums"><span class="m">$10,000<small> fixed + GST</small></span><span class="g">Including GST: $11,000</span></div><ul><li>Everything in the review, fee credited</li><li>Every critical and high-risk finding fixed, scope in writing</li><li>Full deployment: domain, SSL, hosting, database, secrets</li><li>Deploy pipeline, automated backups, uptime and error alarms</li><li>Plain-English runbook and cost breakdown at handover</li><li>30 days of post-launch support; typically live in 2 to 3 weeks</li></ul><a class="btn" href="#sheet" data-book data-prefill="App launch package ($10,000)">Start the launch package</a></div>
-      <div class="pack"><h3>App care plan</h3><p class="for">Your on-call engineer after launch, so you never have to watch a status page.</p><div class="lnums"><span class="m">$500<small> a month + GST</small></span><span class="g">Including GST: $550 a month</span></div><ul><li>Hosting, domain, SSL and security updates managed</li><li>Uptime and error monitoring, next-business-day response</li><li>Automated backups, tested monthly</li><li>Two hours of small fixes each month; unused time rolls over</li><li>Monthly plain-English health and cost report</li><li>Month to month: cancel any time, keep everything</li></ul><a class="btn-2" href="#sheet" data-book data-prefill="App care plan ($500 a month)">Ask about app care</a></div>
+      <div class="pack"><h3>The review</h3><p class="for">A clear verdict on your app before you spend another dollar or invite another user.</p><div class="lnums"><span class="m"><span data-p="pricing.app.review">$2,900</span><small> fixed + GST</small></span><span class="g">Including GST: <span data-p="pricing.app.review" data-fmt="gst">$3,190</span></span></div><ul><li>Line-by-line review of your codebase and live app</li><li>Security sweep: exposed keys, logins, payments, data</li><li>Findings ranked critical to cosmetic, in plain English</li><li>Fix roadmap with ready-to-paste prompts for your AI tool</li><li>Realistic monthly running-cost estimate for your stack</li><li>45-minute walkthrough and an honest fix-or-rebuild verdict</li></ul><a class="btn-2" href="#sheet" data-book data-prefill="App review">Book the review</a></div>
+      <div class="pack"><h3>The launch package</h3><p class="for">The full journey: reviewed, fixed and deployed to production, in accounts you own.</p><div class="lnums"><span class="m"><span data-p="pricing.app.launch">$10,000</span><small> fixed + GST</small></span><span class="g">Including GST: <span data-p="pricing.app.launch" data-fmt="gst">$11,000</span></span></div><ul><li>Everything in the review, fee credited</li><li>Every critical and high-risk finding fixed, scope in writing</li><li>Full deployment: domain, SSL, hosting, database, secrets</li><li>Deploy pipeline, automated backups, uptime and error alarms</li><li>Plain-English runbook and cost breakdown at handover</li><li>30 days of post-launch support; typically live in 2 to 3 weeks</li></ul><a class="btn" href="#sheet" data-book data-prefill="App launch package">Start the launch package</a></div>
+      <div class="pack"><h3>App care plan</h3><p class="for">Your on-call engineer after launch, so you never have to watch a status page.</p><div class="lnums"><span class="m"><span data-p="pricing.app.care">$500</span><small> a month + GST</small></span><span class="g">Including GST: <span data-p="pricing.app.care" data-fmt="gst">$550</span> a month</span></div><ul><li>Hosting, domain, SSL and security updates managed</li><li>Uptime and error monitoring, next-business-day response</li><li>Automated backups, tested monthly</li><li>Two hours of small fixes each month; unused time rolls over</li><li>Monthly plain-English health and cost report</li><li>Month to month: cancel any time, keep everything</li></ul><a class="btn-2" href="#sheet" data-book data-prefill="App care plan">Ask about app care</a></div>
     </div>
-    <p class="small muted" style="max-width:72ch;margin-top:1rem">All prices in Australian dollars, shown + GST. Fixed quotes assume a typical MVP codebase; larger apps are quoted after a free 20-minute scoping call, before any payment. Ad-hoc engineering: $200 an hour + GST in two-hour blocks, or a prepaid 10-hour block for $1,500 + GST on any care plan. Scaling up? App care plus advisor at $1,000 a month + GST adds five hours of engineering and a monthly strategy call.</p>
+    <p class="small muted" style="max-width:72ch;margin-top:1rem">All prices in Australian dollars, shown + GST. Fixed quotes assume a typical MVP codebase; larger apps are quoted after a free 20-minute scoping call, before any payment. Ad-hoc engineering: <span data-p="pricing.app.hourly">$200</span> an hour + GST in two-hour blocks, or a prepaid 10-hour block for <span data-p="pricing.app.prepaidBlock">$1,500</span> + GST on any care plan. Scaling up? App care plus advisor at <span data-p="pricing.app.careAdvisor">$1,000</span> a month + GST adds five hours of engineering and a monthly strategy call.</p>
 
     <h3 style="margin-top:2.6rem">Questions founders ask</h3>
     <div class="faq launch-faq">
@@ -989,7 +960,7 @@ window.AXFORM = (() => {
       <details><summary>What if my app isn't ready to launch?</summary><p>Then the review says so, plainly, with what it would take to get there. That's a lot cheaper than finding out from your customers.</p></details>
       <details><summary>Are you only for Brisbane?</summary><p>We're Brisbane-based and happy to meet local founders in person. Everything else happens over screen-shares, so we work with founders across Australia, and anywhere our time zones overlap.</p></details>
     </div>
-    <div class="snav" style="margin-top:1.6rem"><a class="btn" href="#sheet" data-book data-prefill="App review ($2,900)">Book a code review</a><a class="btn-2" href="#sheet" data-book data-prefill="App review: free 20-minute scoping call">Free 20-minute scoping call</a></div>
+    <div class="snav" style="margin-top:1.6rem"><a class="btn" href="#sheet" data-book data-prefill="App review">Book a code review</a><a class="btn-2" href="#sheet" data-book data-prefill="App review: free 20-minute scoping call">Free 20-minute scoping call</a></div>
   </div>
 </section>
 
@@ -1005,12 +976,12 @@ window.AXFORM = (() => {
     <div class="tablewrap"><table id="fdeTable">
       <thead><tr><th>What you buy</th><th>ArchonX (+ GST)</th><th>What others charge</th></tr></thead>
       <tbody>
-        <tr><td>One working system in two weeks: one workflow or agent, scoped in writing, live and handed over</td><td class="price">$10,000 + GST</td><td>Brisbane pilots $20,000 to $65,000; two-week sprints $10,000 to $25,000</td></tr>
-        <tr><td>Four-week build: up to three connected systems, live and handed over</td><td class="price">$20,000 + GST</td><td>Six-week fixed projects $30,000 to $90,000</td></tr>
-        <tr><td>Embedded engineer, two days a week</td><td class="price">$8,800 a month + GST</td><td>Part-time AI engineers $15,000 to $35,000 a month</td></tr>
-        <tr><td>Embedded engineer, three days a week</td><td class="price">$12,900 a month + GST</td><td>Part-time AI engineers $15,000 to $35,000 a month</td></tr>
-        <tr><td>Full-time secondment, three-month minimum</td><td class="price">Quoted on request</td><td>Embedded engineers $25,000 to $50,000 a month</td></tr>
-        <tr><td>Own what we build, outright</td><td class="price">From $3,900 + GST, no monthly fee to us</td><td>Software subscriptions: per seat, every month, for as long as you use it</td></tr>
+        <tr><td>One working system in two weeks: one workflow or agent, scoped in writing, live and handed over</td><td class="price"><span data-p="pricing.engineer.twoWeekSystem">$10,000</span> + GST</td><td data-market>Brisbane pilots $20,000 to $65,000; two-week sprints $10,000 to $25,000</td></tr>
+        <tr><td>Four-week build: up to three connected systems, live and handed over</td><td class="price"><span data-p="pricing.engineer.fourWeekBuild">$20,000</span> + GST</td><td data-market>Six-week fixed projects $30,000 to $90,000</td></tr>
+        <tr><td>Embedded engineer, two days a week</td><td class="price"><span data-p="pricing.engineer.embeddedTwoDays">$8,800</span> a month + GST</td><td data-market>Part-time AI engineers $15,000 to $35,000 a month</td></tr>
+        <tr><td>Embedded engineer, three days a week</td><td class="price"><span data-p="pricing.engineer.embeddedThreeDays">$12,900</span> a month + GST</td><td data-market>Part-time AI engineers $15,000 to $35,000 a month</td></tr>
+        <tr><td>Full-time secondment, three-month minimum</td><td class="price">Quoted on request</td><td data-market>Embedded engineers $25,000 to $50,000 a month</td></tr>
+        <tr><td>Own what we build, outright</td><td class="price">From <span data-p="pricing.packs.front.own">$3,900</span> + GST, no monthly fee to us</td><td>Software subscriptions: per seat, every month, for as long as you use it</td></tr>
       </tbody>
     </table></div>
     <p class="small muted" style="margin-top:.8rem">Sprints are fixed scope in writing: half at kick-off, half on acceptance, and the second half isn't payable if the agreed outcome isn't live. Embedded months are billed in advance, month to month, with 30 days' notice. Travel outside greater Brisbane is at cost. Software and model subscriptions stay in your name. Government work, senior GenAI specialists and full-time secondments are quoted on request. No result is guaranteed; what we promise is the system, live, in your name.</p>
@@ -1026,19 +997,19 @@ window.AXFORM = (() => {
     <div class="progs">
       <div class="prog"><span class="tag">Free, places limited</span><h3>Live Build</h3><p class="meta">90 minutes · online · once a month · recorded for everyone who registers</p><p>We build one real automation from scratch for one volunteer business while you watch and ask questions. We show where it stumbles as well as where it works.</p><p class="small muted">For owners and managers who want to see what "AI automation" actually looks like before they spend a dollar. Places limited to 25 so every question gets answered. <a href="mailto:hello@archonx.ai">Contact us</a> for the next session date. Register and you get a calendar invite and one reminder; nothing else unless you ask.</p><a class="btn-2" href="#sheet" data-book data-prefill="Live Build registration">Save my seat</a></div>
       <div class="prog"><span class="tag">Free, places limited</span><h3>First Workflow Cohort</h3><p class="meta">Six Tuesday evenings, 7:00 to 8:15pm AEST · live on Zoom with recordings · Friday lunchtime office hours · up to twelve businesses</p><p><b>Week 1</b> where the hours actually go (bring a week of your own admin). <b>Week 2</b> what AI can and can't do today, shown live. <b>Week 3</b> the front door: calls, chat, missed calls, follow-up and bookings. <b>Week 4</b> the back office: inbox, quotes, invoices, books and meeting notes. <b>Week 5</b> your obligations: Privacy Act and the APPs, telling people they're talking to AI, the Spam Act, recording consent, and which government programs you may be able to access. <b>Week 6</b> build night and your plan: one working automation, your one-page AI policy, and the order to do the rest in.</p><p class="small muted">For owners and office managers in any of the industries on this page who will do the homework. No technical background needed. Applications close two weeks before each cohort; we confirm by email within five business days. <a href="mailto:hello@archonx.ai">Contact us</a> for the next cohort's dates.</p><p class="small"><b>This cohort is run and paid for by ArchonX. It is not government-funded.</b> There is no sales segment and no obligation to buy anything, during or after.</p><a class="btn-2" href="#sheet" data-book data-prefill="First Workflow Cohort application">Apply for the next cohort</a></div>
-      <div class="prog"><span class="tag">Paid</span><h3>Team AI Day</h3><p class="meta">Half a day · on site (Brisbane metro) or online · up to eight people · built on your own files</p><p>Your team builds the two or three assistants it will use every day, writes the safe-use rules, and leaves with an AI policy it can adopt that afternoon.</p><p class="small muted">For teams of 3 to 20 where the owner wants everyone using the same tools the same safe way. <span class="price">$1,500 + GST</span> per team. Travel outside the Brisbane metro area quoted separately. If your team does the work and does not leave with a working assistant, we refund the fee.</p><a class="btn-2" href="#sheet" data-book data-prefill="Team AI Day">Book a Team AI Day</a></div>
-      <div class="prog"><span class="tag">Paid</span><h3>AI Policy Morning</h3><p class="meta">Two hours · online · your leadership team</p><p>One AI-use policy template and one client-disclosure template, completed together, including the automated-decisions wording Privacy Act entities need from 10 December 2026.</p><p class="small muted">For accounting, bookkeeping, legal, allied health, dental and real estate businesses that handle client, patient or tenant data and need rules now. <span class="price">$500 + GST</span> per firm.</p><a class="btn-2" href="#sheet" data-book data-prefill="AI Policy Morning">Book a Policy Morning</a></div>
+      <div class="prog"><span class="tag">Paid</span><h3>Team AI Day</h3><p class="meta">Half a day · on site (Brisbane metro) or online · up to eight people · built on your own files</p><p>Your team builds the two or three assistants it will use every day, writes the safe-use rules, and leaves with an AI policy it can adopt that afternoon.</p><p class="small muted">For teams of 3 to 20 where the owner wants everyone using the same tools the same safe way. <span class="price"><span data-p="pricing.advice.training.teamDay">$1,500</span> + GST</span> per team. Travel outside the Brisbane metro area quoted separately. If your team does the work and does not leave with a working assistant, we refund the fee.</p><a class="btn-2" href="#sheet" data-book data-prefill="Team AI Day">Book a Team AI Day</a></div>
+      <div class="prog"><span class="tag">Paid</span><h3>AI Policy Morning</h3><p class="meta">Two hours · online · your leadership team</p><p>One AI-use policy template and one client-disclosure template, completed together, including the automated-decisions wording Privacy Act entities need from 10 December 2026.</p><p class="small muted">For accounting, bookkeeping, legal, allied health, dental and real estate businesses that handle client, patient or tenant data and need rules now. <span class="price"><span data-p="pricing.advice.training.policyMorning">$500</span> + GST</span> per firm.</p><a class="btn-2" href="#sheet" data-book data-prefill="AI Policy Morning">Book a Policy Morning</a></div>
     </div>
-    <p style="margin-top:1.4rem"><b>90-Day Pilot:</b> for teams of 5 to 50 who want one workflow live, measured and governed at a fixed price. From <span class="price">$5,900 + GST</span>. Details under <a href="#services">Services</a>.</p>
+    <p style="margin-top:1.4rem"><b>90-Day Pilot:</b> for teams of 5 to 50 who want one workflow live, measured and governed at a fixed price. From <span class="price"><span data-p="pricing.builds.pilot.upTo20">$5,900</span> + GST</span>. Details under <a href="#services">Services</a>.</p>
 
     <div class="gov">
       <h3>Government programs we help clients access</h3>
       <p>ArchonX is a private business. We receive no government funding and we are not part of any of the programs below. We keep track of them, tell you on the call if you look eligible, and we are happy to build whatever plan comes out of one.</p>
       <ul>
-        <li><b>AI Adopt Centres</b> (Department of Industry, Science and Resources). A $17 million program funding four centres that give free advice, training and roadmaps to eligible small and medium businesses in National Reconstruction Fund priority sectors such as manufacturing, medical science, agriculture and clean energy, with a focus on businesses that trade interstate or internationally. Funded to 31 March 2027. Details at <a href="https://business.gov.au/expertise-and-advice/ai-adopt-centres" target="_blank" rel="noopener">business.gov.au</a>.</li>
+        <li><b>AI Adopt Centres</b> (Department of Industry, Science and Resources). A <span data-market>$17</span> million program funding four centres that give free advice, training and roadmaps to eligible small and medium businesses in National Reconstruction Fund priority sectors such as manufacturing, medical science, agriculture and clean energy, with a focus on businesses that trade interstate or internationally. Funded to 31 March 2027. Details at <a href="https://business.gov.au/expertise-and-advice/ai-adopt-centres" target="_blank" rel="noopener">business.gov.au</a>.</li>
         <li><b>Digital Solutions, Australian Small Business Advisory Services.</b> For businesses with fewer than 20 full-time-equivalent staff and sole traders: up to five hours of one-to-one digital advice for a small fee, plus free workshops, with AI and emerging technologies among the topics. Recommenced 1 July 2026. Details at <a href="https://business.gov.au/expertise-and-advice/Digital-Solutions-Australian-Small-Business-Advisory-Services" target="_blank" rel="noopener">business.gov.au</a>.</li>
-        <li><b>CSIRO Kick-Start.</b> Matched funding of $20,000 to $60,000 for eligible smaller companies (turnover and operating expenses under $10 million, or trading for less than three years) to test, prototype or prove a technology idea. Applications accepted at any time. Details at <a href="https://business.gov.au/grants-and-programs/csiro-kickstart" target="_blank" rel="noopener">business.gov.au</a>.</li>
-        <li><b>State programs.</b> South Australia's AI Capability Pilot Program (under 20 FTE, two or more years trading, co-contribution required, running to 30 June 2027). Western Australia's Innovation Booster Grant, up to $50,000 in an annual round. Victoria's Small Business Activation Fund grants of $5,000 to $100,000 announced in the May 2026 state budget. Queensland announced a small-business AI adoption program in its June 2026 budget; guidelines and an opening date had not been published when this page was written. We update this list each quarter; ask us what is current for your state.</li>
+        <li><b>CSIRO Kick-Start.</b> Matched funding of <span data-market>$20,000</span> to <span data-market>$60,000</span> for eligible smaller companies (turnover and operating expenses under <span data-market>$10</span> million, or trading for less than three years) to test, prototype or prove a technology idea. Applications accepted at any time. Details at <a href="https://business.gov.au/grants-and-programs/csiro-kickstart" target="_blank" rel="noopener">business.gov.au</a>.</li>
+        <li><b>State programs.</b> South Australia's AI Capability Pilot Program (under 20 FTE, two or more years trading, co-contribution required, running to 30 June 2027). Western Australia's Innovation Booster Grant, up to <span data-market>$50,000</span> in an annual round. Victoria's Small Business Activation Fund grants of <span data-market>$5,000</span> to <span data-market>$100,000</span> announced in the May 2026 state budget. Queensland announced a small-business AI adoption program in its June 2026 budget; guidelines and an opening date had not been published when this page was written. We update this list each quarter; ask us what is current for your state.</li>
       </ul>
     </div>
   </div>
@@ -1050,7 +1021,7 @@ window.AXFORM = (() => {
     <h2>Four steps and a date in writing</h2>
     <div class="steps" style="margin-top:2rem">
       <div class="step"><div><h4>Pick a time.</h4><p>A 15-minute video or phone call with us. You get an SMS and a calendar invite straight away. We cover what is eating your week, what software you use, what AI could take over first and roughly what it costs. If AI isn't worth it for you yet, or a free government program or your existing software already does the job, we say so.</p></div></div>
-      <div class="step"><div><h4>Written quote within two business days.</h4><p>Fixed price, go-live date, what's included, what's excluded and who bills the extras. For bigger or multi-system jobs we suggest the $1,000 audit first, which is credited against the build within 60 days and refunded if we can't find three worthwhile opportunities.</p></div></div>
+      <div class="step"><div><h4>Written quote within two business days.</h4><p>Fixed price, go-live date, what's included, what's excluded and who bills the extras. For bigger or multi-system jobs we suggest the <span data-p="pricing.advice.audit.fixed">$1,000</span> audit first, which is credited against the build within 60 days and refunded if we can't find three worthwhile opportunities.</p></div></div>
       <div class="step"><div><h4>Build, then test with you on real calls and emails.</h4><p>A Front Desk build typically takes two to four weeks from the day you give us access; Back Office and Whole Shop typically take four to eight. Your quote states the date we commit to. You get a progress text every Friday. Nothing faces a customer until you've heard it, read it and approved the rules: what it says first ("You're speaking with an AI assistant for [Business]; this call is recorded"), when it transfers to a person, and what it never does.</p></div></div>
       <div class="step"><div><h4>Hand over, in your name.</h4><p>Logins, accounts and the phone number are yours. You get a one-page runbook, a recorded 60-minute training session and 30 days of included fixes. After 30 days you get a report of calls answered, bookings made and hours logged against the plan's estimates. Then keep it running yourself, or pick a care plan.</p></div></div>
     </div>
@@ -1062,7 +1033,7 @@ window.AXFORM = (() => {
   <div class="wrap">
     <p class="eyebrow">Pricing</p>
     <h2>Prices you can read before you call</h2>
-    <p class="lede" style="margin-top:.8rem">All prices are in Australian dollars and shown + GST; 10% GST is added to every invoice, so $400 a month is $440 including GST. Setup is paid half on signing, half at go-live. Monthly plans are month to month: cancel any time with 30 days' notice, no exit fee, no automatic renewal into a longer term, and your monthly price is held for 12 months from the day you start, with 60 days' written notice of any change after that.</p>
+    <p class="lede" style="margin-top:.8rem">All prices are in Australian dollars and shown + GST; 10% GST is added to every invoice, so <span data-p="pricing.packs.front.monthly">$400</span> a month is <span data-p="pricing.packs.front.monthly" data-fmt="gst">$440</span> including GST. Setup is paid half on signing, half at go-live. Monthly plans are month to month: cancel any time with 30 days' notice, no exit fee, no automatic renewal into a longer term, and your monthly price is held for 12 months from the day you start, with 60 days' written notice of any change after that.</p>
     <div class="ptoggle" role="group" aria-label="Pricing mode"><button class="on" id="modeMonthly" type="button" aria-pressed="true">Monthly plan</button><button id="modeOwn" type="button" aria-pressed="false">Own it outright</button></div>
     <div class="packs">
       <div class="pack"><h3>Front Desk</h3><p class="for">Trades, clinics, legal practices and venues that miss calls and enquiries.</p><div class="nums" data-pack="front"></div><ul><li>AI receptionist with 400 call minutes a month</li><li>Missed-call text-back</li><li>Website and social chat agent (500 conversations)</li><li>Bookings into your calendar, job, practice or reservation software</li><li>Instant lead follow-up by SMS and email (300 SMS)</li><li>Review requests</li><li>One Australian number connected</li><li>Monthly report · Care Plan Light</li></ul><p class="live">Typical go-live: 2 to 4 weeks</p></div>
@@ -1076,50 +1047,50 @@ window.AXFORM = (() => {
     <div class="tablewrap"><table id="setupTable">
       <thead><tr><th>Industry</th><th>Front Desk setup (+ GST)</th><th>What the setup covers</th></tr></thead>
       <tbody>
-        <tr data-ind="trades"><td>Trades</td><td class="price">$1,500 + GST</td><td>Job-software connection, urgent-call rules, voice-note quoting</td></tr>
-        <tr data-ind="dental"><td>Dental and allied health</td><td class="price">$2,000 + GST</td><td>Practice-software connection, recording and consent scripts for your state, clinical escalation rules, patient-facing notice</td></tr>
-        <tr data-ind="realestate"><td>Real estate and property management</td><td class="price">$1,800 + GST</td><td>Portal enquiry routing, maintenance triage rules, CRM or property-software connection</td></tr>
-        <tr data-ind="accounting"><td>Accounting and bookkeeping</td><td class="price">$1,500 + GST</td><td>Calendar and practice-software connection, BAS-season call rules (most firms start on Back Office)</td></tr>
-        <tr data-ind="legal"><td>Legal</td><td class="price">$2,000 + GST</td><td>Intake and conflict-check script, recording consent, matter routing, no-advice guardrails</td></tr>
-        <tr data-ind="hospitality"><td>Hospitality</td><td class="price">$1,500 + GST</td><td>Reservation-system connection, function-enquiry capture, Google Business Profile</td></tr>
-        <tr data-ind="retail"><td>Retail</td><td class="price">$1,500 + GST</td><td>Catalogue, order-status and hours connection (Shopify, Square or Lightspeed), review trigger, Google Business Profile</td></tr>
-        <tr data-ind="salons"><td>Barbershops and salons</td><td class="price">$1,500 + GST</td><td>Booking-software connection or booking-link routing, mid-service missed-call text-back, consent capture for rebooking and review messages</td></tr>
-        <tr data-ind="automotive"><td>Automotive workshops</td><td class="price">$1,700 + GST</td><td>Workshop-software connection with vehicle fields, breakdown call rules, service-reminder schedule</td></tr>
-        <tr data-ind="cleaning"><td>Cleaning services</td><td class="price">$1,500 + GST</td><td>Job-software connection, quote-intake questions, confirmation and access texts</td></tr>
-        <tr data-ind="gyms"><td>Gyms and fitness studios</td><td class="price">$1,700 + GST</td><td>Membership-software and lead-ad connection, consent-first trial follow-up, failed-payment drafts (read only)</td></tr>
-        <tr data-ind="logistics"><td>Freight, logistics and warehousing</td><td class="price">$1,800 + GST</td><td>Depot or transport-software connection, time-slot and collection intake questions, cargo-status answers from your tracking data</td></tr>
+        <tr data-ind="trades"><td>Trades</td><td class="price"><span data-p="pricing.industries.trades.setup">$1,500</span> + GST</td><td>Job-software connection, urgent-call rules, voice-note quoting</td></tr>
+        <tr data-ind="dental"><td>Dental and allied health</td><td class="price"><span data-p="pricing.industries.dental.setup">$2,000</span> + GST</td><td>Practice-software connection, recording and consent scripts for your state, clinical escalation rules, patient-facing notice</td></tr>
+        <tr data-ind="realestate"><td>Real estate and property management</td><td class="price"><span data-p="pricing.industries.realestate.setup">$1,800</span> + GST</td><td>Portal enquiry routing, maintenance triage rules, CRM or property-software connection</td></tr>
+        <tr data-ind="accounting"><td>Accounting and bookkeeping</td><td class="price"><span data-p="pricing.industries.accounting.setup">$1,500</span> + GST</td><td>Calendar and practice-software connection, BAS-season call rules (most firms start on Back Office)</td></tr>
+        <tr data-ind="legal"><td>Legal</td><td class="price"><span data-p="pricing.industries.legal.setup">$2,000</span> + GST</td><td>Intake and conflict-check script, recording consent, matter routing, no-advice guardrails</td></tr>
+        <tr data-ind="hospitality"><td>Hospitality</td><td class="price"><span data-p="pricing.industries.hospitality.setup">$1,500</span> + GST</td><td>Reservation-system connection, function-enquiry capture, Google Business Profile</td></tr>
+        <tr data-ind="retail"><td>Retail</td><td class="price"><span data-p="pricing.industries.retail.setup">$1,500</span> + GST</td><td>Catalogue, order-status and hours connection (Shopify, Square or Lightspeed), review trigger, Google Business Profile</td></tr>
+        <tr data-ind="salons"><td>Barbershops and salons</td><td class="price"><span data-p="pricing.industries.salons.setup">$1,500</span> + GST</td><td>Booking-software connection or booking-link routing, mid-service missed-call text-back, consent capture for rebooking and review messages</td></tr>
+        <tr data-ind="automotive"><td>Automotive workshops</td><td class="price"><span data-p="pricing.industries.automotive.setup">$1,700</span> + GST</td><td>Workshop-software connection with vehicle fields, breakdown call rules, service-reminder schedule</td></tr>
+        <tr data-ind="cleaning"><td>Cleaning services</td><td class="price"><span data-p="pricing.industries.cleaning.setup">$1,500</span> + GST</td><td>Job-software connection, quote-intake questions, confirmation and access texts</td></tr>
+        <tr data-ind="gyms"><td>Gyms and fitness studios</td><td class="price"><span data-p="pricing.industries.gyms.setup">$1,700</span> + GST</td><td>Membership-software and lead-ad connection, consent-first trial follow-up, failed-payment drafts (read only)</td></tr>
+        <tr data-ind="logistics"><td>Freight, logistics and warehousing</td><td class="price"><span data-p="pricing.industries.logistics.setup">$1,800</span> + GST</td><td>Depot or transport-software connection, time-slot and collection intake questions, cargo-status answers from your tracking data</td></tr>
       </tbody>
     </table></div>
 
     <h3 style="margin-top:2.4rem">Prefer to own it outright?</h3>
-    <p style="max-width:70ch">Any package can be bought as a one-off build with no monthly fee to us: Front Desk from <span class="price">$3,900 + GST</span> (from $4,100 with workshop or studio setup, from $4,200 with property or freight setup, from $4,400 with clinic or legal setup), Back Office from <span class="price">$8,800 + GST</span>, Whole Shop from <span class="price">$14,100 + GST</span>. No per-seat fees, ever. You then pay the software, number and call costs directly to the providers (typically $60 to $250 a month depending on call volume; this is an estimate and we itemise it on your quote), and you can add a care plan at any time.</p>
+    <p style="max-width:70ch">Any package can be bought as a one-off build with no monthly fee to us: Front Desk from <span class="price"><span data-p="pricing.packs.front.own">$3,900</span> + GST</span> (from <span data-p="pricing.industries.automotive.own">$4,100</span> with workshop or studio setup, from <span data-p="pricing.industries.realestate.own">$4,200</span> with property or freight setup, from <span data-p="pricing.industries.dental.own">$4,400</span> with clinic or legal setup), Back Office from <span class="price"><span data-p="pricing.packs.back.own">$8,800</span> + GST</span>, Whole Shop from <span class="price"><span data-p="pricing.packs.whole.own">$14,100</span> + GST</span>. No per-seat fees, ever. You then pay the software, number and call costs directly to the providers (typically <span data-p="pricing.extras.providerCostsLow">$60</span> to <span data-p="pricing.extras.providerCostsHigh">$250</span> a month depending on call volume; this is an estimate and we itemise it on your quote), and you can add a care plan at any time.</p>
 
     <h3 style="margin-top:2.4rem">App review and launch (fixed fees, + GST)</h3>
     <p class="small muted">For founders who built an app with AI. Details under <a href="#launch">App review and launch</a>.</p>
     <div class="tablewrap"><table>
       <thead><tr><th>Package</th><th>Price (+ GST)</th><th>What it covers</th></tr></thead>
       <tbody>
-        <tr><td>The review</td><td class="price">$2,900 fixed + GST</td><td>Line-by-line code and security review, plain-English findings, fix roadmap, running-cost estimate, 45-minute walkthrough</td></tr>
-        <tr><td>The launch package</td><td class="price">$10,000 fixed + GST</td><td>The review (fee credited) plus fixes, full deployment in your accounts, backups, monitoring, runbook and 30 days' support</td></tr>
-        <tr><td>App care plan</td><td class="price">$500 a month + GST</td><td>Managed hosting and security updates, monitoring, tested backups, two hours of fixes a month</td></tr>
-        <tr><td>App care plus advisor</td><td class="price">$1,000 a month + GST</td><td>The care plan plus five hours of engineering and a monthly strategy call</td></tr>
-        <tr><td>Ad-hoc engineering</td><td class="price">$200 an hour + GST</td><td>In two-hour blocks; prepaid 10-hour block $1,500 + GST on any care plan</td></tr>
+        <tr><td>The review</td><td class="price"><span data-p="pricing.app.review">$2,900</span> fixed + GST</td><td>Line-by-line code and security review, plain-English findings, fix roadmap, running-cost estimate, 45-minute walkthrough</td></tr>
+        <tr><td>The launch package</td><td class="price"><span data-p="pricing.app.launch">$10,000</span> fixed + GST</td><td>The review (fee credited) plus fixes, full deployment in your accounts, backups, monitoring, runbook and 30 days' support</td></tr>
+        <tr><td>App care plan</td><td class="price"><span data-p="pricing.app.care">$500</span> a month + GST</td><td>Managed hosting and security updates, monitoring, tested backups, two hours of fixes a month</td></tr>
+        <tr><td>App care plus advisor</td><td class="price"><span data-p="pricing.app.careAdvisor">$1,000</span> a month + GST</td><td>The care plan plus five hours of engineering and a monthly strategy call</td></tr>
+        <tr><td>Ad-hoc engineering</td><td class="price"><span data-p="pricing.app.hourly">$200</span> an hour + GST</td><td>In two-hour blocks; prepaid 10-hour block <span data-p="pricing.app.prepaidBlock">$1,500</span> + GST on any care plan</td></tr>
       </tbody>
     </table></div>
 
     <h3 style="margin-top:2.4rem">Add-ons (+ GST)</h3>
     <ul class="addons" style="margin-top:.6rem">
-      <li>Extra 500 call minutes: <span class="price">$200/mo + GST</span> (or $0.35 a minute as you go)</li>
-      <li>Extra Australian phone number or line: about <span class="price">$15/mo</span>, billed at cost</li>
-      <li>Extra workflow automation: from <span class="price">$2,900 + GST</span> one-off</li>
-      <li>Document and clinic paperwork automation: from <span class="price">$7,500 + GST</span> one-off plus from $300 a month</li>
-      <li>AI Readiness Audit: <span class="price">$1,000 + GST</span>, credited against a build within 60 days</li>
-      <li>Care Plan on a build you own: Light <span class="price">$200</span>, Standard <span class="price">$500</span>, Full <span class="price">$1,000</span> a month, all + GST</li>
+      <li>Extra 500 call minutes: <span class="price"><span data-p="pricing.extras.extraMinutes500">$200</span>/mo + GST</span> (or <span data-p="pricing.frontDesk.receptionist.extraMinute">$0.35</span> a minute as you go)</li>
+      <li>Extra Australian phone number or line: about <span class="price"><span data-p="pricing.extras.phoneNumberMonthly">$15</span>/mo</span>, billed at cost</li>
+      <li>Extra workflow automation: from <span class="price"><span data-p="pricing.builds.workflow.from">$2,900</span> + GST</span> one-off</li>
+      <li>Document and clinic paperwork automation: from <span class="price"><span data-p="pricing.builds.documents.from">$7,500</span> + GST</span> one-off plus from <span data-p="pricing.builds.documents.monthly">$300</span> a month</li>
+      <li>AI Readiness Audit: <span class="price"><span data-p="pricing.advice.audit.fixed">$1,000</span> + GST</span>, credited against a build within 60 days</li>
+      <li>Care Plan on a build you own: Light <span class="price"><span data-p="pricing.advice.carePlan.light">$200</span></span>, Standard <span class="price"><span data-p="pricing.advice.carePlan.standard">$500</span></span>, Full <span class="price"><span data-p="pricing.advice.carePlan.full">$1,000</span></span> a month, all + GST</li>
     </ul>
 
     <div class="stack" style="margin-top:2.2rem;max-width:72ch">
-      <p><b>What is never included in our price, and who bills it:</b> your Australian phone number and call minutes above the allowance (telephony provider, at cost) · SMS above the allowance (about $0.10 a message, at cost) · your existing software subscriptions such as ServiceM8, Cliniko, Xero, MYOB or HubSpot (those companies) · any new software a build needs, which we name on the quote with its monthly cost before you sign.</p>
-      <p class="small muted"><b>Market context, published so you can check:</b> Australian pricing guides published in 2026 put managed AI receptionists at roughly $200 to $500 a month plus $400 to $1,000 setup, single-workflow automation builds at $1,500 to $5,000 one-off, and managed automation retainers from about $1,000 a month (three Australian providers' published pricing guides, July to September 2026, all vendor-published; we keep the links and will share them on request). Our monthly prices sit inside those bands; our setup fees sit above them because they include connecting your own software, testing on real calls, a runbook, recorded training and 30 days of fixes, stated so you can compare like with like.</p>
+      <p><b>What is never included in our price, and who bills it:</b> your Australian phone number and call minutes above the allowance (telephony provider, at cost) · SMS above the allowance (about <span data-p="pricing.frontDesk.leadFollowUp.smsCost">$0.10</span> a message, at cost) · your existing software subscriptions such as ServiceM8, Cliniko, Xero, MYOB or HubSpot (those companies) · any new software a build needs, which we name on the quote with its monthly cost before you sign.</p>
+      <p class="small muted" data-market><b>Market context, published so you can check:</b> Australian pricing guides published in 2026 put managed AI receptionists at roughly $200 to $500 a month plus $400 to $1,000 setup, single-workflow automation builds at $1,500 to $5,000 one-off, and managed automation retainers from about $1,000 a month (three Australian providers' published pricing guides, July to September 2026, all vendor-published; we keep the links and will share them on request). Our monthly prices sit inside those bands; our setup fees sit above them because they include connecting your own software, testing on real calls, a runbook, recorded training and 30 days of fixes, stated so you can compare like with like.</p>
       <p class="small"><b>Terms in one paragraph.</b> Fixed price in writing before work starts. Month to month, 30 days' notice to cancel, no early-termination fee, no automatic price rises for 12 months, 60 days' notice of any change after that. If we can't get your system live and tested as described in the quote, you don't pay the second half of the setup fee. We never move you to a higher plan without your written yes. If you go over your included minutes or SMS, we bill the published rate and tell you by email the same week. We don't promise business results: how many jobs you win or hours you save depends on your business, and we give you estimates with the assumptions written down, then a measured report after 30 days.</p>
     </div>
   </div>
@@ -1213,7 +1184,7 @@ window.AXFORM = (() => {
     <h2>Questions owners ask, in the order they ask them</h2>
     <div class="faq" style="margin-top:1.6rem">
       <details><summary>Will my customers know they're talking to AI? Will it put them off?</summary><p>Yes, they'll know, because every call and chat starts by saying so. In practice people care about getting an answer and a booking quickly, and about being able to reach a person. The AI transfers urgent calls to you, offers a call-back whenever someone asks for a human, and never pretends.</p></details>
-      <details><summary>What does it really cost once everything's added up?</summary><p>The package price plus three things: your phone number (about $15 a month), any call minutes above your allowance ($0.35 each) and any software you don't already have. Your quote lists each one with the company that bills it. Most Front Desk clients should expect those extras to add between $20 and $80 a month depending on call volume; that is an estimate, and we show you the maths for your business.</p></details>
+      <details><summary>What does it really cost once everything's added up?</summary><p>The package price plus three things: your phone number (about <span data-p="pricing.extras.phoneNumberMonthly">$15</span> a month), any call minutes above your allowance (<span data-p="pricing.frontDesk.receptionist.extraMinute">$0.35</span> each) and any software you don't already have. Your quote lists each one with the company that bills it. Most Front Desk clients should expect those extras to add between <span data-p="pricing.extras.frontDeskExtrasLow">$20</span> and <span data-p="pricing.extras.frontDeskExtrasHigh">$80</span> a month depending on call volume; that is an estimate, and we show you the maths for your business.</p></details>
       <details><summary>Am I signing a contract?</summary><p>You sign a one-page agreement that sets out the fixed price, the go-live date, what's included and the cancellation terms. Monthly plans are month to month with 30 days' notice and no exit fee. Your monthly price is held for 12 months. There are no automatic renewals into a longer term and no automatic upgrades.</p></details>
       <details><summary>What happens to our data, and our customers' data?</summary><p>It lives in named systems, in the Australian region wherever the provider offers one, with the exceptions listed on your quote. We use business AI accounts whose terms exclude training on your data. Call recordings and transcripts are kept for the period set out in your quote, or less if you want. You can ask for anything to be exported or deleted. The full detail is in <a href="#about-data">how we handle data</a> and in our Privacy Policy.</p></details>
       <details><summary>Can it answer calls after hours and on weekends?</summary><p>Yes. You decide the rules: answer everything 24/7, or only when you don't pick up, or only outside your hours. You also decide what counts as urgent for your industry (a burst pipe, a patient in distress, a tenant with no hot water, a client in custody) and where those calls go. Everything else becomes a booking or a message, and you get a text summary.</p></details>
@@ -1221,7 +1192,7 @@ window.AXFORM = (() => {
       <details><summary>Does it work with ServiceM8, Cliniko, Xero and the rest?</summary><p>We integrate with the job, booking, practice and accounting software most Australian small businesses use, including ServiceM8, Tradify, Simpro, AroFlo, Cliniko, Halaxy, Nookal, Best Practice, Xero, Xero Practice Manager, MYOB, QuickBooks, HubSpot, Pipedrive, Zoho, Google Workspace and Microsoft 365. For real estate, legal, dental and hospitality systems we confirm the connector on the call before we quote. If your software has no way to connect, we tell you before you pay anything.</p></details>
       <details><summary>I'm not technical. How much of my time does this take?</summary><p>About three hours in total for a Front Desk package: the 15-minute call, an hour walking through how you work, half an hour giving us access, and an hour of testing and training. You never need to touch the technical side. The runbook is one page.</p></details>
       <details><summary>What if it gets something wrong?</summary><p>It will, sometimes, the same way a new receptionist does. That is why the build includes rules about what it never does on its own, a transfer to you for anything urgent or unclear, a text summary of every interaction so you can check, a monthly report that shows what it got wrong, and 30 days of included fixes after go-live. On a care plan, we also watch the logs and fix problems before you see them.</p></details>
-      <details><summary>Is there a guarantee? Will it replace my staff?</summary><p>We don't guarantee business results, because no honest provider can; how many jobs you win or hours you save depends on your business. What we do guarantee is written down: a fixed price before work starts, a go-live date, and if we can't get the system live and tested as described in the quote, you don't pay the second half of the setup fee. On the $1,000 audit, if we can't find at least three worthwhile opportunities, you don't pay. On staff: that is your decision, and we don't sell it as a replacement. The systems take the repetitive parts of reception and admin off the plate so the people you have can do the work that needs a person. For what it is worth, 88% of Australian accounting and bookkeeping practices using AI do not expect it to reduce team numbers (Xero, September 2026).</p></details>
+      <details><summary>Is there a guarantee? Will it replace my staff?</summary><p>We don't guarantee business results, because no honest provider can; how many jobs you win or hours you save depends on your business. What we do guarantee is written down: a fixed price before work starts, a go-live date, and if we can't get the system live and tested as described in the quote, you don't pay the second half of the setup fee. On the <span data-p="pricing.advice.audit.fixed">$1,000</span> audit, if we can't find at least three worthwhile opportunities, you don't pay. On staff: that is your decision, and we don't sell it as a replacement. The systems take the repetitive parts of reception and admin off the plate so the people you have can do the work that needs a person. For what it is worth, 88% of Australian accounting and bookkeeping practices using AI do not expect it to reduce team numbers (Xero, September 2026).</p></details>
     </div>
   </div>
 </section>
@@ -1232,7 +1203,7 @@ window.AXFORM = (() => {
     <h2>Fifteen minutes. A straight answer.</h2>
     <p class="lede">Tell us what's eating your week. You'll leave the call knowing what AI could take off your plate, what it would cost, and whether it's worth doing yet. If the answer is "not yet", you'll hear that too.</p>
     <div><a class="btn" href="#sheet" data-book>Pick a time for my call</a></div>
-    <p class="small muted">Prefer to talk first? Email <a href="mailto:hello@archonx.ai">hello@archonx.ai</a>, Monday to Friday 8am to 6pm AEST, and we'll arrange a time. Want it on one page? <a href="/consultation/fact-sheet.html">Download the fact sheet</a>.</p>
+    <p class="small muted">Prefer to talk first? Email <a href="mailto:hello@archonx.ai">hello@archonx.ai</a>, <span data-p="text.hours" data-fmt="plain">Monday to Friday 8am to 6pm AEST</span>, and we'll arrange a time. Want it on one page? <a href="/consultation/fact-sheet.html">Download the fact sheet</a>.</p>
     <p class="small muted">We limit how many new builds we start each month so every build gets proper attention. If this month is full, we'll give you the next start date on the call and hold your place.</p>
     <p class="small muted">Prefer to start smaller? <a href="#audit">Do the free two-minute audit</a> and get one free build either way.</p>
     <div class="px-cta-grid">
@@ -1242,26 +1213,13 @@ window.AXFORM = (() => {
   </div>
 </section>
 
-<section id="admin">
-  <div class="wrap">
-    <p class="eyebrow">Admin</p>
-    <h2>Audits and leads</h2>
-    <p class="lede" style="margin-top:.6rem" id="admIntro">Loading…</p>
-    <div id="admUI" hidden>
-      <div class="kpis" id="admKpis"></div>
-      <div class="tabs" role="tablist"><button class="on" type="button" data-tab="audits" aria-pressed="true">Audits</button><button type="button" data-tab="leads" aria-pressed="false">Booking form leads</button></div>
-      <div class="adm-actions" style="margin-bottom:1rem"><label class="small">Show <select id="admFilter"><option value="all">all</option><option value="new">new</option><option value="contacted">contacted</option><option value="quoted">quoted</option><option value="won">won</option><option value="lost">lost</option><option value="not-yet">not yet</option></select></label><button class="btn-2" type="button" id="admCsv">Copy CSV</button><button class="btn-2" type="button" id="admRefresh">Refresh</button><a class="linkbtn" href="#top" id="admExit">Back to the site</a></div>
-      <div id="admList"></div>
-    </div>
-  </div>
-</section>
 
 </main>
 
 <footer id="privacy-brief">
   <div class="wrap">
     <div class="fgrid">
-      <div><p class="fbrand"><img src="/assets/archonx-logo-mark-4k.png" alt="" width="28" height="28"><span>ArchonX<small>Consulting</small></span></p><h4 class="sr-only">ArchonX Consulting</h4><p>ArchonX Consulting is a trading name of ArchonX Pty Ltd, ACN 698 731 832, based in Brisbane, QLD. Australian owned and operated. We work with businesses across Australia and on site in the Brisbane area.</p><p style="margin-top:.6rem"><b>Contact.</b> <a href="mailto:hello@archonx.ai">hello@archonx.ai</a><br>Monday to Friday 8am to 6pm AEST. For anything not covered on this page, including privacy requests, email us and a person replies.</p></div>
+      <div><p class="fbrand"><img src="/assets/archonx-logo-mark-4k.png" alt="" width="28" height="28"><span>ArchonX<small>Consulting</small></span></p><h4 class="sr-only">ArchonX Consulting</h4><p>ArchonX Consulting is a trading name of ArchonX Pty Ltd, ACN 698 731 832, based in Brisbane, QLD. Australian owned and operated. We work with businesses across Australia and on site in the Brisbane area.</p><p style="margin-top:.6rem"><b>Contact.</b> <a href="mailto:hello@archonx.ai">hello@archonx.ai</a><br><span data-p="text.hours" data-fmt="plain">Monday to Friday 8am to 6pm AEST</span>. For anything not covered on this page, including privacy requests, email us and a person replies.</p></div>
       <div><h4>Privacy in brief</h4><p>We collect only what you give us on this site (name, business details, team size, mobile, email, and anything you type or build in the plan tool if you carry it into the booking form) to reply, book your call and prepare for it. We store it with our form, booking and email providers, some of which are outside Australia; email us for the list. We don't sell it. You can see, correct or delete it by emailing <a href="mailto:hello@archonx.ai">hello@archonx.ai</a>. Complaints can go to us first and then to the Office of the Australian Information Commissioner (oaic.gov.au). Our Privacy Policy covers automated decision-making, cookies and advertising pixels in full.</p></div>
       <div id="messages"><h4>Messages from us</h4><p>We send marketing SMS or email only to people who have ticked the box asking for it, and we keep a dated record of that consent. Every message identifies ArchonX Consulting (ArchonX Pty Ltd, ACN 698 731 832) and includes a free unsubscribe, actioned within five business days. Replies to your enquiry aren't marketing and don't need the box, but they still tell you who they're from. To stop messages at any time, reply STOP or email hello@archonx.ai.</p><p style="margin-top:.6rem"><a href="#demo">Demo</a><a href="#services">Services</a><a href="#programs">Programs</a><a href="#pricing">Pricing</a><a href="#industries">Industries</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="/privacy">Privacy Policy</a><a href="#book">Collection notice</a><a href="/terms">Terms of service</a><a href="#about-data">AI use statement</a><a href="#messages">Unsubscribe</a><a href="#privacy-brief">Complaints</a></p></div>
     </div>
@@ -1270,8 +1228,7 @@ window.AXFORM = (() => {
       <p><b>Government programs.</b> ArchonX is a private business. It is not affiliated with, funded by or endorsed by any government program. If you may be eligible for free advice from one of the Australian Government's AI Adopt Centres or the Digital Solutions program, see business.gov.au; we will also tell you on the call.</p>
       <p><b>ArchonX.</b> ArchonX Consulting is the consulting arm of ArchonX. More about ArchonX: <a href="/about">About</a> · <a href="/protocol">Archon Protocol</a> · <a href="/markets">Markets</a> · <a href="/competitive">Advantage</a> · <a href="https://bluework.com.au" target="_blank" rel="noopener">Bluework</a> · <a href="/consultation/fact-sheet.html">Fact sheet</a>.</p>
       <p>We acknowledge the Traditional Owners of the lands on which we work and live, and pay our respects to Elders past and present.</p>
-      <p>© 2026 ArchonX Pty Ltd, trading as ArchonX Consulting. Prices on this page are in Australian dollars and shown + GST unless stated, correct at 10 October 2026; see Pricing for exclusions.</p>
-      <p class="admin-link" id="adminLink" hidden><a href="#admin">Staff: open the admin view (audits and leads)</a></p>
+      <p>© 2026 ArchonX Pty Ltd, trading as ArchonX Consulting. Prices on this page are in Australian dollars and shown + GST unless stated, correct at <span data-p="text.pricesCorrectAt" data-fmt="date">2 November 2026</span>; see Pricing for exclusions.</p>
     </div>
   </div>
 </footer>
@@ -1286,7 +1243,7 @@ const $$ = (s, r) => Array.from((r||document).querySelectorAll(s));
 const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const use = n => (window.claude && typeof window.claude.use === 'function') ? window.claude.use(n).catch(() => null) : Promise.resolve(null);
 
-/* ---------- pricing constants (must match the Pricing section) ---------- */
+/* ---------- pricing constants: from the site content (ax-content.js); the literals are the committed defaults ---------- */
 const PACKS = {
   front: { name: 'Front Desk', monthly: 400, setup: 1500, own: 3900 },
   back:  { name: 'Back Office', monthly: 800, setup: 4000, own: 8800 },
@@ -1306,8 +1263,26 @@ const IND = {
   gyms:        { name: 'Gyms and fitness studios', setup: 1700, own: 4100 },
   logistics:   { name: 'Freight, logistics and warehousing', setup: 1800, own: 4200 }
 };
-const money = n => '$' + n.toLocaleString('en-AU');
-const gst = n => '$' + (Math.round(n * 110) / 100).toLocaleString('en-AU', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+const syncPricing = c => {
+  const PR = c && c.pricing; if (!PR) return;
+  Object.keys(PACKS).forEach(k => { const v = PR.packs && PR.packs[k]; if (v) Object.assign(PACKS[k], { name: v.name, monthly: v.monthly, setup: v.setup, own: v.own }); });
+  Object.keys(IND).forEach(k => { const v = PR.industries && PR.industries[k]; if (v) Object.assign(IND[k], { name: v.name, setup: v.setup, own: v.own }); });
+};
+if (window.AX) syncPricing(window.AX.content);
+/* PRICE(path, fallback): a number from the site content, or the committed default. */
+const PRICE = (path, fallback) => { const v = window.AX ? window.AX.get(path) : undefined; return typeof v === 'number' ? v : fallback; };
+const money = n => window.AX ? window.AX.money(n) : '$' + n.toLocaleString('en-AU');
+const gst = n => window.AX ? window.AX.gst(n) : '$' + (Math.round(n * 110) / 100).toLocaleString('en-AU', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+/* Sends a lead to the admin backend and to Web3Forms at the same time; true when either took it. */
+async function sendBoth(kind, subject, fields) {
+  const viaApi = window.AX && window.AX.api ? window.AX.postLead(kind, fields) : Promise.resolve(false);
+  const viaForm = window.AXFORM ? window.AXFORM.send(subject, fields) : Promise.resolve(false);
+  const results = await Promise.allSettled([viaApi, viaForm]);
+  if (results.some(r => r.status === 'fulfilled' && r.value === true)) return true;
+  const failed = results.find(r => r.status === 'rejected');
+  if (failed) throw failed.reason;
+  return false;
+}
 
 /* ---------- the six example plans (illustrative) ---------- */
 const PLANS = {
@@ -1466,7 +1441,7 @@ function renderTotals() {
   const setup = key === 'front' ? ind.setup : p.setup;
   const own = key === 'front' ? ind.own : p.own;
   el.total.innerHTML = on.length ? `Illustrative total: <b>${fmtH(lo, hi)} a week</b> across ${on.length} job${on.length === 1 ? '' : 's'}` : 'Nothing selected. Tick "Add to my plan" on the jobs you want.';
-  el.suggest.textContent = on.length ? `Suggested start: ${p.name} at ${money(p.monthly)} a month plus ${money(setup)} setup, or build outright from ${money(own)}.` : '';
+  el.suggest.textContent = on.length ? `Suggested start: ${esc(p.name)} at ${money(p.monthly)} a month plus ${money(setup)} setup, or build outright from ${money(own)}.` : '';
   $$('.card', el.cards).forEach((c, i) => c.classList.toggle('off', !current.items[i].on));
 }
 
@@ -1648,7 +1623,7 @@ function renderPacks() {
     const p = PACKS[n.dataset.pack];
     n.classList.remove('swap'); void n.offsetWidth; n.classList.add('swap');
     if (mode === 'monthly') n.innerHTML = `<span class="m">${money(p.monthly)}<small> a month + GST</small></span><span class="sub">+ ${money(p.setup)} setup + GST${n.dataset.pack === 'front' ? ' (varies by industry, see table)' : ''}</span><span class="g">Including GST: ${gst(p.monthly)} a month, ${gst(p.setup)} setup</span>`;
-    else n.innerHTML = `<span class="m">from ${money(p.own)}<small> one-off + GST</small></span><span class="sub">No monthly fee to us${n.dataset.pack === 'front' ? ' (from $4,400 with clinic or legal setup)' : ''}</span><span class="g">Including GST: from ${gst(p.own)}. You pay software, number and call costs directly to the providers.</span>`;
+    else n.innerHTML = `<span class="m">from ${money(p.own)}<small> one-off + GST</small></span><span class="sub">No monthly fee to us${n.dataset.pack === 'front' ? ' (from ' + money(IND.dental.own) + ' with clinic or legal setup)' : ''}</span><span class="g">Including GST: from ${gst(p.own)}. You pay software, number and call costs directly to the providers.</span>`;
   });
   $('#modeMonthly').classList.toggle('on', mode === 'monthly'); $('#modeMonthly').setAttribute('aria-pressed', String(mode === 'monthly'));
   $('#modeOwn').classList.toggle('on', mode === 'own'); $('#modeOwn').setAttribute('aria-pressed', String(mode === 'own'));
@@ -1709,8 +1684,7 @@ form.addEventListener('submit', async e => {
   renderDone(name, saved, reason);
 });
 async function saveLead(lead) {
-  if (!window.AXFORM) return false;
-  return window.AXFORM.send('Booking request: ' + lead.business, {
+  return sendBoth('booking', 'Booking request: ' + lead.business, {
     name: lead.name, email: lead.email, mobile: lead.mobile, business: lead.business, team_size: lead.team,
     marketing_consent: lead.marketingConsent ? 'yes, ' + lead.consentRecordedAt : 'no',
     plan_jobs_ticked: (lead.planJobs || []).join('; '), demo_industry: lead.industry, source: lead.source, submitted_at: lead.submittedAt
@@ -1723,7 +1697,7 @@ function renderDone(name, saved, reason) {
     done.innerHTML = `<h3>Thanks, ${who}. Your details are in.</h3><p>Next: we text you within one business day with three times to choose from, then you get a calendar invite. Nothing else is sent unless you ticked the box.</p><p class="help">Change of mind? Reply STOP to the text or email <a href="mailto:hello@archonx.ai">hello@archonx.ai</a> and we delete your details.</p><p><button class="btn-2" type="button" id="againBtn">Send another enquiry</button></p>`;
   } else {
     const why = reason === 'timeout' ? 'That took too long to save, so we can\'t confirm your details went through.' : 'We couldn\'t send your details just now, so nothing has been sent.';
-    done.innerHTML = `<h3>Thanks, ${who}.</h3><p>${why} To book your call, email us and we'll sort a time:</p><div class="copyrow"><code id="cEmail">hello@archonx.ai</code><button class="btn-2" type="button" data-copy="cEmail">Copy</button></div><p class="help">Monday to Friday 8am to 6pm AEST.</p><p><button class="btn-2" type="button" id="againBtn">Back to the form</button></p>`;
+    done.innerHTML = `<h3>Thanks, ${who}.</h3><p>${why} To book your call, email us and we'll sort a time:</p><div class="copyrow"><code id="cEmail">hello@archonx.ai</code><button class="btn-2" type="button" data-copy="cEmail">Copy</button></div><p class="help">${esc((window.AX && window.AX.get('text.hours')) || 'Monday to Friday 8am to 6pm AEST')}.</p><p><button class="btn-2" type="button" id="againBtn">Back to the form</button></p>`;
   }
   $$('[data-copy]', done).forEach(b => b.addEventListener('click', async () => {
     const t = $('#' + b.dataset.copy).textContent;
@@ -1733,13 +1707,14 @@ function renderDone(name, saved, reason) {
   $('#againBtn').addEventListener('click', () => { done.hidden = true; form.hidden = false; $('#f_name').focus(); });
   done.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
 }
-window.OP = { PACKS, IND, money, gst, esc, use, reduceMotion, renderStatic, fmtH };
+if (window.AX) window.AX.onUpdate(c => { syncPricing(c); renderPacks(); if (current.items.length) renderTotals(); });
+window.OP = { PACKS, IND, money, gst, esc, use, reduceMotion, renderStatic, fmtH, PRICE, sendBoth };
 })();
 </script>
 <script>
 (function(){
 'use strict';
-const OP = window.OP || {}; const { PACKS, IND, money, esc, use, reduceMotion } = OP; if (!PACKS) return;
+const OP = window.OP || {}; const { PACKS, IND, money, esc, use, reduceMotion, PRICE, sendBoth } = OP; if (!PACKS) return;
 const $ = (s, r) => (r||document).querySelector(s);
 const $$ = (s, r) => Array.from((r||document).querySelectorAll(s));
 
@@ -1789,15 +1764,15 @@ const LIB = {
   'workflow': 'One repeatable chain of work connected end to end, with a person approving anything that matters.'
 };
 const FREE = {
-  D1: { name: 'Enquiry auto-reply with booking link', desc: 'Replies by email within a minute to web-form, portal or lead-site enquiries: thanks them, answers the two standard questions, offers your booking or quote link, and tells you.', who: 'Trades, cleaners, real estate, gyms, anyone whose enquiries arrive by form or email', up: 'Instant Lead Follow-up $200 a month plus $500, or Front Desk' },
-  D2: { name: 'Voice note to draft quote', desc: 'You send a 30-second voice note after the job; a draft quote with line items appears in your inbox for checking. It never sends to the customer.', who: 'Trades, automotive workshops, cleaners', up: 'Quotes, Invoices and Bookkeeping Automation from $1,900, or Back Office' },
-  D3: { name: 'Daily inbox summary', desc: 'At 7am, one email: what came in, what needs a reply, what has a deadline, and drafted replies for the two most urgent. Reads only the mailbox you authorise.', who: 'Accountants, lawyers, agents, any owner-operator with a busy inbox', up: 'Inbox and Admin Assistant from $500 a month plus $1,000, or Back Office' },
-  D4: { name: 'Invoice reminders from Xero by email', desc: 'Polite reminders at 7, 14 and 21 days overdue in your words, from your own mailbox, stopping when Xero shows paid. Without Xero, reminders run from a shared sheet you update.', who: 'Trades, cleaners, workshops, firms with their own receivables', up: 'Quotes, Invoices and Bookkeeping Automation (SMS reminders, pay links)' },
-  D5: { name: 'Lead or quote form to sheet plus alert', desc: 'A short branded form; each submission lands in a sheet or your CRM and you get an email alert. For cleaners on ServiceM8, a quote-request form that creates the job.', who: 'Cleaners, trades, anyone taking enquiries on paper or by phone', up: 'Workflow Automation from $2,900, or Front Desk' },
-  D6: { name: 'Website FAQ chat', desc: 'A chat widget on your site answering your top 20 questions from a document you approve, showing "You\'re chatting with an AI assistant" before the first message, handing over by email when it can\'t help.', who: 'Retail, hospitality, salons, clinics, gyms with a website', up: 'Website and Social Chat Agent $200 a month plus $500, or Front Desk' },
-  D7: { name: 'Review request after sale plus reply drafts', desc: 'After a paid invoice or completed appointment, one email asking for a Google review, sent once, no incentive; new reviews are emailed to you with a drafted reply to approve.', who: 'Retail, hospitality, salons, workshops', up: 'Reviews and Reputation $100 a month, included in every package' },
-  D8: { name: 'Missed-call text-back', desc: 'When a call goes unanswered, the caller gets a text within a minute with your existing booking link or a call-back promise. No promotion, and it says it is an automated message.', cost: 'Your number and texts are billed to you at cost by the phone provider, about $5 to $15 a month, in your name.', who: 'Salons, workshops, trades, cleaners, gyms, venues', up: 'AI Receptionist from $300 a month plus $500, or Front Desk' },
-  D9: { name: 'Document and form chaser', desc: 'From a shared sheet of what is outstanding, polite email reminders on your schedule, a status view of who is behind, and a daily digest.', who: 'Accountants, lawyers, property managers, clinics (non-clinical forms only)', up: 'Inbox and Admin Assistant, or Back Office' }
+  D1: { name: 'Enquiry auto-reply with booking link', desc: 'Replies by email within a minute to web-form, portal or lead-site enquiries: thanks them, answers the two standard questions, offers your booking or quote link, and tells you.', who: 'Trades, cleaners, real estate, gyms, anyone whose enquiries arrive by form or email' },
+  D2: { name: 'Voice note to draft quote', desc: 'You send a 30-second voice note after the job; a draft quote with line items appears in your inbox for checking. It never sends to the customer.', who: 'Trades, automotive workshops, cleaners' },
+  D3: { name: 'Daily inbox summary', desc: 'At 7am, one email: what came in, what needs a reply, what has a deadline, and drafted replies for the two most urgent. Reads only the mailbox you authorise.', who: 'Accountants, lawyers, agents, any owner-operator with a busy inbox' },
+  D4: { name: 'Invoice reminders from Xero by email', desc: 'Polite reminders at 7, 14 and 21 days overdue in your words, from your own mailbox, stopping when Xero shows paid. Without Xero, reminders run from a shared sheet you update.', who: 'Trades, cleaners, workshops, firms with their own receivables' },
+  D5: { name: 'Lead or quote form to sheet plus alert', desc: 'A short branded form; each submission lands in a sheet or your CRM and you get an email alert. For cleaners on ServiceM8, a quote-request form that creates the job.', who: 'Cleaners, trades, anyone taking enquiries on paper or by phone' },
+  D6: { name: 'Website FAQ chat', desc: 'A chat widget on your site answering your top 20 questions from a document you approve, showing "You\'re chatting with an AI assistant" before the first message, handing over by email when it can\'t help.', who: 'Retail, hospitality, salons, clinics, gyms with a website' },
+  D7: { name: 'Review request after sale plus reply drafts', desc: 'After a paid invoice or completed appointment, one email asking for a Google review, sent once, no incentive; new reviews are emailed to you with a drafted reply to approve.', who: 'Retail, hospitality, salons, workshops' },
+  D8: { name: 'Missed-call text-back', desc: 'When a call goes unanswered, the caller gets a text within a minute with your existing booking link or a call-back promise. No promotion, and it says it is an automated message.', cost: 'Your number and texts are billed to you at cost by the phone provider, about $5 to $15 a month, in your name.', who: 'Salons, workshops, trades, cleaners, gyms, venues' },
+  D9: { name: 'Document and form chaser', desc: 'From a shared sheet of what is outstanding, polite email reminders on your schedule, a status view of who is behind, and a daily digest.', who: 'Accountants, lawyers, property managers, clinics (non-clinical forms only)' }
 };
 const BM = ['Under $300', '$300 to $600', '$600 to $1,000', '$1,000 to $2,000', 'More than $2,000'], BO = ['Under $1,000', '$1,000 to $3,000', '$3,000 to $6,000', '$6,000 to $12,000', 'More than $12,000'];
 const bandLabel = (arr, v) => (v === 9 ? 'Not sure yet' : arr[v]);
@@ -1934,13 +1909,14 @@ function compute() {
   const bandM = m => m < 300 ? 0 : m < 600 ? 1 : m < 1000 ? 2 : m < 2000 ? 3 : 4;
   const bandO = s => s < 1000 ? 0 : s < 3000 ? 1 : s < 6000 ? 2 : s < 12000 ? 3 : 4;
   const mk = (m, s, own) => ({ m, s, own, needM: bandM(m), needO: bandO(s), needOwnO: bandO(own) });
-  const price = { front: mk(PACKS.front.monthly, ind.setup, ind.own), back: mk(PACKS.back.monthly, PACKS.back.setup, PACKS.back.own), whole: mk(PACKS.whole.monthly, PACKS.whole.setup, PACKS.whole.own), workflow: mk(0, 2900, 2900) }[pkg];
+  const price = { front: mk(PACKS.front.monthly, ind.setup, ind.own), back: mk(PACKS.back.monthly, PACKS.back.setup, PACKS.back.own), whole: mk(PACKS.whole.monthly, PACKS.whole.setup, PACKS.whole.own), workflow: mk(0, PRICE('pricing.builds.workflow.from', 2900), PRICE('pricing.builds.workflow.from', 2900)) }[pkg];
   const unsure = A.bm === 9 || A.bo === 9;
   let fit, smaller = null;
   if (unsure) fit = 'discuss';
   else if (A.bm >= price.needM && A.bo >= price.needO) fit = 'fits';
   else {
-    const comp = { 'reception': ['AI Receptionist', 300, 500], 'follow-up': ['Instant Lead Follow-up', 200, 500], 'chat': ['Website and Social Chat Agent', 200, 500], 'reviews': ['Reviews and Reputation', 100, 0], 'inbox': ['Inbox and Admin Assistant', 500, 1000], 'quotes/invoices': ['Quotes, Invoices and Bookkeeping Automation', 0, 1900], 'bookkeeping': ['Quotes, Invoices and Bookkeeping Automation', 0, 1900], 'documents': ['Document chasing inside Inbox and Admin Assistant', 500, 1000], 'meetings': ['Meeting Notes and CRM Updates', 100, 500], 'content': ['Content and Marketing Automation', 200, 700], 'workflow': ['A single workflow build', 0, 2900] }[tl];
+    const F = 'pricing.frontDesk.', B = 'pricing.backOffice.';
+    const comp = { 'reception': ['AI Receptionist', PRICE(F + 'receptionist.monthly', 300), PRICE(F + 'receptionist.setup', 500)], 'follow-up': ['Instant Lead Follow-up', PRICE(F + 'leadFollowUp.monthly', 200), PRICE(F + 'leadFollowUp.setup', 500)], 'chat': ['Website and Social Chat Agent', PRICE(F + 'chat.monthly', 200), PRICE(F + 'chat.setup', 500)], 'reviews': ['Reviews and Reputation', PRICE(F + 'reviews.monthly', 100), 0], 'inbox': ['Inbox and Admin Assistant', PRICE(B + 'inbox.monthly', 500), PRICE(B + 'inbox.setup', 1000)], 'quotes/invoices': ['Quotes, Invoices and Bookkeeping Automation', 0, PRICE(B + 'quotesInvoices.from', 1900)], 'bookkeeping': ['Quotes, Invoices and Bookkeeping Automation', 0, PRICE(B + 'quotesInvoices.from', 1900)], 'documents': ['Document chasing inside Inbox and Admin Assistant', PRICE(B + 'inbox.monthly', 500), PRICE(B + 'inbox.setup', 1000)], 'meetings': ['Meeting Notes and CRM Updates', PRICE(B + 'meetings.monthly', 100), PRICE(B + 'meetings.setup', 500)], 'content': ['Content and Marketing Automation', PRICE(B + 'content.monthly', 200), PRICE(B + 'content.setup', 700)], 'workflow': ['A single workflow build', 0, PRICE('pricing.builds.workflow.from', 2900)] }[tl];
     if (comp && A.bm >= bandM(comp[1]) && A.bo >= bandO(comp[2])) smaller = { name: comp[0], m: comp[1], s: comp[2], job: top[0].label, jobs: [top[0].label], outright: false };
     else if (A.bo >= price.needOwnO) smaller = { name: PACKS[pkg === 'workflow' ? 'front' : pkg].name + ' owned outright', m: 0, s: price.own, job: allJobs, jobs: top.map(i => i.label), outright: true };
     else if (pkg === 'whole' && A.bm >= bandM(PACKS.front.monthly) && A.bo >= bandO(ind.setup)) { const fj = top.filter(i => FRONT.includes(lineOf(i))).map(i => i.label); smaller = { name: 'Front Desk (the first half of Whole Shop)', m: PACKS.front.monthly, s: ind.setup, job: fj.join(' and ') || top[0].label, jobs: fj.length ? fj : [top[0].label], outright: false }; }
@@ -1949,6 +1925,7 @@ function compute() {
   return { top, nTop, allJobs, pkg, half, capped, price, fit, smaller, fb, fbNote, created: new Date().toISOString() };
 }
 const PKGNAME = k => k === 'workflow' ? 'a single workflow build' : PACKS[k].name;
+if (window.AX) window.AX.onUpdate(() => { const aRes = $('#aRes'); if (A.result && aRes && aRes.innerHTML && !aRes.hidden) { try { A.result = compute(); renderResult(A.result); } catch (e) {} } });
 function renderResult(r) {
   const d = AUDIT[A.ind];
   const title = A.ind === 'other' ? A.indOther : d.name;
@@ -1961,7 +1938,7 @@ function renderResult(r) {
   const pm = r.pkg === 'workflow' ? `from <b>${money(P.s)} one-off</b>` : `at <b>${money(P.m)} a month plus ${money(P.s)} setup</b>`;
   const ownLine = r.pkg === 'workflow' ? ' It is a one-off build you own, with no monthly fee to us.' : ` Or own it outright from ${money(P.own)} with no monthly fee to us.`;
   const halfName = r.pkg === 'front' ? 'front desk' : 'back office';
-  const halfLine = r.capped ? ` For a one-person business we'd start with the ${halfName} half; the other half can come later.` : (r.pkg === 'whole' && r.half ? ` We'd start with the ${PACKS[r.half].name} half.` : '');
+  const halfLine = r.capped ? ` For a one-person business we'd start with the ${halfName} half; the other half can come later.` : (r.pkg === 'whole' && r.half ? ` We'd start with the ${esc(PACKS[r.half].name)} half.` : '');
   let fitText;
   if (r.fit === 'fits') fitText = `Based on what you told us, <b>${esc(name)}</b> ${pm} (+ GST) covers ${r.capped ? 'the ' + halfName + ' jobs above' : jobs}.${halfLine}${ownLine} We'll confirm this in writing within two business days once we've checked your software.`;
   else if (r.fit === 'partial') {
@@ -2033,9 +2010,8 @@ aform.addEventListener('submit', async e => {
   adone.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
 });
 async function saveAudit(rec) {
-  if (!window.AXFORM) return false;
   const c = rec.contact || {};
-  return window.AXFORM.send('Free AI audit: ' + c.business + ' (' + rec.industry_name + ', ' + rec.fit_status + ')', {
+  return sendBoth('audit', 'Free AI audit: ' + c.business + ' (' + rec.industry_name + ', ' + rec.fit_status + ')', {
     name: c.name, email: c.email, mobile: c.mobile, business: c.business, website: c.website, notes: c.notes,
     industry: rec.industry_name + (rec.industry_other_text ? ' (' + rec.industry_other_text + ')' : ''), team_size: rec.team_size,
     software: (rec.software || []).join(', ') + (rec.software_other_text ? '; ' + rec.software_other_text : ''),
@@ -2047,131 +2023,6 @@ async function saveAudit(rec) {
     reply_due_by: rec.sla_due_at, result_as_shown: rec.result_text
   });
 }
-
-/* ---------- admin view (editors only) ---------- */
-let adminTab = 'audits', adminDocs = { audits: [], leads: [] }, adminDb = null, unsubs = [];
-async function initAdmin() {
-  const user = await use('user');
-  const can = user ? await user.canEdit().catch(() => false) : false;
-  if (can) $('#adminLink').hidden = false;
-  const onHash = async () => {
-    const isAdmin = location.hash === '#admin';
-    document.body.classList.toggle('admin-mode', isAdmin);
-    if (!isAdmin) return;
-    if (!can) { $('#admIntro').innerHTML = 'This view is for ArchonX staff. Open the page from an account that can edit this artifact. <a href="#top">Back to the site</a>'; $('#admUI').hidden = true; return; }
-    adminDb = adminDb || await use('db');
-    if (!adminDb) { $('#admIntro').textContent = 'The database isn\'t available in this view.'; return; }
-    $('#admIntro').textContent = 'Every audit and booking-form submission, newest first. Reply before the SLA time shown on each row, record what you decided, and keep your notes here.';
-    $('#admUI').hidden = false;
-    if (!unsubs.length) {
-      unsubs.push(adminDb.collection('audits').onSnapshot(s => { adminDocs.audits = s.docs.map(d => ({ id: d.id, ...(d.data() || {}) })); renderAdmin(); }, e => { $('#admIntro').textContent = 'Could not read audits: ' + (e && e.code); }));
-      unsubs.push(adminDb.collection('leads').onSnapshot(s => { adminDocs.leads = s.docs.map(d => ({ id: d.id, ...(d.data() || {}) })); renderAdmin(); }, e => { $('#admIntro').textContent = 'Could not read leads: ' + (e && e.code); }));
-    }
-  };
-  window.addEventListener('hashchange', onHash); onHash();
-}
-const STATUSES = ['new', 'contacted', 'quoted', 'won', 'lost', 'not-yet'];
-function slaPill(doc) {
-  const l = doc.latest || {}; if (doc.status && doc.status !== 'new') return `<span class="pill ok">${esc(doc.status)}</span>`;
-  const due = l.sla_due_at ? new Date(l.sla_due_at) : null; if (!due) return '<span class="pill">new</span>';
-  const hrs = (due - Date.now()) / 36e5;
-  return hrs < 0 ? `<span class="pill late">overdue ${Math.round(-hrs)} h</span>` : (hrs < 8 ? `<span class="pill late">due in ${Math.round(hrs)} h</span>` : `<span class="pill">due ${due.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })}</span>`);
-}
-let renderPending = false;
-function renderAdmin() {
-  const listEl = $('#admList');
-  if (listEl.contains(document.activeElement) && document.activeElement.matches('input,select,textarea,button')) { renderPending = true; return; }
-  const open = new Set($$('.adm-row[open]', listEl).map(d => d.dataset.id));
-  const filt = $('#admFilter').value;
-  const list = (adminDocs[adminTab] || []).slice().sort((a, b) => String(b.updatedAt || '').localeCompare(String(a.updatedAt || ''))).filter(d => filt === 'all' || (d.status || 'new') === filt);
-  const au = adminDocs.audits, le = adminDocs.leads;
-  $('#admKpis').innerHTML = `<span><b>${au.length}</b> audits</span><span><b>${au.filter(d => (d.status || 'new') === 'new').length}</b> awaiting reply</span><span><b>${au.filter(d => ['won'].includes(d.status)).length}</b> won</span><span><b>${le.length}</b> booking leads</span>`;
-  if (!list.length) { listEl.innerHTML = `<p class="muted">Nothing here yet. ${adminTab === 'audits' ? 'Audits appear the moment someone finishes screen 5.' : 'Booking-form submissions appear here.'}</p>`; return; }
-  listEl.innerHTML = list.map(doc => adminTab === 'audits' ? auditRow(doc) : leadRow(doc)).join('');
-  $$('.adm-row', listEl).forEach(d => { if (open.has(d.dataset.id)) d.open = true; });
-}
-$('#admList').addEventListener('focusout', () => { if (renderPending) { renderPending = false; setTimeout(renderAdmin, 0); } });
-function kv(k, v) { return v ? `<dt>${esc(k)}</dt><dd>${esc(String(v))}</dd>` : ''; }
-function auditRow(doc) {
-  const l = doc.latest || {}; const c = l.contact || {};
-  const hist = (doc.history || []).length;
-  return `<details class="adm-row" data-id="${esc(doc.id)}"><summary><div><div class="ttl">${esc(c.business || '(no business name)')} · ${esc(c.name || '')}</div><div class="meta">${esc(l.industry_name || '')} · ${esc(l.team_size || '')} · top: ${esc((l.headaches && l.headaches[0] && l.headaches[0].label) || '')} · fit: ${esc(l.fit_status || '')} · free: ${esc(l.free_build_suggested || '')} · ${l.created_at ? new Date(l.created_at).toLocaleString('en-AU') : ''}${hist ? ' · ' + hist + ' earlier' : ''}</div></div><div>${slaPill(doc)}</div></summary>
-  <div class="adm-body"><div><dl>${kv('Mobile', c.mobile)}${kv('Email', c.email)}${kv('Website', c.website)}${kv('Notes from them', c.notes)}${kv('Software', (l.software || []).join(', '))}${kv('Other software', l.software_other_text)}${kv('All headaches ticked', (l.all_headaches || []).join(' · '))}${kv('What good looks like', l.good_looks_like)}${kv('Planning to use AI', (l.ai_plan || '') + (l.ai_plan_text ? ' (' + l.ai_plan_text + ')' : ''))}${kv('Monthly budget', l.budget_monthly)}${kv('One-off budget', l.budget_oneoff)}${kv('Timeline', l.timeline)}${kv('Suggested', l.suggested_package)}${kv('Marketing consent', l.marketing_consent ? 'yes, ' + (l.consent_recorded_at || '') : 'no')}${kv('SLA due', l.sla_due_at ? new Date(l.sla_due_at).toLocaleString('en-AU') : '')}</dl><p class="adm-note" style="margin-top:.8rem"><b>Result as they saw it</b></p><pre class="mono small" style="white-space:pre-wrap;margin:.3rem 0 0">${esc(l.result_text || '')}</pre></div>
-  <form class="adm-form" data-id="${esc(doc.id)}" data-col="audits">
-    <label>Status <select name="status">${STATUSES.map(s => `<option value="${s}" ${(doc.status || 'new') === s ? 'selected' : ''}>${s}</option>`).join('')}</select></label>
-    <label>Budget-fit decision <select name="budget_fit_decision"><option value="">as suggested (${esc(l.fit_status || '')})</option><option value="fits" ${doc.budget_fit_decision === 'fits' ? 'selected' : ''}>fits</option><option value="partial" ${doc.budget_fit_decision === 'partial' ? 'selected' : ''}>partial</option><option value="notyet" ${doc.budget_fit_decision === 'notyet' ? 'selected' : ''}>not yet</option><option value="discuss" ${doc.budget_fit_decision === 'discuss' ? 'selected' : ''}>to discuss</option></select></label>
-    <label>Free build to deliver <select name="free_build_chosen"><option value="">suggested (${esc(l.free_build_suggested || '')})</option>${Object.keys(FREE).map(k => `<option value="${k}" ${doc.free_build_chosen === k ? 'selected' : ''}>${k}: ${esc(FREE[k].name)}</option>`).join('')}<option value="none" ${doc.free_build_chosen === 'none' ? 'selected' : ''}>none</option></select></label>
-    <label>Confirmation text sent (date) <input type="date" name="sms_sent_at" value="${esc(doc.sms_sent_at || '')}"></label>
-    <label>Reply sent (date) <input type="date" name="reply_sent_at" value="${esc(doc.reply_sent_at || '')}"></label>
-    <label>Hourly rate for the annual estimate (optional, $) <input type="number" name="hourly_rate" min="0" step="5" value="${esc(doc.hourly_rate || '')}"></label>
-    <label>Your notes <textarea name="owner_notes">${esc(doc.owner_notes || '')}</textarea></label>
-    <div class="adm-actions"><button class="btn-2" type="submit">Save</button><button class="btn-2" type="button" data-tpl="${esc(doc.id)}">Draft the reply</button><span class="adm-note" data-saved></span></div>
-    <textarea name="draft" aria-label="Reply draft" hidden></textarea>
-  </form></div></details>`;
-}
-function leadRow(doc) {
-  const l = doc.latest || {}; const hist = (doc.history || []).length;
-  return `<details class="adm-row" data-id="${esc(doc.id)}"><summary><div><div class="ttl">${esc(l.business || '(no business)')} · ${esc(l.name || '')}</div><div class="meta">${esc(l.team || '')} · ${esc(l.mobile || '')} · ${esc(l.email || '')} · ${l.submittedAt ? new Date(l.submittedAt).toLocaleString('en-AU') : ''}${hist ? ' · ' + hist + ' earlier' : ''}</div></div><div><span class="pill ${doc.status && doc.status !== 'new' ? 'ok' : ''}">${esc(doc.status || 'new')}</span></div></summary>
-  <div class="adm-body"><div><dl>${kv('Industry picked in the demo', l.industry)}${kv('Plan jobs they ticked', (l.planJobs || []).join(' · '))}${kv('Marketing consent', l.marketingConsent ? 'yes, ' + (l.consentRecordedAt || '') : 'no')}${kv('Source', l.source)}</dl></div>
-  <form class="adm-form" data-id="${esc(doc.id)}" data-col="leads">
-    <label>Status <select name="status">${STATUSES.map(s => `<option value="${s}" ${(doc.status || 'new') === s ? 'selected' : ''}>${s}</option>`).join('')}</select></label>
-    <label>Call booked (date) <input type="date" name="call_booked_at" value="${esc(doc.call_booked_at || '')}"></label>
-    <label>Your notes <textarea name="owner_notes">${esc(doc.owner_notes || '')}</textarea></label>
-    <div class="adm-actions"><button class="btn-2" type="submit">Save</button><span class="adm-note" data-saved></span></div>
-  </form></div></details>`;
-}
-function template(doc) {
-  const l = doc.latest || {}, c = l.contact || {}; const first = (c.name || '').split(' ')[0] || 'there';
-  const H = l.headaches || []; const hs = H.map(x => x.label); const n = hs.length;
-  const lo = H.reduce((s, x) => s + (x.lo || 0), 0), hi = H.reduce((s, x) => s + (x.hi || 0), 0), open = H.some(x => x.open);
-  const range = open ? `more than ${lo} hours a week` : `about ${lo} to ${hi} hours a week`;
-  const allYours = n > 0 && H.every(x => x.yours), noneYours = n > 0 && H.every(x => !x.yours);
-  const est = allYours ? `Your estimate was ${range}` : noneYours ? `Our typical estimate is ${range}` : `Between your estimates and our typical figures, ${range}`;
-  const estBy = allYours ? 'by your estimate' : noneYours ? 'by our typical estimate' : 'between your estimates and our typical figures';
-  const countWord = n === 1 ? 'job' : n === 2 ? 'two' : 'three';
-  const jobsN = n === 1 ? 'The job you picked' : `The ${countWord} jobs you picked`;
-  const allOf = n === 3 ? 'all three' : n === 2 ? 'both' : 'it';
-  const sw = (l.software || []).filter(s => s !== 'None of these');
-  const fit = doc.budget_fit_decision || l.fit_status || 'fits';
-  const fbk = doc.free_build_chosen && doc.free_build_chosen !== 'none' ? doc.free_build_chosen : l.free_build_suggested; const fb = FREE[fbk] || FREE.D1;
-  const pk = Object.keys(PACKS).find(k => PACKS[k].name === l.suggested_package); const indP = IND[l.industry] || IND.trades;
-  const pm = pk ? money(PACKS[pk].monthly) : '$[monthly]', ps = pk ? money(pk === 'front' ? indP.setup : PACKS[pk].setup) : '$[setup]', pb = pk ? money(pk === 'front' ? indP.own : PACKS[pk].own) : '$[build]';
-  const pkgName = l.suggested_package || '[Package]';
-  const sig = `\n\nThe ArchonX Consulting team\nArchonX Pty Ltd, ACN 698 731 832, Brisbane QLD, hello@archonx.ai`;
-  const freeP = `Free, either way: we'll set up ${fb.name} for you. ${fb.desc} It runs free on our side for 90 days and identifies itself as an automated message every time. It takes about 20 minutes of yours.`;
-  const rate = +doc.hourly_rate || 0; const annual = rate && !open ? ` (at $${rate} an hour that is roughly $${Math.round(lo * rate * 46).toLocaleString('en-AU')} to $${Math.round(hi * rate * 46).toLocaleString('en-AU')} a year, an estimate)` : '';
-  if (fit === 'notyet' || fit === 'not_yet') return `Subject: Your ArchonX audit, ${c.business}: the free build, and what to do yourself\n\nHi ${first},\n\nThanks for doing the audit. Our packages start at $400 a month plus $1,500 setup, both + GST, and that's above what you said the business can spend right now, so I won't send you a proposal. Here's what we can do instead.\n\n${freeP} If you want it, reply "yes" and we'll suggest a time.\n\nDo it yourself, in about an hour:\n1. [specific native feature in ${sw[0] || 'your software'}]\n2. [specific native feature]\n3. [specific free step, e.g. add your top ten questions and answers to your Google Business Profile]\n\nYour ${n === 1 ? 'job' : 'jobs'}, ${hs.join(', ')}, will still be here when the numbers change. The audit stays free, and we'll check in once in three months unless you'd rather we didn't; just say.${sig}`;
-  if (fit === 'partial') return `Subject: Your ArchonX plan, ${c.business}: what fits and what doesn't\n\nHi ${first},\n\nThanks for doing the audit. We'll be straight with you about the numbers.\n\n${jobsN}: ${hs.join(', ')}, ${range} ${estBy}${annual}. Covering ${allOf} is ${pkgName} at ${pm} a month plus ${ps} setup, both + GST, which is above the range you gave (${l.budget_monthly} a month, ${l.budget_oneoff} one-off).\n\nWhat fits your range: [component or build] at $[price] + GST. It handles ${hs[0]} and I'd start there.${n > 1 ? ' ' + hs.slice(1).join(' and ') + ' can wait; you\'d add ' + (n === 2 ? 'it' : 'them') + ' later as a single workflow from $2,900 or by moving to ' + pkgName + ' when it makes sense.' : ''} If a one-off suits you better, the whole thing can be owned outright from ${pb} with no monthly fee to us.\n\nFree, regardless: ${fb.name}. ${fb.desc} 90 days free on our side, then your choice to keep it, take it over, or switch it off.\n\nIf you want to go ahead with the smaller step, reply "yes" and we'll send a written quote. If you'd rather talk it through, pick a time: [booking link].${sig}`;
-  if (fit === 'discuss') return `Subject: Your ArchonX plan, ${c.business}\n\nHi ${first},\n\nThanks for doing the audit. Here's what I took from it.\n\nThe ${n === 1 ? 'job' : countWord + ' jobs'} eating your week, in your words: ${hs.join(', ')}. ${est} across the ${n === 1 ? 'job' : countWord}${annual}. You weren't sure about budget, so here's the range: the package that covers ${allOf} is ${pkgName} at ${pm} a month plus ${ps} setup; the smallest useful step is [component] at $[price]; owning it outright is from ${pb}. All prices + GST. A 15-minute call is the quickest way to land on the right one: [booking link].\n\n${freeP}\n\nNext step: reply "yes" to this email and we'll send the written quote and a time to set up the free build, or pick a slot at the link above. No obligation.${sig}`;
-  return `Subject: Your ArchonX plan, ${c.business}\n\nHi ${first},\n\nThanks for doing the audit. Here's what I took from it.\n\nThe ${n === 1 ? 'job' : countWord + ' jobs'} eating your week, in your words: ${hs.join(', ')}. ${est} across the ${n === 1 ? 'job' : countWord}${annual}. we've checked what ${sw.join(', ') || 'the tools you already use'} can and can't do, and ${allOf === 'it' ? 'it' : allOf} can be handled inside ${pkgName} at ${pm} a month plus ${ps} setup, both + GST, month to month with 30 days' notice. If you'd rather pay once and own it, the same build is from ${pb} with no monthly fee to us. Your phone number, any minutes above the allowance and any software you don't already have are billed by the provider at cost and listed on the quote.\n\n${freeP}\n\nNext step: reply "yes" to this email and we'll send the written quote and a time to set up the free build, or pick a 15-minute slot here: [booking link]. No obligation.${sig}`;
-}
-$('#admList').addEventListener('submit', async e => {
-  e.preventDefault(); const f = e.target; if (!f.matches('.adm-form')) return;
-  const id = f.dataset.id, col = f.dataset.col; const data = {}; new FormData(f).forEach((v, k) => { if (k !== 'draft') data[k] = v; });
-  data.admin_updated_at = new Date().toISOString();
-  const note = f.querySelector('[data-saved]'); note.textContent = 'Saving…';
-  try { await adminDb.doc(col + '/' + id).update(data); note.textContent = 'Saved'; } catch (err) { note.textContent = 'Could not save (' + ((err && err.code) || 'error') + ')'; }
-  setTimeout(() => { note.textContent = ''; }, 3000);
-});
-$('#admList').addEventListener('click', async e => {
-  const b = e.target.closest('[data-tpl]'); if (!b) return;
-  const doc = adminDocs.audits.find(d => d.id === b.dataset.tpl); if (!doc) return;
-  const f = b.closest('form'); const live = Object.assign({}, doc); new FormData(f).forEach((v, k) => { if (k !== 'draft') live[k] = v; });
-  const ta = f.querySelector('[name=draft]'); ta.value = template(live); ta.hidden = false; ta.rows = 18;
-  try { await navigator.clipboard.writeText(ta.value); b.textContent = 'Draft copied and shown below'; } catch (err) { b.textContent = 'Draft shown below'; }
-  setTimeout(() => { b.textContent = 'Draft the reply'; }, 3000);
-});
-$$('.tabs button').forEach(b => b.addEventListener('click', () => { adminTab = b.dataset.tab; $$('.tabs button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', String(x === b)); }); renderAdmin(); }));
-$('#admFilter').addEventListener('change', renderAdmin);
-$('#admRefresh').addEventListener('click', renderAdmin);
-$('#admCsv').addEventListener('click', async function () {
-  const rows = adminTab === 'audits'
-    ? [['created', 'business', 'name', 'mobile', 'email', 'website', 'industry', 'team', 'top1', 'top2', 'top3', 'hours_lo', 'hours_hi', 'ai_plan', 'budget_monthly', 'budget_oneoff', 'timeline', 'suggested', 'fit', 'free_build', 'consent', 'status', 'decision', 'free_build_chosen', 'reply_sent', 'notes']].concat(adminDocs.audits.map(d => { const l = d.latest || {}, c = l.contact || {}, hs = l.headaches || []; return [l.created_at, c.business, c.name, c.mobile, c.email, c.website, l.industry_name, l.team_size, hs[0] && hs[0].label, hs[1] && hs[1].label, hs[2] && hs[2].label, hs.reduce((s, x) => s + (x.lo || 0), 0), hs.reduce((s, x) => s + (x.hi || 0), 0), l.ai_plan, l.budget_monthly, l.budget_oneoff, l.timeline, l.suggested_package, l.fit_status, l.free_build_suggested, l.marketing_consent, d.status, d.budget_fit_decision, d.free_build_chosen, d.reply_sent_at, d.owner_notes]; }))
-    : [['submitted', 'business', 'name', 'team', 'mobile', 'email', 'industry', 'plan_jobs', 'consent', 'status', 'call_booked', 'notes']].concat(adminDocs.leads.map(d => { const l = d.latest || {}; return [l.submittedAt, l.business, l.name, l.team, l.mobile, l.email, l.industry, (l.planJobs || []).join('; '), l.marketingConsent, d.status, d.call_booked_at, d.owner_notes]; }));
-  const csv = rows.map(r => r.map(v => '"' + String(v === undefined || v === null ? '' : v).replace(/"/g, '""') + '"').join(',')).join('\n');
-  const b = this; try { await navigator.clipboard.writeText(csv); b.textContent = 'CSV copied'; } catch (e) { b.textContent = 'Copy failed'; } setTimeout(() => { b.textContent = 'Copy CSV'; }, 2500);
-});
-/* admin view is artifact-only; on archonx.ai leads arrive by email */
 
 /* deep-link: #audit scrolls; the first script handles industry hashes */
 if (location.hash === '#audit') setTimeout(() => $('#audit').scrollIntoView(), 50);
@@ -2189,7 +2040,7 @@ if (location.hash === '#audit') setTimeout(() => $('#audit').scrollIntoView(), 5
     nav.classList.toggle("scrolled", past);
   };
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("hashchange", () => setTimeout(() => { onScroll(); if (!document.body.classList.contains("admin-mode")) window.dispatchEvent(new Event("resize")); }, 0));
+  window.addEventListener("hashchange", () => setTimeout(() => { onScroll(); window.dispatchEvent(new Event("resize")); }, 0));
   onScroll();
   const annc = document.getElementById("annc"), anncClose = document.getElementById("anncClose");
   if (annc && anncClose) anncClose.addEventListener("click", () => annc.classList.add("hidden"));

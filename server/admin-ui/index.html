@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ArchonX admin</title>
+<link rel="stylesheet" href="/admin/assets/admin.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="#overview">ArchonX admin</a>
+    <div class="who"><span id="whoEmail"></span> <button type="button" class="linkbtn" id="signOut">Sign out</button></div>
+  </div>
+  <nav class="nav" id="nav" aria-label="Sections">
+    <a href="#overview" data-route="overview">Overview</a>
+    <a href="#pricing" data-route="pricing">Pricing</a>
+    <a href="#text" data-route="text">Text</a>
+    <a href="#leads" data-route="leads">Leads<span class="badge" id="leadsBadge" hidden></span></a>
+    <a href="#history" data-route="history">History</a>
+    <a href="#settings" data-route="settings">Settings</a>
+  </nav>
+</header>
+
+<main class="main">
+  <div id="notice" class="notice" role="status" hidden></div>
+
+  <!-- Shown alone while the password must be changed -->
+  <section id="gate" hidden>
+    <h1>Choose a new password</h1>
+    <p>Your password was set by someone else or reset. Choose your own before continuing. At least 12 characters; not your email address.</p>
+    <form id="gateForm" class="pwform" novalidate>
+      <label for="gateCurrent">Current (temporary) password</label>
+      <input id="gateCurrent" name="currentPassword" type="password" autocomplete="current-password" required>
+      <label for="gateNew">New password</label>
+      <input id="gateNew" name="newPassword" type="password" autocomplete="new-password" required minlength="12" maxlength="128">
+      <label for="gateConfirm">New password again</label>
+      <input id="gateConfirm" name="confirmPassword" type="password" autocomplete="new-password" required>
+      <p class="err" data-error hidden></p>
+      <div class="actions"><button type="submit" class="btn primary">Change password</button></div>
+    </form>
+  </section>
+
+  <section id="overview" data-section hidden>
+    <h1>Overview</h1>
+    <div id="overviewBody"></div>
+  </section>
+
+  <section id="pricing" data-section hidden>
+    <h1>Pricing</h1>
+    <p class="muted">Every ArchonX price ends in 00 and is shown "+ GST" on the website. Third-party costs are estimates billed by the provider. Changes go live within a minute of saving.</p>
+    <div id="pricingBody"></div>
+    <div class="savebar" data-savebar>
+      <span class="count" data-count></span>
+      <button type="button" class="btn" data-discard>Discard</button>
+      <button type="button" class="btn primary" data-save>Save changes</button>
+    </div>
+  </section>
+
+  <section id="text" data-section hidden>
+    <h1>Text</h1>
+    <p class="muted">Short strings shown on the consulting page and the home page. No &lt; or &gt; characters.</p>
+    <div id="textBody"></div>
+    <div class="savebar" data-savebar>
+      <span class="count" data-count></span>
+      <button type="button" class="btn" data-discard>Discard</button>
+      <button type="button" class="btn primary" data-save>Save changes</button>
+    </div>
+  </section>
+
+  <section id="leads" data-section hidden>
+    <h1>Leads</h1>
+    <form id="leadFilters" class="filters" novalidate>
+      <div>
+        <label for="leadStatus">Status</label>
+        <select id="leadStatus" name="status">
+          <option value="">All</option>
+          <option value="new">New</option>
+          <option value="contacted">Contacted</option>
+          <option value="quoted">Quoted</option>
+          <option value="won">Won</option>
+          <option value="lost">Lost</option>
+          <option value="not-yet">Not yet</option>
+        </select>
+      </div>
+      <div>
+        <label for="leadKind">Kind</label>
+        <select id="leadKind" name="kind">
+          <option value="">All</option>
+          <option value="booking">Booking</option>
+          <option value="audit">Audit</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="grow">
+        <label for="leadSearch">Search</label>
+        <input id="leadSearch" name="q" type="search" placeholder="Name, business, email or mobile" autocomplete="off">
+      </div>
+      <div><button type="submit" class="btn">Apply</button></div>
+      <div><a id="leadsCsv" class="btn" href="/api/admin/leads/export.csv" download>Download CSV</a></div>
+    </form>
+    <div id="leadsBody"></div>
+  </section>
+
+  <section id="history" data-section hidden>
+    <h1>History</h1>
+    <p class="muted">Every save is kept. View a version to see how it differs from what is live now; restore puts it back as a new version.</p>
+    <div id="historyBody"></div>
+    <div id="historyDiff"></div>
+    <h2>Activity</h2>
+    <div id="activityBody"></div>
+  </section>
+
+  <section id="settings" data-section hidden>
+    <h1>Settings</h1>
+
+    <h2>Change password</h2>
+    <form id="pwForm" class="pwform" novalidate>
+      <div class="two-col">
+        <div>
+          <label for="pwCurrent">Current password</label>
+          <input id="pwCurrent" name="currentPassword" type="password" autocomplete="current-password" required>
+        </div>
+        <div></div>
+        <div>
+          <label for="pwNew">New password</label>
+          <input id="pwNew" name="newPassword" type="password" autocomplete="new-password" required minlength="12" maxlength="128">
+        </div>
+        <div>
+          <label for="pwConfirm">New password again</label>
+          <input id="pwConfirm" name="confirmPassword" type="password" autocomplete="new-password" required>
+        </div>
+      </div>
+      <p class="muted">At least 12 characters and not your email address. Other devices signed in with your login are signed out.</p>
+      <p class="err" data-error hidden></p>
+      <div class="actions"><button type="submit" class="btn">Change password</button></div>
+    </form>
+
+    <h2>Logins</h2>
+    <div id="adminsBody"></div>
+    <h3>Add another login</h3>
+    <form id="addAdminForm" novalidate>
+      <div class="two-col">
+        <div>
+          <label for="newAdminEmail">Email</label>
+          <input id="newAdminEmail" name="email" type="email" autocomplete="off" required>
+        </div>
+        <div>
+          <label for="newAdminPassword">Temporary password</label>
+          <input id="newAdminPassword" name="temporaryPassword" type="text" autocomplete="off" required minlength="12" maxlength="128">
+        </div>
+      </div>
+      <p class="muted">Tell them the temporary password in person or by phone. They must choose their own at first sign-in.</p>
+      <p class="err" data-error hidden></p>
+      <div class="actions"><button type="submit" class="btn">Add login</button></div>
+    </form>
+
+    <h2>Sessions</h2>
+    <p>Signs every device out of the admin, including this one. Use it if you have signed in on a shared or lost device.</p>
+    <div class="actions"><button type="button" class="btn" id="revokeAll">Sign out everywhere</button></div>
+
+    <h2>Content file for the website developer</h2>
+    <p>The website carries a built-in copy of this content so it works when this server is off. After pricing changes, download the file and send it to the developer; they replace <code>content/site-content.json</code> and publish.</p>
+    <p id="driftLine" class="muted"></p>
+    <ul id="driftList" class="changes"></ul>
+    <div class="actions"><a class="btn" href="/api/admin/content/export" download="site-content.json">Download content file</a></div>
+
+    <h2>Backup</h2>
+    <p>Downloads the whole database: content, history, leads and activity. Do this once a month and after a busy week; keep the file somewhere safe.</p>
+    <div class="actions"><a class="btn" href="/api/admin/backup" download>Download backup</a></div>
+  </section>
+</main>
+
+<dialog id="confirmDialog" aria-labelledby="confirmTitle">
+  <h2 id="confirmTitle"></h2>
+  <div id="confirmBody"></div>
+  <div class="actions">
+    <button type="button" class="btn" id="confirmCancel">Cancel</button>
+    <button type="button" class="btn primary" id="confirmOk">Save</button>
+  </div>
+</dialog>
+
+<dialog id="leadDialog" aria-labelledby="leadTitle">
+  <h2 id="leadTitle"></h2>
+  <div id="leadBody"></div>
+  <div class="actions">
+    <button type="button" class="btn" id="leadDelete">Delete</button>
+    <button type="button" class="btn" id="leadClose">Close</button>
+    <button type="button" class="btn primary" id="leadSave">Save</button>
+  </div>
+</dialog>
+
+<script src="/admin/assets/fields.js"></script>
+<script src="/admin/assets/app.js"></script>
+</body>
+</html>

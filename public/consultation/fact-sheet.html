@@ -9,6 +9,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/conthrax">
+<script src="/consultation/ax-content.js"></script>
 <style>
 :root{--ink:#1E2124;--ink-2:#55595D;--rule:#E4E4E4;--paper:#fff;--body:"Archivo","Helvetica Neue",Arial,system-ui,sans-serif;--mono:"DM Mono","SFMono-Regular",Consolas,monospace;--serif:"Instrument Serif",Georgia,serif;--logo:"Conthrax","Inter",-apple-system,sans-serif}
 *{box-sizing:border-box}
@@ -78,13 +79,13 @@ td.price{font-family:var(--mono);white-space:nowrap}
   <table>
     <thead><tr><th>Service</th><th>ArchonX price (+ GST)</th><th>What others typically charge</th></tr></thead>
     <tbody>
-      <tr><td>Front Desk: receptionist, chat, follow-up, reviews</td><td class="price">$400 a month + $1,500 setup</td><td>Managed receptionists $200 to $500 a month plus $400 to $1,000 setup</td></tr>
-      <tr><td>Back Office: inbox, quotes, invoices, bookkeeping</td><td class="price">$800 a month + $4,000 setup</td><td>Managed automation retainers from about $1,000 a month</td></tr>
-      <tr><td>Whole Shop: both, for up to ten people</td><td class="price">$1,200 a month + $6,900 setup</td><td>&nbsp;</td></tr>
-      <tr><td>One working system in two weeks</td><td class="price">$10,000</td><td>Pilots $20,000 to $65,000</td></tr>
-      <tr><td>Embedded engineer, two or three days a week</td><td class="price">$8,800 or $12,900 a month</td><td>Part-time AI engineers $15,000 to $35,000 a month</td></tr>
-      <tr><td>Workflow automation</td><td class="price">from $2,900 per workflow</td><td>Single-workflow builds $1,500 to $5,000, with no handover</td></tr>
-      <tr><td>AI readiness audit</td><td class="price">$1,000, credited against any build</td><td>&nbsp;</td></tr>
+      <tr><td>Front Desk: receptionist, chat, follow-up, reviews</td><td class="price"><span data-p="pricing.packs.front.monthly">$400</span> a month + <span data-p="pricing.packs.front.setup">$1,500</span> setup</td><td data-market>Managed receptionists $200 to $500 a month plus $400 to $1,000 setup</td></tr>
+      <tr><td>Back Office: inbox, quotes, invoices, bookkeeping</td><td class="price"><span data-p="pricing.packs.back.monthly">$800</span> a month + <span data-p="pricing.packs.back.setup">$4,000</span> setup</td><td data-market>Managed automation retainers from about $1,000 a month</td></tr>
+      <tr><td>Whole Shop: both, for up to ten people</td><td class="price"><span data-p="pricing.packs.whole.monthly">$1,200</span> a month + <span data-p="pricing.packs.whole.setup">$6,900</span> setup</td><td>&nbsp;</td></tr>
+      <tr><td>One working system in two weeks</td><td class="price"><span data-p="pricing.engineer.twoWeekSystem">$10,000</span></td><td data-market>Pilots $20,000 to $65,000</td></tr>
+      <tr><td>Embedded engineer, two or three days a week</td><td class="price"><span data-p="pricing.engineer.embeddedTwoDays">$8,800</span> or <span data-p="pricing.engineer.embeddedThreeDays">$12,900</span> a month</td><td data-market>Part-time AI engineers $15,000 to $35,000 a month</td></tr>
+      <tr><td>Workflow automation</td><td class="price">from <span data-p="pricing.builds.workflow.from">$2,900</span> per workflow</td><td data-market>Single-workflow builds $1,500 to $5,000, with no handover</td></tr>
+      <tr><td>AI readiness audit</td><td class="price"><span data-p="pricing.advice.audit.fixed">$1,000</span>, credited against any build</td><td>&nbsp;</td></tr>
       <tr><td>Free AI audit, with one free build</td><td class="price">Free</td><td>&nbsp;</td></tr>
     </tbody>
   </table>
@@ -100,11 +101,11 @@ td.price{font-family:var(--mono);white-space:nowrap}
       <a class="btn" href="https://archonx.ai/consultation/#audit">Start the free audit</a><a class="btn-2" href="https://archonx.ai/consultation/#sheet">Book a 15-minute call</a>
     </div>
     <div>
-      <p><b>ArchonX Consulting</b><br>hello@archonx.ai<br>archonx.ai/consultation<br>Monday to Friday, 8am to 6pm AEST<br>Brisbane, working across Australia</p>
+      <p><b>ArchonX Consulting</b><br>hello@archonx.ai<br>archonx.ai/consultation<br><span data-p="text.hours" data-fmt="plain">Monday to Friday 8am to 6pm AEST</span><br><span data-p="text.location" data-fmt="plain">Brisbane, working across Australia</span></p>
     </div>
   </div>
 
-  <p class="fine">ArchonX Consulting is a trading name of ArchonX Pty Ltd, ACN 698 731 832. Prices are in Australian dollars, + GST, correct at 1 November 2026; the full list is at archonx.ai/consultation. Market figures are ranges from published Australian price lists and 2026 rate guides, collected October 2026; no firm is named. We don't guarantee business results; what we promise is the system, live, in your name. Every AI assistant we set up identifies itself as an AI.</p>
+  <p class="fine">ArchonX Consulting is a trading name of ArchonX Pty Ltd, ACN 698 731 832. Prices are in Australian dollars, + GST, correct at <span data-p="text.pricesCorrectAt" data-fmt="date">2 November 2026</span>; the full list is at archonx.ai/consultation. Market figures are ranges from published Australian price lists and 2026 rate guides, collected October 2026; no firm is named. We don't guarantee business results; what we promise is the system, live, in your name. Every AI assistant we set up identifies itself as an AI.</p>
 </div>
 <button class="print" type="button" onclick="window.print()">Save as PDF</button>
 </body>

@@ -4,6 +4,7 @@ import EdFooter from '../components/EdFooter.jsx'
 import GlobeBackdrop from '../components/GlobeBackdrop.jsx'
 import { Magnetic, TiltCard, Parallax, AnimatedCounter, handleHashClick } from '../motion/index.js'
 import { Section, SectionHead } from '../components/editorial/index.js'
+import { useSiteContent } from '../content/useSiteContent.js'
 
 // No 01 — the three lexicon entries. `dict` is the dictionary gloss that only
 // the first entry carries.
@@ -158,6 +159,7 @@ const FACTS = [
 const delayStyle = (delay) => (delay ? { '--delay': delay } : undefined)
 
 export default function Home() {
+  const { home } = useSiteContent()
   usePageMeta({
     title: 'ArchonX.ai – AI Software and Consulting for Australian Business | Brisbane',
     description:
@@ -296,7 +298,7 @@ export default function Home() {
           <div className="ed-quote-block reveal-up">
             <span className="ed-quote-dash"></span>
             <blockquote className="ed-quote">
-              AI does the repetitive work. <span className="ed-underline ed-underline--heavy">People make the decisions</span>.
+              {home.doctrineQuote} <span className="ed-underline ed-underline--heavy">{home.doctrineQuoteEmphasis}</span>.
             </blockquote>
             <p className="ed-quote-attr">The rule we work by</p>
             <p className="ed-quote-sub">Software that helps run the business, with your people in charge of it.</p>
