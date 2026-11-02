@@ -1,0 +1,4 @@
+# Generated or machine-synced files keep LF endings on every platform.
+public/consultation/ax-content.js text eol=lf
+src/content/defaults.json text eol=lf
+content/site-content.json text eol=lf

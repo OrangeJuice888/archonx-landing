@@ -1,3 +1,9 @@
 node_modules/
 dist/
 .DS_Store
+
+# admin backend (local data, secrets)
+server/data/
+server/.env
+.env
+.env.local

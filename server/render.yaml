@@ -1,0 +1,26 @@
+# Render Blueprint for the ArchonX admin backend (the alternative to Fly.io).
+# Render reads a file named render.yaml from the ROOT of the repository, so copy this file there first:
+#   copy server\render.yaml render.yaml
+# A paid Starter instance with a disk is required: free instances sleep and lose the database.
+services:
+  - type: web
+    name: archonx-admin
+    runtime: docker
+    plan: starter
+    region: singapore
+    dockerfilePath: ./server/Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: TRUST_PROXY
+        value: "1"
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
