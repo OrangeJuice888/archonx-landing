@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import EdFooter from '../components/EdFooter.jsx'
 import GlobeBackdrop from '../components/GlobeBackdrop.jsx'
 import { Magnetic, TiltCard, Parallax, AnimatedCounter, handleHashClick } from '../motion/index.js'
 import { Section, SectionHead } from '../components/editorial/index.js'
-
-const MotionLink = motion.create(Link)
 
 // No 01 — the three lexicon entries. `dict` is the dictionary gloss that only
 // the first entry carries.
@@ -37,7 +34,8 @@ const LEXICON = [
   },
 ]
 
-// No 02 — the usual way → the ArchonX way. Every price is published.
+// No 02 — the usual way → the ArchonX way. No amounts here: every price
+// lives on the consulting page.
 const LEDGER = [
   {
     letter: 'A',
@@ -48,7 +46,7 @@ const LEDGER = [
     letter: 'B',
     delay: '0.05s',
     crisis: <>Software subscriptions charge per seat, every month, for as long as you use them</>,
-    solution: 'Own what we build outright from $3,900 + GST. No per-seat fees, ever',
+    solution: "Own what we build outright. No per-seat fees, no lock-in, 30 days' notice on any plan",
   },
   {
     letter: 'C',
@@ -59,8 +57,8 @@ const LEDGER = [
   {
     letter: 'D',
     delay: '0.15s',
-    crisis: <>A pilot elsewhere costs $20,000 to $65,000 and takes four to ten weeks</>,
-    solution: 'One working system in two weeks for $10,000 + GST, with the second half not payable until it is live',
+    crisis: <>A pilot elsewhere opens with a strategy deck and takes four to ten weeks</>,
+    solution: 'One working system in two weeks, tested on your real calls and documents, and signed off only once it is live',
   },
 ]
 
@@ -115,111 +113,43 @@ const CLAUSES = [
   },
 ]
 
-// No 05 — the eight sectors. Note that market 03 deep-links to
-// `#market-service` while its own anchor id is `market-services`.
-const MARKETS = [
+// No 05 — six plain facts about working with ArchonX. No prices here; the
+// consulting page carries every price, and the Markets page the sector detail.
+const FACTS = [
   {
-    id: 'market-retail',
-    to: '/markets#market-retail',
-    num: '01',
-    name: <>Retail</>,
-    desc: <>Stock, order and opening-hours questions answered on web, Instagram and phone from your live catalogue; supplier invoices into the books; review requests after each sale. Point of sale and back office built around how you sell.</>,
-    metrics: <><span><strong>Catalogue answers</strong> 24 / 7</span><span><strong>POS to books</strong> in one flow</span></>,
+    id: 'fact-speed',
+    title: 'Live in two weeks',
+    body: <>One workflow or agent, scoped in writing, tested on your real calls and documents, and live in your name within 14 days. The quote arrives in writing within two business days, with the go-live date in it.</>,
   },
   {
-    id: 'market-construction',
-    to: '/markets#market-construction',
-    num: '02',
+    id: 'fact-engineers',
     delay: '0.05s',
-    name: <>Construction &amp; trades</>,
-    desc: <>The phone answered while you're on the tools, a voice note turned into a draft quote, invoices chased until they're paid. For crews, Bluework handles rosters, clock-in and the SOPs.</>,
-    metrics: <><span><strong>Calls answered</strong> jobs booked</span><span><strong>Voice note</strong> to draft quote</span></>,
+    title: 'Built by engineers who have done this at scale',
+    body: <>Our engineers have worked with SK Hynix, Samsung, Hyundai, LG, Citibank, MetLife, IBM, Suncorp, OpenAI, Blackbook, Incheon Airport and Shinsegae, and with central government agencies, national data centres and public enterprises. The same discipline, with far less ceremony.</>,
   },
   {
-    id: 'market-services',
-    to: '/markets#market-service',
-    num: '03',
+    id: 'fact-ownership',
     delay: '0.1s',
-    name: <>Professional services &amp; agencies</>,
-    desc: <>Document chasing, inbox triage, reconciliation suggestions and meeting notes into the practice system, for accountants, lawyers, agencies and consultancies. Every change still goes through a registered person.</>,
-    metrics: <><span><strong>Documents chased</strong> automatically</span><span><strong>Drafts ready</strong> a person sends</span></>,
+    title: 'Yours to keep',
+    body: <>Every account, phone number and subscription sits under your business with your logins, with a one-page runbook and recorded training. Month to month, 30 days' notice, no exit fee, no per-seat fees. If ArchonX disappeared tomorrow, it would keep running.</>,
   },
   {
-    id: 'market-hospitality',
-    to: '/markets#market-hospitality',
-    num: '04',
+    id: 'fact-people',
     delay: '0.15s',
-    name: <>Hospitality</>,
-    desc: <>Bookings by phone, text and web during service; guest questions answered from your own FAQ; supplier invoices into the books; rosters and clock-in across venues with Bluework.</>,
-    metrics: <><span><strong>Bookings taken</strong> during service</span><span><strong>Rosters</strong> to timesheets</span></>,
+    title: 'Honest AI, with people in charge',
+    body: <>Every assistant says it is an AI. Money, health, legal and tenancy decisions go through a person. Nothing faces a customer until you have heard it, read it and approved the rules it follows.</>,
   },
   {
-    id: 'market-logistics',
-    to: '/markets#market-logistics',
-    num: '05',
+    id: 'fact-data',
     delay: '0.2s',
-    name: <>Logistics &amp; warehousing</>,
-    desc: <>Rostering, clock-in and task boards for floors that run in shifts, with award-aware timesheets and SOPs the team can search. Workflow automation between job, fleet and accounting software.</>,
-    metrics: <><span><strong>Shift rosters</strong> &amp; timesheets</span><span><strong>Systems</strong> connected</span></>,
+    title: 'Your data stays yours',
+    body: <>Business accounts whose terms exclude training on your data, data-sharing settings turned off, and records kept in the Australian region wherever the provider offers one. Written into the quote, not left to a policy page.</>,
   },
   {
-    id: 'market-bpo',
-    to: '/markets#market-bpo',
-    num: '06',
+    id: 'fact-measured',
     delay: '0.25s',
-    name: <>BPO &amp; contact centres</>,
-    desc: <>AI receptionists and chat agents for overflow and after hours, and enquiry follow-up until booked. Team rostering in Bluework, with fatigue and overload signals from its Protect layer (in controlled rollout), reviewed by a person.</>,
-    metrics: <><span><strong>Overflow</strong> answered</span><span><strong>Rosters</strong> &amp; timesheets</span></>,
-  },
-  {
-    id: 'market-government',
-    to: '/markets#market-government',
-    num: '07',
-    delay: '0.3s',
-    name: <>Government &amp; infrastructure</>,
-    desc: <>Operations software for dispersed teams: rosters, SOPs with citations, and tamper-evident records designed for audits. AI-use policies written to align with the Australian Privacy Principles and the Voluntary AI Safety Standard.</>,
-    metrics: <><span><strong>Evidence-grade</strong> records</span><span><strong>AI-use policy</strong> included</span></>,
-  },
-  {
-    id: 'market-defense',
-    to: '/markets#market-defense',
-    num: '08',
-    delay: '0.35s',
-    name: <>Emergency services &amp; dispatch</>,
-    desc: <>Shift rosters, clock-in and searchable SOPs for teams that cannot afford a gap. Fatigue and overload signals come with Bluework Protect (in controlled rollout), and a person reviews every one.</>,
-    metrics: <><span><strong>Rosters</strong> &amp; clock-in</span><span><strong>Human review</strong> always</span></>,
-  },
-]
-
-// No 06 — three published prices next to what the market charges. `value` is
-// the printed price, `cap` what it covers; market ranges come from published
-// Australian price lists and 2026 rate guides (docs/research), no firm named.
-const RESULTS = [
-  {
-    id: 'price-front-desk',
-    meta: <>Front desk</>,
-    value: '$400',
-    cap: 'a month + $1,500 setup, + GST',
-    title: 'Phone answered, enquiries followed up, reviews asked',
-    body: <>Managed AI receptionists elsewhere run $200 to $500 a month plus $400 to $1,000 setup. Ours includes connecting your own software, testing on real calls, a runbook, recorded training and 30 days of fixes.</>,
-  },
-  {
-    id: 'price-system',
-    delay: '0.1s',
-    meta: <>One working system</>,
-    value: '$10,000',
-    cap: 'fixed, live in two weeks, + GST',
-    title: 'One workflow or agent, scoped in writing and handed over',
-    body: <>Pilots elsewhere are quoted at $20,000 to $65,000 over four to ten weeks. Half at kick-off, half on acceptance, and the second half isn't payable if the agreed outcome isn't live.</>,
-  },
-  {
-    id: 'price-engineer',
-    delay: '0.2s',
-    meta: <>Engineer in your team</>,
-    value: '$8,800',
-    cap: 'a month, two days a week, + GST',
-    title: 'A forward-deployed engineer who ships one improvement a week',
-    body: <>Part-time AI engineers elsewhere cost $15,000 to $35,000 a month. Ours works inside your systems, trains the person who will own each change, and leaves the runbook behind.</>,
+    title: 'Measured every month',
+    body: <>Thirty days of included fixes after go-live, then a monthly report of what the system did and what it got wrong, in plain numbers. The next job starts when the first one has paid for itself.</>,
   },
 ]
 
@@ -261,20 +191,20 @@ export default function Home() {
           </div>
           <div className="ed-hero-strip">
             <div className="ed-hero-stat">
-              <span className="ed-stat-num">$10,000</span>
-              <span className="ed-stat-label">one working system in two weeks, live and in your name. Pilots elsewhere run $20,000 to $65,000.</span>
+              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={14} /><sup>days</sup></span>
+              <span className="ed-stat-label">from a signed quote to one working system, live and in your name</span>
             </div>
             <div className="ed-hero-stat">
               <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={2} /><sup>min</sup></span>
               <span className="ed-stat-label">free AI audit with your result on screen, and one build we set up free</span>
             </div>
             <div className="ed-hero-stat">
-              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={0} /></span>
-              <span className="ed-stat-label">per-seat fees, ever. Own what we build outright, from $3,900 + GST.</span>
+              <span className="ed-stat-num">24/7</span>
+              <span className="ed-stat-label">calls answered and enquiries followed up, by an assistant that says it is an AI</span>
             </div>
           </div>
           <div className="ed-hero-scroll" aria-hidden="true">
-            <span>01 / 06 &mdash; Scroll</span>
+            <span>01 / 05 &mdash; Scroll</span>
             <span className="ed-scroll-line"></span>
           </div>
         </div>
@@ -374,53 +304,23 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ===================== No 05 — INDEX OF SECTORS ===================== */}
-      <Section pole="paper" id="markets">
+      {/* ===================== No 05 — WHAT YOU GET ===================== */}
+      <Section pole="paper" id="facts">
         <div className="ed-container">
-          <SectionHead
-            no="05"
-            label="Sectors"
-            running={<>Index &mdash; 01&ndash;08</>}
-            bignum="05"
-            title="Where to start, by sector."
-          />
-          <div className="ed-index">
-            {MARKETS.map((market) => (
-              <MotionLink key={market.id} to={market.to} whileHover={{ x: 6 }} className="ed-index-row reveal-up" style={delayStyle(market.delay)} id={market.id}>
-                <span className="ed-index-num">{market.num}</span>
-                <span className="ed-index-name">{market.name}</span>
-                <span className="ed-index-desc">{market.desc}</span>
-                <span className="ed-index-metrics">{market.metrics}</span>
-                <span className="ed-index-go">&rarr;</span>
-              </MotionLink>
-            ))}
-          </div>
-          <p className="ed-index-note reveal-up">Each row names the first jobs we recommend switching on in that sector. The free audit on the consulting page picks the one that fits your business and budget.</p>
-        </div>
-      </Section>
-
-      {/* ===================== No 06 — THE AUSTRALIAN PICTURE ===================== */}
-      <Section pole="paper" className="ed-results" id="impact">
-        <div className="ed-container">
-          <SectionHead no="06" label="Prices" bignum="06" title="What it costs, next to what others charge." fat />
-          <div className="ed-results-grid">
-            {RESULTS.map((result) => (
-              <TiltCard as="div" key={result.id} className="ed-result reveal-up" style={delayStyle(result.delay)} id={result.id}>
-                <span className="ed-result-meta">{result.meta}</span>
-                <div className="ed-result-num"><span className="counter">{result.value}</span></div>
-                <div className="ed-gauge">
-                  <span className="ed-gauge-cap">{result.cap}</span>
-                </div>
-                <h3>{result.title}</h3>
-                <p>{result.body}</p>
+          <SectionHead no="05" label="What you get" bignum="05" title="What working with ArchonX looks like." />
+          <div className="ed-lexicon">
+            {FACTS.map((fact) => (
+              <TiltCard as="article" key={fact.id} className="ed-entry reveal-up" style={delayStyle(fact.delay)} id={fact.id}>
+                <h3>{fact.title}</h3>
+                <p>{fact.body}</p>
               </TiltCard>
             ))}
           </div>
-          <p className="ed-index-note reveal-up">Market figures are ranges from published Australian price lists and 2026 rate guides, collected October 2026; no firm is named. ArchonX publishes its prices and its method; it has no client results to report yet, and it won't invent any.</p>
+          <p className="ed-index-note reveal-up">Prices and packages are on the <a href="/consultation/">consulting page</a>; sector-by-sector starting points are on the <Link to="/markets">Markets page</Link>. ArchonX has no client results to report yet, and it won't invent any.</p>
         </div>
       </Section>
 
-      {/* ===================== No 07 — WORK WITH US ===================== */}
+      {/* ===================== No 06 — WORK WITH US ===================== */}
       <Section pole="ink" className="ed-offering" id="start">
         <div className="ed-container">
           <SectionHead meta={<>Work with us</>} />
@@ -440,11 +340,11 @@ export default function Home() {
             <div className="ed-termsheet reveal-up" style={{ '--delay': '0.1s' }}>
               <div className="ed-term-row">
                 <span className="ed-term-label">Software</span>
-                <span className="ed-term-value">Bluework: rosters, time and daily operations &middot; from A$8 per active employee a month (minimum four), + GST &middot; <a href="https://bluework.com.au" target="_blank" rel="noopener">bluework.com.au</a></span>
+                <span className="ed-term-value">Bluework: rosters, time and daily operations, in early access &middot; <a href="https://bluework.com.au" target="_blank" rel="noopener">bluework.com.au</a></span>
               </div>
               <div className="ed-term-row">
                 <span className="ed-term-label">Consulting</span>
-                <span className="ed-term-value">Packages from $400 a month plus $1,500 setup, or own a build outright from $3,900 &middot; all + GST, month to month</span>
+                <span className="ed-term-value">Packages, builds you own, and an engineer in your team &middot; fixed quotes in writing, month to month, every price published on the <a href="/consultation/">consulting page</a></span>
               </div>
               <div className="ed-term-row">
                 <span className="ed-term-label">Based in</span>
