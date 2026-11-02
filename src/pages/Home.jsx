@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import EdFooter from '../components/EdFooter.jsx'
 import GlobeBackdrop from '../components/GlobeBackdrop.jsx'
-import { Magnetic, TiltCard, Parallax, AnimatedCounter, GaugeFill, handleHashClick } from '../motion/index.js'
+import { Magnetic, TiltCard, Parallax, AnimatedCounter, handleHashClick } from '../motion/index.js'
 import { Section, SectionHead } from '../components/editorial/index.js'
 
 const MotionLink = motion.create(Link)
@@ -37,30 +37,30 @@ const LEXICON = [
   },
 ]
 
-// No 02 — the gap → the answer ledger. Every figure is attributed.
+// No 02 — the usual way → the ArchonX way. Every price is published.
 const LEDGER = [
   {
     letter: 'A',
-    crisis: <>65% of SMEs that haven't adopted AI distrust its decisions or prefer human control (National AI Centre)</>,
-    solution: 'A person approves anything that matters',
+    crisis: <>A traditional consultancy bills the hours and keeps the logins</>,
+    solution: 'We price the outcome and hand you the keys: your accounts, your numbers, a one-page runbook',
   },
   {
     letter: 'B',
     delay: '0.05s',
-    crisis: <>Privacy and security is a top barrier, at 39% (Intuit QuickBooks)</>,
-    solution: 'Data kept in Australia where the provider offers it; business accounts whose terms exclude training on your data',
+    crisis: <>Software subscriptions charge per seat, every month, for as long as you use them</>,
+    solution: 'Own what we build outright from $3,900 + GST. No per-seat fees, ever',
   },
   {
     letter: 'C',
     delay: '0.1s',
-    crisis: <>Lack of knowledge holds back 31% (Intuit QuickBooks)</>,
-    solution: 'A free audit, a written plan and one job first',
+    crisis: <>AI that acts on its own and lets callers think it is a person</>,
+    solution: 'Every assistant says it is an AI. Money, health, legal and tenancy decisions go through a person',
   },
   {
     letter: 'D',
     delay: '0.15s',
-    crisis: <>79% report productivity gains from AI (Intuit QuickBooks)</>,
-    solution: 'A monthly report on what it did and what it got wrong',
+    crisis: <>A pilot elsewhere costs $20,000 to $65,000 and takes four to ten weeks</>,
+    solution: 'One working system in two weeks for $10,000 + GST, with the second half not payable until it is live',
   },
 ]
 
@@ -191,34 +191,35 @@ const MARKETS = [
   },
 ]
 
-// No 06 — the three measured figures. `value` drives both the counter and the
-// gauge; `cap` is the printed "n / 100" caption.
+// No 06 — three published prices next to what the market charges. `value` is
+// the printed price, `cap` what it covers; market ranges come from published
+// Australian price lists and 2026 rate guides (docs/research), no firm named.
 const RESULTS = [
   {
-    id: 'impact-adoption',
-    meta: <>Adoption</>,
-    value: 12,
-    cap: '12 / 100',
-    title: 'Businesses using AI at work',
-    body: <>12% of Australian businesses used AI in the workplace in 2024&ndash;25, and 11% of small and micro businesses. Large businesses were at 35%. (ABS Business Characteristics Survey, June 2026)</>,
+    id: 'price-front-desk',
+    meta: <>Front desk</>,
+    value: '$400',
+    cap: 'a month + $1,500 setup, + GST',
+    title: 'Phone answered, enquiries followed up, reviews asked',
+    body: <>Managed AI receptionists elsewhere run $200 to $500 a month plus $400 to $1,000 setup. Ours includes connecting your own software, testing on real calls, a runbook, recorded training and 30 days of fixes.</>,
   },
   {
-    id: 'impact-smes',
+    id: 'price-system',
     delay: '0.1s',
-    meta: <>SMEs</>,
-    value: 44,
-    cap: '44 / 100',
-    title: 'SMEs reporting some AI adoption',
-    body: <>44% of Australian small and medium businesses reported some AI adoption in February 2026, mostly content generation and data analysis. Agentic AI is largely untouched. (National AI Centre SME AI Pulse)</>,
+    meta: <>One working system</>,
+    value: '$10,000',
+    cap: 'fixed, live in two weeks, + GST',
+    title: 'One workflow or agent, scoped in writing and handed over',
+    body: <>Pilots elsewhere are quoted at $20,000 to $65,000 over four to ten weeks. Half at kick-off, half on acceptance, and the second half isn't payable if the agreed outcome isn't live.</>,
   },
   {
-    id: 'impact-intent',
+    id: 'price-engineer',
     delay: '0.2s',
-    meta: <>Plans</>,
-    value: 71,
-    cap: '71 / 100',
-    title: 'Businesses planning more AI in 2026',
-    body: <>71% of Australian businesses plan to increase their use of AI in 2026, and 76% of AI users reported higher profitability against 34% of non-users. (CPA Australia Business Technology Report)</>,
+    meta: <>Engineer in your team</>,
+    value: '$8,800',
+    cap: 'a month, two days a week, + GST',
+    title: 'A forward-deployed engineer who ships one improvement a week',
+    body: <>Part-time AI engineers elsewhere cost $15,000 to $35,000 a month. Ours works inside your systems, trains the person who will own each change, and leaves the runbook behind.</>,
   },
 ]
 
@@ -260,16 +261,16 @@ export default function Home() {
           </div>
           <div className="ed-hero-strip">
             <div className="ed-hero-stat">
-              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={44} /><sup>%</sup></span>
-              <span className="ed-stat-label">of Australian SMEs report some AI adoption (National AI Centre, Feb 2026)</span>
+              <span className="ed-stat-num">$10,000</span>
+              <span className="ed-stat-label">one working system in two weeks, live and in your name. Pilots elsewhere run $20,000 to $65,000.</span>
             </div>
             <div className="ed-hero-stat">
-              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={71} /><sup>%</sup></span>
-              <span className="ed-stat-label">of businesses plan to increase AI use in 2026 (CPA Australia)</span>
+              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={2} /><sup>min</sup></span>
+              <span className="ed-stat-label">free AI audit with your result on screen, and one build we set up free</span>
             </div>
             <div className="ed-hero-stat">
-              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={8} /><sup>h / wk</sup></span>
-              <span className="ed-stat-label">saved on average by accountants and bookkeepers using AI (Xero, Sept 2026)</span>
+              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={0} /></span>
+              <span className="ed-stat-label">per-seat fees, ever. Own what we build outright, from $3,900 + GST.</span>
             </div>
           </div>
           <div className="ed-hero-scroll" aria-hidden="true">
@@ -299,16 +300,16 @@ export default function Home() {
       {/* ===================== No 02 — THE GAP ===================== */}
       <Section pole="ink" id="problem">
         <div className="ed-container">
-          <SectionHead meta={<>The problem</>} />
+          <SectionHead meta={<>Why ArchonX</>} />
           <div className="ed-deficit">
             <div className="ed-deficit-left reveal-up">
-              <div className="ed-deficit-num"><AnimatedCounter className="counter" target={12} /><span className="ed-deficit-sym">%</span></div>
-              <p className="ed-deficit-cap">of Australian businesses used AI in the workplace in 2024&ndash;25 (ABS Business Characteristics Survey, June 2026)</p>
-              <p className="ed-deficit-copy">Only <strong>12% of Australian businesses</strong> used AI at work in 2024&ndash;25, and 11% of small and micro businesses (ABS). Among small and medium businesses that haven't adopted it, <strong>65% say they distrust AI decisions or prefer human control</strong> (National AI Centre). The tools exist. Getting them working is the hard part.</p>
+              <div className="ed-deficit-num"><AnimatedCounter className="counter" target={100} /><span className="ed-deficit-sym">%</span></div>
+              <p className="ed-deficit-cap">of what we build runs in your name: your accounts, your logins, your phone number</p>
+              <p className="ed-deficit-copy">If ArchonX disappeared tomorrow, your system would keep running. Traditional consultancies bill the hours and keep the keys; software companies bill per seat forever. We <strong>price the outcome</strong>, hand over the logins on day one, and stay on only if you want a care plan.</p>
             </div>
             <div className="ed-deficit-right reveal-up" style={{ '--delay': '0.1s' }}>
-              <span className="ed-kicker">What we do about it</span>
-              <p className="ed-deficit-copy">Software, and the people who put it to work. We build the system, connect it to what you already run, keep a person <span className="ed-underline">approving anything that matters</span>, and report what it did every month.</p>
+              <span className="ed-kicker">What you can hold us to</span>
+              <p className="ed-deficit-copy">A fixed quote in writing within two business days, with a go-live date. Nothing faces a customer until you've heard it, read it and approved the rules. Thirty days of included fixes. A monthly report of what the system did and got wrong. And if we can't get it live as quoted, <span className="ed-underline">you don't pay the second half of the setup</span>.</p>
             </div>
           </div>
           <div className="ed-ledger">
@@ -401,22 +402,21 @@ export default function Home() {
       {/* ===================== No 06 — THE AUSTRALIAN PICTURE ===================== */}
       <Section pole="paper" className="ed-results" id="impact">
         <div className="ed-container">
-          <SectionHead no="06" label="The numbers" bignum="06" title="Where business is up to." fat />
+          <SectionHead no="06" label="Prices" bignum="06" title="What it costs, next to what others charge." fat />
           <div className="ed-results-grid">
             {RESULTS.map((result) => (
               <TiltCard as="div" key={result.id} className="ed-result reveal-up" style={delayStyle(result.delay)} id={result.id}>
                 <span className="ed-result-meta">{result.meta}</span>
-                <div className="ed-result-num"><AnimatedCounter className="counter" target={result.value} /><sup>%</sup></div>
+                <div className="ed-result-num"><span className="counter">{result.value}</span></div>
                 <div className="ed-gauge">
                   <span className="ed-gauge-cap">{result.cap}</span>
-                  <div className="ed-gauge-track"><GaugeFill percent={result.value} /></div>
                 </div>
                 <h3>{result.title}</h3>
                 <p>{result.body}</p>
               </TiltCard>
             ))}
           </div>
-          <p className="ed-index-note reveal-up">These figures describe the Australian market. ArchonX publishes its prices and its method; it has no client results to report yet, and it won't invent any.</p>
+          <p className="ed-index-note reveal-up">Market figures are ranges from published Australian price lists and 2026 rate guides, collected October 2026; no firm is named. ArchonX publishes its prices and its method; it has no client results to report yet, and it won't invent any.</p>
         </div>
       </Section>
 
