@@ -296,7 +296,7 @@ export default function Home() {
           <div className="ed-quote-block reveal-up">
             <span className="ed-quote-dash"></span>
             <blockquote className="ed-quote">
-              AI does the repetitive work. <span className="ed-underline ed-underline--heavy">People make the calls</span>.
+              AI does the repetitive work. <span className="ed-underline ed-underline--heavy">People make the decisions</span>.
             </blockquote>
             <p className="ed-quote-attr">The rule we work by</p>
             <p className="ed-quote-sub">Software that helps run the business, with your people in charge of it.</p>
