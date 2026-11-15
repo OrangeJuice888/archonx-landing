@@ -2,6 +2,8 @@ import { usePageMeta } from '../hooks/usePageMeta.js'
 import EdFooter from '../components/EdFooter.jsx'
 import { Magnetic, Parallax } from '../motion/index.js'
 import { ChapterCover, SectionHead, NextChapter, Section } from '../components/editorial/index.js'
+import { useSiteContent } from '../content/useSiteContent.js'
+import { money } from '../content/money.js'
 import '../styles/pages/competitive.css'
 
 // № 05.1 — the ledger of contrasts. Each entry is one .ed-clause article:
@@ -38,31 +40,33 @@ const CONTRASTS = [
   },
 ]
 
-// № 05.3 — three ways to begin. Three .edc-tier cards, staggered.
-const TIERS = [
+// № 05.3 — three ways to begin. Three .edc-tier cards, staggered. Prices come from the site
+// content (content/site-content.json, overridden by the admin backend when configured).
+const tiersFor = (p) => [
   {
     name: 'Bluework',
     meta: 'Software, in early access',
-    desc: 'Rosters, clock-in and timesheets, leave, tasks, team chat, voice-recorded SOPs and a company AI agent for teams that run shifts. The optional Protect layer flags psychosocial-hazard signals for human review and is in controlled rollout. From A$8 per active employee a month (minimum four), + GST.',
+    desc: `Rosters, clock-in and timesheets, leave, tasks, team chat, voice-recorded SOPs and a company AI agent for teams that run shifts. The optional Protect layer flags psychosocial-hazard signals for human review and is in controlled rollout. From A${money(p.bluework.perEmployeeMonthly)} per active employee a month (minimum ${p.bluework.minimumEmployees}), + GST.`,
     tag: '[ ArchonX Lab — bluework.com.au ]',
   },
   {
     name: 'Packages',
     meta: 'Consulting at published prices',
-    desc: 'Front Desk, Back Office and Whole Shop: AI receptionist, chat agent, lead follow-up, inbox, bookkeeping and workflow automation, from $400 a month plus $1,500 setup, or own the build outright from $3,900. All prices + GST, month to month.',
+    desc: `Front Desk, Back Office and Whole Shop: AI receptionist, chat agent, lead follow-up, inbox, bookkeeping and workflow automation, from ${money(p.packs.front.monthly)} a month plus ${money(p.packs.front.setup)} setup, or own the build outright from ${money(p.packs.front.own)}. All prices + GST, month to month.`,
     tag: '[ ArchonX Consulting — fixed quotes ]',
     delay: '0.05s',
   },
   {
     name: 'Custom builds',
     meta: 'Both arms, scoped in consultation',
-    desc: 'Workflow automation from $2,900, 90-day pilots from $5,900, and review and launch for apps built with AI from $2,900, all + GST. Bespoke systems too: point of sale and back office, marketplaces, operations dashboards. Built in your name, handed over with a runbook.',
+    desc: `Workflow automation from ${money(p.builds.workflow.from)}, 90-day pilots from ${money(p.builds.pilot.upTo20)}, and review and launch for apps built with AI from ${money(p.app.review)}, all + GST. Bespoke systems too: point of sale and back office, marketplaces, operations dashboards. Built in your name, handed over with a runbook.`,
     tag: '[ Mapped first, then built ]',
     delay: '0.1s',
   },
 ]
 
 export default function Competitive() {
+  const TIERS = tiersFor(useSiteContent().pricing)
   usePageMeta({
     title: "How we're different - ArchonX.ai",
     description: 'How ArchonX differs: we build what we recommend, in your name, with people in charge, and software and consulting sit under one roof.',

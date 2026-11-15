@@ -26,12 +26,19 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Check prices are bound to the content file
+        run: npm run check:prices
       - name: Build
         run: npm run build
+        env:
+          # Set the repository variable API_URL to the admin backend's address
+          # (for example https://archonx-admin.fly.dev) once it is deployed.
+          # Empty means the site uses the committed defaults only.
+          VITE_API_URL: ${{ vars.API_URL }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

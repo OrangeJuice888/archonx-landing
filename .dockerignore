@@ -1,0 +1,9 @@
+# Docker build context is the repo root (see server/Dockerfile). Keep local-only and large folders out.
+node_modules
+**/node_modules
+dist
+.git
+docs
+server/data
+**/.env
+**/.env.local

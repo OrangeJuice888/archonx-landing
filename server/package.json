@@ -1,0 +1,19 @@
+{
+  "name": "archonx-admin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Admin backend for archonx.ai: login, pricing and text editor, leads inbox, content history, backups.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning --env-file-if-exists=.env src/index.js",
+    "dev": "node --no-warnings=ExperimentalWarning --env-file-if-exists=.env --watch src/index.js",
+    "test": "node --no-warnings=ExperimentalWarning --test \"test/**/*.test.js\"",
+    "reset-password": "node --no-warnings=ExperimentalWarning --env-file-if-exists=.env src/cli.js reset-password"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "pricing": {
+    "packs": {
+      "front": {
+        "name": "Front Desk",
+        "monthly": 400,
+        "setup": 1500,
+        "own": 3900
+      },
+      "back": {
+        "name": "Back Office",
+        "monthly": 800,
+        "setup": 4000,
+        "own": 8800
+      },
+      "whole": {
+        "name": "Whole Shop",
+        "monthly": 1200,
+        "setup": 6900,
+        "own": 14100
+      }
+    },
+    "industries": {
+      "trades": {
+        "name": "Trades",
+        "setup": 1500,
+        "own": 3900
+      },
+      "dental": {
+        "name": "Dental and allied health",
+        "setup": 2000,
+        "own": 4400
+      },
+      "realestate": {
+        "name": "Real estate and property management",
+        "setup": 1800,
+        "own": 4200
+      },
+      "accounting": {
+        "name": "Accounting and bookkeeping",
+        "setup": 1500,
+        "own": 3900
+      },
+      "legal": {
+        "name": "Legal",
+        "setup": 2000,
+        "own": 4400
+      },
+      "hospitality": {
+        "name": "Hospitality",
+        "setup": 1500,
+        "own": 3900
+      },
+      "retail": {
+        "name": "Retail",
+        "setup": 1500,
+        "own": 3900
+      },
+      "salons": {
+        "name": "Barbershops and salons",
+        "setup": 1500,
+        "own": 3900
+      },
+      "automotive": {
+        "name": "Automotive workshops",
+        "setup": 1700,
+        "own": 4100
+      },
+      "cleaning": {
+        "name": "Cleaning services",
+        "setup": 1500,
+        "own": 3900
+      },
+      "gyms": {
+        "name": "Gyms and fitness studios",
+        "setup": 1700,
+        "own": 4100
+      },
+      "logistics": {
+        "name": "Freight, logistics and warehousing",
+        "setup": 1800,
+        "own": 4200
+      }
+    },
+    "frontDesk": {
+      "receptionist": {
+        "monthly": 300,
+        "setup": 500,
+        "ownFrom": 2900,
+        "includedMinutes": 300,
+        "extraMinute": 0.35
+      },
+      "chat": {
+        "monthly": 200,
+        "setup": 500,
+        "includedConversations": 500,
+        "extraConversation": 0.2
+      },
+      "leadFollowUp": {
+        "monthly": 200,
+        "setup": 500,
+        "smsCost": 0.1
+      },
+      "reviews": {
+        "monthly": 100
+      }
+    },
+    "backOffice": {
+      "inbox": {
+        "monthly": 500,
+        "setup": 1000
+      },
+      "quotesInvoices": {
+        "from": 1900
+      },
+      "meetings": {
+        "monthly": 100,
+        "setup": 500
+      },
+      "content": {
+        "monthly": 200,
+        "setup": 700
+      }
+    },
+    "builds": {
+      "workflow": {
+        "from": 2900,
+        "multiSystemFrom": 9000,
+        "toolsLow": 50,
+        "toolsHigh": 150
+      },
+      "documents": {
+        "from": 7500,
+        "monthly": 300
+      },
+      "pilot": {
+        "upTo20": 5900,
+        "upTo50": 8900
+      },
+      "takeover": {
+        "from": 1000
+      }
+    },
+    "advice": {
+      "audit": {
+        "fixed": 1000
+      },
+      "governance": {
+        "from": 1500
+      },
+      "training": {
+        "perSeatFrom": 300,
+        "teamDay": 1500,
+        "buildDay": 3900,
+        "policyMorning": 500
+      },
+      "carePlan": {
+        "light": 200,
+        "standard": 500,
+        "full": 1000
+      }
+    },
+    "app": {
+      "review": 2900,
+      "launch": 10000,
+      "care": 500,
+      "careAdvisor": 1000,
+      "hourly": 200,
+      "prepaidBlock": 1500
+    },
+    "engineer": {
+      "twoWeekSystem": 10000,
+      "fourWeekBuild": 20000,
+      "embeddedTwoDays": 8800,
+      "embeddedThreeDays": 12900
+    },
+    "extras": {
+      "extraMinutes500": 200,
+      "phoneNumberMonthly": 15,
+      "frontDeskExtrasLow": 20,
+      "frontDeskExtrasHigh": 80,
+      "providerCostsLow": 60,
+      "providerCostsHigh": 250
+    },
+    "bluework": {
+      "perEmployeeMonthly": 8,
+      "minimumEmployees": 4
+    }
+  },
+  "text": {
+    "announcement": "Free AI audit for Australian businesses, with one free build:",
+    "announcementLink": "see your result in two minutes",
+    "opening": "We turn the latest AI into working systems inside your business.",
+    "openingSub": "One job first, a person approving anything that matters, and everything built in your name.",
+    "email": "hello@archonx.ai",
+    "hours": "Monday to Friday 8am to 6pm AEST",
+    "location": "Brisbane, working across Australia",
+    "pricesCorrectAt": "2026-11-02"
+  },
+  "home": {
+    "doctrineQuote": "AI does the repetitive work.",
+    "doctrineQuoteEmphasis": "People make the decisions"
+  }
+}

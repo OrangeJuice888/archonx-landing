@@ -4,9 +4,14 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/sync-content.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/sync-content.mjs",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check:prices": "node scripts/check-prices.mjs",
+    "admin": "npm --prefix server start",
+    "test:server": "npm --prefix server test"
   },
   "dependencies": {
     "framer-motion": "^11.11.9",
@@ -16,6 +21,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.3",
+    "parse5": "^8.1.0",
     "vite": "^5.4.10"
   }
 }
