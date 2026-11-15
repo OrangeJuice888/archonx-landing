@@ -113,43 +113,40 @@ const CLAUSES = [
   },
 ]
 
-// No 05 — six plain facts about working with ArchonX. No prices here; the
-// consulting page carries every price, and the Markets page the sector detail.
-const FACTS = [
+// What we do: one argument in prose blocks (title left, text right). No prices, no cards.
+// "Compliance surveillance" always carries its object: the business's own records.
+const WHAT_WE_DO = [
   {
-    id: 'fact-speed',
-    title: 'Live in two weeks',
-    body: <>One workflow or agent, scoped in writing, tested on your real calls and documents, and live in your name within 14 days. The quote arrives in writing within two business days, with the go-live date in it.</>,
+    id: 'do-automation',
+    title: 'Automation',
+    body: [
+      <>Software does the routine work across the tools you already run. Calls are answered and enquiries followed up by assistants that say they are AI. Quotes and invoices are drafted, bills go into Xero, MYOB or QuickBooks, and paperwork is read and filed for a person to check.</>,
+      <>Nothing faces a customer until it has been tested on your real calls and documents.</>,
+    ],
   },
   {
-    id: 'fact-engineers',
-    delay: '0.05s',
-    title: 'Built by engineers who have done this at scale',
-    body: <>Our engineers have worked with SK Hynix, Samsung, Hyundai, LG, Citibank, MetLife, IBM, Suncorp, OpenAI, Blackbook, Incheon Airport and Shinsegae, and with central government agencies, national data centres and public enterprises. The same discipline, with far less ceremony.</>,
+    id: 'do-compliance',
+    title: 'Compliance surveillance of your own records',
+    body: [
+      <>Your own records are checked continuously against the rules your business has to follow. You and your advisers set the rules and the schedule. We build the checks.</>,
+      <>A licence that lapses next month, a job booked with no safe work method statement on file, a follow-up text queued for someone who unsubscribed: each goes to a named person with the evidence attached. The system flags. A person decides. Every check is logged.</>,
+    ],
   },
   {
-    id: 'fact-ownership',
-    delay: '0.1s',
-    title: 'Yours to keep',
-    body: <>Every account, phone number and subscription sits under your business with your logins, with a one-page runbook and recorded training. Month to month, 30 days' notice, no exit fee, no per-seat fees. If ArchonX disappeared tomorrow, it would keep running.</>,
+    id: 'do-engineers',
+    title: 'Engineers alongside your team',
+    body: [
+      <>An ArchonX engineer works inside your team two or three days a week and ships one improvement every week. Or start with one working system in two weeks on a fixed scope.</>,
+      <>Our engineers have worked with SK Hynix, Samsung, Hyundai, LG, Citibank, MetLife, IBM, Suncorp, OpenAI, Blackbook, Incheon Airport and Shinsegae, and with central government agencies, national data centres and public enterprises. That is their past experience, not a client list.</>,
+    ],
   },
   {
-    id: 'fact-people',
-    delay: '0.15s',
-    title: 'Honest AI, with people in charge',
-    body: <>Every assistant says it is an AI. Money, health, legal and tenancy decisions go through a person. Nothing faces a customer until you have heard it, read it and approved the rules it follows.</>,
-  },
-  {
-    id: 'fact-data',
-    delay: '0.2s',
-    title: 'Your data stays yours',
-    body: <>Business accounts whose terms exclude training on your data, data-sharing settings turned off, and records kept in the Australian region wherever the provider offers one. Written into the quote, not left to a policy page.</>,
-  },
-  {
-    id: 'fact-measured',
-    delay: '0.25s',
-    title: 'Measured every month',
-    body: <>Thirty days of included fixes after go-live, then a monthly report of what the system did and what it got wrong, in plain numbers. The next job starts when the first one has paid for itself.</>,
+    id: 'do-cost',
+    title: 'Cost and efficiency, measured',
+    body: [
+      <>The aim is lower running costs and less rework: fewer missed renewals, less re-keying, less chasing paper before an audit. We do not promise a number before we have measured your work.</>,
+      <>A monthly report shows what the system did and what it got wrong. Month to month, 30 days' notice, no exit fee, no per-seat fees.</>,
+    ],
   },
 ]
 
@@ -159,9 +156,9 @@ const delayStyle = (delay) => (delay ? { '--delay': delay } : undefined)
 
 export default function Home() {
   usePageMeta({
-    title: 'ArchonX.ai – AI Software and Consulting for Australian Business | Brisbane',
+    title: 'ArchonX.ai – Automation and Compliance Surveillance Software | Brisbane, Australia',
     description:
-      'ArchonX is an Australian software company. ArchonX Lab builds operations software such as Bluework; ArchonX Consulting puts AI to work inside businesses, from a one-person trade to a large organisation, with people in charge.',
+      'ArchonX is an Australian software company specialising in automation and compliance surveillance of your own records, built on the software you already run.',
     bodyClass: 'home-editorial',
   })
   return (
@@ -182,7 +179,7 @@ export default function Home() {
           </h1>
           <div className="ed-hero-sub">
             <p className="ed-hero-dek" id="hero-subtitle">
-              ArchonX is an Australian software company. We build AI systems and put them to work inside businesses, from a one-person trade to a large organisation. ArchonX Lab builds the software; ArchonX Consulting puts it into your operations.
+              ArchonX is an Australian software company. We specialise in two things: automating routine work across the software you already run, and compliance surveillance of your own records, checked continuously with every exception sent to a person. The aim is lower running costs and less rework.
             </p>
             <div className="ed-hero-ctas">
               <Magnetic href="/consultation/" className="ed-btn ed-btn--solid" id="hero-cta-primary">Start a consultation <span className="ed-arrow">&rarr;</span></Magnetic>
@@ -192,7 +189,7 @@ export default function Home() {
           <div className="ed-hero-strip">
             <div className="ed-hero-stat">
               <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={14} /><sup>days</sup></span>
-              <span className="ed-stat-label">from a signed quote to one working system, live and in your name</span>
+              <span className="ed-stat-label">from a signed quote to one working system on a fixed scope, live and in your name</span>
             </div>
             <div className="ed-hero-stat">
               <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={2} /><sup>min</sup></span>
@@ -209,6 +206,25 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ===================== WHAT WE DO ===================== */}
+      <Section pole="paper" id="what-we-do">
+        <div className="ed-container">
+          <SectionHead label="What we do" title="Automation and compliance surveillance of your own records." />
+          <p className="ed-brief-lede reveal-up">Most businesses already own the software they need. The cost is in the work between the systems: re-keying, chasing, and checks nobody has time to do. We map how work moves through your business, connect the job, accounting, calendar and CRM software you already run, and build only what is missing. Nothing you run today is replaced, and every account stays in your name.</p>
+          <div className="ed-briefs">
+            {WHAT_WE_DO.map((block) => (
+              <article key={block.id} className="ed-brief reveal-up" id={block.id}>
+                <h3 className="ed-brief-title">{block.title}</h3>
+                <div className="ed-brief-body">
+                  {block.body.map((para, i) => <p key={i}>{para}</p>)}
+                </div>
+              </article>
+            ))}
+          </div>
+          <p className="ed-index-note reveal-up">ArchonX has no client results or certifications to report yet, and it won't invent any. Prices are on the <a href="/consultation/">consulting page</a>; sector-by-sector starting points are on the <Link to="/markets">Markets page</Link>.</p>
+        </div>
+      </Section>
 
       {/* ===================== No 01 — THE LEXICON ===================== */}
       <Section pole="paper" id="about">
@@ -301,22 +317,6 @@ export default function Home() {
             <p className="ed-quote-attr">The rule we work by</p>
             <p className="ed-quote-sub">Software that helps run the business, with your people in charge of it.</p>
           </div>
-        </div>
-      </Section>
-
-      {/* ===================== No 05 — WHAT YOU GET ===================== */}
-      <Section pole="paper" id="facts">
-        <div className="ed-container">
-          <SectionHead no="05" label="What you get" bignum="05" title="What working with ArchonX looks like." />
-          <div className="ed-lexicon">
-            {FACTS.map((fact) => (
-              <TiltCard as="article" key={fact.id} className="ed-entry reveal-up" style={delayStyle(fact.delay)} id={fact.id}>
-                <h3>{fact.title}</h3>
-                <p>{fact.body}</p>
-              </TiltCard>
-            ))}
-          </div>
-          <p className="ed-index-note reveal-up">Prices and packages are on the <a href="/consultation/">consulting page</a>; sector-by-sector starting points are on the <Link to="/markets">Markets page</Link>. ArchonX has no client results to report yet, and it won't invent any.</p>
         </div>
       </Section>
 

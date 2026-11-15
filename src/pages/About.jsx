@@ -70,7 +70,7 @@ export default function About() {
           <>the business. People</>,
           <><span className="ed-ghost">in command.</span></>,
         ]}
-        dek={<>ArchonX is an Australian software company. We build systems and put the latest AI to work inside businesses, from a one-person trade to a large organisation, so the people running them spend less time on admin.</>}
+        dek={<>ArchonX is an Australian software company specialising in automation and in compliance surveillance of a business's own records. We connect the software a business already runs, automate the routine work across it and check its records continuously, from a one-person trade to a large organisation, so the people running it spend less time on admin.</>}
         aside={
           <>
             <span className="ed-kicker">[ The Vision ]</span>
