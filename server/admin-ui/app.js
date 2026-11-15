@@ -25,9 +25,9 @@
     ['text.announcementLink', 'Announcement link text', 'The linked words at the end of the announcement bar.'],
     ['text.opening', 'Opening sentence', 'The first sentence under the consulting page headline.'],
     ['text.openingSub', 'Opening, second sentence', 'The sentence that follows the opening sentence.'],
-    ['text.hours', 'Hours', 'Shown with the contact details on the consulting page and the fact sheet.'],
-    ['text.location', 'Location', 'Shown on the fact sheet.'],
-    ['text.pricesCorrectAt', 'Prices correct at', 'The date in the pricing footnote on the consulting page and the fact sheet.', 'date'],
+    ['text.hours', 'Hours', 'Shown with the contact details on the consulting page and the company overview.'],
+    ['text.location', 'Location', 'Shown on the company overview.'],
+    ['text.pricesCorrectAt', 'Prices correct at', 'The date in the pricing footnote on the consulting page.', 'date'],
     ['home.doctrineQuote', 'Home page quote, first part', 'The large quote on the home page, before the underlined words.'],
     ['home.doctrineQuoteEmphasis', 'Home page quote, underlined part', 'The underlined words of the home page quote (a full stop is added after them).']
   ];

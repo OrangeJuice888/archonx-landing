@@ -19,21 +19,21 @@
 
   /* Packages */
   add('pricing.packs.front.monthly', 'Front Desk, monthly fee', 'a month', 'price',
-    'Front Desk pack card, the fact sheet price table, the "What does it actually cost?" answer and the GST example ("$400 a month is $440 including GST"); also the Packages tier on the How we\'re different page.');
+    'Front Desk pack card, the "What does it actually cost?" answer and the GST example ("$400 a month is $440 including GST"); also the Packages tier on the How we\'re different page.');
   add('pricing.packs.front.setup', 'Front Desk, setup', 'one-off', 'price',
-    'Front Desk pack card and the fact sheet ("$400 a month + $1,500 setup"); the Packages tier on How we\'re different. The page says "from", so the lowest industry setup should match this figure.');
+    'Front Desk pack card; the Packages tier on How we\'re different. The page says "from", so the lowest industry setup should match this figure.');
   add('pricing.packs.front.own', 'Front Desk, own it outright', 'one-off', 'price',
     '"Own what we build, outright: From $3,900 + GST", "Front Desk from $3,900 + GST" in the one-off build paragraph, and the Packages tier on How we\'re different. The lowest industry own price should match this figure.');
   add('pricing.packs.back.monthly', 'Back Office, monthly fee', 'a month', 'price',
-    'Back Office pack card and the fact sheet ("$800 a month + $4,000 setup").');
+    'Back Office pack card.');
   add('pricing.packs.back.setup', 'Back Office, setup', 'one-off', 'price',
-    'Back Office pack card and the fact sheet.');
+    'Back Office pack card.');
   add('pricing.packs.back.own', 'Back Office, own it outright', 'one-off', 'price',
     '"Back Office from $8,800 + GST" in the one-off build paragraph.');
   add('pricing.packs.whole.monthly', 'Whole Shop, monthly fee', 'a month', 'price',
-    'Whole Shop pack card and the fact sheet ("$1,200 a month + $6,900 setup").');
+    'Whole Shop pack card.');
   add('pricing.packs.whole.setup', 'Whole Shop, setup', 'one-off', 'price',
-    'Whole Shop pack card and the fact sheet.');
+    'Whole Shop pack card.');
   add('pricing.packs.whole.own', 'Whole Shop, own it outright', 'one-off', 'price',
     '"Whole Shop from $14,100 + GST" in the one-off build paragraph.');
 
@@ -106,7 +106,7 @@
 
   /* Builds */
   add('pricing.builds.workflow.from', 'Workflow automation, from', 'one-off', 'price',
-    'Workflow Automation card ("from $2,900 per workflow + GST"), the extras list ("Extra workflow automation: from $2,900 + GST one-off"), the fact sheet, the Custom builds tier on How we\'re different, and the audit\'s budget-fit table.');
+    'Workflow Automation card ("from $2,900 per workflow + GST"), the extras list ("Extra workflow automation: from $2,900 + GST one-off"), the Custom builds tier on How we\'re different, and the audit\'s budget-fit table.');
   add('pricing.builds.workflow.multiSystemFrom', 'Multi-system workflow build, from', 'one-off', 'price',
     'Workflow Automation card ("Multi-system builds (three or more apps) from $9,000").');
   add('pricing.builds.workflow.toolsLow', 'Workflow tool subscriptions, low estimate', 'a month', 'cost',
@@ -126,7 +126,7 @@
 
   /* Advice and training */
   add('pricing.advice.audit.fixed', 'AI readiness audit, fixed', 'one-off', 'price',
-    'AI Readiness Audit card ("fixed $1,000 + GST"), the quote paragraph ("the $1,000 audit first"), the extras list, the fact sheet and the Programs section.');
+    'AI Readiness Audit card ("fixed $1,000 + GST"), the quote paragraph ("the $1,000 audit first"), the extras list and the Programs section.');
   add('pricing.advice.governance.from', 'AI risk, governance and policy review, from', 'one-off', 'price',
     'AI Risk, Governance and Policy Review card ("review and policy from $1,500 + GST").');
   add('pricing.advice.training.perSeatFrom', 'Training, per seat from', 'per seat', 'price',
@@ -160,13 +160,13 @@
 
   /* Engineer */
   add('pricing.engineer.twoWeekSystem', 'One working system in two weeks', 'one-off', 'price',
-    'Engineer table ("One working system in two weeks … $10,000 + GST") and the fact sheet.');
+    'Engineer table ("One working system in two weeks … $10,000 + GST").');
   add('pricing.engineer.fourWeekBuild', 'Four-week build', 'one-off', 'price',
     'Engineer table ("Four-week build: up to three connected systems … $20,000 + GST").');
   add('pricing.engineer.embeddedTwoDays', 'Embedded engineer, two days a week', 'a month', 'price',
-    'Engineer table ("Embedded engineer, two days a week $8,800 a month + GST") and the fact sheet ("$8,800 or $12,900 a month").');
+    'Engineer table ("Embedded engineer, two days a week $8,800 a month + GST").');
   add('pricing.engineer.embeddedThreeDays', 'Embedded engineer, three days a week', 'a month', 'price',
-    'Engineer table ("Embedded engineer, three days a week $12,900 a month + GST") and the fact sheet.');
+    'Engineer table ("Embedded engineer, three days a week $12,900 a month + GST").');
 
   /* Extras */
   add('pricing.extras.extraMinutes500', 'Extra 500 call minutes', 'a month', 'price',

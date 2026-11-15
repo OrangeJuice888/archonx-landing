@@ -1,6 +1,6 @@
 # ArchonX website
 
-The public site at https://archonx.ai. A Vite and React app in `src/`, built and published to GitHub Pages by `.github/workflows/static.yml`. The consulting page is a standalone file at `public/consultation/index.html`, with its fact sheet beside it.
+The public site at https://archonx.ai. A Vite and React app in `src/`, built and published to GitHub Pages by `.github/workflows/static.yml`. The consulting page is a standalone file at `public/consultation/index.html`, with its one-page company overview beside it.
 
 Common commands, run in the project folder:
 

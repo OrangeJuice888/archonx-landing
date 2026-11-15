@@ -1098,3 +1098,38 @@ body.home-editorial {
     .home-editorial .ed-btn .ed-arrow,
     .home-editorial .ed-clause-title { transition: none; }
 }
+
+/* =================== WHAT WE DO ===================
+   One argument in prose: a lead paragraph, then blocks with the title on the
+   left and the text on the right. No cards, no numbering. */
+.home-editorial .ed-brief-lede {
+    max-width: 60ch;
+    margin: 0 0 clamp(32px, 5vw, 56px);
+    font-size: clamp(18px, 1.7vw, 22px);
+    line-height: 1.5;
+    color: var(--ink);
+}
+.home-editorial .ed-brief {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.5fr);
+    gap: clamp(20px, 3vw, 56px);
+    padding: 40px 0;
+    border-top: 1px solid var(--rule-light);
+}
+.home-editorial .ed-brief-title {
+    font-size: clamp(24px, 2.6vw, 34px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+}
+.home-editorial .ed-brief-body p {
+    max-width: 62ch;
+    color: var(--grey-600);
+    font-size: 16px;
+    line-height: 1.7;
+}
+.home-editorial .ed-brief-body p + p { margin-top: 14px; }
+.home-editorial .ed-index-note a { color: inherit; text-decoration: underline; }
+@media (max-width: 1024px) {
+    .home-editorial .ed-brief { grid-template-columns: 1fr; gap: 12px; padding: 32px 0; }
+}
