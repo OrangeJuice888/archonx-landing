@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import EdFooter from '../components/EdFooter.jsx'
 import GlobeBackdrop from '../components/GlobeBackdrop.jsx'
-import { Magnetic, TiltCard, Parallax, AnimatedCounter, GaugeFill, handleHashClick } from '../motion/index.js'
+import { Magnetic, TiltCard, Parallax, AnimatedCounter, handleHashClick } from '../motion/index.js'
 import { Section, SectionHead } from '../components/editorial/index.js'
-
-const MotionLink = motion.create(Link)
 
 // No 01 — the three lexicon entries. `dict` is the dictionary gloss that only
 // the first entry carries.
@@ -37,30 +34,31 @@ const LEXICON = [
   },
 ]
 
-// No 02 — the gap → the answer ledger. Every figure is attributed.
+// No 02 — the usual way → the ArchonX way. No amounts here: every price
+// lives on the consulting page.
 const LEDGER = [
   {
     letter: 'A',
-    crisis: <>65% of SMEs that haven't adopted AI distrust its decisions or prefer human control (National AI Centre)</>,
-    solution: 'A person approves anything that matters',
+    crisis: <>A traditional consultancy bills the hours and keeps the logins</>,
+    solution: 'We price the outcome and hand you the keys: your accounts, your numbers, a one-page runbook',
   },
   {
     letter: 'B',
     delay: '0.05s',
-    crisis: <>Privacy and security is a top barrier, at 39% (Intuit QuickBooks)</>,
-    solution: 'Data kept in Australia where the provider offers it; business accounts whose terms exclude training on your data',
+    crisis: <>Software subscriptions charge per seat, every month, for as long as you use them</>,
+    solution: "Own what we build outright. No per-seat fees, no lock-in, 30 days' notice on any plan",
   },
   {
     letter: 'C',
     delay: '0.1s',
-    crisis: <>Lack of knowledge holds back 31% (Intuit QuickBooks)</>,
-    solution: 'A free audit, a written plan and one job first',
+    crisis: <>AI that acts on its own and lets callers think it is a person</>,
+    solution: 'Every assistant says it is an AI. Money, health, legal and tenancy decisions go through a person',
   },
   {
     letter: 'D',
     delay: '0.15s',
-    crisis: <>79% report productivity gains from AI (Intuit QuickBooks)</>,
-    solution: 'A monthly report on what it did and what it got wrong',
+    crisis: <>A pilot elsewhere opens with a strategy deck and takes four to ten weeks</>,
+    solution: 'One working system in two weeks, tested on your real calls and documents, and signed off only once it is live',
   },
 ]
 
@@ -115,110 +113,40 @@ const CLAUSES = [
   },
 ]
 
-// No 05 — the eight sectors. Note that market 03 deep-links to
-// `#market-service` while its own anchor id is `market-services`.
-const MARKETS = [
+// What we do: one argument in prose blocks (title left, text right). No prices, no cards.
+// "Compliance surveillance" always carries its object: the business's own records.
+const WHAT_WE_DO = [
   {
-    id: 'market-retail',
-    to: '/markets#market-retail',
-    num: '01',
-    name: <>Retail</>,
-    desc: <>Stock, order and opening-hours questions answered on web, Instagram and phone from your live catalogue; supplier invoices into the books; review requests after each sale. Point of sale and back office built around how you sell.</>,
-    metrics: <><span><strong>Catalogue answers</strong> 24 / 7</span><span><strong>POS to books</strong> in one flow</span></>,
+    id: 'do-automation',
+    title: 'Automation',
+    body: [
+      <>Software does the routine work across the tools you already run. Calls are answered and enquiries followed up by assistants that say they are AI. Quotes and invoices are drafted, bills go into Xero, MYOB or QuickBooks, and paperwork is read and filed for a person to check.</>,
+      <>Nothing faces a customer until it has been tested on your real calls and documents.</>,
+    ],
   },
   {
-    id: 'market-construction',
-    to: '/markets#market-construction',
-    num: '02',
-    delay: '0.05s',
-    name: <>Construction &amp; trades</>,
-    desc: <>The phone answered while you're on the tools, a voice note turned into a draft quote, invoices chased until they're paid. For crews, Bluework handles rosters, clock-in and the SOPs.</>,
-    metrics: <><span><strong>Calls answered</strong> jobs booked</span><span><strong>Voice note</strong> to draft quote</span></>,
+    id: 'do-compliance',
+    title: 'Compliance surveillance of your own records',
+    body: [
+      <>Your own records are checked continuously against the rules your business has to follow. You and your advisers set the rules and the schedule. We build the checks.</>,
+      <>A licence that lapses next month, a job booked with no safe work method statement on file, a follow-up text queued for someone who unsubscribed: each goes to a named person with the evidence attached. The system flags. A person decides. Every check is logged.</>,
+    ],
   },
   {
-    id: 'market-services',
-    to: '/markets#market-service',
-    num: '03',
-    delay: '0.1s',
-    name: <>Professional services &amp; agencies</>,
-    desc: <>Document chasing, inbox triage, reconciliation suggestions and meeting notes into the practice system, for accountants, lawyers, agencies and consultancies. Every change still goes through a registered person.</>,
-    metrics: <><span><strong>Documents chased</strong> automatically</span><span><strong>Drafts ready</strong> a person sends</span></>,
+    id: 'do-engineers',
+    title: 'Engineers alongside your team',
+    body: [
+      <>An ArchonX engineer works inside your team two or three days a week and ships one improvement every week. Or start with one working system in two weeks on a fixed scope.</>,
+      <>Our engineers have worked with SK Hynix, Samsung, Hyundai, LG, Citibank, MetLife, IBM, Suncorp, OpenAI, Blackbook, Incheon Airport and Shinsegae, and with central government agencies, national data centres and public enterprises. That is their past experience, not a client list.</>,
+    ],
   },
   {
-    id: 'market-hospitality',
-    to: '/markets#market-hospitality',
-    num: '04',
-    delay: '0.15s',
-    name: <>Hospitality</>,
-    desc: <>Bookings by phone, text and web during service; guest questions answered from your own FAQ; supplier invoices into the books; rosters and clock-in across venues with Bluework.</>,
-    metrics: <><span><strong>Bookings taken</strong> during service</span><span><strong>Rosters</strong> to timesheets</span></>,
-  },
-  {
-    id: 'market-logistics',
-    to: '/markets#market-logistics',
-    num: '05',
-    delay: '0.2s',
-    name: <>Logistics &amp; warehousing</>,
-    desc: <>Rostering, clock-in and task boards for floors that run in shifts, with award-aware timesheets and SOPs the team can search. Workflow automation between job, fleet and accounting software.</>,
-    metrics: <><span><strong>Shift rosters</strong> &amp; timesheets</span><span><strong>Systems</strong> connected</span></>,
-  },
-  {
-    id: 'market-bpo',
-    to: '/markets#market-bpo',
-    num: '06',
-    delay: '0.25s',
-    name: <>BPO &amp; contact centres</>,
-    desc: <>AI receptionists and chat agents for overflow and after hours, and enquiry follow-up until booked. Team rostering in Bluework, with fatigue and overload signals from its Protect layer (in controlled rollout), reviewed by a person.</>,
-    metrics: <><span><strong>Overflow</strong> answered</span><span><strong>Rosters</strong> &amp; timesheets</span></>,
-  },
-  {
-    id: 'market-government',
-    to: '/markets#market-government',
-    num: '07',
-    delay: '0.3s',
-    name: <>Government &amp; infrastructure</>,
-    desc: <>Operations software for dispersed teams: rosters, SOPs with citations, and tamper-evident records designed for audits. AI-use policies written to align with the Australian Privacy Principles and the Voluntary AI Safety Standard.</>,
-    metrics: <><span><strong>Evidence-grade</strong> records</span><span><strong>AI-use policy</strong> included</span></>,
-  },
-  {
-    id: 'market-defense',
-    to: '/markets#market-defense',
-    num: '08',
-    delay: '0.35s',
-    name: <>Emergency services &amp; dispatch</>,
-    desc: <>Shift rosters, clock-in and searchable SOPs for teams that cannot afford a gap. Fatigue and overload signals come with Bluework Protect (in controlled rollout), and a person reviews every one.</>,
-    metrics: <><span><strong>Rosters</strong> &amp; clock-in</span><span><strong>Human review</strong> always</span></>,
-  },
-]
-
-// No 06 — the three measured figures. `value` drives both the counter and the
-// gauge; `cap` is the printed "n / 100" caption.
-const RESULTS = [
-  {
-    id: 'impact-adoption',
-    meta: <>Adoption</>,
-    value: 12,
-    cap: '12 / 100',
-    title: 'Businesses using AI at work',
-    body: <>12% of Australian businesses used AI in the workplace in 2024&ndash;25, and 11% of small and micro businesses. Large businesses were at 35%. (ABS Business Characteristics Survey, June 2026)</>,
-  },
-  {
-    id: 'impact-smes',
-    delay: '0.1s',
-    meta: <>SMEs</>,
-    value: 44,
-    cap: '44 / 100',
-    title: 'SMEs reporting some AI adoption',
-    body: <>44% of Australian small and medium businesses reported some AI adoption in February 2026, mostly content generation and data analysis. Agentic AI is largely untouched. (National AI Centre SME AI Pulse)</>,
-  },
-  {
-    id: 'impact-intent',
-    delay: '0.2s',
-    meta: <>Plans</>,
-    value: 71,
-    cap: '71 / 100',
-    title: 'Businesses planning more AI in 2026',
-    body: <>71% of Australian businesses plan to increase their use of AI in 2026, and 76% of AI users reported higher profitability against 34% of non-users. (CPA Australia Business Technology Report)</>,
+    id: 'do-cost',
+    title: 'Cost and efficiency, measured',
+    body: [
+      <>The aim is lower running costs and less rework: fewer missed renewals, less re-keying, less chasing paper before an audit. We do not promise a number before we have measured your work.</>,
+      <>A monthly report shows what the system did and what it got wrong. Month to month, 30 days' notice, no exit fee, no per-seat fees.</>,
+    ],
   },
 ]
 
@@ -228,9 +156,9 @@ const delayStyle = (delay) => (delay ? { '--delay': delay } : undefined)
 
 export default function Home() {
   usePageMeta({
-    title: 'ArchonX.ai – AI Software and Consulting for Australian Business | Brisbane',
+    title: 'ArchonX.ai – Automation and Compliance Surveillance Software | Brisbane, Australia',
     description:
-      'ArchonX is an Australian software company. ArchonX Lab builds operations software such as Bluework; ArchonX Consulting puts AI to work inside businesses, from a one-person trade to a large organisation, with people in charge.',
+      'ArchonX is an Australian software company specialising in automation and compliance surveillance of your own records, built on the software you already run.',
     bodyClass: 'home-editorial',
   })
   return (
@@ -251,7 +179,7 @@ export default function Home() {
           </h1>
           <div className="ed-hero-sub">
             <p className="ed-hero-dek" id="hero-subtitle">
-              ArchonX is an Australian software company. We build AI systems and put them to work inside businesses, from a one-person trade to a large organisation. ArchonX Lab builds the software; ArchonX Consulting puts it into your operations.
+              ArchonX is an Australian software company. We specialise in two things: automating routine work across the software you already run, and compliance surveillance of your own records, checked continuously with every exception sent to a person. The aim is lower running costs and less rework.
             </p>
             <div className="ed-hero-ctas">
               <Magnetic href="/consultation/" className="ed-btn ed-btn--solid" id="hero-cta-primary">Start a consultation <span className="ed-arrow">&rarr;</span></Magnetic>
@@ -260,24 +188,43 @@ export default function Home() {
           </div>
           <div className="ed-hero-strip">
             <div className="ed-hero-stat">
-              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={44} /><sup>%</sup></span>
-              <span className="ed-stat-label">of Australian SMEs report some AI adoption (National AI Centre, Feb 2026)</span>
+              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={14} /><sup>days</sup></span>
+              <span className="ed-stat-label">from a signed quote to one working system on a fixed scope, live and in your name</span>
             </div>
             <div className="ed-hero-stat">
-              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={71} /><sup>%</sup></span>
-              <span className="ed-stat-label">of businesses plan to increase AI use in 2026 (CPA Australia)</span>
+              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={2} /><sup>min</sup></span>
+              <span className="ed-stat-label">free AI audit with your result on screen, and one build we set up free</span>
             </div>
             <div className="ed-hero-stat">
-              <span className="ed-stat-num"><AnimatedCounter className="hero-stat-value" target={8} /><sup>h / wk</sup></span>
-              <span className="ed-stat-label">saved on average by accountants and bookkeepers using AI (Xero, Sept 2026)</span>
+              <span className="ed-stat-num">24/7</span>
+              <span className="ed-stat-label">calls answered and enquiries followed up, by an assistant that says it is an AI</span>
             </div>
           </div>
           <div className="ed-hero-scroll" aria-hidden="true">
-            <span>01 / 06 &mdash; Scroll</span>
+            <span>01 / 05 &mdash; Scroll</span>
             <span className="ed-scroll-line"></span>
           </div>
         </div>
       </section>
+
+      {/* ===================== WHAT WE DO ===================== */}
+      <Section pole="paper" id="what-we-do">
+        <div className="ed-container">
+          <SectionHead label="What we do" title="Automation and compliance surveillance of your own records." />
+          <p className="ed-brief-lede reveal-up">Most businesses already own the software they need. The cost is in the work between the systems: re-keying, chasing, and checks nobody has time to do. We map how work moves through your business, connect the job, accounting, calendar and CRM software you already run, and build only what is missing. Nothing you run today is replaced, and every account stays in your name.</p>
+          <div className="ed-briefs">
+            {WHAT_WE_DO.map((block) => (
+              <article key={block.id} className="ed-brief reveal-up" id={block.id}>
+                <h3 className="ed-brief-title">{block.title}</h3>
+                <div className="ed-brief-body">
+                  {block.body.map((para, i) => <p key={i}>{para}</p>)}
+                </div>
+              </article>
+            ))}
+          </div>
+          <p className="ed-index-note reveal-up">ArchonX has no client results or certifications to report yet, and it won't invent any. Prices are on the <a href="/consultation/">consulting page</a>; sector-by-sector starting points are on the <Link to="/markets">Markets page</Link>.</p>
+        </div>
+      </Section>
 
       {/* ===================== No 01 — THE LEXICON ===================== */}
       <Section pole="paper" id="about">
@@ -299,16 +246,16 @@ export default function Home() {
       {/* ===================== No 02 — THE GAP ===================== */}
       <Section pole="ink" id="problem">
         <div className="ed-container">
-          <SectionHead meta={<>The problem</>} />
+          <SectionHead meta={<>Why ArchonX</>} />
           <div className="ed-deficit">
             <div className="ed-deficit-left reveal-up">
-              <div className="ed-deficit-num"><AnimatedCounter className="counter" target={12} /><span className="ed-deficit-sym">%</span></div>
-              <p className="ed-deficit-cap">of Australian businesses used AI in the workplace in 2024&ndash;25 (ABS Business Characteristics Survey, June 2026)</p>
-              <p className="ed-deficit-copy">Only <strong>12% of Australian businesses</strong> used AI at work in 2024&ndash;25, and 11% of small and micro businesses (ABS). Among small and medium businesses that haven't adopted it, <strong>65% say they distrust AI decisions or prefer human control</strong> (National AI Centre). The tools exist. Getting them working is the hard part.</p>
+              <div className="ed-deficit-num"><AnimatedCounter className="counter" target={100} /><span className="ed-deficit-sym">%</span></div>
+              <p className="ed-deficit-cap">of what we build runs in your name: your accounts, your logins, your phone number</p>
+              <p className="ed-deficit-copy">If ArchonX disappeared tomorrow, your system would keep running. Traditional consultancies bill the hours and keep the keys; software companies bill per seat forever. We <strong>price the outcome</strong>, hand over the logins on day one, and stay on only if you want a care plan.</p>
             </div>
             <div className="ed-deficit-right reveal-up" style={{ '--delay': '0.1s' }}>
-              <span className="ed-kicker">What we do about it</span>
-              <p className="ed-deficit-copy">Software, and the people who put it to work. We build the system, connect it to what you already run, keep a person <span className="ed-underline">approving anything that matters</span>, and report what it did every month.</p>
+              <span className="ed-kicker">What you can hold us to</span>
+              <p className="ed-deficit-copy">A fixed quote in writing within two business days, with a go-live date. Nothing faces a customer until you've heard it, read it and approved the rules. Thirty days of included fixes. A monthly report of what the system did and got wrong. And if we can't get it live as quoted, <span className="ed-underline">you don't pay the second half of the setup</span>.</p>
             </div>
           </div>
           <div className="ed-ledger">
@@ -365,7 +312,7 @@ export default function Home() {
           <div className="ed-quote-block reveal-up">
             <span className="ed-quote-dash"></span>
             <blockquote className="ed-quote">
-              AI does the repetitive work. <span className="ed-underline ed-underline--heavy">People make the calls</span>.
+              AI does the repetitive work. <span className="ed-underline ed-underline--heavy">People make the decisions</span>.
             </blockquote>
             <p className="ed-quote-attr">The rule we work by</p>
             <p className="ed-quote-sub">Software that helps run the business, with your people in charge of it.</p>
@@ -373,54 +320,7 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ===================== No 05 — INDEX OF SECTORS ===================== */}
-      <Section pole="paper" id="markets">
-        <div className="ed-container">
-          <SectionHead
-            no="05"
-            label="Sectors"
-            running={<>Index &mdash; 01&ndash;08</>}
-            bignum="05"
-            title="Where to start, by sector."
-          />
-          <div className="ed-index">
-            {MARKETS.map((market) => (
-              <MotionLink key={market.id} to={market.to} whileHover={{ x: 6 }} className="ed-index-row reveal-up" style={delayStyle(market.delay)} id={market.id}>
-                <span className="ed-index-num">{market.num}</span>
-                <span className="ed-index-name">{market.name}</span>
-                <span className="ed-index-desc">{market.desc}</span>
-                <span className="ed-index-metrics">{market.metrics}</span>
-                <span className="ed-index-go">&rarr;</span>
-              </MotionLink>
-            ))}
-          </div>
-          <p className="ed-index-note reveal-up">Each row names the first jobs we recommend switching on in that sector. The free audit on the consulting page picks the one that fits your business and budget.</p>
-        </div>
-      </Section>
-
-      {/* ===================== No 06 — THE AUSTRALIAN PICTURE ===================== */}
-      <Section pole="paper" className="ed-results" id="impact">
-        <div className="ed-container">
-          <SectionHead no="06" label="The numbers" bignum="06" title="Where business is up to." fat />
-          <div className="ed-results-grid">
-            {RESULTS.map((result) => (
-              <TiltCard as="div" key={result.id} className="ed-result reveal-up" style={delayStyle(result.delay)} id={result.id}>
-                <span className="ed-result-meta">{result.meta}</span>
-                <div className="ed-result-num"><AnimatedCounter className="counter" target={result.value} /><sup>%</sup></div>
-                <div className="ed-gauge">
-                  <span className="ed-gauge-cap">{result.cap}</span>
-                  <div className="ed-gauge-track"><GaugeFill percent={result.value} /></div>
-                </div>
-                <h3>{result.title}</h3>
-                <p>{result.body}</p>
-              </TiltCard>
-            ))}
-          </div>
-          <p className="ed-index-note reveal-up">These figures describe the Australian market. ArchonX publishes its prices and its method; it has no client results to report yet, and it won't invent any.</p>
-        </div>
-      </Section>
-
-      {/* ===================== No 07 — WORK WITH US ===================== */}
+      {/* ===================== No 06 — WORK WITH US ===================== */}
       <Section pole="ink" className="ed-offering" id="start">
         <div className="ed-container">
           <SectionHead meta={<>Work with us</>} />
@@ -440,11 +340,11 @@ export default function Home() {
             <div className="ed-termsheet reveal-up" style={{ '--delay': '0.1s' }}>
               <div className="ed-term-row">
                 <span className="ed-term-label">Software</span>
-                <span className="ed-term-value">Bluework: rosters, time and daily operations &middot; from A$8 per active employee a month (minimum four), ex GST &middot; <a href="https://bluework.com.au" target="_blank" rel="noopener">bluework.com.au</a></span>
+                <span className="ed-term-value">Bluework: rosters, time and daily operations, in early access &middot; <a href="https://bluework.com.au" target="_blank" rel="noopener">bluework.com.au</a></span>
               </div>
               <div className="ed-term-row">
                 <span className="ed-term-label">Consulting</span>
-                <span className="ed-term-value">Packages from $399 a month plus $990 setup, or own a build outright from $3,900 &middot; ex GST, month to month</span>
+                <span className="ed-term-value">Packages, builds you own, and an engineer in your team &middot; fixed quotes in writing, month to month, every price published on the <a href="/consultation/">consulting page</a></span>
               </div>
               <div className="ed-term-row">
                 <span className="ed-term-label">Based in</span>

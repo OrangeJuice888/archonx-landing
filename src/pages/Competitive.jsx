@@ -43,20 +43,20 @@ const TIERS = [
   {
     name: 'Bluework',
     meta: 'Software, in early access',
-    desc: 'Rosters, clock-in and timesheets, leave, tasks, team chat, voice-recorded SOPs and a company AI agent for teams that run shifts. The optional Protect layer flags psychosocial-hazard signals for human review and is in controlled rollout. From A$8 per active employee a month (minimum four), ex GST.',
+    desc: 'Rosters, clock-in and timesheets, leave, tasks, team chat, voice-recorded SOPs and a company AI agent for teams that run shifts. The optional Protect layer flags psychosocial-hazard signals for human review and is in controlled rollout. From A$8 per active employee a month (minimum four), + GST.',
     tag: '[ ArchonX Lab — bluework.com.au ]',
   },
   {
     name: 'Packages',
     meta: 'Consulting at published prices',
-    desc: 'Front Desk, Back Office and Whole Shop: AI receptionist, chat agent, lead follow-up, inbox, bookkeeping and workflow automation, from $399 a month plus $990 setup, or own the build outright from $3,900. All prices ex GST, month to month.',
+    desc: 'Front Desk, Back Office and Whole Shop: AI receptionist, chat agent, lead follow-up, inbox, bookkeeping and workflow automation, from $400 a month plus $1,500 setup, or own the build outright from $3,900. All prices + GST, month to month.',
     tag: '[ ArchonX Consulting — fixed quotes ]',
     delay: '0.05s',
   },
   {
     name: 'Custom builds',
     meta: 'Both arms, scoped in consultation',
-    desc: 'Workflow automation from $2,500, 90-day pilots from $5,900, and review and launch for apps built with AI from $1,500, all ex GST. Bespoke systems too: point of sale and back office, marketplaces, operations dashboards. Built in your name, handed over with a runbook.',
+    desc: 'Workflow automation from $2,900, 90-day pilots from $5,900, and review and launch for apps built with AI from $2,900, all + GST. Bespoke systems too: point of sale and back office, marketplaces, operations dashboards. Built in your name, handed over with a runbook.',
     tag: '[ Mapped first, then built ]',
     delay: '0.1s',
   },
